@@ -1,0 +1,10 @@
+2013-07-16 06:19:16 Error: Fatal Error (4): syntax error, unexpected ';' in [C:\WorkSpace\Website\sdcmob\app\View\Themed\Cakestrap\Elements\menu\top_menu.ctp, line 9]
+2013-07-16 06:19:16 Error: [FatalErrorException] syntax error, unexpected ';'
+Request URL: /
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\lib\Cake\Error\ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\WorkSpace\We...', 9)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\WorkSpace\We...', 9, Array)
+#2 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\WorkSpace\We...', 9, Array)
+#3 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
