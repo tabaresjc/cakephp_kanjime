@@ -8,3 +8,301 @@ Stack Trace:
 #3 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(904): App::_checkFatalError()
 #4 [internal function]: App::shutdown()
 #5 {main}
+2013-07-16 06:38:14 Error: [MissingControllerException] Controller class PostController could not be found.
+Exception Attributes: array (
+  'class' => 'PostController',
+  'plugin' => NULL,
+)
+Request URL: /post
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-16 07:01:59 Error: [MissingControllerException] Controller class UserController could not be found.
+Exception Attributes: array (
+  'class' => 'UserController',
+  'plugin' => NULL,
+)
+Request URL: /user
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-16 07:02:02 Error: Fatal Error (1): Call to a member function allow() on a non-object in [C:\WorkSpace\Website\sdcmob\app\Controller\UsersController.php, line 12]
+2013-07-16 07:02:02 Error: [FatalErrorException] Call to a member function allow() on a non-object
+Request URL: /users
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\lib\Cake\Error\ErrorHandler.php(184): ErrorHandler::handleFatalError(1, 'Call to a membe...', 'C:\WorkSpace\We...', 12)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', 'C:\WorkSpace\We...', 12, Array)
+#2 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', 'C:\WorkSpace\We...', 12, Array)
+#3 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-07-16 07:04:06 Error: Fatal Error (4): syntax error, unexpected ';' in [C:\WorkSpace\Website\sdcmob\app\View\Users\add.ctp, line 38]
+2013-07-16 07:04:06 Error: [FatalErrorException] syntax error, unexpected ';'
+Request URL: /users/add
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\lib\Cake\Error\ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\WorkSpace\We...', 38)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\WorkSpace\We...', 38, Array)
+#2 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\WorkSpace\We...', 38, Array)
+#3 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-07-16 07:15:20 Error: Fatal Error (64): Cannot redeclare AppController::$components in [C:\WorkSpace\Website\sdcmob\app\Controller\AppController.php, line 44]
+2013-07-16 07:15:20 Error: [FatalErrorException] Cannot redeclare AppController::$components
+Request URL: /users/add
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\lib\Cake\Error\ErrorHandler.php(184): ErrorHandler::handleFatalError(64, 'Cannot redeclar...', 'C:\WorkSpace\We...', 44)
+#1 [internal function]: ErrorHandler::handleError(64, 'Cannot redeclar...', 'C:\WorkSpace\We...', 44, Array)
+#2 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 64, 'Cannot redeclar...', 'C:\WorkSpace\We...', 44, Array)
+#3 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-07-16 07:28:18 Error: Fatal Error (4): syntax error, unexpected '=>' (T_DOUBLE_ARROW) in [C:\WorkSpace\Website\sdcmob\app\View\Users\edit.ctp, line 56]
+2013-07-16 07:28:18 Error: [FatalErrorException] syntax error, unexpected '=>' (T_DOUBLE_ARROW)
+Request URL: /users/edit/1
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\lib\Cake\Error\ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\WorkSpace\We...', 56)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\WorkSpace\We...', 56, Array)
+#2 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\WorkSpace\We...', 56, Array)
+#3 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-07-16 07:28:56 Error: Fatal Error (4): syntax error, unexpected '=>' (T_DOUBLE_ARROW) in [C:\WorkSpace\Website\sdcmob\app\View\Users\edit.ctp, line 56]
+2013-07-16 07:28:56 Error: [FatalErrorException] syntax error, unexpected '=>' (T_DOUBLE_ARROW)
+Request URL: /users/edit/1
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\lib\Cake\Error\ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\WorkSpace\We...', 56)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\WorkSpace\We...', 56, Array)
+#2 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\WorkSpace\We...', 56, Array)
+#3 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-07-16 07:30:12 Error: Fatal Error (4): syntax error, unexpected '=>' (T_DOUBLE_ARROW) in [C:\WorkSpace\Website\sdcmob\app\View\Users\edit.ctp, line 56]
+2013-07-16 07:30:12 Error: [FatalErrorException] syntax error, unexpected '=>' (T_DOUBLE_ARROW)
+Request URL: /users/edit/1
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\lib\Cake\Error\ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\WorkSpace\We...', 56)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\WorkSpace\We...', 56, Array)
+#2 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\WorkSpace\We...', 56, Array)
+#3 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-07-16 07:30:48 Error: Fatal Error (4): syntax error, unexpected '=>' (T_DOUBLE_ARROW) in [C:\WorkSpace\Website\sdcmob\app\View\Users\edit.ctp, line 57]
+2013-07-16 07:30:48 Error: [FatalErrorException] syntax error, unexpected '=>' (T_DOUBLE_ARROW)
+Request URL: /users/edit/1
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\lib\Cake\Error\ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\WorkSpace\We...', 57)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\WorkSpace\We...', 57, Array)
+#2 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\WorkSpace\We...', 57, Array)
+#3 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-07-16 07:45:23 Error: Fatal Error (4): syntax error, unexpected '<' in [C:\WorkSpace\Website\sdcmob\app\View\Users\login.ctp, line 3]
+2013-07-16 07:45:23 Error: [FatalErrorException] syntax error, unexpected '<'
+Request URL: /users/login
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\lib\Cake\Error\ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\WorkSpace\We...', 3)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\WorkSpace\We...', 3, Array)
+#2 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\WorkSpace\We...', 3, Array)
+#3 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-07-16 07:49:57 Error: Fatal Error (4): syntax error, unexpected '<' in [C:\WorkSpace\Website\sdcmob\app\View\Users\login.ctp, line 3]
+2013-07-16 07:49:57 Error: [FatalErrorException] syntax error, unexpected '<'
+Request URL: /users/login
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\lib\Cake\Error\ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\WorkSpace\We...', 3)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\WorkSpace\We...', 3, Array)
+#2 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\WorkSpace\We...', 3, Array)
+#3 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-07-16 07:52:06 Error: [MissingControllerException] Controller class ThemeController could not be found.
+Exception Attributes: array (
+  'class' => 'ThemeController',
+  'plugin' => NULL,
+)
+Request URL: /theme/Cakestrap/js/libs/jquery.min.map
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-16 08:58:04 Error: [MissingControllerException] Controller class ThemeController could not be found.
+Exception Attributes: array (
+  'class' => 'ThemeController',
+  'plugin' => NULL,
+)
+Request URL: /theme/Cakestrap/js/libs/jquery.min.map
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-16 09:08:41 Error: [MissingControllerException] Controller class ThemeController could not be found.
+Exception Attributes: array (
+  'class' => 'ThemeController',
+  'plugin' => NULL,
+)
+Request URL: /theme/Cakestrap/js/libs/jquery.min.map
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-16 09:11:05 Error: [MissingControllerException] Controller class ThemeController could not be found.
+Exception Attributes: array (
+  'class' => 'ThemeController',
+  'plugin' => NULL,
+)
+Request URL: /theme/Cakestrap/js/libs/jquery.min.map
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-16 09:11:21 Error: [MissingControllerException] Controller class ThemeController could not be found.
+Exception Attributes: array (
+  'class' => 'ThemeController',
+  'plugin' => NULL,
+)
+Request URL: /theme/Cakestrap/js/libs/jquery.min.map
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-16 09:12:13 Error: [MissingControllerException] Controller class ThemeController could not be found.
+Exception Attributes: array (
+  'class' => 'ThemeController',
+  'plugin' => NULL,
+)
+Request URL: /theme/Cakestrap/js/libs/jquery.min.map
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-16 09:21:15 Error: [MissingControllerException] Controller class ThemeController could not be found.
+Exception Attributes: array (
+  'class' => 'ThemeController',
+  'plugin' => NULL,
+)
+Request URL: /theme/Cakestrap/js/libs/jquery.min.map
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-16 09:41:53 Error: [MissingControllerException] Controller class ThemeController could not be found.
+Exception Attributes: array (
+  'class' => 'ThemeController',
+  'plugin' => NULL,
+)
+Request URL: /theme/Cakestrap/js/libs/jquery.min.map
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-16 09:42:58 Error: [MissingControllerException] Controller class ThemeController could not be found.
+Exception Attributes: array (
+  'class' => 'ThemeController',
+  'plugin' => NULL,
+)
+Request URL: /theme/Cakestrap/js/libs/jquery.min.map
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-16 09:48:22 Error: [MissingControllerException] Controller class ThemeController could not be found.
+Exception Attributes: array (
+  'class' => 'ThemeController',
+  'plugin' => NULL,
+)
+Request URL: /theme/Cakestrap/js/libs/jquery.min.map
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-16 09:59:11 Error: Fatal Error (1): Call to undefined method SessionComponent::flash() in [C:\WorkSpace\Website\sdcmob\app\Controller\AppController.php, line 50]
+2013-07-16 09:59:11 Error: [FatalErrorException] Call to undefined method SessionComponent::flash()
+Request URL: /
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\lib\Cake\Error\ErrorHandler.php(184): ErrorHandler::handleFatalError(1, 'Call to undefin...', 'C:\WorkSpace\We...', 50)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', 'C:\WorkSpace\We...', 50, Array)
+#2 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', 'C:\WorkSpace\We...', 50, Array)
+#3 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-07-16 10:00:05 Error: Fatal Error (64): Cannot redeclare AppController::$components in [C:\WorkSpace\Website\sdcmob\app\Controller\AppController.php, line 47]
+2013-07-16 10:00:05 Error: [FatalErrorException] Cannot redeclare AppController::$components
+Request URL: /
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\lib\Cake\Error\ErrorHandler.php(184): ErrorHandler::handleFatalError(64, 'Cannot redeclar...', 'C:\WorkSpace\We...', 47)
+#1 [internal function]: ErrorHandler::handleError(64, 'Cannot redeclar...', 'C:\WorkSpace\We...', 47, Array)
+#2 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 64, 'Cannot redeclar...', 'C:\WorkSpace\We...', 47, Array)
+#3 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-07-16 10:00:25 Error: Fatal Error (64): Cannot redeclare AppController::$components in [C:\WorkSpace\Website\sdcmob\app\Controller\AppController.php, line 46]
+2013-07-16 10:00:25 Error: [FatalErrorException] Cannot redeclare AppController::$components
+Request URL: /
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\lib\Cake\Error\ErrorHandler.php(184): ErrorHandler::handleFatalError(64, 'Cannot redeclar...', 'C:\WorkSpace\We...', 46)
+#1 [internal function]: ErrorHandler::handleError(64, 'Cannot redeclar...', 'C:\WorkSpace\We...', 46, Array)
+#2 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 64, 'Cannot redeclar...', 'C:\WorkSpace\We...', 46, Array)
+#3 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-07-16 10:00:56 Error: Fatal Error (64): Cannot redeclare AppController::$components in [C:\WorkSpace\Website\sdcmob\app\Controller\AppController.php, line 46]
+2013-07-16 10:00:56 Error: [FatalErrorException] Cannot redeclare AppController::$components
+Request URL: /users/login
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\lib\Cake\Error\ErrorHandler.php(184): ErrorHandler::handleFatalError(64, 'Cannot redeclar...', 'C:\WorkSpace\We...', 46)
+#1 [internal function]: ErrorHandler::handleError(64, 'Cannot redeclar...', 'C:\WorkSpace\We...', 46, Array)
+#2 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 64, 'Cannot redeclar...', 'C:\WorkSpace\We...', 46, Array)
+#3 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-07-16 10:02:51 Error: Fatal Error (64): Cannot redeclare AppController::$components in [C:\WorkSpace\Website\sdcmob\app\Controller\AppController.php, line 46]
+2013-07-16 10:02:51 Error: [FatalErrorException] Cannot redeclare AppController::$components
+Request URL: /users/login
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\lib\Cake\Error\ErrorHandler.php(184): ErrorHandler::handleFatalError(64, 'Cannot redeclar...', 'C:\WorkSpace\We...', 46)
+#1 [internal function]: ErrorHandler::handleError(64, 'Cannot redeclar...', 'C:\WorkSpace\We...', 46, Array)
+#2 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 64, 'Cannot redeclar...', 'C:\WorkSpace\We...', 46, Array)
+#3 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-07-16 10:02:56 Error: Fatal Error (64): Cannot redeclare AppController::$components in [C:\WorkSpace\Website\sdcmob\app\Controller\AppController.php, line 46]
+2013-07-16 10:02:56 Error: [FatalErrorException] Cannot redeclare AppController::$components
+Request URL: /users/login
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\lib\Cake\Error\ErrorHandler.php(184): ErrorHandler::handleFatalError(64, 'Cannot redeclar...', 'C:\WorkSpace\We...', 46)
+#1 [internal function]: ErrorHandler::handleError(64, 'Cannot redeclar...', 'C:\WorkSpace\We...', 46, Array)
+#2 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 64, 'Cannot redeclar...', 'C:\WorkSpace\We...', 46, Array)
+#3 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-07-16 10:03:18 Error: Fatal Error (64): Cannot redeclare AppController::$components in [C:\WorkSpace\Website\sdcmob\app\Controller\AppController.php, line 46]
+2013-07-16 10:03:18 Error: [FatalErrorException] Cannot redeclare AppController::$components
+Request URL: /users/login
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\lib\Cake\Error\ErrorHandler.php(184): ErrorHandler::handleFatalError(64, 'Cannot redeclar...', 'C:\WorkSpace\We...', 46)
+#1 [internal function]: ErrorHandler::handleError(64, 'Cannot redeclar...', 'C:\WorkSpace\We...', 46, Array)
+#2 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 64, 'Cannot redeclar...', 'C:\WorkSpace\We...', 46, Array)
+#3 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-07-16 10:03:20 Error: Fatal Error (64): Cannot redeclare AppController::$components in [C:\WorkSpace\Website\sdcmob\app\Controller\AppController.php, line 46]
+2013-07-16 10:03:20 Error: [FatalErrorException] Cannot redeclare AppController::$components
+Request URL: /users/login
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\lib\Cake\Error\ErrorHandler.php(184): ErrorHandler::handleFatalError(64, 'Cannot redeclar...', 'C:\WorkSpace\We...', 46)
+#1 [internal function]: ErrorHandler::handleError(64, 'Cannot redeclar...', 'C:\WorkSpace\We...', 46, Array)
+#2 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 64, 'Cannot redeclar...', 'C:\WorkSpace\We...', 46, Array)
+#3 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-07-16 10:06:04 Error: Fatal Error (1): Call to undefined method SessionComponent::flash() in [C:\WorkSpace\Website\sdcmob\app\Controller\AppController.php, line 50]
+2013-07-16 10:06:04 Error: [FatalErrorException] Call to undefined method SessionComponent::flash()
+Request URL: /users/login
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\lib\Cake\Error\ErrorHandler.php(184): ErrorHandler::handleFatalError(1, 'Call to undefin...', 'C:\WorkSpace\We...', 50)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', 'C:\WorkSpace\We...', 50, Array)
+#2 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', 'C:\WorkSpace\We...', 50, Array)
+#3 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-07-16 10:10:25 Error: Fatal Error (1): Call to undefined method SessionComponent::flash() in [C:\WorkSpace\Website\sdcmob\app\Controller\AppController.php, line 50]
+2013-07-16 10:10:25 Error: [FatalErrorException] Call to undefined method SessionComponent::flash()
+Request URL: /users/login
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\lib\Cake\Error\ErrorHandler.php(184): ErrorHandler::handleFatalError(1, 'Call to undefin...', 'C:\WorkSpace\We...', 50)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to undefin...', 'C:\WorkSpace\We...', 50, Array)
+#2 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to undefin...', 'C:\WorkSpace\We...', 50, Array)
+#3 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}

@@ -16,17 +16,15 @@
  * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
 
-$cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework');
+$cakeDescription = __d('cake_dev', 'SDCmob Online');
 ?>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
+
+<!DOCTYPE html>
+<html lang="en">
 
 	<head>
 		<?php echo $this->Html->charset(); ?>
-		<title>
-			<?php echo $cakeDescription ?>:
-			<?php echo $title_for_layout; ?>
-		</title>
+		<title><?php echo $cakeDescription ?> | <?php echo $title_for_layout; ?></title>
 		<?php
 			echo $this->Html->meta('icon');			
 			echo $this->fetch('meta');
@@ -36,11 +34,6 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 			echo $this->Html->css('core');
 
 			echo $this->fetch('css');
-			
-			echo $this->Html->script('libs/jquery');
-			echo $this->Html->script('libs/bootstrap.min');
-			
-			echo $this->fetch('script');
 		?>
 	</head>
 
@@ -64,15 +57,19 @@ $cakeDescription = __d('cake_dev', 'CakePHP: the rapid development php framework
 			</div><!-- #footer .container -->
 			
 		</div><!-- #main-container -->
-		
+		<?php if(Configure::read('debug')>1): ?>
 		<div class="container">
 			<div class="well">
 				<small>
 					<?php echo $this->element('sql_dump'); ?>
 				</small>
 			</div>
-		</div><!-- .container -->
-		
+		</div>
+		<?php endif; ?>
 	</body>
-
+	<?php	
+	echo $this->Html->script('libs/jquery');
+	echo $this->Html->script('libs/bootstrap.min');	
+	echo $this->fetch('script');
+	?>
 </html>
