@@ -32,7 +32,7 @@
 	<tr>
 		<td><?php echo h($post['Post']['id']); ?>&nbsp;</td>
 		<td><?php echo h($post['Post']['title']); ?>&nbsp;</td>
-		<td><?php echo h($post['Post']['body']); ?>&nbsp;</td>
+		<td><?php echo h(mb_strlen($post['Post']['body'])>30 ? mb_substr($post['Post']['body'],0,30) . '...' :  $post['Post']['body'] ); ?>&nbsp;</td>
 		<td><?php echo h($post['Post']['created']); ?>&nbsp;</td>
 		<td><?php echo h($post['Post']['modified']); ?>&nbsp;</td>
 		<td class="actions">

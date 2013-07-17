@@ -1,4 +1,7 @@
-
+<?php
+	$this->Html->addCrumb(__('List Posts'), array('action' => 'index'));
+	$this->Html->addCrumb(__('Post'), null);
+?>
 <div id="page-container" class="row-fluid">
 
 	<div id="sidebar" class="span3">
@@ -6,11 +9,10 @@
 		<div class="actions">
 			
 			<ul class="nav nav-list bs-docs-sidenav">			
-						<li><?php echo $this->Html->link(__('Edit Post'), array('action' => 'edit', $post['Post']['id']), array('class' => '')); ?> </li>
-		<li><?php echo $this->Form->postLink(__('Delete Post'), array('action' => 'delete', $post['Post']['id']), array('class' => ''), __('Are you sure you want to delete # %s?', $post['Post']['id'])); ?> </li>
-		<li><?php echo $this->Html->link(__('List Posts'), array('action' => 'index'), array('class' => '')); ?> </li>
-		<li><?php echo $this->Html->link(__('New Post'), array('action' => 'add'), array('class' => '')); ?> </li>
-				
+				<li><?php echo $this->Html->link(__('Edit Post'), array('action' => 'edit', $post['Post']['id']), array('class' => '')); ?> </li>
+				<li><?php echo $this->Form->postLink(__('Delete Post'), array('action' => 'delete', $post['Post']['id']), array('class' => ''), __('Are you sure you want to delete # %s?', $post['Post']['id'])); ?> </li>
+				<li><?php echo $this->Html->link(__('List Posts'), array('action' => 'index'), array('class' => '')); ?> </li>
+				<li><?php echo $this->Html->link(__('New Post'), array('action' => 'add'), array('class' => '')); ?> </li>	
 			</ul><!-- .nav nav-list bs-docs-sidenav -->
 			
 		</div><!-- .actions -->

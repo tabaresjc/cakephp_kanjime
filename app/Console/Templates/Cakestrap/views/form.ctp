@@ -17,6 +17,17 @@
  */
 ?>
 
+<?php
+	echo "<?php\n";
+	echo "\t\$this->Html->addCrumb(__('List " . $pluralHumanName . "'), array('action' => 'index'));\n";
+	if (strpos($action, 'add') === false) {
+		echo "\t\$this->Html->addCrumb(__('Edit " . $singularHumanName . "'), null);\n";
+	} else {
+		echo "\t\$this->Html->addCrumb(__('New " . $singularHumanName . "'), null);\n";
+	}
+	echo "?>\n";
+?>
+
 <div id="page-container" class="row-fluid">
 
 	<div id="sidebar" class="span3">

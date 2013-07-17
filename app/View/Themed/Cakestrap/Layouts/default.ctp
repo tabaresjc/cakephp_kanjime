@@ -39,25 +39,25 @@ $cakeDescription = __d('cake_dev', 'SDCmob Online');
 
 	<body>
 
-		<div id="main-container">
-		
+		<div id="main-container">		
 			<div id="header" class="container">
 				<?php echo $this->element('menu/top_menu'); ?>
 			</div>
-			
 			<div id="content" class="container">
-
 				<?php echo $this->Session->flash(); ?>
-
+				<div class="row">
+					<div class="span3"></div>
+					<div class="span9">
+						<?php echo $this->element('menu/bread_crumbs'); ?>
+					</div>
+				</div>
 				<?php echo $this->fetch('content'); ?>
-			</div><!-- #header .container -->
-			
+			</div>			
 			<div id="footer" class="container">
-				<?php //Silence is golden ?>
-			</div><!-- #footer .container -->
-			
+				
+			</div>			
 		</div><!-- #main-container -->
-		<?php if(Configure::read('debug')>1): ?>
+		<?php if(Configure::read('debug') > 1 ): ?>
 		<div class="container">
 			<div class="well">
 				<small>

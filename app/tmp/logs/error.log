@@ -336,3 +336,552 @@ Stack Trace:
 #3 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(904): App::_checkFatalError()
 #4 [internal function]: App::shutdown()
 #5 {main}
+2013-07-17 06:15:06 Error: [MissingControllerException] Controller class CollectionsController could not be found.
+Exception Attributes: array (
+  'class' => 'CollectionsController',
+  'plugin' => NULL,
+)
+Request URL: /collections
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-17 06:24:59 Error: [MissingControllerException] Controller class ThemeController could not be found.
+Exception Attributes: array (
+  'class' => 'ThemeController',
+  'plugin' => NULL,
+)
+Request URL: /theme/Cakestrap/js/libs/jquery.min.map
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-17 06:35:46 Error: [MissingControllerException] Controller class ThemeController could not be found.
+Exception Attributes: array (
+  'class' => 'ThemeController',
+  'plugin' => NULL,
+)
+Request URL: /theme/Cakestrap/js/libs/jquery.min.map
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-17 06:39:37 Error: Fatal Error (1): Call to a member function addCrumb() on a non-object in [C:\WorkSpace\Website\sdcmob\app\Controller\PostsController.php, line 28]
+2013-07-17 06:39:37 Error: [FatalErrorException] Call to a member function addCrumb() on a non-object
+Request URL: /posts/view/1
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\lib\Cake\Error\ErrorHandler.php(184): ErrorHandler::handleFatalError(1, 'Call to a membe...', 'C:\WorkSpace\We...', 28)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', 'C:\WorkSpace\We...', 28, Array)
+#2 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', 'C:\WorkSpace\We...', 28, Array)
+#3 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-07-17 06:50:06 Error: [MissingControllerException] Controller class ThemeController could not be found.
+Exception Attributes: array (
+  'class' => 'ThemeController',
+  'plugin' => NULL,
+)
+Request URL: /theme/Cakestrap/js/libs/jquery.min.map
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-17 07:16:20 Error: Fatal Error (4): syntax error, unexpected '=>' (T_DOUBLE_ARROW) in [C:\WorkSpace\Website\sdcmob\app\View\Collections\index.ctp, line 44]
+2013-07-17 07:16:20 Error: [FatalErrorException] syntax error, unexpected '=>' (T_DOUBLE_ARROW)
+Request URL: /collections
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\lib\Cake\Error\ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\WorkSpace\We...', 44)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\WorkSpace\We...', 44, Array)
+#2 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\WorkSpace\We...', 44, Array)
+#3 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-07-17 07:39:00 Error: [MissingControllerException] Controller class ThemeController could not be found.
+Exception Attributes: array (
+  'class' => 'ThemeController',
+  'plugin' => NULL,
+)
+Request URL: /theme/Cakestrap/js/libs/jquery.min.map
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-17 07:48:14 Error: [MissingControllerException] Controller class ThemeController could not be found.
+Exception Attributes: array (
+  'class' => 'ThemeController',
+  'plugin' => NULL,
+)
+Request URL: /theme/Cakestrap/js/libs/jquery.min.map
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-17 07:52:13 Error: [MissingControllerException] Controller class ThemeController could not be found.
+Exception Attributes: array (
+  'class' => 'ThemeController',
+  'plugin' => NULL,
+)
+Request URL: /theme/Cakestrap/js/libs/jquery.min.map
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-17 07:59:21 Error: [MissingControllerException] Controller class ThemeController could not be found.
+Exception Attributes: array (
+  'class' => 'ThemeController',
+  'plugin' => NULL,
+)
+Request URL: /theme/Cakestrap/js/libs/jquery.min.map
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-17 08:01:39 Error: [MissingControllerException] Controller class ThemeController could not be found.
+Exception Attributes: array (
+  'class' => 'ThemeController',
+  'plugin' => NULL,
+)
+Request URL: /theme/Cakestrap/js/libs/jquery.min.map
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-17 08:35:33 Error: [MissingControllerException] Controller class ThemeController could not be found.
+Exception Attributes: array (
+  'class' => 'ThemeController',
+  'plugin' => NULL,
+)
+Request URL: /theme/Cakestrap/js/libs/jquery.min.map
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-17 08:51:23 Error: [MissingControllerException] Controller class ThemeController could not be found.
+Exception Attributes: array (
+  'class' => 'ThemeController',
+  'plugin' => NULL,
+)
+Request URL: /theme/Cakestrap/js/libs/jquery.min.map
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-17 08:52:19 Error: [MissingControllerException] Controller class ThemeController could not be found.
+Exception Attributes: array (
+  'class' => 'ThemeController',
+  'plugin' => NULL,
+)
+Request URL: /theme/Cakestrap/js/libs/jquery.min.map
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-17 08:53:27 Error: [MissingControllerException] Controller class ThemeController could not be found.
+Exception Attributes: array (
+  'class' => 'ThemeController',
+  'plugin' => NULL,
+)
+Request URL: /theme/Cakestrap/js/libs/jquery.min.map
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-17 09:03:24 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/kanjime.js
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-17 09:03:29 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/kanjime.js
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-17 09:07:31 Error: [MissingControllerException] Controller class ThemeController could not be found.
+Exception Attributes: array (
+  'class' => 'ThemeController',
+  'plugin' => NULL,
+)
+Request URL: /theme/Cakestrap/js/libs/jquery.min.map
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-17 09:10:13 Error: [MissingControllerException] Controller class ThemeController could not be found.
+Exception Attributes: array (
+  'class' => 'ThemeController',
+  'plugin' => NULL,
+)
+Request URL: /theme/Cakestrap/js/libs/jquery.min.map
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-17 09:13:05 Error: [MissingControllerException] Controller class Wp-contentController could not be found.
+Exception Attributes: array (
+  'class' => 'Wp-contentController',
+  'plugin' => NULL,
+)
+Request URL: /wp-content/plugins/wp-generic-functions/images/loader.gif
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-17 09:13:12 Error: [MissingControllerException] Controller class ThemeController could not be found.
+Exception Attributes: array (
+  'class' => 'ThemeController',
+  'plugin' => NULL,
+)
+Request URL: /theme/Cakestrap/js/libs/jquery.min.map
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-17 09:13:54 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /img/loader.gif
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-17 09:13:58 Error: [MissingControllerException] Controller class ThemeController could not be found.
+Exception Attributes: array (
+  'class' => 'ThemeController',
+  'plugin' => NULL,
+)
+Request URL: /theme/Cakestrap/js/libs/jquery.min.map
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-17 09:17:58 Error: [MissingControllerException] Controller class ImgController could not be found.
+Exception Attributes: array (
+  'class' => 'ImgController',
+  'plugin' => NULL,
+)
+Request URL: /img/glyphicons-halflings.png
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-17 09:22:05 Error: [MissingControllerException] Controller class ThemeController could not be found.
+Exception Attributes: array (
+  'class' => 'ThemeController',
+  'plugin' => NULL,
+)
+Request URL: /theme/Cakestrap/js/libs/jquery.min.map
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-17 09:22:12 Error: [MissingControllerException] Controller class ThemeController could not be found.
+Exception Attributes: array (
+  'class' => 'ThemeController',
+  'plugin' => NULL,
+)
+Request URL: /theme/Cakestrap/js/libs/jquery.min.map
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-17 09:30:39 Error: [MissingControllerException] Controller class CollectionController could not be found.
+Exception Attributes: array (
+  'class' => 'CollectionController',
+  'plugin' => NULL,
+)
+Request URL: /
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-17 09:40:47 Error: Fatal Error (1): Cannot use object of type CakeResponse as array in [C:\WorkSpace\Website\sdcmob\app\Controller\CollectionsController.php, line 54]
+2013-07-17 09:40:47 Error: [FatalErrorException] Cannot use object of type CakeResponse as array
+Request URL: /Collections/findKanji
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\lib\Cake\Error\ErrorHandler.php(184): ErrorHandler::handleFatalError(1, 'Cannot use obje...', 'C:\WorkSpace\We...', 54)
+#1 [internal function]: ErrorHandler::handleError(1, 'Cannot use obje...', 'C:\WorkSpace\We...', 54, Array)
+#2 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Cannot use obje...', 'C:\WorkSpace\We...', 54, Array)
+#3 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-07-17 09:40:52 Error: [MissingControllerException] Controller class ThemeController could not be found.
+Exception Attributes: array (
+  'class' => 'ThemeController',
+  'plugin' => NULL,
+)
+Request URL: /theme/Cakestrap/js/libs/jquery.min.map
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-17 09:41:04 Error: Fatal Error (1): Cannot use object of type CakeResponse as array in [C:\WorkSpace\Website\sdcmob\app\Controller\CollectionsController.php, line 54]
+2013-07-17 09:41:04 Error: [FatalErrorException] Cannot use object of type CakeResponse as array
+Request URL: /Collections/findKanji
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\lib\Cake\Error\ErrorHandler.php(184): ErrorHandler::handleFatalError(1, 'Cannot use obje...', 'C:\WorkSpace\We...', 54)
+#1 [internal function]: ErrorHandler::handleError(1, 'Cannot use obje...', 'C:\WorkSpace\We...', 54, Array)
+#2 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Cannot use obje...', 'C:\WorkSpace\We...', 54, Array)
+#3 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-07-17 09:41:58 Error: [MissingControllerException] Controller class ThemeController could not be found.
+Exception Attributes: array (
+  'class' => 'ThemeController',
+  'plugin' => NULL,
+)
+Request URL: /theme/Cakestrap/js/libs/jquery.min.map
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-17 09:42:00 Error: Fatal Error (1): Cannot use object of type CakeResponse as array in [C:\WorkSpace\Website\sdcmob\app\Controller\CollectionsController.php, line 54]
+2013-07-17 09:42:00 Error: [FatalErrorException] Cannot use object of type CakeResponse as array
+Request URL: /collections/findkanji
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\lib\Cake\Error\ErrorHandler.php(184): ErrorHandler::handleFatalError(1, 'Cannot use obje...', 'C:\WorkSpace\We...', 54)
+#1 [internal function]: ErrorHandler::handleError(1, 'Cannot use obje...', 'C:\WorkSpace\We...', 54, Array)
+#2 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Cannot use obje...', 'C:\WorkSpace\We...', 54, Array)
+#3 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-07-17 09:48:48 Error: [MissingControllerException] Controller class ThemeController could not be found.
+Exception Attributes: array (
+  'class' => 'ThemeController',
+  'plugin' => NULL,
+)
+Request URL: /theme/Cakestrap/js/libs/jquery.min.map
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-17 09:48:51 Error: [MissingControllerException] Controller class ThemeController could not be found.
+Exception Attributes: array (
+  'class' => 'ThemeController',
+  'plugin' => NULL,
+)
+Request URL: /theme/Cakestrap/js/libs/jquery.min.map
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-17 09:48:54 Error: Fatal Error (1): Cannot use object of type CakeResponse as array in [C:\WorkSpace\Website\sdcmob\app\Controller\CollectionsController.php, line 54]
+2013-07-17 09:48:54 Error: [FatalErrorException] Cannot use object of type CakeResponse as array
+Request URL: /collections/findkanji
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\lib\Cake\Error\ErrorHandler.php(184): ErrorHandler::handleFatalError(1, 'Cannot use obje...', 'C:\WorkSpace\We...', 54)
+#1 [internal function]: ErrorHandler::handleError(1, 'Cannot use obje...', 'C:\WorkSpace\We...', 54, Array)
+#2 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Cannot use obje...', 'C:\WorkSpace\We...', 54, Array)
+#3 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-07-17 09:49:12 Error: [MissingControllerException] Controller class ThemeController could not be found.
+Exception Attributes: array (
+  'class' => 'ThemeController',
+  'plugin' => NULL,
+)
+Request URL: /theme/Cakestrap/js/libs/jquery.min.map
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-17 09:49:40 Error: Fatal Error (1): Cannot use object of type CakeResponse as array in [C:\WorkSpace\Website\sdcmob\app\Controller\CollectionsController.php, line 54]
+2013-07-17 09:49:40 Error: [FatalErrorException] Cannot use object of type CakeResponse as array
+Request URL: /collections/findkanji/
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\lib\Cake\Error\ErrorHandler.php(184): ErrorHandler::handleFatalError(1, 'Cannot use obje...', 'C:\WorkSpace\We...', 54)
+#1 [internal function]: ErrorHandler::handleError(1, 'Cannot use obje...', 'C:\WorkSpace\We...', 54, Array)
+#2 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Cannot use obje...', 'C:\WorkSpace\We...', 54, Array)
+#3 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-07-17 09:49:43 Error: [MissingControllerException] Controller class ThemeController could not be found.
+Exception Attributes: array (
+  'class' => 'ThemeController',
+  'plugin' => NULL,
+)
+Request URL: /theme/Cakestrap/js/libs/jquery.min.map
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-17 09:49:45 Error: Fatal Error (1): Cannot use object of type CakeResponse as array in [C:\WorkSpace\Website\sdcmob\app\Controller\CollectionsController.php, line 54]
+2013-07-17 09:49:45 Error: [FatalErrorException] Cannot use object of type CakeResponse as array
+Request URL: /collections/findkanji/
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\lib\Cake\Error\ErrorHandler.php(184): ErrorHandler::handleFatalError(1, 'Cannot use obje...', 'C:\WorkSpace\We...', 54)
+#1 [internal function]: ErrorHandler::handleError(1, 'Cannot use obje...', 'C:\WorkSpace\We...', 54, Array)
+#2 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Cannot use obje...', 'C:\WorkSpace\We...', 54, Array)
+#3 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-07-17 09:50:51 Error: [MissingControllerException] Controller class ThemeController could not be found.
+Exception Attributes: array (
+  'class' => 'ThemeController',
+  'plugin' => NULL,
+)
+Request URL: /theme/Cakestrap/js/libs/jquery.min.map
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-17 09:51:09 Error: [MissingControllerException] Controller class ThemeController could not be found.
+Exception Attributes: array (
+  'class' => 'ThemeController',
+  'plugin' => NULL,
+)
+Request URL: /theme/Cakestrap/js/libs/jquery.min.map
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-17 09:51:37 Error: [MissingControllerException] Controller class ThemeController could not be found.
+Exception Attributes: array (
+  'class' => 'ThemeController',
+  'plugin' => NULL,
+)
+Request URL: /theme/Cakestrap/js/libs/jquery.min.map
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-17 09:51:40 Error: Fatal Error (1): Cannot use object of type CakeResponse as array in [C:\WorkSpace\Website\sdcmob\app\Controller\CollectionsController.php, line 54]
+2013-07-17 09:51:40 Error: [FatalErrorException] Cannot use object of type CakeResponse as array
+Request URL: /collections/findKanji/
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\lib\Cake\Error\ErrorHandler.php(184): ErrorHandler::handleFatalError(1, 'Cannot use obje...', 'C:\WorkSpace\We...', 54)
+#1 [internal function]: ErrorHandler::handleError(1, 'Cannot use obje...', 'C:\WorkSpace\We...', 54, Array)
+#2 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Cannot use obje...', 'C:\WorkSpace\We...', 54, Array)
+#3 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-07-17 09:56:21 Error: [MissingControllerException] Controller class ThemeController could not be found.
+Exception Attributes: array (
+  'class' => 'ThemeController',
+  'plugin' => NULL,
+)
+Request URL: /theme/Cakestrap/js/libs/jquery.min.map
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-17 10:04:46 Error: [MissingControllerException] Controller class ThemeController could not be found.
+Exception Attributes: array (
+  'class' => 'ThemeController',
+  'plugin' => NULL,
+)
+Request URL: /theme/Cakestrap/js/libs/jquery.min.map
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-17 10:06:51 Error: Fatal Error (4): syntax error, unexpected '=>' (T_DOUBLE_ARROW) in [C:\WorkSpace\Website\sdcmob\app\Controller\CollectionsController.php, line 56]
+2013-07-17 10:06:51 Error: [FatalErrorException] syntax error, unexpected '=>' (T_DOUBLE_ARROW)
+Request URL: /collections/findKanji/
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\lib\Cake\Error\ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\WorkSpace\We...', 56)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\WorkSpace\We...', 56, Array)
+#2 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\WorkSpace\We...', 56, Array)
+#3 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-07-17 10:06:54 Error: Fatal Error (4): syntax error, unexpected '=>' (T_DOUBLE_ARROW) in [C:\WorkSpace\Website\sdcmob\app\Controller\CollectionsController.php, line 56]
+2013-07-17 10:06:54 Error: [FatalErrorException] syntax error, unexpected '=>' (T_DOUBLE_ARROW)
+Request URL: /Collections/add
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\lib\Cake\Error\ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\WorkSpace\We...', 56)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\WorkSpace\We...', 56, Array)
+#2 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\WorkSpace\We...', 56, Array)
+#3 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-07-17 10:07:41 Error: Fatal Error (4): syntax error, unexpected '=>' (T_DOUBLE_ARROW) in [C:\WorkSpace\Website\sdcmob\app\Controller\CollectionsController.php, line 56]
+2013-07-17 10:07:41 Error: [FatalErrorException] syntax error, unexpected '=>' (T_DOUBLE_ARROW)
+Request URL: /Collections/add
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\lib\Cake\Error\ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\WorkSpace\We...', 56)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\WorkSpace\We...', 56, Array)
+#2 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\WorkSpace\We...', 56, Array)
+#3 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-07-17 10:07:43 Error: Fatal Error (4): syntax error, unexpected '=>' (T_DOUBLE_ARROW) in [C:\WorkSpace\Website\sdcmob\app\Controller\CollectionsController.php, line 56]
+2013-07-17 10:07:43 Error: [FatalErrorException] syntax error, unexpected '=>' (T_DOUBLE_ARROW)
+Request URL: /Collections/add
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\lib\Cake\Error\ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\WorkSpace\We...', 56)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\WorkSpace\We...', 56, Array)
+#2 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\WorkSpace\We...', 56, Array)
+#3 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-07-17 10:08:05 Error: Fatal Error (4): syntax error, unexpected '=>' (T_DOUBLE_ARROW) in [C:\WorkSpace\Website\sdcmob\app\Controller\CollectionsController.php, line 55]
+2013-07-17 10:08:06 Error: [FatalErrorException] syntax error, unexpected '=>' (T_DOUBLE_ARROW)
+Request URL: /Collections/add
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\lib\Cake\Error\ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\WorkSpace\We...', 55)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\WorkSpace\We...', 55, Array)
+#2 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\WorkSpace\We...', 55, Array)
+#3 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-07-17 10:08:07 Error: Fatal Error (4): syntax error, unexpected '=>' (T_DOUBLE_ARROW) in [C:\WorkSpace\Website\sdcmob\app\Controller\CollectionsController.php, line 55]
+2013-07-17 10:08:07 Error: [FatalErrorException] syntax error, unexpected '=>' (T_DOUBLE_ARROW)
+Request URL: /Collections/add
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\lib\Cake\Error\ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\WorkSpace\We...', 55)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\WorkSpace\We...', 55, Array)
+#2 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\WorkSpace\We...', 55, Array)
+#3 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-07-17 10:08:09 Error: Fatal Error (4): syntax error, unexpected '=>' (T_DOUBLE_ARROW) in [C:\WorkSpace\Website\sdcmob\app\Controller\CollectionsController.php, line 55]
+2013-07-17 10:08:09 Error: [FatalErrorException] syntax error, unexpected '=>' (T_DOUBLE_ARROW)
+Request URL: /Collections/add
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\lib\Cake\Error\ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\WorkSpace\We...', 55)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\WorkSpace\We...', 55, Array)
+#2 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\WorkSpace\We...', 55, Array)
+#3 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-07-17 10:08:59 Error: Fatal Error (4): syntax error, unexpected '=>' (T_DOUBLE_ARROW) in [C:\WorkSpace\Website\sdcmob\app\Controller\CollectionsController.php, line 56]
+2013-07-17 10:08:59 Error: [FatalErrorException] syntax error, unexpected '=>' (T_DOUBLE_ARROW)
+Request URL: /Collections/add
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\lib\Cake\Error\ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\WorkSpace\We...', 56)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\WorkSpace\We...', 56, Array)
+#2 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\WorkSpace\We...', 56, Array)
+#3 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-07-17 10:10:08 Error: Fatal Error (4): syntax error, unexpected '=>' (T_DOUBLE_ARROW) in [C:\WorkSpace\Website\sdcmob\app\Controller\CollectionsController.php, line 55]
+2013-07-17 10:10:08 Error: [FatalErrorException] syntax error, unexpected '=>' (T_DOUBLE_ARROW)
+Request URL: /Collections/add
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\lib\Cake\Error\ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\WorkSpace\We...', 55)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\WorkSpace\We...', 55, Array)
+#2 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\WorkSpace\We...', 55, Array)
+#3 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-07-17 10:11:21 Error: [MissingControllerException] Controller class ThemeController could not be found.
+Exception Attributes: array (
+  'class' => 'ThemeController',
+  'plugin' => NULL,
+)
+Request URL: /theme/Cakestrap/js/libs/jquery.min.map
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-17 10:12:09 Error: [MissingControllerException] Controller class ThemeController could not be found.
+Exception Attributes: array (
+  'class' => 'ThemeController',
+  'plugin' => NULL,
+)
+Request URL: /theme/Cakestrap/js/libs/jquery.min.map
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-17 10:15:02 Error: [MissingControllerException] Controller class ThemeController could not be found.
+Exception Attributes: array (
+  'class' => 'ThemeController',
+  'plugin' => NULL,
+)
+Request URL: /theme/Cakestrap/js/libs/jquery.min.map
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-17 10:15:41 Error: [MissingControllerException] Controller class ThemeController could not be found.
+Exception Attributes: array (
+  'class' => 'ThemeController',
+  'plugin' => NULL,
+)
+Request URL: /theme/Cakestrap/js/libs/jquery.min.map
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-17 10:41:20 Error: [MissingControllerException] Controller class ThemeController could not be found.
+Exception Attributes: array (
+  'class' => 'ThemeController',
+  'plugin' => NULL,
+)
+Request URL: /theme/Cakestrap/js/libs/jquery.min.map
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}

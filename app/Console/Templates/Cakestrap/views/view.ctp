@@ -16,7 +16,12 @@
  * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
 ?>
-
+<?php
+	echo "<?php\n";
+	echo "\t\$this->Html->addCrumb(__('List " . $pluralHumanName . "'), array('action' => 'index'));\n";
+	echo "\t\$this->Html->addCrumb(__('View " . $singularHumanName . "'), null);\n";
+	echo "?>\r\n";
+?>
 <div id="page-container" class="row-fluid">
 
 	<div id="sidebar" class="span3">
