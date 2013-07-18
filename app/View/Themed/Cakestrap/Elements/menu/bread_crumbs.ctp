@@ -1,1 +1,5 @@
-<?php echo $this->Html->getCrumbList(array( 'class' => 'breadcrumb', 'separator' => '<span class="divider">/</span>' ), 'Home'); ?>
+<?php 
+	if($this->params['controller']!='users' && $this->params['action']!='login'){
+		echo $this->Html->getCrumbList(array( 'class' => 'breadcrumb', 'separator' => '<span class="divider">/</span>' ), 'Home'); 
+	}
+?>

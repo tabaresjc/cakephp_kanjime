@@ -1,4 +1,4 @@
-<?php
+﻿<?php
 App::uses('AppController', 'Controller');
 /**
  * Collections Controller
@@ -39,14 +39,77 @@ class CollectionsController extends AppController {
  */
 	public function add() {
 		if ($this->request->is('post')) {
-			$this->Collection->create();
+			
+			$count = $this->Collection->find('count', array(
+				'conditions' => array('Collection.title' => $this->request->data['Collection']['title'])
+			));
+			
+			if($count>0){
+				$this->Session->setFlash(__('This name already exist. Please try another name'), 'flash/error');
+			}else{
+				
+				$this->Collection->create();
+				if ($this->Collection->save($this->request->data)) {
+					$this->Session->setFlash(__('The collection has been saved'), 'flash/success');
+					$this->redirect(array('action' => 'index'));
+				} else {
+					$this->Session->setFlash(__('The collection could not be saved. Please, try again.'), 'flash/error');
+				}
+			}
+		} else {			
+			$data = array(
+				'title' => 'Kanji',
+				'subtitle' => '漢字',
+				'description' => 'カンジ'
+			);
+			$this->data = array( 'Collection' => $data );
+		}
+	}
+
+/**
+ * edit method
+ *
+ * @throws NotFoundException
+ * @param string $id
+ * @return void
+ */
+	public function edit($id = null) {
+		if (!$this->Collection->exists($id)) {
+			throw new NotFoundException(__('Invalid collection'));
+		}
+		if ($this->request->is('post') || $this->request->is('put')) {
 			if ($this->Collection->save($this->request->data)) {
 				$this->Session->setFlash(__('The collection has been saved'), 'flash/success');
 				$this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash(__('The collection could not be saved. Please, try again.'), 'flash/error');
 			}
+		} else {
+			$options = array('conditions' => array('Collection.' . $this->Collection->primaryKey => $id));
+			$this->request->data = $this->Collection->find('first', $options);
 		}
+	}
+
+/**
+ * delete method
+ *
+ * @throws NotFoundException
+ * @throws MethodNotAllowedException
+ * @param string $id
+ * @return void
+ */
+	public function delete($id = null) {
+		$this->Collection->id = $id;
+		if (!$this->Collection->exists()) {
+			throw new NotFoundException(__('Invalid collection'));
+		}
+		$this->request->onlyAllow('post', 'delete');
+		if ($this->Collection->delete()) {
+			$this->Session->setFlash(__('Collection deleted'), 'flash/success');
+			$this->redirect(array('action' => 'index'));
+		}
+		$this->Session->setFlash(__('Collection was not deleted'), 'flash/error');
+		$this->redirect(array('action' => 'index'));
 	}
 	
 	public function findKanji() {
@@ -111,9 +174,8 @@ class CollectionsController extends AppController {
 			$this->Session->setFlash(__('Invalid Action'), 'flash/error');
 			$this->redirect('/');			
 		}
-	}
-
-
+	}	
+	
 	function mbStringToArray ($string) {
 	  $strlen = mb_strlen($string);
 	  while ($strlen) {
@@ -122,51 +184,5 @@ class CollectionsController extends AppController {
 		$strlen = mb_strlen($string);
 	  }
 	  return $array;
-	}	
-
-/**
- * edit method
- *
- * @throws NotFoundException
- * @param string $id
- * @return void
- */
-	public function edit($id = null) {
-		if (!$this->Collection->exists($id)) {
-			throw new NotFoundException(__('Invalid collection'));
-		}
-		if ($this->request->is('post') || $this->request->is('put')) {
-			if ($this->Collection->save($this->request->data)) {
-				$this->Session->setFlash(__('The collection has been saved'), 'flash/success');
-				$this->redirect(array('action' => 'index'));
-			} else {
-				$this->Session->setFlash(__('The collection could not be saved. Please, try again.'), 'flash/error');
-			}
-		} else {
-			$options = array('conditions' => array('Collection.' . $this->Collection->primaryKey => $id));
-			$this->request->data = $this->Collection->find('first', $options);
-		}
-	}
-
-/**
- * delete method
- *
- * @throws NotFoundException
- * @throws MethodNotAllowedException
- * @param string $id
- * @return void
- */
-	public function delete($id = null) {
-		$this->Collection->id = $id;
-		if (!$this->Collection->exists()) {
-			throw new NotFoundException(__('Invalid collection'));
-		}
-		$this->request->onlyAllow('post', 'delete');
-		if ($this->Collection->delete()) {
-			$this->Session->setFlash(__('Collection deleted'), 'flash/success');
-			$this->redirect(array('action' => 'index'));
-		}
-		$this->Session->setFlash(__('Collection was not deleted'), 'flash/error');
-		$this->redirect(array('action' => 'index'));
-	}
+	}		
 }

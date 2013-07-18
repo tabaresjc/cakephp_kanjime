@@ -2,9 +2,28 @@
 	WPGFunctions = {
 		setup: function() {		
 			// setup the show details for selected movie
-			$('#kanji_me_breakdown').click(WPGFunctions.breakDownKanji);
+			if($('#kanji_me_updater').length > 0) {
+				WPGFunctions.setupUpdater();
+			}else if($('#kanji_me_breakdown').length > 0) {
+				$('#kanji_me_breakdown').click(WPGFunctions.breakDownKanji);
+			}
+		},
+		setupUpdater: function() {
+			var result = JSON.parse($('#kanjime_body').val());
+			if(result.kanjiList!=undefined){
+				var ko = result.kanjiList;
+				var count = ko.length;
+				WPGFunctions.prepareWorkingSpace();
+				for(var i=0; i<count;i++){
+					WPGFunctions.getKanjiAdminTableForm((i+1).toString(),ko[i].kanji,ko[i].kunyomi,ko[i].onyomi,ko[i].meaning);
+				}
+				$('#kanjime_placeholder').append(WPGFunctions.getPreviewPanel);			
+				$("#kanjime_send_to_editor").click(WPGFunctions.previewKanjiList);
+				$('#kanji_me_breakdown').click(WPGFunctions.breakDownKanji);
+			}			
 		},
 		breakDownKanji: function() {
+			WPGFunctions.clearWorkingSpace();
 			WPGFunctions.enableSpinnerInEditor();
 			var kanjime_title = $('#CollectionTitle').val();
 			var kanjime_subtitle = $('#CollectionSubtitle').val();
@@ -17,7 +36,7 @@
 			};
 			$.post('/collections/findkanji/', data, function(response) {
 				//alert('Response: '+response);
-				WPGFunctions.clearWorkingSpace();				
+				
 				if(response!=undefined && response.length>20){
 					var result = JSON.parse(response);
 					if(!WPGFunctions.testEmptyString(result.error)){
@@ -26,10 +45,20 @@
 					if(result.kanjiList!=undefined){
 						var ko = result.kanjiList;
 						var count = ko.length;
+						WPGFunctions.prepareWorkingSpace();
 						for(var i=0; i<count;i++){
+							if(ko[i].kunyomi.indexOf('«')==-1 || ko[i].kunyomi.indexOf('»')==-1){
+								ko[i].kunyomi = WPGFunctions.getRomajiConversion(ko[i].kunyomi);
+							}
+							if(ko[i].onyomi.indexOf('«')==-1 || ko[i].onyomi.indexOf('»')==-1){
+								ko[i].onyomi = WPGFunctions.getRomajiConversion(ko[i].onyomi);
+							}						
 							WPGFunctions.getKanjiAdminTableForm((i+1).toString(),ko[i].kanji,ko[i].kunyomi,ko[i].onyomi,ko[i].meaning);
 						}
-						WPGFunctions.appendToEditorButton();
+						result.kanjiList = ko;						
+						$('#kanjime_body').val(JSON.stringify(result));
+						$('#kanjime_placeholder').append(WPGFunctions.getPreviewPanel);			
+						$("#kanjime_send_to_editor").click(WPGFunctions.previewKanjiList);
 					}
 				}
 				WPGFunctions.disableSpinnerInEditor();
@@ -39,44 +68,12 @@
 			});
 			return(false);
 		},
-		getDataFromEditor: function() {
-			document.getElementById("content-html").click();
-			var dataOrigin = $("#wp-content-editor-container #content").val();
-			if(dataOrigin!=undefined && dataOrigin.length > 0){
-				var kanjiObject = JSON.parse(dataOrigin);
-				if(kanjiObject!=undefined && kanjiObject.original!=undefined && kanjiObject.name!=undefined && kanjiObject.list!=undefined){
-					WPGFunctions.clearWorkingSpace();
-					var count = kanjiObject.list.length;
-					for(var i=0;i<count;i++){
-						var no = kanjiObject.list[i];
-						WPGFunctions.getKanjiAdminTableForm((i+1).toString(),no.kanji,no.kunyomi,no.onyomi,no.meaning);
-					}
-					$('#kanjime_original').val(kanjiObject.original);
-					$('#kanjime_name').val(kanjiObject.name);		
-					WPGFunctions.appendToEditorButton();
-				} else {
-					alert('There is no data to work with');
-				}
-			}
-			else {
-				alert('There is no data to work with');
-			}
-			return(false);
-		},
-		clearWorkingSpace: function() {
-			$('#message_placeholder').empty();
-			$('#kanjime_placeholder').empty();
-		},
-		appendToEditorButton: function() {
-			$('#kanjime_placeholder').append(WPGFunctions.getSendKanjiToPanel);			
-			$("#kanjime_send_to_editor").click(WPGFunctions.sendKanjiToEditor);
-		},
-		sendKanjiToEditor: function() {
-			document.getElementById("content-html").click();
+		updateDataFromEditor: function() {
 			var kanjiObject = new Object();
 			
-			kanjiObject.original = $('#kanjime_original').val();
-			kanjiObject.name = $('#kanjime_name').val();
+			kanjiObject.Name = $('#CollectionTitle').val();
+			kanjiObject.Kanji = $('#CollectionSubtitle').val();
+			kanjiObject.Katakana = $('#CollectionDescription').val();			
 			
 			var kanjiList = [];
 			$(".kanji-form").each( function(index, element){
@@ -87,69 +84,106 @@
 				no.meaning = $(this).find('#km_meaningvalue').val();
 				kanjiList[index] = no;
 			});
-			kanjiObject.list = kanjiList;
-			var str = JSON.stringify(kanjiObject);
 			
-			$("#postexcerpt textarea#excerpt").val(kanjiObject.original);
-			$("#titlewrap input#title").val(kanjiObject.name);	
-			$("#wp-content-editor-container #content").val(str).focus();
+			kanjiObject.kanjiList = kanjiList;
+			$('#kanjime_body').val(JSON.stringify(kanjiObject));
+		},		
+		prepareWorkingSpace: function() {
+			$('#kanjime_placeholder').addClass('well');
+		},
+		clearWorkingSpace: function() {
+			$('#kanjime_preview').empty().removeClass();
+			$('#kanjime_placeholder').empty().removeClass();
+		},
+		previewKanjiList: function() {
+			if(!$('#kanjime_preview').hasClass('well')){
+				$('#kanjime_preview').addClass('well');
+			}
+			$('#kanjime_preview').empty();
+			WPGFunctions.updateDataFromEditor();
+			
+			var result = JSON.parse($('#kanjime_body').val());
+			if(result.kanjiList!=undefined){
+				var ko = result.kanjiList;
+				var count = ko.length;
+				$('#kanjime_preview').append('<h1 style=\"text-align: center;\">'+result.Kanji+'</h1>');
+				
+				for(var i=0; i<count;i++){
+					WPGFunctions.previewSingleKanji(ko[i].kanji,ko[i].kunyomi,ko[i].onyomi,ko[i].meaning);
+				}
+			}
 			return(false);
 		},
+		previewSingleKanji: function(kanji,kun,on,meaning) {
+			
+			var singleKanji = '';
+			singleKanji += '<table class=\"table table-bordered table-condensed\">\n';
+			singleKanji += '   <tr style=\"background-color: #333;color: white;\">\n';
+			singleKanji += '       <td colspan=\"2\"><h3>'+WPGFunctions.formatLine(kanji)+'</h3></td>\n';
+			singleKanji += '   </tr>\n';
+			singleKanji += '   <tr>\n';
+			singleKanji += '       <td style=\"width:30%%;\"><strong>Kun</strong></td>\n';
+			singleKanji += '       <td>'+WPGFunctions.formatLine(kun)+'</td>\n';
+			singleKanji += '   </tr>\n';
+			singleKanji += '   <tr>\n';
+			singleKanji += '       <td><strong>On</strong></td>\n';
+			singleKanji += '       <td>'+WPGFunctions.formatLine(on)+'</td>\n';
+			singleKanji += '   </tr>\n';
+			singleKanji += '   <tr>\n';
+			singleKanji += '       <td><strong>Meaning</strong></td>\n';
+			singleKanji += '       <td>'+WPGFunctions.formatLine(meaning)+'</td>\n';
+			singleKanji += '   </tr>\n';
+			singleKanji += '</table>\n';			
+			$('#kanjime_preview').append(singleKanji);
+		},		
 		getKanjiAdminTableForm: function(index,kanji,kun,on,meaning) {
-			var v1 = kun.indexOf('»');
-			var v2 = kun.indexOf('«');
-			
-			if(kun.indexOf('«')==-1 || kun.indexOf('»')==-1){
-				kun = WPGFunctions.getRomajiConversion(kun);
-			}
-			if(on.indexOf('«')==-1 || on.indexOf('»')==-1){
-				on = WPGFunctions.getRomajiConversion(on);
-			}			
-			
-			var singleTable = "";
-			singleTable += '<div class="kanji-form">\n';
+			var singleTable = '';
+			singleTable += '<form class="kanji-form form-horizontal">\n';
 			singleTable += '	<h3>Kanji #'+index+'</h3>\n';
-			singleTable += '	<table class="form-table">\n';
-			singleTable += '		<tbody>\n';
-			singleTable += '			<tr valign="top">\n';
-			singleTable += '				<td scope="row"><label for="km_picvalue">Kanji</label></td>\n';
-			singleTable += '				<td><input class="regular-text" id="km_picvalue" name= "km_picvalue" placeholder="Insert one single kanji" type="text" value="'+kanji+'"></td>\n';
-			singleTable += '			</tr>\n';
-			singleTable += '			<tr valign="top">\n';
-			singleTable += '				<td scope="row"><label for="km_kyvalue">Kun Yomi</label></td>\n';
-			singleTable += '				<td><input class="regular-text" id="km_kyvalue" name="km_kyvalue" type="text" value="'+kun+'"></td>\n';
-			singleTable += '			</tr>\n';
-			singleTable += '			<tr valign="top">\n';
-			singleTable += '				<td scope="row"><label for="km_oyvalue">On Yomi</label></td>\n';
-			singleTable += '				<td><input class="regular-text" id="km_oyvalue" name="km_oyvalue" type="text" value="'+on+'"></td>\n';
-			singleTable += '			</tr>\n';
-			singleTable += '			<tr valign="top">\n';
-			singleTable += '				<td scope="row"><label for="km_meaningvalue">Meaning</label></td>\n';
-			singleTable += '				<td>\n';
-			singleTable += '					<input class="regular-text" id="km_meaningvalue" name="km_meaningvalue" type="text" value="'+meaning+'" placeholder="Meaning of the kanji">\n';
-			singleTable += '				</td>\n';
-			singleTable += '			</tr>\n';
-			singleTable += '		</tbody>\n';
-			singleTable += '	</table>\n';
-			singleTable += '</div>\n';
+			singleTable += '	<div class="control-group">\n';
+			singleTable += '		<label for="km_picvalue" class="control-label">Kanji</label>\n';
+			singleTable += '		<div class="controls">\n';
+			singleTable += '			<input id="km_picvalue" name="km_picvalue" class="span12" type="text" value="'+kanji+'" >\n';
+			singleTable += '		</div>\n';
+			singleTable += '	</div>\n';
+			singleTable += '	<div class="control-group">\n';
+			singleTable += '		<label for="km_kyvalue" class="control-label">Kun-Yomi</label>\n';
+			singleTable += '		<div class="controls">\n';
+			singleTable += '			<input id="km_kyvalue" name="km_kyvalue" class="span12" type="text" value="'+kun+'" >\n';
+			singleTable += '		</div>\n';
+			singleTable += '	</div>\n';
+			singleTable += '	<div class="control-group">\n';
+			singleTable += '		<label for="km_oyvalue" class="control-label">On-Yomi</label>\n';
+			singleTable += '		<div class="controls">\n';
+			singleTable += '			<input id="km_oyvalue" name="km_oyvalue" class="span12" type="text" value="'+on+'" >\n';
+			singleTable += '		</div>\n';
+			singleTable += '	</div>\n';
+			singleTable += '	<div class="control-group">\n';
+			singleTable += '		<label for="km_meaningvalue" class="control-label">Meaning</label>\n';
+			singleTable += '		<div class="controls">\n';
+			singleTable += '			<input id="km_meaningvalue" name="km_meaningvalue" class="span12" type="text" value="'+meaning+'" >\n';
+			singleTable += '		</div>\n';
+			singleTable += '	</div>\n';
+			singleTable += '</form>\n';	
+
 			$('#kanjime_placeholder').append(singleTable);
 		},
-		getSendKanjiToPanel: function(){
+		getPreviewPanel: function(){
 			var singlePanel = '';
-			singlePanel += '<div class="kanjime_send">';
-			singlePanel += '	<a id="kanjime_send_to_editor" class="button button-primary button-large" >Send to editor</a>';
-			singlePanel += '</div>';
+			singlePanel += '<div class="btn-toolbar　clearfix">\n';
+			singlePanel += '	<a href="javascript:void(0)" id="kanjime_send_to_editor" class="btn btn-large btn-primary">Preview</a>\n';
+			singlePanel += '</div>\n';
 			return(singlePanel);
 		},
 		enableSpinnerInEditor: function(){
-			$('#message_placeholder').empty();
-			$('#message_placeholder').append('<div id="kanjime_spinner" style="padding: 10px 0px 0px 0px;"><img src="/img/loader.gif" border="0" style="margin:0px auto;display: block;" alt="Loading"></div>');
+			$('#kanjime_placeholder').empty();
+			$('#kanjime_placeholder').append('<div id="kanjime_spinner" style="padding: 10px 0px 0px 0px;"><img src="/img/loader.gif" border="0" style="margin:0px auto;display: block;" alt="Loading"></div>');
 		},
 		disableSpinnerInEditor: function(){
 			$('#kanjime_spinner').remove();
 		},
 		setErrorMessage: function(message){
-			$('#message_placeholder').prepend('<div class="alert"><button type="button" class="close" data-dismiss="alert">×</button>'+message+'</div>');
+			$('#kanjime_placeholder').prepend('<div class="alert"><button type="button" class="close" data-dismiss="alert">×</button>'+message+'</div>');
 		},
 		testEmptyString: function(str) {
 			return (!str || /^\s*$/.test(str));
@@ -263,8 +297,8 @@
 				return(rom);
 		},
 		getRomajiConversion: function(val) {
-			var str1 = new Array();
-			
+			if(WPGFunctions.testEmptyString(val)) return val;
+			var str1 = new Array();			
 			var rom = WPGFunctions.getRomajiArray();
 			str1 = val.split(", ");
 			for(var k=0;k<str1.length;k++) {
@@ -312,7 +346,10 @@
 		},
 		getr: function(val,arr) {
 			return arr[val];
-		}	
+		},
+		formatLine: function(val){
+			return val.replace(/\*(.*?)\*/,'<strong>$1</strong>');
+		},
 	}
 	$(WPGFunctions.setup);
 });

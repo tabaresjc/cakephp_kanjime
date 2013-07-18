@@ -3,7 +3,7 @@
 	$this->Html->addCrumb(__('New Name'), null);
 	$this->start('script');
 		echo $this->Html->script('libs/kanjime');
-	$this->end();		
+	$this->end();
 ?>
 
 <div id="page-container" class="row-fluid">
@@ -55,16 +55,16 @@
 	  </fieldset>
 	  <div class="well">
 		<div class="btn-toolbar">
-			<?php echo $this->Form->submit('Submit', array('class' => 'btn btn-large btn-primary', 'div' => false)); ?>
-			<?php echo $this->Html->link('Breakdown', 'javascript:void(0)', array('id' => 'kanji_me_breakdown', 'class' => 'btn btn-large btn-warning pull-right')); ?>
+			<?php echo $this->Html->link('Breakdown', 'javascript:void(0)', array('id' => 'kanji_me_breakdown', 'class' => 'btn btn-large btn-warning')); ?>
+			<?php echo $this->Form->submit('Submit', array('class' => 'btn btn-large btn-primary pull-right', 'div' => false)); ?>
 		</div>
 	  </div>
 	  <?php echo $this->Form->end(); ?>
 	</div>
-	<div id="message_placeholder" class="well">
+	<div id="kanjime_placeholder" class="">
 	</div>
-	<div id="kanjime_placeholder" class="well">
-	</div>
+	<div id="kanjime_preview" class="">
+	</div>	
   </div>
   <!-- #page-content .span9 -->
 </div>
