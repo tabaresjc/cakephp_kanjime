@@ -3,7 +3,7 @@
 	$this->Html->addCrumb(__('Edit Name'), null);
 	$this->start('script');
 		echo $this->Html->script('libs/kanjime');
-	$this->end();	
+	$this->end();
 ?>
 
 <div id="page-container" class="row-fluid">
@@ -29,7 +29,7 @@
 		<h2>
 		  <?php echo __('Edit Name'); ?>
 		</h2>
-		<?php echo $this->Form->hidden('id'); ?>
+		
 		<!-- .control-group -->
 		<div class="control-group">
 		  <?php echo $this->Form->label('title', 'Name', array('class' => 'control-label'));?>
@@ -56,7 +56,7 @@
 		</div>
 		<!-- .control-group -->
 		<?php echo $this->Form->hidden('body', array('id' => 'kanjime_body')); ?>
-		
+		<?php echo $this->Form->hidden('id'); ?>
 		<!-- .control-group -->
 	  </fieldset>
 	  <div class="well">

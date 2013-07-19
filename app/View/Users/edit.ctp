@@ -22,14 +22,6 @@
 		  <?php echo __('Edit User'); ?>
 		</h2>
 		<div class="control-group">
-		  <?php echo $this->Form->label('id', 'id', array('class' => 'control-label'));?>
-		  <div class="controls">
-			<?php echo $this->Form->input('id', array('class' => 'span12')); ?>
-		  </div>
-		  <!-- .controls -->
-		</div>
-		<!-- .control-group -->
-		<div class="control-group">
 		  <?php echo $this->Form->label('username', 'Username', array('class' => 'control-label'));?>
 		  <div class="controls">
 			<?php echo $this->Form->input('username', array('class' => 'span12')); ?>
@@ -52,9 +44,15 @@
 		  </div>
 		  <!-- .controls -->
 		</div>
+		<?php echo $this->Form->hidden('id'); ?>
 		<!-- .control-group -->
 	  </fieldset>
-	  <?php echo $this->Form->submit('Submit', array('class' => 'btn btn-large btn-primary')); ?>
+	  <div class="well">
+		<div class="btn-toolbar">
+			<?php echo $this->Form->submit('Submit', array('class' => 'btn btn-large btn-primary pull-right', 'div' => false)); ?>
+		</div>
+		<div class="clearfix"></div>
+	  </div>
 	  <?php echo $this->Form->end(); ?>
 	</div>
   </div>

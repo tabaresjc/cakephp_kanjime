@@ -42,7 +42,15 @@
 		  <!-- .controls -->
 		</div>
 		<!-- .control-group -->
-	  </fieldset><?php echo $this->Form->submit('Submit', array('class' => 'btn btn-large btn-primary')); ?><?php echo $this->Form->end(); ?>
+	  </fieldset>
+	  
+	  <div class="well">
+		<div class="btn-toolbar">
+			<?php echo $this->Form->submit('Submit', array('class' => 'btn btn-large btn-primary pull-right', 'div' => false)); ?>
+		</div>
+		<div class="clearfix"></div>
+	  </div>	  
+	  <?php echo $this->Form->end(); ?>
 	</div>
   </div>
   <!-- #page-content .span9 -->

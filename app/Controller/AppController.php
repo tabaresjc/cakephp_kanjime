@@ -38,7 +38,7 @@ class AppController extends Controller {
 		/*'DebugKit.Toolbar',*/
         'Session',
         'Auth' => array(
-            'loginRedirect' => '/',
+            'loginRedirect' => array('controller' => 'admins', 'action' => 'index'),
             'logoutRedirect' => array('controller' => 'users', 'action' => 'login'),
 			'authorize' => array('Controller'),
 			'authError' => 'You must be logged in to view this page.',
@@ -50,11 +50,9 @@ class AppController extends Controller {
     }
 	
 	public function isAuthorized($user) {
-		// Admin can access every action
 		if (isset($user['role']) && $user['role'] === 'admin') {
 			return true;
 		}
-
 		// Default deny
 		return false;
 	}	

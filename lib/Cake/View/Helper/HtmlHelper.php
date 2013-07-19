@@ -343,6 +343,11 @@ class HtmlHelper extends AppHelper {
 		if (isset($options['escape'])) {
 			$escapeTitle = $options['escape'];
 		}
+		$inlineHtml = '';
+		if (isset($options['inline-html'])) {
+			$inlineHtml = $options['inline-html'];
+			unset($options['inline-html']);
+		}		
 
 		if ($escapeTitle === true) {
 			$title = h($title);
@@ -366,7 +371,7 @@ class HtmlHelper extends AppHelper {
 			}
 			unset($options['default']);
 		}
-		return sprintf($this->_tags['link'], $url, $this->_parseAttributes($options), $title);
+		return sprintf($this->_tags['link'], $url, $this->_parseAttributes($options), $title . $inlineHtml );
 	}
 
 /**

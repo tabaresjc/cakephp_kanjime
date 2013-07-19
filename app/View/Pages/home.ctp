@@ -1,227 +1,282 @@
 <?php
-/**
- *
- * PHP 5
- *
- * CakePHP(tm) : Rapid Development Framework (http://cakephp.org)
- * Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
- *
- * Licensed under The MIT License
- * For full copyright and license information, please see the LICENSE.txt
- * Redistributions of files must retain the above copyright notice.
- *
- * @copyright     Copyright (c) Cake Software Foundation, Inc. (http://cakefoundation.org)
- * @link          http://cakephp.org CakePHP(tm) Project
- * @package       app.View.Pages
- * @since         CakePHP(tm) v 0.10.0.1076
- * @license       http://www.opensource.org/licenses/mit-license.php MIT License
- */
-
-if (!Configure::read('debug')):
-	throw new NotFoundException();
-endif;
-App::uses('Debugger', 'Utility');
+	$this->start('css');
+	echo $this->Html->css('bootstrap');
+	echo $this->Html->css('bootstrap-responsive');
+	echo $this->Html->css('prettyPhoto');
+	echo $this->Html->css('sequence');
+	echo $this->Html->css('styles');
+	$this->end();
+	$this->start('script');
+	echo $this->Html->script('jquery.min');
+	echo $this->Html->script('bootstrap');
+	echo $this->Html->script('jquery.prettyPhoto');
+	echo $this->Html->script('sequence.jquery');
+	echo $this->Html->script('jquery-hover-effect');
+	echo $this->Html->script('custom');
+	?>
+	<script>
+		jQuery(function() {
+			jQuery('ul.da-thumbs > li').hoverdir();
+		});
+	</script>	
+	<?php
+	$this->end();
 ?>
-<h2><?php echo __d('cake_dev', 'Release Notes for CakePHP %s.', Configure::version()); ?></h2>
-<p>
-	<a href="http://cakephp.org/changelogs/<?php echo Configure::version(); ?>"><?php echo __d('cake_dev', 'Read the changelog'); ?> </a>
-</p>
-<?php
-if (Configure::read('debug') > 0):
-	Debugger::checkSecurityKeys();
-endif;
-?>
-<p id="url-rewriting-warning" style="background-color:#e32; color:#fff;">
-	<?php echo __d('cake_dev', 'URL rewriting is not properly configured on your server.'); ?>
-	1) <a target="_blank" href="http://book.cakephp.org/2.0/en/installation/url-rewriting.html" style="color:#fff;">Help me configure it</a>
-	2) <a target="_blank" href="http://book.cakephp.org/2.0/en/development/configuration.html#cakephp-core-configuration" style="color:#fff;">I don't / can't use URL rewriting</a>
-</p>
-<p>
-<?php
-	if (version_compare(PHP_VERSION, '5.2.8', '>=')):
-		echo '<span class="notice success">';
-			echo __d('cake_dev', 'Your version of PHP is 5.2.8 or higher.');
-		echo '</span>';
-	else:
-		echo '<span class="notice">';
-			echo __d('cake_dev', 'Your version of PHP is too low. You need PHP 5.2.8 or higher to use CakePHP.');
-		echo '</span>';
-	endif;
-?>
-</p>
-<p>
-	<?php
-		if (is_writable(TMP)):
-			echo '<span class="notice success">';
-				echo __d('cake_dev', 'Your tmp directory is writable.');
-			echo '</span>';
-		else:
-			echo '<span class="notice">';
-				echo __d('cake_dev', 'Your tmp directory is NOT writable.');
-			echo '</span>';
-		endif;
-	?>
-</p>
-<p>
-	<?php
-		$settings = Cache::settings();
-		if (!empty($settings)):
-			echo '<span class="notice success">';
-				echo __d('cake_dev', 'The %s is being used for core caching. To change the config edit APP/Config/core.php ', '<em>'. $settings['engine'] . 'Engine</em>');
-			echo '</span>';
-		else:
-			echo '<span class="notice">';
-				echo __d('cake_dev', 'Your cache is NOT working. Please check the settings in APP/Config/core.php');
-			echo '</span>';
-		endif;
-	?>
-</p>
-<p>
-	<?php
-		$filePresent = null;
-		if (file_exists(APP . 'Config' . DS . 'database.php')):
-			echo '<span class="notice success">';
-				echo __d('cake_dev', 'Your database configuration file is present.');
-				$filePresent = true;
-			echo '</span>';
-		else:
-			echo '<span class="notice">';
-				echo __d('cake_dev', 'Your database configuration file is NOT present.');
-				echo '<br/>';
-				echo __d('cake_dev', 'Rename APP/Config/database.php.default to APP/Config/database.php');
-			echo '</span>';
-		endif;
-	?>
-</p>
-<?php
-if (isset($filePresent)):
-	App::uses('ConnectionManager', 'Model');
-	try {
-		$connected = ConnectionManager::getDataSource('default');
-	} catch (Exception $connectionError) {
-		$connected = false;
-		$errorMsg = $connectionError->getMessage();
-		if (method_exists($connectionError, 'getAttributes')) {
-			$attributes = $connectionError->getAttributes();
-			if (isset($errorMsg['message'])) {
-				$errorMsg .= '<br />' . $attributes['message'];
-			}
-		}
-	}
-?>
-<p>
-	<?php
-		if ($connected && $connected->isConnected()):
-			echo '<span class="notice success">';
-	 			echo __d('cake_dev', 'Cake is able to connect to the database.');
-			echo '</span>';
-		else:
-			echo '<span class="notice">';
-				echo __d('cake_dev', 'Cake is NOT able to connect to the database.');
-				echo '<br /><br />';
-				echo $errorMsg;
-			echo '</span>';
-		endif;
-	?>
-</p>
-<?php endif; ?>
-<?php
-	App::uses('Validation', 'Utility');
-	if (!Validation::alphaNumeric('cakephp')) {
-		echo '<p><span class="notice">';
-			echo __d('cake_dev', 'PCRE has not been compiled with Unicode support.');
-			echo '<br/>';
-			echo __d('cake_dev', 'Recompile PCRE with Unicode support by adding <code>--enable-unicode-properties</code> when configuring');
-		echo '</span></p>';
-	}
-?>
+<!-- main wrap -->
+<div class="main-wrap">
+	<!-- header -->
+	<header>
+		<!-- top area -->
+		<div class="top-nav">  
+			<div class="wrapper"> 
+				<div class="logo">
+					<a href="index.html">
+						<!-- your logo image -->
+						<img src="img/logo.png" alt="" />
+					</a>
+				</div>
+				
+				<div class="phone">
+					<p>Call &#45; 008 009 172</p>
+				</div>
+			</div> 
+		</div>
+		<!-- end top area -->
+	</header>
+	<!-- end of header-->
 
-<p>
-	<?php
-		if (CakePlugin::loaded('DebugKit')):
-			echo '<span class="notice success">';
-				echo __d('cake_dev', 'DebugKit plugin is present');
-			echo '</span>';
-		else:
-			echo '<span class="notice">';
-				echo __d('cake_dev', 'DebugKit is not installed. It will help you inspect and debug different aspects of your application.');
-				echo '<br/>';
-				echo __d('cake_dev', 'You can install it from %s', $this->Html->link('github', 'https://github.com/cakephp/debug_kit'));
-			echo '</span>';
-		endif;
-	?>
-</p>
+	<!-- section intro -->
+	<section id="intro">	
+		<div class="featured">
+			<div class="wrapper">
 
-<h3><?php echo __d('cake_dev', 'Editing this Page'); ?></h3>
-<p>
-<?php
-echo __d('cake_dev', 'To change the content of this page, edit: APP/View/Pages/home.ctp.<br />
-To change its layout, edit: APP/View/Layouts/default.ctp.<br />
-You can also add some CSS styles for your pages at: APP/webroot/css.');
-?>
-</p>
+				<div class="row-fluid">
+				<!-- slider -->	
+				<div class="span12">
+				
+				<div id="sequence-theme">
+					<div id="sequence">
+						<img class="prev" src="img/slides/bt-prev.png" alt="Previous Frame" />
+						<img class="next" src="img/slides/bt-next.png" alt="Next Frame" />
+						<ul>
+							<li class="animate-in">
+								<h2 class="title">Fresh design</h2>
+								<h5 class="subtitle">We always consider with latest web design trends</h5>
+								<img class="model" src="img/slides/img1.png" alt="" />
+							</li>
+							<li>
+								<h2 class="title">Responsive layout</h2>
+								<h5 class="subtitle">Degrade from wide screen to mobile screen size</h5>
+								<img class="model" src="img/slides/img2.png" alt="" />
+							</li>
+							<li>
+								<h2 class="title">Built with bootstrap</h2>
+								<h5 class="subtitle">Supports modern browsers, old browsers (IE7+), touch devices and responsive designs</h5>
+								<img class="model" src="img/slides/img3.png" alt="" />
+							</li>
+						</ul>
+					</div>
+					<ul class="nav">
+						<li><img src="img/slides/thumb1.png" alt="Thumbnail" /></li>
+						<li><img src="img/slides/thumb2.png" alt="Thumbnail" /></li>
+						<li><img src="img/slides/thumb3.png" alt="Thumbnail" /></li>
+					</ul>
+				</div>			
+						
+				</div>
+				<!-- end slider -->	
+				</div>			  
+			  
+			</div>
+		</div>
+	</section>
+	<!-- end section intro -->
 
-<h3><?php echo __d('cake_dev', 'Getting Started'); ?></h3>
-<p>
-	<?php
-		echo $this->Html->link(
-			sprintf('<strong>%s</strong> %s', __d('cake_dev', 'New'), __d('cake_dev', 'CakePHP 2.0 Docs')),
-			'http://book.cakephp.org/2.0/en/',
-			array('target' => '_blank', 'escape' => false)
-		);
-	?>
-</p>
-<p>
-	<?php
-		echo $this->Html->link(
-			__d('cake_dev', 'The 15 min Blog Tutorial'),
-			'http://book.cakephp.org/2.0/en/tutorials-and-examples/blog/blog.html',
-			array('target' => '_blank', 'escape' => false)
-		);
-	?>
-</p>
+	<!-- section main content -->
+	<section id="main-content">
+		<div class="content-wrap">		
 
-<h3><?php echo __d('cake_dev', 'Official Plugins'); ?></h3>
-<p>
-<ul>
-	<li>
-		<?php echo $this->Html->link('DebugKit', 'https://github.com/cakephp/debug_kit') ?>:
-		<?php echo __d('cake_dev', 'provides a debugging toolbar and enhanced debugging tools for CakePHP applications.'); ?>
-	</li>
-	<li>
-		<?php echo $this->Html->link('Localized', 'https://github.com/cakephp/localized') ?>:
-		<?php echo __d('cake_dev', 'contains various localized validation classes and translations for specific countries'); ?>
-	</li>
-</ul>
-</p>
+			<!-- tagline -->
+			<div class="tagline">
+				<div class="wrapper">
+					<!--### Subtitle ###-->
+					<h2>Great choice to build application landing page</h2>
+					<!-- CTA -->
+					<div class="cta"> 
+						<div class="btn-group"> 
+							<a href="#" class="btn btn-green btn-large"><i class="icon-shopping-cart icon-white"></i> Buy this template</a> 
+							<a href="#" class="btn btn-red btn-large">Try demo version</a> 
+						</div>
+					</div>
+				</div>
+			</div>	
+			<!-- end tagline -->
+				
+			<!-- wrapper -->
+			<div class="wrapper">
+			
+				<!-- boxes -->
+				<div class="boxes">
+						<div class="row-fluid">
+						 
+							<!-- box 1 -->
+							<div class="span4">
+								<div class="box">
+									<div class="icon"> 
+										<img src="img/icons/icon-1.png" class="" alt="" />
+									</div>
+									<h4>Easy to customize</h4>
+									<p>  Optimal viewing experience with a minimum of resizing, and scrolling across a wide range of devices </p>
+									<a href="#" class="textlink">Learn more</a>
+								</div>	
+							</div> 
+							 
+							<!-- box 2 -->
+							<div class="span4">
+								<div class="box">
+									<div class="icon"> 
+										<img src="img/icons/icon-2.png" class="" alt="" />
+									</div>
+									<h4>High conversion</h4>
+									<p> Optimal viewing experience with a minimum of resizing, and scrolling across a wide range of devices </p>
+									<a href="#" class="textlink">Learn more</a>
+								</div>	
+							</div> 
+							 
+							<!-- box 3 -->
+							<div class="span4">
+								<div class="box">
+									<div class="icon"> 
+										<img src="img/icons/icon-3.png" class="" alt="" />
+									</div>
+									<h4> Responsive Layout</h4>
+									<p>  Optimal viewing experience with a minimum of resizing, and scrolling across a wide range of devices </p>
+									<a href="#" class="textlink">Learn more</a>
+								</div>	
+							</div> 
+						 
+						</div>
+						
+				</div>			
+				<!-- end boxes -->
+			
+				
+				<!-- recent portfolio -->
+				<div class="row-fluid portfolio">
+				<div class="headline"><h2><span>Great examples built with bootslander</span></h2></div>
+					<ul class="portfolio_list da-thumbs">
+				  
+						<li class="span3">
+							<img src="img/dummies/img1.jpg" alt="img">
+							<article class="da-animate da-slideFromRight" style="display: block;">
+								<h5>Portfolio item</h5>
+								<span class="link_post"><a href="#"></a></span>
+								<span class="zoom"><a data-pretty="prettyPhoto[works]" href="img/dummies/big1.jpg"></a></span>
+							</article>
+						</li>
+						<li class="span3">
+							<img src="img/dummies/img2.jpg" alt="img">
+							<article class="da-animate da-slideFromRight" style="display: block;">
+								<h5>Portfolio item</h5>
+								<span class="link_post"><a href="#"></a></span>
+								<span class="zoom"><a data-pretty="prettyPhoto[works]" href="img/dummies/big1.jpg"></a></span>
+							</article>
+						</li>
+						<li class="span3">
+							<img src="img/dummies/img3.jpg" alt="img">
+							<article class="da-animate da-slideFromRight" style="display: block;">
+								<h5>Portfolio item</h5>
+								<span class="link_post"><a href="#"></a></span>
+								<span class="zoom"><a data-pretty="prettyPhoto" href="img/dummies/big1.jpg"></a></span>
+							</article>
+						</li>
+						<li class="span3">
+							<img src="img/dummies/img4.jpg" alt="img">
+							<article class="da-animate da-slideFromRight" style="display: block;">
+								<h5>Portfolio item</h5>
+								<span class="link_post"><a href="#"></a></span>
+								<span class="zoom"><a data-pretty="prettyPhoto" href="img/dummies/big1.jpg"></a></span>
+							</article>
+						</li>
+					</ul>
+					
+				</div>	
+				<!-- end portfolio -->	
+				
+				
+				<!-- testimonials -->
+				<div class="row-fluid testimonials">
+					<div class="headline"><h2><span>What people are saying</span></h2></div>
+					<ul>
+						<li class="span4">
+							<div class="testimonial">
+								<img src="img/dummies/user-1.png" alt="" class="img-circle" />
+								<p>
+								&ldquo;Lorem ipsum dolor sit amet, veritus molestie et his. Summo dissentiet duo an. Et duo vitae atomorum, eripuit eruditi definitiones nec ut.&rdquo;
+								</p>	
+								<span>&#45;&#45; Mike lamouz, <a href="#">Net designer</a></span>
+							</div>							
+						</li>
+						<li class="span4">
+							<div class="testimonial">
+								<img src="img/dummies/user-2.png" alt="" class="img-circle" />
+								<p>
+								&ldquo;Lorem ipsum dolor sit amet, veritus molestie et his. Summo dissentiet duo an. Et duo vitae atomorum, eripuit eruditi definitiones nec ut.&rdquo;
+								</p>		
+								<span>&#45;&#45; Leslie samarov, <a href="#">JIK Company</a></span>
+							</div>						
+						</li>
+						<li class="span4">
+							<div class="testimonial">
+								<img src="img/dummies/user-3.png" alt="" class="img-circle" />
+								<p>
+								&ldquo;Lorem ipsum dolor sit amet, veritus molestie et his. Summo dissentiet duo an. Et duo vitae atomorum, eripuit eruditi definitiones nec ut.&rdquo;
+								</p>
+								<span>&#45;&#45; Jonathan does, <a href="#">App Studio</a></span>							
+							</div>						
+						</li>						
+						
+					</ul>	
+				</div>
+			
+			</div>
+			<!-- end wrapper -->
 
-<h3><?php echo __d('cake_dev', 'More about Cake'); ?></h3>
-<p>
-<?php echo __d('cake_dev', 'CakePHP is a rapid development framework for PHP which uses commonly known design patterns like Active Record, Association Data Mapping, Front Controller and MVC.'); ?>
-</p>
-<p>
-<?php echo __d('cake_dev', 'Our primary goal is to provide a structured framework that enables PHP users at all levels to rapidly develop robust web applications, without any loss to flexibility.'); ?>
-</p>
+		</div>
+	</section>
+	<!-- end main content section -->
 
-<ul>
-	<li><a href="http://cakefoundation.org/"><?php echo __d('cake_dev', 'Cake Software Foundation'); ?> </a>
-	<ul><li><?php echo __d('cake_dev', 'Promoting development related to CakePHP'); ?></li></ul></li>
-	<li><a href="http://www.cakephp.org"><?php echo __d('cake_dev', 'CakePHP'); ?> </a>
-	<ul><li><?php echo __d('cake_dev', 'The Rapid Development Framework'); ?></li></ul></li>
-	<li><a href="http://book.cakephp.org"><?php echo __d('cake_dev', 'CakePHP Documentation'); ?> </a>
-	<ul><li><?php echo __d('cake_dev', 'Your Rapid Development Cookbook'); ?></li></ul></li>
-	<li><a href="http://api.cakephp.org/"><?php echo __d('cake_dev', 'CakePHP API'); ?> </a>
-	<ul><li><?php echo __d('cake_dev', 'Quick Reference'); ?></li></ul></li>
-	<li><a href="http://bakery.cakephp.org"><?php echo __d('cake_dev', 'The Bakery'); ?> </a>
-	<ul><li><?php echo __d('cake_dev', 'Everything CakePHP'); ?></li></ul></li>
-	<li><a href="http://plugins.cakephp.org"><?php echo __d('cake_dev', 'CakePHP plugins repo'); ?> </a>
-	<ul><li><?php echo __d('cake_dev', 'A comprehensive list of all CakePHP plugins created by the community'); ?></li></ul></li>
-	<li><a href="https://groups.google.com/group/cake-php"><?php echo __d('cake_dev', 'CakePHP Google Group'); ?> </a>
-	<ul><li><?php echo __d('cake_dev', 'Community mailing list'); ?></li></ul></li>
-	<li><a href="irc://irc.freenode.net/cakephp">irc.freenode.net #cakephp</a>
-	<ul><li><?php echo __d('cake_dev', 'Live chat about CakePHP'); ?></li></ul></li>
-	<li><a href="https://github.com/cakephp/"><?php echo __d('cake_dev', 'CakePHP Code'); ?> </a>
-	<ul><li><?php echo __d('cake_dev', 'For the Development of CakePHP Git repository, Downloads'); ?></li></ul></li>
-	<li><a href="https://cakephp.lighthouseapp.com/"><?php echo __d('cake_dev', 'CakePHP Lighthouse'); ?> </a>
-	<ul><li><?php echo __d('cake_dev', 'CakePHP Tickets, Wiki pages, Roadmap'); ?></li></ul></li>
-</ul>
+	<!-- section bottom -->
+	<section id="bottom">
+		<div class="bottom-cta">
+			<div class="wrapper">
+				<h3 class="title">Don&#96;t miss this special offer! </h3>
+				<h2>Get it now for just $10! the price will be increased after 50 downloads</h2>
+				<a href="#" class="btn btn-red btn-large">Get the latest version bootslander v.1.2</a>
+			</div>
+		</div>
+	</section>
+	<!-- end section bottom -->
+
+	<!-- footer -->
+	<footer>
+		<div class="footer"> 
+			<div class="wrapper">
+				<div class="social">
+					<a href="#" class="fb"> </a> <a href="#" class="tw"> </a>
+				</div>
+
+				<div class="subfooter"> 
+					<ul>
+						<li><a href="#">Home</a> &#45; <li>
+						<li><a href="#">Terms conditions</a> &#45; <li>
+						<li><a href="#">Contact</a><li>
+					</ul>	
+					<p class="copyright">&#169; copyright 2013. All rights reserved. Designed by iWebStudio</p>
+
+				</div>
+			</div>
+		</div>
+	</footer>
+</div>
+<!-- end main wrap -->
