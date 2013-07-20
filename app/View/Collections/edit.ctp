@@ -69,8 +69,14 @@
 	</div>
 	<div id="kanjime_placeholder" class="">
 	</div>
-	<div id="kanjime_preview" class="">
-	</div>	
+	<div id="kanjime_preview" class="modal hide fade" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" style="padding:10px;">
+		<div class="modal-header">
+			<button type="button" class="close" data-dismiss="modal" aria-hidden="true">x</button>
+			<h4 id="myModalLabel">Preview for iPhone</h4>
+		</div>
+		<div class="modal-body">
+		</div>
+	</div>
   </div>
   <!-- #page-content .span9 -->
 </div>

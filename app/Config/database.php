@@ -59,9 +59,9 @@ class DATABASE_CONFIG {
 		'datasource' => 'Database/Mysql',
 		'persistent' => false,
 		'host' => 'localhost',
-		'login' => 'sdcmob',
-		'password' => 'sdc123456',
-		'database' => 'sdcmob',
+		'login' => 'kanjime',
+		'password' => '7Sb3AYwA8uHhSrYh',
+		'database' => 'kanjime',
 		'prefix' => '',
 		'encoding' => 'utf8',
 	);

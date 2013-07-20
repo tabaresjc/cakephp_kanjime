@@ -20,21 +20,24 @@ $cakeDescription = __d('cake_dev', 'Kanji Me!');
 ?>
 <?php if($this->params['controller']=='pages' && $this->params['action']=='display'): ?>
 <!DOCTYPE html>
-<html lang="en">
+<!--[if lt IE 7 ]><html class="ie ie6" lang="en" class="no-js"> <![endif]-->
+<!--[if IE 7 ]><html class="ie ie7" lang="en" class="no-js"> <![endif]-->
+<!--[if IE 8 ]><html class="ie ie8" lang="en" class="no-js"> <![endif]-->
+<!--[if (gte IE 9)|!(IE)]><!-->
+<html lang="en" class="no-js">
 	<head>
-		<?php echo $this->Html->charset(); ?>
 		<title><?php echo $cakeDescription ?> | <?php echo $title_for_layout; ?></title>
+		<?php echo $this->Html->charset(); ?>
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
 		<?php
 			echo $this->Html->meta('icon');			
 			echo $this->fetch('css');
 		?>
 	</head>
 	<body>
-	<?php echo $this->fetch('content'); ?>
+		<?php echo $this->fetch('content'); ?>
 	</body>
-	<?php	
-	echo $this->fetch('script');
-	?>
+	<?php echo $this->fetch('script'); ?>	
 </html>
 <?php else : ?>
 <!DOCTYPE html>
@@ -75,12 +78,11 @@ $cakeDescription = __d('cake_dev', 'Kanji Me!');
 			</div>
 		</div>
 		<?php endif; ?>
-
+		<?php
+		echo $this->Html->script('libs/jquery');
+		echo $this->Html->script('libs/bootstrap.min');
+		echo $this->fetch('script');
+		?>
 	</body>
-	<?php	
-	echo $this->Html->script('libs/jquery');
-	echo $this->Html->script('libs/bootstrap.min');
-	echo $this->fetch('script');
-	?>
 </html>
 <?php endif; ?>

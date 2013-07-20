@@ -2969,3 +2969,669 @@ Request URL: /theme/Cakestrap/js/libs/jquery.min.map
 Stack Trace:
 #0 C:\WorkSpace\Website\sdcmob\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 {main}
+2013-07-20 04:34:43 Error: [MissingControllerException] Controller class ThemeController could not be found.
+Exception Attributes: array (
+  'class' => 'ThemeController',
+  'plugin' => NULL,
+)
+Request URL: /theme/Cakestrap/js/libs/jquery.min.map
+Stack Trace:
+#0 C:\Websites\kanjime\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-20 04:36:17 Error: [MissingControllerException] Controller class ThemeController could not be found.
+Exception Attributes: array (
+  'class' => 'ThemeController',
+  'plugin' => NULL,
+)
+Request URL: /theme/Cakestrap/js/libs/jquery.min.map
+Stack Trace:
+#0 C:\Websites\kanjime\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-20 04:36:45 Error: [MissingControllerException] Controller class ThemeController could not be found.
+Exception Attributes: array (
+  'class' => 'ThemeController',
+  'plugin' => NULL,
+)
+Request URL: /theme/Cakestrap/js/libs/jquery.min.map
+Stack Trace:
+#0 C:\Websites\kanjime\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-20 04:38:01 Error: [MissingControllerException] Controller class ThemeController could not be found.
+Exception Attributes: array (
+  'class' => 'ThemeController',
+  'plugin' => NULL,
+)
+Request URL: /theme/Cakestrap/js/libs/jquery.min.map
+Stack Trace:
+#0 C:\Websites\kanjime\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-20 04:42:39 Error: [MissingControllerException] Controller class ThemeController could not be found.
+Exception Attributes: array (
+  'class' => 'ThemeController',
+  'plugin' => NULL,
+)
+Request URL: /theme/Cakestrap/js/libs/jquery.min.map
+Stack Trace:
+#0 C:\Websites\kanjime\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-20 04:43:49 Error: [MissingControllerException] Controller class ThemeController could not be found.
+Exception Attributes: array (
+  'class' => 'ThemeController',
+  'plugin' => NULL,
+)
+Request URL: /theme/Cakestrap/js/libs/jquery.min.map
+Stack Trace:
+#0 C:\Websites\kanjime\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-20 04:44:34 Error: [MissingControllerException] Controller class ThemeController could not be found.
+Exception Attributes: array (
+  'class' => 'ThemeController',
+  'plugin' => NULL,
+)
+Request URL: /theme/Cakestrap/js/libs/jquery.min.map
+Stack Trace:
+#0 C:\Websites\kanjime\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-20 04:46:20 Error: [MissingControllerException] Controller class ThemeController could not be found.
+Exception Attributes: array (
+  'class' => 'ThemeController',
+  'plugin' => NULL,
+)
+Request URL: /theme/Cakestrap/js/libs/jquery.min.map
+Stack Trace:
+#0 C:\Websites\kanjime\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-20 05:19:13 Error: [MissingControllerException] Controller class ThemeController could not be found.
+Exception Attributes: array (
+  'class' => 'ThemeController',
+  'plugin' => NULL,
+)
+Request URL: /theme/Cakestrap/js/libs/jquery.min.map
+Stack Trace:
+#0 C:\Websites\kanjime\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-20 05:22:20 Error: [MissingControllerException] Controller class ThemeController could not be found.
+Exception Attributes: array (
+  'class' => 'ThemeController',
+  'plugin' => NULL,
+)
+Request URL: /theme/Cakestrap/js/libs/jquery.min.map
+Stack Trace:
+#0 C:\Websites\kanjime\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-20 05:23:48 Error: [MissingControllerException] Controller class ThemeController could not be found.
+Exception Attributes: array (
+  'class' => 'ThemeController',
+  'plugin' => NULL,
+)
+Request URL: /theme/Cakestrap/js/libs/jquery.min.map
+Stack Trace:
+#0 C:\Websites\kanjime\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-20 05:25:25 Error: [MissingControllerException] Controller class ThemeController could not be found.
+Exception Attributes: array (
+  'class' => 'ThemeController',
+  'plugin' => NULL,
+)
+Request URL: /theme/Cakestrap/js/libs/jquery.min.map
+Stack Trace:
+#0 C:\Websites\kanjime\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-20 05:27:57 Error: [MissingControllerException] Controller class Index.htmlController could not be found.
+Exception Attributes: array (
+  'class' => 'Index.htmlController',
+  'plugin' => NULL,
+)
+Request URL: /index.html
+Stack Trace:
+#0 C:\Websites\kanjime\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-20 05:46:56 Error: [MissingControllerException] Controller class ThemeController could not be found.
+Exception Attributes: array (
+  'class' => 'ThemeController',
+  'plugin' => NULL,
+)
+Request URL: /theme/Cakestrap/img/diagonal-stripe.png
+Stack Trace:
+#0 C:\Websites\kanjime\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-20 05:49:39 Error: [MissingControllerException] Controller class AssetsController could not be found.
+Exception Attributes: array (
+  'class' => 'AssetsController',
+  'plugin' => NULL,
+)
+Request URL: /assets/img/btn-app-store.png
+Stack Trace:
+#0 C:\Websites\kanjime\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-20 05:49:39 Error: [MissingControllerException] Controller class AssetsController could not be found.
+Exception Attributes: array (
+  'class' => 'AssetsController',
+  'plugin' => NULL,
+)
+Request URL: /assets/img/big-thing-logo.png
+Stack Trace:
+#0 C:\Websites\kanjime\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-20 05:49:39 Error: [MissingControllerException] Controller class AssetsController could not be found.
+Exception Attributes: array (
+  'class' => 'AssetsController',
+  'plugin' => NULL,
+)
+Request URL: /assets/img/slide-item1.png
+Stack Trace:
+#0 C:\Websites\kanjime\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-20 05:49:39 Error: [MissingControllerException] Controller class AssetsController could not be found.
+Exception Attributes: array (
+  'class' => 'AssetsController',
+  'plugin' => NULL,
+)
+Request URL: /assets/img/feature-bootstrap.png
+Stack Trace:
+#0 C:\Websites\kanjime\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-20 05:49:39 Error: [MissingControllerException] Controller class AssetsController could not be found.
+Exception Attributes: array (
+  'class' => 'AssetsController',
+  'plugin' => NULL,
+)
+Request URL: /assets/img/slide-item2.png
+Stack Trace:
+#0 C:\Websites\kanjime\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-20 05:49:39 Error: [MissingControllerException] Controller class AssetsController could not be found.
+Exception Attributes: array (
+  'class' => 'AssetsController',
+  'plugin' => NULL,
+)
+Request URL: /assets/img/feature-responsive.png
+Stack Trace:
+#0 C:\Websites\kanjime\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-20 05:49:39 Error: [MissingControllerException] Controller class AssetsController could not be found.
+Exception Attributes: array (
+  'class' => 'AssetsController',
+  'plugin' => NULL,
+)
+Request URL: /assets/img/feature-easy-customize.png
+Stack Trace:
+#0 C:\Websites\kanjime\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-20 05:49:39 Error: [MissingControllerException] Controller class ThemeController could not be found.
+Exception Attributes: array (
+  'class' => 'ThemeController',
+  'plugin' => NULL,
+)
+Request URL: /theme/Cakestrap/font/fontawesome-webfont.woff?v=3.1.0
+Stack Trace:
+#0 C:\Websites\kanjime\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-20 05:49:39 Error: [MissingControllerException] Controller class ThemeController could not be found.
+Exception Attributes: array (
+  'class' => 'ThemeController',
+  'plugin' => NULL,
+)
+Request URL: /theme/Cakestrap/font/socialico-webfont.woff
+Stack Trace:
+#0 C:\Websites\kanjime\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-20 05:49:40 Error: [MissingControllerException] Controller class AssetsController could not be found.
+Exception Attributes: array (
+  'class' => 'AssetsController',
+  'plugin' => NULL,
+)
+Request URL: /assets/img/call-to-action-iphone.png
+Stack Trace:
+#0 C:\Websites\kanjime\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-20 05:49:40 Error: [MissingControllerException] Controller class ThemeController could not be found.
+Exception Attributes: array (
+  'class' => 'ThemeController',
+  'plugin' => NULL,
+)
+Request URL: /theme/Cakestrap/img/hero-unit-bg.png
+Stack Trace:
+#0 C:\Websites\kanjime\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-20 05:49:40 Error: [MissingControllerException] Controller class ThemeController could not be found.
+Exception Attributes: array (
+  'class' => 'ThemeController',
+  'plugin' => NULL,
+)
+Request URL: /theme/Cakestrap/img/iphone-white-mockup.png
+Stack Trace:
+#0 C:\Websites\kanjime\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-20 05:49:40 Error: [MissingControllerException] Controller class ThemeController could not be found.
+Exception Attributes: array (
+  'class' => 'ThemeController',
+  'plugin' => NULL,
+)
+Request URL: /theme/Cakestrap/font/fontawesome-webfont.ttf?v=3.1.0
+Stack Trace:
+#0 C:\Websites\kanjime\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-20 05:49:40 Error: [MissingControllerException] Controller class ThemeController could not be found.
+Exception Attributes: array (
+  'class' => 'ThemeController',
+  'plugin' => NULL,
+)
+Request URL: /theme/Cakestrap/font/socialico-webfont.ttf
+Stack Trace:
+#0 C:\Websites\kanjime\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-20 05:49:40 Error: [MissingControllerException] Controller class ThemeController could not be found.
+Exception Attributes: array (
+  'class' => 'ThemeController',
+  'plugin' => NULL,
+)
+Request URL: /theme/Cakestrap/font/fontawesome-webfont.svg
+Stack Trace:
+#0 C:\Websites\kanjime\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-20 05:49:40 Error: [MissingControllerException] Controller class ThemeController could not be found.
+Exception Attributes: array (
+  'class' => 'ThemeController',
+  'plugin' => NULL,
+)
+Request URL: /theme/Cakestrap/font/socialico-webfont.svg
+Stack Trace:
+#0 C:\Websites\kanjime\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-20 05:51:26 Error: [MissingControllerException] Controller class AssetsController could not be found.
+Exception Attributes: array (
+  'class' => 'AssetsController',
+  'plugin' => NULL,
+)
+Request URL: /assets/img/big-thing-logo.png
+Stack Trace:
+#0 C:\Websites\kanjime\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-20 05:51:49 Error: [MissingControllerException] Controller class ThemeController could not be found.
+Exception Attributes: array (
+  'class' => 'ThemeController',
+  'plugin' => NULL,
+)
+Request URL: /theme/Cakestrap/js/libs/jquery.min.map
+Stack Trace:
+#0 C:\Websites\kanjime\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-20 05:51:52 Error: [MissingControllerException] Controller class ThemeController could not be found.
+Exception Attributes: array (
+  'class' => 'ThemeController',
+  'plugin' => NULL,
+)
+Request URL: /theme/Cakestrap/js/libs/jquery.min.map
+Stack Trace:
+#0 C:\Websites\kanjime\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-20 05:51:56 Error: [MissingControllerException] Controller class ThemeController could not be found.
+Exception Attributes: array (
+  'class' => 'ThemeController',
+  'plugin' => NULL,
+)
+Request URL: /theme/Cakestrap/js/libs/jquery.min.map
+Stack Trace:
+#0 C:\Websites\kanjime\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-20 05:52:15 Error: [MissingControllerException] Controller class ThemeController could not be found.
+Exception Attributes: array (
+  'class' => 'ThemeController',
+  'plugin' => NULL,
+)
+Request URL: /theme/Cakestrap/img/iphone-white-mockup.png
+Stack Trace:
+#0 C:\Websites\kanjime\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-20 05:52:15 Error: [MissingControllerException] Controller class ThemeController could not be found.
+Exception Attributes: array (
+  'class' => 'ThemeController',
+  'plugin' => NULL,
+)
+Request URL: /theme/Cakestrap/img/hero-unit-bg.png
+Stack Trace:
+#0 C:\Websites\kanjime\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-20 05:52:15 Error: [MissingControllerException] Controller class ThemeController could not be found.
+Exception Attributes: array (
+  'class' => 'ThemeController',
+  'plugin' => NULL,
+)
+Request URL: /theme/Cakestrap/img/diagonal-stripe.png
+Stack Trace:
+#0 C:\Websites\kanjime\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-20 05:52:15 Error: [MissingControllerException] Controller class ThemeController could not be found.
+Exception Attributes: array (
+  'class' => 'ThemeController',
+  'plugin' => NULL,
+)
+Request URL: /theme/Cakestrap/font/socialico-webfont.woff
+Stack Trace:
+#0 C:\Websites\kanjime\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-20 05:52:15 Error: [MissingControllerException] Controller class ThemeController could not be found.
+Exception Attributes: array (
+  'class' => 'ThemeController',
+  'plugin' => NULL,
+)
+Request URL: /theme/Cakestrap/font/fontawesome-webfont.woff?v=3.1.0
+Stack Trace:
+#0 C:\Websites\kanjime\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-20 05:52:15 Error: [MissingControllerException] Controller class ThemeController could not be found.
+Exception Attributes: array (
+  'class' => 'ThemeController',
+  'plugin' => NULL,
+)
+Request URL: /theme/Cakestrap/font/socialico-webfont.ttf
+Stack Trace:
+#0 C:\Websites\kanjime\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-20 05:52:15 Error: [MissingControllerException] Controller class ThemeController could not be found.
+Exception Attributes: array (
+  'class' => 'ThemeController',
+  'plugin' => NULL,
+)
+Request URL: /theme/Cakestrap/font/fontawesome-webfont.ttf?v=3.1.0
+Stack Trace:
+#0 C:\Websites\kanjime\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-20 05:52:16 Error: [MissingControllerException] Controller class ThemeController could not be found.
+Exception Attributes: array (
+  'class' => 'ThemeController',
+  'plugin' => NULL,
+)
+Request URL: /theme/Cakestrap/font/socialico-webfont.svg
+Stack Trace:
+#0 C:\Websites\kanjime\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-20 05:52:16 Error: [MissingControllerException] Controller class ThemeController could not be found.
+Exception Attributes: array (
+  'class' => 'ThemeController',
+  'plugin' => NULL,
+)
+Request URL: /theme/Cakestrap/font/fontawesome-webfont.svg
+Stack Trace:
+#0 C:\Websites\kanjime\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-20 05:54:08 Error: [MissingControllerException] Controller class ThemeController could not be found.
+Exception Attributes: array (
+  'class' => 'ThemeController',
+  'plugin' => NULL,
+)
+Request URL: /theme/Cakestrap/img/hero-unit-bg.png
+Stack Trace:
+#0 C:\Websites\kanjime\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-20 05:54:08 Error: [MissingControllerException] Controller class ThemeController could not be found.
+Exception Attributes: array (
+  'class' => 'ThemeController',
+  'plugin' => NULL,
+)
+Request URL: /theme/Cakestrap/img/iphone-white-mockup.png
+Stack Trace:
+#0 C:\Websites\kanjime\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-20 05:54:08 Error: [MissingControllerException] Controller class ThemeController could not be found.
+Exception Attributes: array (
+  'class' => 'ThemeController',
+  'plugin' => NULL,
+)
+Request URL: /theme/Cakestrap/img/diagonal-stripe.png
+Stack Trace:
+#0 C:\Websites\kanjime\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-20 05:54:09 Error: [MissingControllerException] Controller class ThemeController could not be found.
+Exception Attributes: array (
+  'class' => 'ThemeController',
+  'plugin' => NULL,
+)
+Request URL: /theme/Cakestrap/font/fontawesome-webfont.woff?v=3.1.0
+Stack Trace:
+#0 C:\Websites\kanjime\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-20 05:54:09 Error: [MissingControllerException] Controller class ThemeController could not be found.
+Exception Attributes: array (
+  'class' => 'ThemeController',
+  'plugin' => NULL,
+)
+Request URL: /theme/Cakestrap/font/socialico-webfont.woff
+Stack Trace:
+#0 C:\Websites\kanjime\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-20 05:54:09 Error: [MissingControllerException] Controller class ThemeController could not be found.
+Exception Attributes: array (
+  'class' => 'ThemeController',
+  'plugin' => NULL,
+)
+Request URL: /theme/Cakestrap/font/fontawesome-webfont.ttf?v=3.1.0
+Stack Trace:
+#0 C:\Websites\kanjime\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-20 05:54:09 Error: [MissingControllerException] Controller class ThemeController could not be found.
+Exception Attributes: array (
+  'class' => 'ThemeController',
+  'plugin' => NULL,
+)
+Request URL: /theme/Cakestrap/font/socialico-webfont.ttf
+Stack Trace:
+#0 C:\Websites\kanjime\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-20 05:54:09 Error: [MissingControllerException] Controller class ThemeController could not be found.
+Exception Attributes: array (
+  'class' => 'ThemeController',
+  'plugin' => NULL,
+)
+Request URL: /theme/Cakestrap/font/fontawesome-webfont.svg
+Stack Trace:
+#0 C:\Websites\kanjime\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-20 05:54:09 Error: [MissingControllerException] Controller class ThemeController could not be found.
+Exception Attributes: array (
+  'class' => 'ThemeController',
+  'plugin' => NULL,
+)
+Request URL: /theme/Cakestrap/font/socialico-webfont.svg
+Stack Trace:
+#0 C:\Websites\kanjime\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-20 05:55:57 Error: [MissingControllerException] Controller class BIGThingApp,SubscriptionServiceAndGeneralProductLandingPageFilesController could not be found.
+Exception Attributes: array (
+  'class' => 'BIGThingApp,SubscriptionServiceAndGeneralProductLandingPageFilesController',
+  'plugin' => NULL,
+)
+Request URL: /BIG%20Thing%20%20%20App,%20Subscription%20Service%20and%20General%20Product%20Landing%20Page_files/btn-app-store.png
+Stack Trace:
+#0 C:\Websites\kanjime\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-20 05:55:57 Error: [MissingControllerException] Controller class BIGThingApp,SubscriptionServiceAndGeneralProductLandingPageFilesController could not be found.
+Exception Attributes: array (
+  'class' => 'BIGThingApp,SubscriptionServiceAndGeneralProductLandingPageFilesController',
+  'plugin' => NULL,
+)
+Request URL: /BIG%20Thing%20%20%20App,%20Subscription%20Service%20and%20General%20Product%20Landing%20Page_files/slide-item2.png
+Stack Trace:
+#0 C:\Websites\kanjime\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-20 05:55:57 Error: [MissingControllerException] Controller class BIGThingApp,SubscriptionServiceAndGeneralProductLandingPageFilesController could not be found.
+Exception Attributes: array (
+  'class' => 'BIGThingApp,SubscriptionServiceAndGeneralProductLandingPageFilesController',
+  'plugin' => NULL,
+)
+Request URL: /BIG%20Thing%20%20%20App,%20Subscription%20Service%20and%20General%20Product%20Landing%20Page_files/big-thing-logo.png
+Stack Trace:
+#0 C:\Websites\kanjime\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-20 05:55:57 Error: [MissingControllerException] Controller class BIGThingApp,SubscriptionServiceAndGeneralProductLandingPageFilesController could not be found.
+Exception Attributes: array (
+  'class' => 'BIGThingApp,SubscriptionServiceAndGeneralProductLandingPageFilesController',
+  'plugin' => NULL,
+)
+Request URL: /BIG%20Thing%20%20%20App,%20Subscription%20Service%20and%20General%20Product%20Landing%20Page_files/feature-responsive.png
+Stack Trace:
+#0 C:\Websites\kanjime\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-20 05:55:57 Error: [MissingControllerException] Controller class BIGThingApp,SubscriptionServiceAndGeneralProductLandingPageFilesController could not be found.
+Exception Attributes: array (
+  'class' => 'BIGThingApp,SubscriptionServiceAndGeneralProductLandingPageFilesController',
+  'plugin' => NULL,
+)
+Request URL: /BIG%20Thing%20%20%20App,%20Subscription%20Service%20and%20General%20Product%20Landing%20Page_files/feature-bootstrap.png
+Stack Trace:
+#0 C:\Websites\kanjime\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-20 05:55:57 Error: [MissingControllerException] Controller class BIGThingApp,SubscriptionServiceAndGeneralProductLandingPageFilesController could not be found.
+Exception Attributes: array (
+  'class' => 'BIGThingApp,SubscriptionServiceAndGeneralProductLandingPageFilesController',
+  'plugin' => NULL,
+)
+Request URL: /BIG%20Thing%20%20%20App,%20Subscription%20Service%20and%20General%20Product%20Landing%20Page_files/slide-item1.png
+Stack Trace:
+#0 C:\Websites\kanjime\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-20 05:55:58 Error: [MissingControllerException] Controller class ThemeController could not be found.
+Exception Attributes: array (
+  'class' => 'ThemeController',
+  'plugin' => NULL,
+)
+Request URL: /theme/Cakestrap/font/fontawesome-webfont.woff?v=3.1.0
+Stack Trace:
+#0 C:\Websites\kanjime\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-20 05:55:58 Error: [MissingControllerException] Controller class ThemeController could not be found.
+Exception Attributes: array (
+  'class' => 'ThemeController',
+  'plugin' => NULL,
+)
+Request URL: /theme/Cakestrap/font/socialico-webfont.woff
+Stack Trace:
+#0 C:\Websites\kanjime\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-20 05:55:58 Error: [MissingControllerException] Controller class BIGThingApp,SubscriptionServiceAndGeneralProductLandingPageFilesController could not be found.
+Exception Attributes: array (
+  'class' => 'BIGThingApp,SubscriptionServiceAndGeneralProductLandingPageFilesController',
+  'plugin' => NULL,
+)
+Request URL: /BIG%20Thing%20%20%20App,%20Subscription%20Service%20and%20General%20Product%20Landing%20Page_files/feature-easy-customize.png
+Stack Trace:
+#0 C:\Websites\kanjime\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-20 05:55:58 Error: [MissingControllerException] Controller class BIGThingApp,SubscriptionServiceAndGeneralProductLandingPageFilesController could not be found.
+Exception Attributes: array (
+  'class' => 'BIGThingApp,SubscriptionServiceAndGeneralProductLandingPageFilesController',
+  'plugin' => NULL,
+)
+Request URL: /BIG%20Thing%20%20%20App,%20Subscription%20Service%20and%20General%20Product%20Landing%20Page_files/call-to-action-iphone.png
+Stack Trace:
+#0 C:\Websites\kanjime\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-20 05:55:58 Error: [MissingControllerException] Controller class ThemeController could not be found.
+Exception Attributes: array (
+  'class' => 'ThemeController',
+  'plugin' => NULL,
+)
+Request URL: /theme/Cakestrap/img/diagonal-stripe.png
+Stack Trace:
+#0 C:\Websites\kanjime\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-20 05:55:58 Error: [MissingControllerException] Controller class ThemeController could not be found.
+Exception Attributes: array (
+  'class' => 'ThemeController',
+  'plugin' => NULL,
+)
+Request URL: /theme/Cakestrap/img/hero-unit-bg.png
+Stack Trace:
+#0 C:\Websites\kanjime\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-20 05:55:58 Error: [MissingControllerException] Controller class ThemeController could not be found.
+Exception Attributes: array (
+  'class' => 'ThemeController',
+  'plugin' => NULL,
+)
+Request URL: /theme/Cakestrap/img/iphone-white-mockup.png
+Stack Trace:
+#0 C:\Websites\kanjime\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-20 05:55:59 Error: [MissingControllerException] Controller class ThemeController could not be found.
+Exception Attributes: array (
+  'class' => 'ThemeController',
+  'plugin' => NULL,
+)
+Request URL: /theme/Cakestrap/font/fontawesome-webfont.ttf?v=3.1.0
+Stack Trace:
+#0 C:\Websites\kanjime\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-20 05:55:59 Error: [MissingControllerException] Controller class ThemeController could not be found.
+Exception Attributes: array (
+  'class' => 'ThemeController',
+  'plugin' => NULL,
+)
+Request URL: /theme/Cakestrap/font/socialico-webfont.ttf
+Stack Trace:
+#0 C:\Websites\kanjime\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-20 05:55:59 Error: [MissingControllerException] Controller class ThemeController could not be found.
+Exception Attributes: array (
+  'class' => 'ThemeController',
+  'plugin' => NULL,
+)
+Request URL: /theme/Cakestrap/font/fontawesome-webfont.svg
+Stack Trace:
+#0 C:\Websites\kanjime\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-20 05:55:59 Error: [MissingControllerException] Controller class ThemeController could not be found.
+Exception Attributes: array (
+  'class' => 'ThemeController',
+  'plugin' => NULL,
+)
+Request URL: /theme/Cakestrap/font/socialico-webfont.svg
+Stack Trace:
+#0 C:\Websites\kanjime\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-20 05:59:27 Error: [MissingControllerException] Controller class BIGThingApp,SubscriptionServiceAndGeneralProductLandingPageFilesController could not be found.
+Exception Attributes: array (
+  'class' => 'BIGThingApp,SubscriptionServiceAndGeneralProductLandingPageFilesController',
+  'plugin' => NULL,
+)
+Request URL: /BIG%20Thing%20%20%20App,%20Subscription%20Service%20and%20General%20Product%20Landing%20Page_files/btn-app-store.png
+Stack Trace:
+#0 C:\Websites\kanjime\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-20 05:59:27 Error: [MissingControllerException] Controller class BIGThingApp,SubscriptionServiceAndGeneralProductLandingPageFilesController could not be found.
+Exception Attributes: array (
+  'class' => 'BIGThingApp,SubscriptionServiceAndGeneralProductLandingPageFilesController',
+  'plugin' => NULL,
+)
+Request URL: /BIG%20Thing%20%20%20App,%20Subscription%20Service%20and%20General%20Product%20Landing%20Page_files/slide-item2.png
+Stack Trace:
+#0 C:\Websites\kanjime\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-20 05:59:27 Error: [MissingControllerException] Controller class BIGThingApp,SubscriptionServiceAndGeneralProductLandingPageFilesController could not be found.
+Exception Attributes: array (
+  'class' => 'BIGThingApp,SubscriptionServiceAndGeneralProductLandingPageFilesController',
+  'plugin' => NULL,
+)
+Request URL: /BIG%20Thing%20%20%20App,%20Subscription%20Service%20and%20General%20Product%20Landing%20Page_files/slide-item1.png
+Stack Trace:
+#0 C:\Websites\kanjime\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-20 05:59:27 Error: [MissingControllerException] Controller class BIGThingApp,SubscriptionServiceAndGeneralProductLandingPageFilesController could not be found.
+Exception Attributes: array (
+  'class' => 'BIGThingApp,SubscriptionServiceAndGeneralProductLandingPageFilesController',
+  'plugin' => NULL,
+)
+Request URL: /BIG%20Thing%20%20%20App,%20Subscription%20Service%20and%20General%20Product%20Landing%20Page_files/big-thing-logo.png
+Stack Trace:
+#0 C:\Websites\kanjime\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-20 06:39:10 Error: [MissingControllerException] Controller class Index.htmlController could not be found.
+Exception Attributes: array (
+  'class' => 'Index.htmlController',
+  'plugin' => NULL,
+)
+Request URL: /index.html
+Stack Trace:
+#0 C:\Websites\kanjime\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}

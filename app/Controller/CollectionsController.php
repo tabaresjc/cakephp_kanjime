@@ -1,4 +1,4 @@
-﻿<?php
+<?php
 App::uses('AppController', 'Controller');
 /**
  * Collections Controller
@@ -58,9 +58,9 @@ class CollectionsController extends AppController {
 			}
 		} else {			
 			$data = array(
-				'title' => 'Kanji',
-				'subtitle' => '漢字',
-				'description' => 'カンジ'
+				'title' => '',
+				'subtitle' => '',
+				'description' => '',
 			);
 			$this->data = array( 'Collection' => $data );
 		}
