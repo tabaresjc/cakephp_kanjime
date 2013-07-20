@@ -21,7 +21,7 @@
 		<div class="control-group">
 		  <?php echo $this->Form->label('username', 'Username', array('class' => 'control-label'));?>
 		  <div class="controls">
-			<?php echo $this->Form->input('username', array('class' => 'span12')); ?>
+			<?php echo $this->Form->input('username', array('class' => 'span12', 'placeholder' => 'Enter login name of the user')); ?>
 		  </div>
 		  <!-- .controls -->
 		</div>
@@ -29,15 +29,22 @@
 		<div class="control-group">
 		  <?php echo $this->Form->label('password', 'Password', array('class' => 'control-label'));?>
 		  <div class="controls">
-			<?php echo $this->Form->input('password', array('class' => 'span12')); ?>
+			<?php echo $this->Form->input('password', array('class' => 'span12', 'placeholder' => 'Enter Password')); ?>
 		  </div>
 		  <!-- .controls -->
 		</div>
+		<div class="control-group">
+		  <?php echo $this->Form->label('password_confirm', 'Confirm password', array('class' => 'control-label'));?>
+		  <div class="controls">
+			<?php echo $this->Form->input('password_confirm', array('type'=>'password', 'class' => 'span12', 'placeholder' => 'Confirm Password')); ?>
+		  </div>
+		  <!-- .controls -->
+		</div>		
 		<!-- .control-group -->
 		<div class="control-group">
 		  <?php echo $this->Form->label('role', 'Role', array('class' => 'control-label'));?>
 		  <div class="controls">
-			<?php echo $this->Form->input('role', array('options' => array('admin' => 'Admin', 'manager' => 'Manager', 'operator' => 'Operator', 'serveradmin' => 'Server Admin'), 'class' => 'span12')); ?>
+			<?php echo $this->Form->input('role', array('options' => array( '--' => '--', 'admin' => 'Admin', 'manager' => 'Manager', 'operator' => 'Operator', 'serveradmin' => 'Server Admin'), 'class' => 'span12')); ?>
 		  </div>
 		  <!-- .controls -->
 		</div>

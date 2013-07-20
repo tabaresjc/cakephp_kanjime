@@ -10,23 +10,46 @@ class User extends AppModel {
         'username' => array(
             'required' => array(
                 'rule' => array('notEmpty'),
-                'message' => 'A username is required'
-            )
+                'message' => 'You can\'t leave this empty.'
+            ),
+            'alphaNumeric' => array(
+                'rule'     => 'alphaNumeric',
+                'required' => true,
+                'message'  => 'You can use letters and numbers'
+            ),
+            'between' => array(
+                'rule'    => array('between', 5, 15),
+                'message' => 'Between 5 to 15 characters'
+            )			
         ),
         'password' => array(
             'required' => array(
-                'rule' => array('notEmpty'),
-                'message' => 'A password is required'
+                'rule' => array('minLength', '8'),
+                'message' => 'Use at least 8 characters'
             )
         ),
+        'password_confirm' => array(
+            'required' => array(
+                'rule' => array('notEmpty'),
+                'message' => 'Please confirm the password'
+            ),
+            'valid' => array(
+                'rule' => array('matchingPassword'),
+                'message' => 'These passwords don\'t match. Try again?'
+            )			
+        ),	
         'role' => array(
             'valid' => array(
                 'rule' => array('inList', array('admin', 'manager', 'operator', 'serveradmin')),
-                'message' => 'Please enter a valid role',
+                'message' => 'Please select a valid role',
                 'allowEmpty' => false
             )
         )
     );
+	
+    public function matchingPassword($check) {
+        return (strcmp($this->data[$this->alias]['password'],$this->data[$this->alias]['password_confirm']) == 0 );
+    }
 	
 	public function beforeSave($options = array()) {
 		if (isset($this->data[$this->alias]['password'])) {

@@ -35,7 +35,7 @@ class AppController extends Controller {
 	public $theme = "Cakestrap";
 	
     public $components = array(
-		/*'DebugKit.Toolbar',*/
+		'DebugKit.Toolbar',
         'Session',
         'Auth' => array(
             'loginRedirect' => array('controller' => 'admins', 'action' => 'index'),

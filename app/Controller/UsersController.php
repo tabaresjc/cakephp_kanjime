@@ -65,6 +65,14 @@ class UsersController extends AppController {
 			} else {
 				$this->Session->setFlash(__('The user could not be saved. Please, try again.'), 'flash/error');
 			}
+		} else {			
+			$data = array(
+				'username' => '',
+				'password' => '',
+				'confirm_password' => '',
+				'role' => 'Admin',
+			);
+			$this->data = array( 'User' => $data );
 		}
 	}
 

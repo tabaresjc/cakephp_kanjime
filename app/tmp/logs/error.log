@@ -3635,3 +3635,53 @@ Request URL: /index.html
 Stack Trace:
 #0 C:\Websites\kanjime\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 {main}
+2013-07-20 15:57:16 Error: [MissingComponentException] Component class ToolbarComponent could not be found.
+Exception Attributes: array (
+  'class' => 'ToolbarComponent',
+  'plugin' => 'DebugKit',
+)
+Request URL: /users/add
+Stack Trace:
+#0 C:\Websites\kanjime\lib\Cake\Controller\ComponentCollection.php(53): ComponentCollection->load('DebugKit.Toolba...', Array)
+#1 C:\Websites\kanjime\lib\Cake\Controller\Controller.php(639): ComponentCollection->init(Object(UsersController))
+#2 C:\Websites\kanjime\lib\Cake\Routing\Dispatcher.php(183): Controller->constructClasses()
+#3 C:\Websites\kanjime\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\Websites\kanjime\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2013-07-20 16:12:15 Error: Fatal Error (4): syntax error, unexpected '=', expecting ')' in [C:\Websites\kanjime\app\View\Users\add.ctp, line 22]
+2013-07-20 16:12:15 Error: [FatalErrorException] syntax error, unexpected '=', expecting ')'
+Request URL: /users/add
+Stack Trace:
+#0 C:\Websites\kanjime\lib\Cake\Error\ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\Websites\kan...', 22)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\Websites\kan...', 22, Array)
+#2 C:\Websites\kanjime\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\Websites\kan...', 22, Array)
+#3 C:\Websites\kanjime\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-07-20 16:18:17 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/libs/jquery.min.map
+Stack Trace:
+#0 C:\Websites\kanjime\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-20 16:18:43 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/libs/jquery.min.map
+Stack Trace:
+#0 C:\Websites\kanjime\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-20 16:35:57 Error: [MissingControllerException] Controller class JsController could not be found.
+Exception Attributes: array (
+  'class' => 'JsController',
+  'plugin' => NULL,
+)
+Request URL: /js/libs/jquery.min.map
+Stack Trace:
+#0 C:\Websites\kanjime\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
