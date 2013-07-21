@@ -48,7 +48,7 @@
 						<h2 class="hide">Main Navigation</h2>
 						<ul class="nav pull-right">
 							<li><a href="#features-section">Features</a></li>
-							<li><a href="#testimonials-section">Testimonials</a></li>
+							<!--<li><a href="#testimonials-section">Testimonials</a></li>-->
 							<li><a href="#call-to-action">Download now</a></li>
 						</ul>
 					</nav>
@@ -91,35 +91,35 @@
 		<section id="features-section" class="container section features">
 			<div class="row-fluid feature-item">
 				<div class="span6">
-					<img src="/img/feature-bootstrap.png" alt="Feature" />
+					<img src="http://placehold.it/480x300" alt="Feature" />
 				</div>
 				<div class="span6 right-text">
-					<h2 class="heading">Search your name</h2>
+					<h2 class="heading">Feature 1</h2>
 					<p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 				</div>					
 			</div>
 			<hr />
 			<div class="row-fluid feature-item">
 				<div class="span6">
-					<h2 class="heading">Publish your Japanese Name</h2>
+					<h2 class="heading">Feature 2</h2>
 					<p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 				</div>
 				<div class="span6">
-					<img src="/img/feature-responsive.png" class="no-shadow" alt="Feature" />
+					<img src="http://placehold.it/480x300" alt="Feature" />
 				</div>					
 			</div>
-			<!--
 			<hr />
+			
 			<div class="row-fluid feature-item">
 				<div class="span6">
-					<img src="/img/feature-easy-customize.png" alt="Feature" />
+					<img src="http://placehold.it/480x300" alt="Feature" />
 				</div>
 				<div class="span6 right-text">
-					<h2 class="heading">EASY TO CUSTOMIZE</h2>
-					<p class="description">Yes, it&#39;s easy to customize the template. Well-written and intuitive code will help you to grasp the structure, elements and style of the page. Moreover, you can check the documentation for detailed guides.</p>
+					<h2 class="heading">Feature 3</h2>
+					<p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
 				</div>
 			</div>
-			-->
+			<hr />
 		</section>
 		<!--
 		<section class="container section features-more">
@@ -155,8 +155,9 @@
 				</div>
 			</div>				
 		</section>			
-		-->
+		
 		<div class="full-width">
+			
 			<section id="testimonials-section" class="container testimonials flexslider">
 				<h2 class="hide">Testimonial</h2>
 				<ul class="slides">
@@ -180,8 +181,11 @@
 					</li>
 				</ul>
 			</section>
+			
 		</div>
-
+		-->
+		<br/>
+		<br/>
 		<section id="call-to-action" class="container section call-to-action">
 			<div class="row-fluid inner">
 				<div class="span7">

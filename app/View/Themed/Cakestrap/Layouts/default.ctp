@@ -23,8 +23,7 @@ $cakeDescription = __d('cake_dev', 'Kanji Me!');
 <!--[if lt IE 7 ]><html class="ie ie6" lang="en" class="no-js"> <![endif]-->
 <!--[if IE 7 ]><html class="ie ie7" lang="en" class="no-js"> <![endif]-->
 <!--[if IE 8 ]><html class="ie ie8" lang="en" class="no-js"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!-->
-<html lang="en" class="no-js">
+<!--[if (gte IE 9)|!(IE)]><!--><html lang="en" class="no-js"> <!--<![endif]-->
 	<head>
 		<title><?php echo $cakeDescription ?> | <?php echo $title_for_layout; ?></title>
 		<?php echo $this->Html->charset(); ?>
