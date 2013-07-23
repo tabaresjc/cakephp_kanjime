@@ -2,7 +2,7 @@
 	$this->start('meta');
 	echo "\t\n";
 	echo "\t". $this->Html->meta(array('name' => 'viewport', 'content' => 'width=device-width, initial-scale=1.0')). "\n";
-	echo "\t". $this->Html->meta('favicon.ico','/favicon.ico',array('type' => 'icon')). "\n";
+	echo "\t". $this->Html->meta('favicon.ico','/img/favicon.ico',array('type' => 'icon')). "\n";
 	$this->end();
 	
 	$this->start('css');

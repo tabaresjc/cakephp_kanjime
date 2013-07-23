@@ -3704,3 +3704,203 @@ Request URL: /img/screenshot.jpg
 Stack Trace:
 #0 C:\WorkSpace\Website\sdcmob\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 {main}
+2013-07-23 10:20:18 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[HY000] [1045] Access denied for user \'kanjime\'@\'localhost\' (using password: YES)',
+  'enabled' => true,
+)
+Request URL: /users/login
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\lib\Cake\Model\Datasource\DboSource.php(262): Mysql->connect()
+#1 C:\WorkSpace\Website\sdcmob\lib\Cake\Model\ConnectionManager.php(107): DboSource->__construct(Array)
+#2 C:\WorkSpace\Website\sdcmob\lib\Cake\Model\Model.php(3221): ConnectionManager::getDataSource('default')
+#3 C:\WorkSpace\Website\sdcmob\lib\Cake\Model\Model.php(1107): Model->setDataSource('default')
+#4 C:\WorkSpace\Website\sdcmob\lib\Cake\Model\Model.php(3243): Model->setSource('users')
+#5 C:\WorkSpace\Website\sdcmob\lib\Cake\Model\Model.php(1318): Model->getDataSource()
+#6 C:\WorkSpace\Website\sdcmob\lib\Cake\View\Helper\FormHelper.php(199): Model->schema()
+#7 C:\WorkSpace\Website\sdcmob\lib\Cake\View\Helper\FormHelper.php(453): FormHelper->_introspectModel('User', 'fields')
+#8 C:\WorkSpace\Website\sdcmob\app\View\Users\login.ctp(35): FormHelper->create('User', Array)
+#9 C:\WorkSpace\Website\sdcmob\lib\Cake\View\View.php(945): include('C:\WorkSpace\We...')
+#10 C:\WorkSpace\Website\sdcmob\lib\Cake\View\View.php(907): View->_evaluate('C:\WorkSpace\We...', Array)
+#11 C:\WorkSpace\Website\sdcmob\lib\Cake\View\View.php(471): View->_render('C:\WorkSpace\We...')
+#12 C:\WorkSpace\Website\sdcmob\lib\Cake\Controller\Controller.php(948): View->render(NULL, NULL)
+#13 C:\WorkSpace\Website\sdcmob\lib\Cake\Routing\Dispatcher.php(194): Controller->render()
+#14 C:\WorkSpace\Website\sdcmob\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#15 C:\WorkSpace\Website\sdcmob\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#16 {main}
+2013-07-23 10:21:33 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[HY000] [1045] Access denied for user \'kanjime\'@\'localhost\' (using password: YES)',
+  'enabled' => true,
+)
+Request URL: /users/login
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\lib\Cake\Model\Datasource\DboSource.php(262): Mysql->connect()
+#1 C:\WorkSpace\Website\sdcmob\lib\Cake\Model\ConnectionManager.php(107): DboSource->__construct(Array)
+#2 C:\WorkSpace\Website\sdcmob\lib\Cake\Model\Model.php(3221): ConnectionManager::getDataSource('default')
+#3 C:\WorkSpace\Website\sdcmob\lib\Cake\Model\Model.php(1107): Model->setDataSource('default')
+#4 C:\WorkSpace\Website\sdcmob\lib\Cake\Model\Model.php(3243): Model->setSource('users')
+#5 C:\WorkSpace\Website\sdcmob\lib\Cake\Model\Model.php(1318): Model->getDataSource()
+#6 C:\WorkSpace\Website\sdcmob\lib\Cake\View\Helper\FormHelper.php(199): Model->schema()
+#7 C:\WorkSpace\Website\sdcmob\lib\Cake\View\Helper\FormHelper.php(453): FormHelper->_introspectModel('User', 'fields')
+#8 C:\WorkSpace\Website\sdcmob\app\View\Users\login.ctp(35): FormHelper->create('User', Array)
+#9 C:\WorkSpace\Website\sdcmob\lib\Cake\View\View.php(945): include('C:\WorkSpace\We...')
+#10 C:\WorkSpace\Website\sdcmob\lib\Cake\View\View.php(907): View->_evaluate('C:\WorkSpace\We...', Array)
+#11 C:\WorkSpace\Website\sdcmob\lib\Cake\View\View.php(471): View->_render('C:\WorkSpace\We...')
+#12 C:\WorkSpace\Website\sdcmob\lib\Cake\Controller\Controller.php(948): View->render(NULL, NULL)
+#13 C:\WorkSpace\Website\sdcmob\lib\Cake\Routing\Dispatcher.php(194): Controller->render()
+#14 C:\WorkSpace\Website\sdcmob\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#15 C:\WorkSpace\Website\sdcmob\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#16 {main}
+2013-07-23 10:21:36 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[HY000] [1045] Access denied for user \'kanjime\'@\'localhost\' (using password: YES)',
+  'enabled' => true,
+)
+Request URL: /users/login
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\lib\Cake\Model\Datasource\DboSource.php(262): Mysql->connect()
+#1 C:\WorkSpace\Website\sdcmob\lib\Cake\Model\ConnectionManager.php(107): DboSource->__construct(Array)
+#2 C:\WorkSpace\Website\sdcmob\lib\Cake\Model\Model.php(3221): ConnectionManager::getDataSource('default')
+#3 C:\WorkSpace\Website\sdcmob\lib\Cake\Model\Model.php(1107): Model->setDataSource('default')
+#4 C:\WorkSpace\Website\sdcmob\lib\Cake\Model\Model.php(3243): Model->setSource('users')
+#5 C:\WorkSpace\Website\sdcmob\lib\Cake\Model\Model.php(1318): Model->getDataSource()
+#6 C:\WorkSpace\Website\sdcmob\lib\Cake\View\Helper\FormHelper.php(199): Model->schema()
+#7 C:\WorkSpace\Website\sdcmob\lib\Cake\View\Helper\FormHelper.php(453): FormHelper->_introspectModel('User', 'fields')
+#8 C:\WorkSpace\Website\sdcmob\app\View\Users\login.ctp(35): FormHelper->create('User', Array)
+#9 C:\WorkSpace\Website\sdcmob\lib\Cake\View\View.php(945): include('C:\WorkSpace\We...')
+#10 C:\WorkSpace\Website\sdcmob\lib\Cake\View\View.php(907): View->_evaluate('C:\WorkSpace\We...', Array)
+#11 C:\WorkSpace\Website\sdcmob\lib\Cake\View\View.php(471): View->_render('C:\WorkSpace\We...')
+#12 C:\WorkSpace\Website\sdcmob\lib\Cake\Controller\Controller.php(948): View->render(NULL, NULL)
+#13 C:\WorkSpace\Website\sdcmob\lib\Cake\Routing\Dispatcher.php(194): Controller->render()
+#14 C:\WorkSpace\Website\sdcmob\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#15 C:\WorkSpace\Website\sdcmob\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#16 {main}
+2013-07-23 10:22:36 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[HY000] [1045] Access denied for user \'kanjime\'@\'localhost\' (using password: YES)',
+  'enabled' => true,
+)
+Request URL: /users/login
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\lib\Cake\Model\Datasource\DboSource.php(262): Mysql->connect()
+#1 C:\WorkSpace\Website\sdcmob\lib\Cake\Model\ConnectionManager.php(107): DboSource->__construct(Array)
+#2 C:\WorkSpace\Website\sdcmob\lib\Cake\Model\Model.php(3221): ConnectionManager::getDataSource('default')
+#3 C:\WorkSpace\Website\sdcmob\lib\Cake\Model\Model.php(1107): Model->setDataSource('default')
+#4 C:\WorkSpace\Website\sdcmob\lib\Cake\Model\Model.php(3243): Model->setSource('users')
+#5 C:\WorkSpace\Website\sdcmob\lib\Cake\Model\Model.php(1318): Model->getDataSource()
+#6 C:\WorkSpace\Website\sdcmob\lib\Cake\View\Helper\FormHelper.php(199): Model->schema()
+#7 C:\WorkSpace\Website\sdcmob\lib\Cake\View\Helper\FormHelper.php(453): FormHelper->_introspectModel('User', 'fields')
+#8 C:\WorkSpace\Website\sdcmob\app\View\Users\login.ctp(35): FormHelper->create('User', Array)
+#9 C:\WorkSpace\Website\sdcmob\lib\Cake\View\View.php(945): include('C:\WorkSpace\We...')
+#10 C:\WorkSpace\Website\sdcmob\lib\Cake\View\View.php(907): View->_evaluate('C:\WorkSpace\We...', Array)
+#11 C:\WorkSpace\Website\sdcmob\lib\Cake\View\View.php(471): View->_render('C:\WorkSpace\We...')
+#12 C:\WorkSpace\Website\sdcmob\lib\Cake\Controller\Controller.php(948): View->render(NULL, NULL)
+#13 C:\WorkSpace\Website\sdcmob\lib\Cake\Routing\Dispatcher.php(194): Controller->render()
+#14 C:\WorkSpace\Website\sdcmob\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#15 C:\WorkSpace\Website\sdcmob\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#16 {main}
+2013-07-23 10:22:42 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[HY000] [1045] Access denied for user \'kanjime\'@\'localhost\' (using password: YES)',
+  'enabled' => true,
+)
+Request URL: /users/login
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\lib\Cake\Model\Datasource\DboSource.php(262): Mysql->connect()
+#1 C:\WorkSpace\Website\sdcmob\lib\Cake\Model\ConnectionManager.php(107): DboSource->__construct(Array)
+#2 C:\WorkSpace\Website\sdcmob\lib\Cake\Model\Model.php(3221): ConnectionManager::getDataSource('default')
+#3 C:\WorkSpace\Website\sdcmob\lib\Cake\Model\Model.php(1107): Model->setDataSource('default')
+#4 C:\WorkSpace\Website\sdcmob\lib\Cake\Model\Model.php(3243): Model->setSource('users')
+#5 C:\WorkSpace\Website\sdcmob\lib\Cake\Model\Model.php(1318): Model->getDataSource()
+#6 C:\WorkSpace\Website\sdcmob\lib\Cake\View\Helper\FormHelper.php(199): Model->schema()
+#7 C:\WorkSpace\Website\sdcmob\lib\Cake\View\Helper\FormHelper.php(453): FormHelper->_introspectModel('User', 'fields')
+#8 C:\WorkSpace\Website\sdcmob\app\View\Users\login.ctp(35): FormHelper->create('User', Array)
+#9 C:\WorkSpace\Website\sdcmob\lib\Cake\View\View.php(945): include('C:\WorkSpace\We...')
+#10 C:\WorkSpace\Website\sdcmob\lib\Cake\View\View.php(907): View->_evaluate('C:\WorkSpace\We...', Array)
+#11 C:\WorkSpace\Website\sdcmob\lib\Cake\View\View.php(471): View->_render('C:\WorkSpace\We...')
+#12 C:\WorkSpace\Website\sdcmob\lib\Cake\Controller\Controller.php(948): View->render(NULL, NULL)
+#13 C:\WorkSpace\Website\sdcmob\lib\Cake\Routing\Dispatcher.php(194): Controller->render()
+#14 C:\WorkSpace\Website\sdcmob\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#15 C:\WorkSpace\Website\sdcmob\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#16 {main}
+2013-07-23 10:22:53 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[HY000] [1045] Access denied for user \'kanjime\'@\'localhost\' (using password: YES)',
+  'enabled' => true,
+)
+Request URL: /users/login
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\lib\Cake\Model\Datasource\DboSource.php(262): Mysql->connect()
+#1 C:\WorkSpace\Website\sdcmob\lib\Cake\Model\ConnectionManager.php(107): DboSource->__construct(Array)
+#2 C:\WorkSpace\Website\sdcmob\lib\Cake\Model\Model.php(3221): ConnectionManager::getDataSource('default')
+#3 C:\WorkSpace\Website\sdcmob\lib\Cake\Model\Model.php(1107): Model->setDataSource('default')
+#4 C:\WorkSpace\Website\sdcmob\lib\Cake\Model\Model.php(3243): Model->setSource('users')
+#5 C:\WorkSpace\Website\sdcmob\lib\Cake\Model\Model.php(1318): Model->getDataSource()
+#6 C:\WorkSpace\Website\sdcmob\lib\Cake\View\Helper\FormHelper.php(199): Model->schema()
+#7 C:\WorkSpace\Website\sdcmob\lib\Cake\View\Helper\FormHelper.php(453): FormHelper->_introspectModel('User', 'fields')
+#8 C:\WorkSpace\Website\sdcmob\app\View\Users\login.ctp(35): FormHelper->create('User', Array)
+#9 C:\WorkSpace\Website\sdcmob\lib\Cake\View\View.php(945): include('C:\WorkSpace\We...')
+#10 C:\WorkSpace\Website\sdcmob\lib\Cake\View\View.php(907): View->_evaluate('C:\WorkSpace\We...', Array)
+#11 C:\WorkSpace\Website\sdcmob\lib\Cake\View\View.php(471): View->_render('C:\WorkSpace\We...')
+#12 C:\WorkSpace\Website\sdcmob\lib\Cake\Controller\Controller.php(948): View->render(NULL, NULL)
+#13 C:\WorkSpace\Website\sdcmob\lib\Cake\Routing\Dispatcher.php(194): Controller->render()
+#14 C:\WorkSpace\Website\sdcmob\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#15 C:\WorkSpace\Website\sdcmob\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#16 {main}
+2013-07-23 10:23:53 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[HY000] [1045] Access denied for user \'kanjime\'@\'localhost\' (using password: YES)',
+  'enabled' => true,
+)
+Request URL: /users/add
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\lib\Cake\Model\Datasource\DboSource.php(262): Mysql->connect()
+#1 C:\WorkSpace\Website\sdcmob\lib\Cake\Model\ConnectionManager.php(107): DboSource->__construct(Array)
+#2 C:\WorkSpace\Website\sdcmob\lib\Cake\Model\Model.php(3221): ConnectionManager::getDataSource('default')
+#3 C:\WorkSpace\Website\sdcmob\lib\Cake\Model\Model.php(1107): Model->setDataSource('default')
+#4 C:\WorkSpace\Website\sdcmob\lib\Cake\Model\Model.php(3243): Model->setSource('users')
+#5 C:\WorkSpace\Website\sdcmob\lib\Cake\Model\Model.php(1318): Model->getDataSource()
+#6 C:\WorkSpace\Website\sdcmob\lib\Cake\View\Helper\FormHelper.php(199): Model->schema()
+#7 C:\WorkSpace\Website\sdcmob\lib\Cake\View\Helper\FormHelper.php(453): FormHelper->_introspectModel('User', 'fields')
+#8 C:\WorkSpace\Website\sdcmob\app\View\Users\add.ctp(16): FormHelper->create('User', Array)
+#9 C:\WorkSpace\Website\sdcmob\lib\Cake\View\View.php(945): include('C:\WorkSpace\We...')
+#10 C:\WorkSpace\Website\sdcmob\lib\Cake\View\View.php(907): View->_evaluate('C:\WorkSpace\We...', Array)
+#11 C:\WorkSpace\Website\sdcmob\lib\Cake\View\View.php(471): View->_render('C:\WorkSpace\We...')
+#12 C:\WorkSpace\Website\sdcmob\lib\Cake\Controller\Controller.php(948): View->render(NULL, NULL)
+#13 C:\WorkSpace\Website\sdcmob\lib\Cake\Routing\Dispatcher.php(194): Controller->render()
+#14 C:\WorkSpace\Website\sdcmob\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#15 C:\WorkSpace\Website\sdcmob\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#16 {main}
+2013-07-23 10:23:56 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[HY000] [1045] Access denied for user \'kanjime\'@\'localhost\' (using password: YES)',
+  'enabled' => true,
+)
+Request URL: /users/login
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\lib\Cake\Model\Datasource\DboSource.php(262): Mysql->connect()
+#1 C:\WorkSpace\Website\sdcmob\lib\Cake\Model\ConnectionManager.php(107): DboSource->__construct(Array)
+#2 C:\WorkSpace\Website\sdcmob\lib\Cake\Model\Model.php(3221): ConnectionManager::getDataSource('default')
+#3 C:\WorkSpace\Website\sdcmob\lib\Cake\Model\Model.php(1107): Model->setDataSource('default')
+#4 C:\WorkSpace\Website\sdcmob\lib\Cake\Model\Model.php(3243): Model->setSource('users')
+#5 C:\WorkSpace\Website\sdcmob\lib\Cake\Model\Model.php(1318): Model->getDataSource()
+#6 C:\WorkSpace\Website\sdcmob\lib\Cake\View\Helper\FormHelper.php(199): Model->schema()
+#7 C:\WorkSpace\Website\sdcmob\lib\Cake\View\Helper\FormHelper.php(453): FormHelper->_introspectModel('User', 'fields')
+#8 C:\WorkSpace\Website\sdcmob\app\View\Users\login.ctp(35): FormHelper->create('User', Array)
+#9 C:\WorkSpace\Website\sdcmob\lib\Cake\View\View.php(945): include('C:\WorkSpace\We...')
+#10 C:\WorkSpace\Website\sdcmob\lib\Cake\View\View.php(907): View->_evaluate('C:\WorkSpace\We...', Array)
+#11 C:\WorkSpace\Website\sdcmob\lib\Cake\View\View.php(471): View->_render('C:\WorkSpace\We...')
+#12 C:\WorkSpace\Website\sdcmob\lib\Cake\Controller\Controller.php(948): View->render(NULL, NULL)
+#13 C:\WorkSpace\Website\sdcmob\lib\Cake\Routing\Dispatcher.php(194): Controller->render()
+#14 C:\WorkSpace\Website\sdcmob\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#15 C:\WorkSpace\Website\sdcmob\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#16 {main}
