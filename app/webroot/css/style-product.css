@@ -1,69 +1,7 @@
-/* Big Thing Landing Page Style for General Product/Service */
-
-@import url('style.css');
-
-/* top nav */
-#top-nav .nav > li > a.btn {
-	padding: 10px 15px;
-	margin: 0 0 0 30px;
-}
-
-#top-nav .nav > li > a.btn:hover {
-	background-color: #0376DA;
-	color: #fff;
-}
-
-/* hero unit */
-.hero-unit {
-	padding-top: 7em;
-	text-align: center;
-}
-
-.hero-unit.video {
-	text-align: left;
-}
-
-.hero-unit .container .row-fluid {
-	min-height: 520px;
-}
-
-.hero-text {
-	padding: 0;
-}
-
-.hero-text .heading {
-	margin-top: 30px;
-	font-size: 3.5em; 
-}
-
-.hero-text .description {
-	margin-bottom: 75px;
-	font-size: 1.3em;
-}
-
-.hero-unit.video .hero-text .heading {
-	margin-top: 0;
-	font-size: 2.5em; 
-}
-
-.hero-unit.video .hero-text .description {
-	margin-bottom: 75px;
-	font-size: 1em;
-}
-
-.hero-video iframe {
-	width: 100%;
-}
-
-.hero-unit .btn {
-	font-size: 1.5em;
-	padding: 23px 78px;
-}
-
 /* pricing table */
 .pricing {
-	margin-top: -20px;
-	margin-bottom: 65px;
+	width:70%;
+	margin: 0 auto;
 }
 
 .pricing .heading {
@@ -72,7 +10,7 @@
 }
 
 .pricing .row-fluid {
-	width: 80%;
+	
 	margin: 0 auto;
 }
 
@@ -91,15 +29,6 @@
 	margin-bottom: 15px;
 }
 
-.pricing-table p.pricing-badge {
-	background: url(/img/badge.png) no-repeat;
-	width: 96px;
-	height: 96px;
-	margin: 0;
-	position: absolute;
-	top: -3em;
-	right: -3em;
-}
 
 .pricing-badge span {
 	display: block;
@@ -113,6 +42,15 @@
 	position: relative;
 }
 
+.pricing-table .promotion {
+	text-align: left;
+}
+
+.pricing-table .promotion  h3{
+	font-family: 'Open Sans', sans-serif;
+	font-weight: 900;
+}
+
 .pricing-table .description {
 	font-size: 1.3em;
 	font-weight: normal;
@@ -124,7 +62,7 @@
 }
 
 .pricing-table ul.icon-feature {
-	margin: 16px 0;
+	margin: 0;
 }
 
 .pricing-table ul.icon-feature li {
@@ -132,8 +70,15 @@
 	display: inline-block;
 	zoom: 1;
 	*display: inline;
-	margin: 60px 3px;
+	margin: 0 15px;
 }
+
+.pricing-table ul.icon-feature p,
+.pricing-table ul.icon-feature h3{
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	font-size: 1.1em;
+}
+
 
 .pricing-table .bottom {
 	background: #e8e8e8;
@@ -143,7 +88,6 @@
 
 .pricing-table ul.feature-list {
 	margin: 0 0 30px 0;
-	
 }
 
 .pricing .btn {

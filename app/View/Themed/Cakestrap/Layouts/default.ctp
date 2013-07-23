@@ -24,35 +24,36 @@ $cakeDescription = __d('cake_dev', 'Kanji Me!');
 <!--[if IE 7 ]><html class="ie ie7" lang="en" class="no-js"> <![endif]-->
 <!--[if IE 8 ]><html class="ie ie8" lang="en" class="no-js"> <![endif]-->
 <!--[if (gte IE 9)|!(IE)]><!--><html lang="en" class="no-js"> <!--<![endif]-->
-	<head>
-		<title><?php echo $cakeDescription ?> | <?php echo $title_for_layout; ?></title>
-		<?php echo $this->Html->charset(); ?>
-		<meta name="viewport" content="width=device-width, initial-scale=1.0">
-		<?php
-			echo $this->Html->meta('icon');			
-			echo $this->fetch('css');
-		?>
-	</head>
-	<body>
-		<?php echo $this->fetch('content'); ?>
-	</body>
-	<?php echo $this->fetch('script'); ?>	
+<head>
+	<title><?php echo $cakeDescription ?> | <?php echo $title_for_layout; ?></title>
+	<?php echo $this->Html->charset(); ?>
+	<?php
+	echo $this->fetch('meta') . "\n";
+	echo $this->fetch('css') . "\n";
+	?>
+</head>
+<body>
+	<?php 
+	echo $this->fetch('content'). "\n";
+	echo $this->fetch('script'). "\n";
+	?>
+</body>
 </html>
 <?php else : ?>
 <!DOCTYPE html>
 <html lang="en">
-	<head>
-		<?php echo $this->Html->charset(); ?>
-		<title><?php echo $cakeDescription ?> | <?php echo $title_for_layout; ?></title>		
-		<?php
-			echo $this->Html->meta('icon');			
-			echo $this->fetch('meta');
-			echo $this->Html->css('bootstrap.admin.min');
-			echo $this->Html->css('bootstrap-responsive.admin.min');
-			echo $this->Html->css('core.admin');
-			echo $this->fetch('css');
-		?>
-	</head>
+<head>
+	<?php echo $this->Html->charset(); ?>
+	<title><?php echo $cakeDescription ?> | <?php echo $title_for_layout; ?></title>		
+	<?php
+		echo $this->Html->meta('icon');			
+		echo $this->fetch('meta');
+		echo $this->Html->css('bootstrap.admin.min');
+		echo $this->Html->css('bootstrap-responsive.admin.min');
+		echo $this->Html->css('core.admin');
+		echo $this->fetch('css');
+	?>
+</head>
 	<body>
 
 		<div id="main-container">
