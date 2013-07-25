@@ -3904,3 +3904,132 @@ Stack Trace:
 #14 C:\WorkSpace\Website\sdcmob\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
 #15 C:\WorkSpace\Website\sdcmob\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #16 {main}
+2013-07-25 11:51:55 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[HY000] [1045] Access denied for user \'sdcmob\'@\'localhost\' (using password: YES)',
+  'enabled' => true,
+)
+Request URL: /users/login
+Stack Trace:
+#0 C:\Websites\kanjime\lib\Cake\Model\Datasource\DboSource.php(262): Mysql->connect()
+#1 C:\Websites\kanjime\lib\Cake\Model\ConnectionManager.php(107): DboSource->__construct(Array)
+#2 C:\Websites\kanjime\lib\Cake\Model\Model.php(3221): ConnectionManager::getDataSource('default')
+#3 C:\Websites\kanjime\lib\Cake\Model\Model.php(1107): Model->setDataSource('default')
+#4 C:\Websites\kanjime\lib\Cake\Model\Model.php(3243): Model->setSource('users')
+#5 C:\Websites\kanjime\lib\Cake\Model\Model.php(1318): Model->getDataSource()
+#6 C:\Websites\kanjime\lib\Cake\View\Helper\FormHelper.php(199): Model->schema()
+#7 C:\Websites\kanjime\lib\Cake\View\Helper\FormHelper.php(453): FormHelper->_introspectModel('User', 'fields')
+#8 C:\Websites\kanjime\app\View\Users\login.ctp(35): FormHelper->create('User', Array)
+#9 C:\Websites\kanjime\lib\Cake\View\View.php(945): include('C:\Websites\kan...')
+#10 C:\Websites\kanjime\lib\Cake\View\View.php(907): View->_evaluate('C:\Websites\kan...', Array)
+#11 C:\Websites\kanjime\lib\Cake\View\View.php(471): View->_render('C:\Websites\kan...')
+#12 C:\Websites\kanjime\lib\Cake\Controller\Controller.php(948): View->render(NULL, NULL)
+#13 C:\Websites\kanjime\lib\Cake\Routing\Dispatcher.php(194): Controller->render()
+#14 C:\Websites\kanjime\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#15 C:\Websites\kanjime\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#16 {main}
+2013-07-25 11:52:46 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[HY000] [1045] Access denied for user \'sdcmob\'@\'localhost\' (using password: YES)',
+  'enabled' => true,
+)
+Request URL: /users/login
+Stack Trace:
+#0 C:\Websites\kanjime\lib\Cake\Model\Datasource\DboSource.php(262): Mysql->connect()
+#1 C:\Websites\kanjime\lib\Cake\Model\ConnectionManager.php(107): DboSource->__construct(Array)
+#2 C:\Websites\kanjime\lib\Cake\Model\Model.php(3221): ConnectionManager::getDataSource('default')
+#3 C:\Websites\kanjime\lib\Cake\Model\Model.php(1107): Model->setDataSource('default')
+#4 C:\Websites\kanjime\lib\Cake\Model\Model.php(3243): Model->setSource('users')
+#5 C:\Websites\kanjime\lib\Cake\Model\Model.php(1318): Model->getDataSource()
+#6 C:\Websites\kanjime\lib\Cake\View\Helper\FormHelper.php(199): Model->schema()
+#7 C:\Websites\kanjime\lib\Cake\View\Helper\FormHelper.php(453): FormHelper->_introspectModel('User', 'fields')
+#8 C:\Websites\kanjime\app\View\Users\login.ctp(35): FormHelper->create('User', Array)
+#9 C:\Websites\kanjime\lib\Cake\View\View.php(945): include('C:\Websites\kan...')
+#10 C:\Websites\kanjime\lib\Cake\View\View.php(907): View->_evaluate('C:\Websites\kan...', Array)
+#11 C:\Websites\kanjime\lib\Cake\View\View.php(471): View->_render('C:\Websites\kan...')
+#12 C:\Websites\kanjime\lib\Cake\Controller\Controller.php(948): View->render(NULL, NULL)
+#13 C:\Websites\kanjime\lib\Cake\Routing\Dispatcher.php(194): Controller->render()
+#14 C:\Websites\kanjime\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#15 C:\Websites\kanjime\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#16 {main}
+2013-07-25 11:53:48 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[HY000] [1045] Access denied for user \'sdcmob\'@\'localhost\' (using password: YES)',
+  'enabled' => true,
+)
+Request URL: /users/login
+Stack Trace:
+#0 C:\Websites\kanjime\lib\Cake\Model\Datasource\DboSource.php(262): Mysql->connect()
+#1 C:\Websites\kanjime\lib\Cake\Model\ConnectionManager.php(107): DboSource->__construct(Array)
+#2 C:\Websites\kanjime\lib\Cake\Model\Model.php(3221): ConnectionManager::getDataSource('default')
+#3 C:\Websites\kanjime\lib\Cake\Model\Model.php(1107): Model->setDataSource('default')
+#4 C:\Websites\kanjime\lib\Cake\Model\Model.php(3243): Model->setSource('users')
+#5 C:\Websites\kanjime\lib\Cake\Model\Model.php(1318): Model->getDataSource()
+#6 C:\Websites\kanjime\lib\Cake\View\Helper\FormHelper.php(199): Model->schema()
+#7 C:\Websites\kanjime\lib\Cake\View\Helper\FormHelper.php(453): FormHelper->_introspectModel('User', 'fields')
+#8 C:\Websites\kanjime\app\View\Users\login.ctp(35): FormHelper->create('User', Array)
+#9 C:\Websites\kanjime\lib\Cake\View\View.php(945): include('C:\Websites\kan...')
+#10 C:\Websites\kanjime\lib\Cake\View\View.php(907): View->_evaluate('C:\Websites\kan...', Array)
+#11 C:\Websites\kanjime\lib\Cake\View\View.php(471): View->_render('C:\Websites\kan...')
+#12 C:\Websites\kanjime\lib\Cake\Controller\Controller.php(948): View->render(NULL, NULL)
+#13 C:\Websites\kanjime\lib\Cake\Routing\Dispatcher.php(194): Controller->render()
+#14 C:\Websites\kanjime\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#15 C:\Websites\kanjime\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#16 {main}
+2013-07-25 14:02:24 Error: [MissingControllerException] Controller class Favicon.icoController could not be found.
+Exception Attributes: array (
+  'class' => 'Favicon.icoController',
+  'plugin' => NULL,
+)
+Request URL: /favicon.ico
+Stack Trace:
+#0 C:\Websites\kanjime\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-25 14:03:19 Error: [MissingControllerException] Controller class Favicon.icoController could not be found.
+Exception Attributes: array (
+  'class' => 'Favicon.icoController',
+  'plugin' => NULL,
+)
+Request URL: /favicon.ico
+Stack Trace:
+#0 C:\Websites\kanjime\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-25 14:04:42 Error: [MissingControllerException] Controller class Favicon.icoController could not be found.
+Exception Attributes: array (
+  'class' => 'Favicon.icoController',
+  'plugin' => NULL,
+)
+Request URL: /favicon.ico
+Stack Trace:
+#0 C:\Websites\kanjime\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-25 14:09:59 Error: [MissingControllerException] Controller class Favicon.icoController could not be found.
+Exception Attributes: array (
+  'class' => 'Favicon.icoController',
+  'plugin' => NULL,
+)
+Request URL: /favicon.ico
+Stack Trace:
+#0 C:\Websites\kanjime\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-25 14:50:26 Error: [MissingControllerException] Controller class Favicon.icoController could not be found.
+Exception Attributes: array (
+  'class' => 'Favicon.icoController',
+  'plugin' => NULL,
+)
+Request URL: /favicon.ico
+Stack Trace:
+#0 C:\Websites\kanjime\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-25 14:51:41 Error: [MissingControllerException] Controller class Favicon.icoController could not be found.
+Exception Attributes: array (
+  'class' => 'Favicon.icoController',
+  'plugin' => NULL,
+)
+Request URL: /favicon.ico
+Stack Trace:
+#0 C:\Websites\kanjime\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
