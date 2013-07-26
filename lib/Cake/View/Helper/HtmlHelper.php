@@ -347,7 +347,13 @@ class HtmlHelper extends AppHelper {
 		if (isset($options['inline-html'])) {
 			$inlineHtml = $options['inline-html'];
 			unset($options['inline-html']);
-		}		
+		}
+		
+		$icon = '';
+		if (isset($options['icon'])) {
+			$icon = '<i class="'.$options['icon'].'"></i>';
+			unset($options['icon']);
+		}
 
 		if ($escapeTitle === true) {
 			$title = h($title);
@@ -363,7 +369,8 @@ class HtmlHelper extends AppHelper {
 			$confirmMessage = str_replace("'", "\'", $confirmMessage);
 			$confirmMessage = str_replace('"', '\"', $confirmMessage);
 			$options['onclick'] = "return confirm('{$confirmMessage}');";
-		} elseif (isset($options['default']) && !$options['default']) {
+		}
+		elseif (isset($options['default']) && !$options['default']) {
 			if (isset($options['onclick'])) {
 				$options['onclick'] .= ' event.returnValue = false; return false;';
 			} else {
@@ -371,7 +378,7 @@ class HtmlHelper extends AppHelper {
 			}
 			unset($options['default']);
 		}
-		return sprintf($this->_tags['link'], $url, $this->_parseAttributes($options), $title . $inlineHtml );
+		return sprintf($this->_tags['link'], $url, $this->_parseAttributes($options), $icon . $title . $inlineHtml );
 	}
 
 /**

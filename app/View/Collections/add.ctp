@@ -1,7 +1,7 @@
 <?php
 	$this->Html->addCrumb(__('List Names'), array('action' => 'index'));
 	$this->Html->addCrumb(__('New Name'), null);
-	$this->start('script');
+	$this->append('custom_script');
 		echo $this->Html->script('libs/kanjime');
 	$this->end();
 ?>

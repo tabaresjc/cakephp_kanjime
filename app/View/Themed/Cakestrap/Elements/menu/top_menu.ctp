@@ -36,7 +36,7 @@
 							</ul>
 							<?php if(!empty($user)) { ?>
 							<ul class="nav pull-right">
-								<li><?php echo $this->Html->link('Hi '. $user['username'], array('controller' => 'users', 'action' => 'view', $user['id'])); ?></li>
+								<li><?php echo $this->Html->link('Hi '. $user['name'], array('controller' => 'users', 'action' => 'view', $user['id'])); ?></li>
 								<li>
 									<?php
 									echo $this->Form->create('User', array('action' => 'logout' , 'class' => 'navbar-form pull-right', 'inputDefaults' => array('label' => false,'div' => false)));

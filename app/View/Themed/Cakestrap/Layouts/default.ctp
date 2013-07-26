@@ -104,6 +104,7 @@ $cakeDescription = __d('cake_dev', 'Kanji Me!');
 	<?php endif; ?>
 	<?php
 	echo $this->fetch('script');
+	echo $this->fetch('custom_script');
 	?>
 </body>
 </html>

@@ -22,6 +22,12 @@ class User extends AppModel {
                 'message' => 'Between 5 to 15 characters'
             )			
         ),
+        'name' => array(
+            'required' => array(
+                'rule' => array('notEmpty'),
+                'message' => 'You can\'t leave this empty.'
+            )
+        ),
         'password' => array(
             'required' => array(
                 'rule' => array('minLength', '8'),
@@ -58,7 +64,12 @@ class User extends AppModel {
                 'message' => 'Please select a valid role',
                 'allowEmpty' => false
             )
-        )
+        ),
+		'email' => array(
+			'rule'    => 'email',
+			'message' => 'Please supply a valid email address.',
+			'allowEmpty' => true
+		)	
     );
 	
     public function matchingPassword($check) {

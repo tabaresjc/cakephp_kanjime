@@ -52,7 +52,31 @@
  *
  * unix_socket =>
  * For MySQL to connect via socket specify the `unix_socket` parameter instead of `host` and `port`
- */
+ 
+class DATABASE_CONFIG {
+
+	public $default = array(
+		'datasource' => 'Database/Mysql',
+		'persistent' => false,
+		'host' => 'localhost',
+		'login' => 'sdcmob',
+		'password' => 'sdc123456',
+		'database' => 'sdcmob',
+		'prefix' => '',
+		'encoding' => 'utf8',
+	);
+
+	public $test = array(
+		'datasource' => 'Database/Mysql',
+		'persistent' => false,
+		'host' => 'localhost',
+		'login' => 'sdcmob',
+		'password' => 'sdc123456',
+		'database' => 'sdcmob_test',
+		'prefix' => '',
+		'encoding' => 'utf8',
+	);
+}
 class DATABASE_CONFIG {
 
 	public $default = array(
@@ -62,6 +86,31 @@ class DATABASE_CONFIG {
 		'login' => 'kanjime',
 		'password' => 'admin123456',
 		'database' => 'kanjime',
+		'prefix' => '',
+		'encoding' => 'utf8',
+	);
+
+	public $test = array(
+		'datasource' => 'Database/Mysql',
+		'persistent' => false,
+		'host' => 'localhost',
+		'login' => 'sdcmob',
+		'password' => 'sdc123456',
+		'database' => 'sdcmob_test',
+		'prefix' => '',
+		'encoding' => 'utf8',
+	);
+}
+ */
+class DATABASE_CONFIG {
+
+	public $default = array(
+		'datasource' => 'Database/Mysql',
+		'persistent' => false,
+		'host' => 'localhost',
+		'login' => 'sdcmob',
+		'password' => 'sdc123456',
+		'database' => 'sdcmob',
 		'prefix' => '',
 		'encoding' => 'utf8',
 	);

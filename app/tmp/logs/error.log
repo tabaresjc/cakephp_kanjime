@@ -4033,3 +4033,137 @@ Request URL: /favicon.ico
 Stack Trace:
 #0 C:\Websites\kanjime\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 {main}
+2013-07-26 02:34:27 Error: [MissingConnectionException] Database connection "Mysql" is missing, or could not be created.
+Exception Attributes: array (
+  'class' => 'Mysql',
+  'message' => 'SQLSTATE[HY000] [1045] Access denied for user \'kanjime\'@\'localhost\' (using password: YES)',
+  'enabled' => true,
+)
+Request URL: /users/login
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\lib\Cake\Model\Datasource\DboSource.php(262): Mysql->connect()
+#1 C:\WorkSpace\Website\sdcmob\lib\Cake\Model\ConnectionManager.php(107): DboSource->__construct(Array)
+#2 C:\WorkSpace\Website\sdcmob\lib\Cake\Model\Model.php(3221): ConnectionManager::getDataSource('default')
+#3 C:\WorkSpace\Website\sdcmob\lib\Cake\Model\Model.php(1107): Model->setDataSource('default')
+#4 C:\WorkSpace\Website\sdcmob\lib\Cake\Model\Model.php(3243): Model->setSource('users')
+#5 C:\WorkSpace\Website\sdcmob\lib\Cake\Model\Model.php(1318): Model->getDataSource()
+#6 C:\WorkSpace\Website\sdcmob\lib\Cake\View\Helper\FormHelper.php(199): Model->schema()
+#7 C:\WorkSpace\Website\sdcmob\lib\Cake\View\Helper\FormHelper.php(453): FormHelper->_introspectModel('User', 'fields')
+#8 C:\WorkSpace\Website\sdcmob\app\View\Users\login.ctp(35): FormHelper->create('User', Array)
+#9 C:\WorkSpace\Website\sdcmob\lib\Cake\View\View.php(945): include('C:\WorkSpace\We...')
+#10 C:\WorkSpace\Website\sdcmob\lib\Cake\View\View.php(907): View->_evaluate('C:\WorkSpace\We...', Array)
+#11 C:\WorkSpace\Website\sdcmob\lib\Cake\View\View.php(471): View->_render('C:\WorkSpace\We...')
+#12 C:\WorkSpace\Website\sdcmob\lib\Cake\Controller\Controller.php(948): View->render(NULL, NULL)
+#13 C:\WorkSpace\Website\sdcmob\lib\Cake\Routing\Dispatcher.php(194): Controller->render()
+#14 C:\WorkSpace\Website\sdcmob\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#15 C:\WorkSpace\Website\sdcmob\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#16 {main}
+2013-07-26 03:39:53 Error: [MissingControllerException] Controller class Favicon.icoController could not be found.
+Exception Attributes: array (
+  'class' => 'Favicon.icoController',
+  'plugin' => NULL,
+)
+Request URL: /favicon.ico
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-26 03:40:08 Error: [MissingControllerException] Controller class Favicon.icoController could not be found.
+Exception Attributes: array (
+  'class' => 'Favicon.icoController',
+  'plugin' => NULL,
+)
+Request URL: /favicon.ico
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-26 03:40:28 Error: [MissingControllerException] Controller class Favicon.icoController could not be found.
+Exception Attributes: array (
+  'class' => 'Favicon.icoController',
+  'plugin' => NULL,
+)
+Request URL: /favicon.ico
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-26 03:41:10 Error: [MissingControllerException] Controller class Favicon.icoController could not be found.
+Exception Attributes: array (
+  'class' => 'Favicon.icoController',
+  'plugin' => NULL,
+)
+Request URL: /favicon.ico
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-26 03:43:40 Error: [MissingControllerException] Controller class Favicon.icoController could not be found.
+Exception Attributes: array (
+  'class' => 'Favicon.icoController',
+  'plugin' => NULL,
+)
+Request URL: /favicon.ico
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-26 03:44:35 Error: [MissingControllerException] Controller class Favicon.icoController could not be found.
+Exception Attributes: array (
+  'class' => 'Favicon.icoController',
+  'plugin' => NULL,
+)
+Request URL: /favicon.ico
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-26 06:43:15 Error: [MissingControllerException] Controller class Favicon.icoController could not be found.
+Exception Attributes: array (
+  'class' => 'Favicon.icoController',
+  'plugin' => NULL,
+)
+Request URL: /favicon.ico
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-26 07:53:29 Error: Fatal Error (4): syntax error, unexpected ''message'' (T_CONSTANT_ENCAPSED_STRING), expecting ')' in [C:\WorkSpace\Website\sdcmob\app\Model\User.php, line 70]
+2013-07-26 07:53:29 Error: [FatalErrorException] syntax error, unexpected ''message'' (T_CONSTANT_ENCAPSED_STRING), expecting ')'
+Request URL: /users/edit/1
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\lib\Cake\Error\ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\WorkSpace\We...', 70)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\WorkSpace\We...', 70, Array)
+#2 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\WorkSpace\We...', 70, Array)
+#3 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-07-26 07:57:18 Error: [MissingControllerException] Controller class Favicon.icoController could not be found.
+Exception Attributes: array (
+  'class' => 'Favicon.icoController',
+  'plugin' => NULL,
+)
+Request URL: /favicon.ico
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-26 07:57:26 Error: [MissingControllerException] Controller class Favicon.icoController could not be found.
+Exception Attributes: array (
+  'class' => 'Favicon.icoController',
+  'plugin' => NULL,
+)
+Request URL: /favicon.ico
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-26 07:57:35 Error: [MissingControllerException] Controller class Favicon.icoController could not be found.
+Exception Attributes: array (
+  'class' => 'Favicon.icoController',
+  'plugin' => NULL,
+)
+Request URL: /favicon.ico
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-26 07:57:38 Error: [MissingControllerException] Controller class Favicon.icoController could not be found.
+Exception Attributes: array (
+  'class' => 'Favicon.icoController',
+  'plugin' => NULL,
+)
+Request URL: /favicon.ico
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}

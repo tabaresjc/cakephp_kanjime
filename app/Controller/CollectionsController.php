@@ -47,7 +47,6 @@ class CollectionsController extends AppController {
 			if($count>0){
 				$this->Session->setFlash(__('This name already exist. Please try another name'), 'flash/error');
 			}else{
-				
 				$this->Collection->create();
 				if ($this->Collection->save($this->request->data)) {
 					$this->Session->setFlash(__('The collection has been saved'), 'flash/success');

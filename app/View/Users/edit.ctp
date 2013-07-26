@@ -21,6 +21,7 @@
             <h2>
               <?php echo __('Edit User'); ?>
             </h2>
+
             <div class="control-group">
               <?php echo $this->Form->label('username', 'Username', array('class' => 'control-label'));?>
               <div class="controls">
@@ -28,6 +29,13 @@
               </div>
               <!-- .controls -->
             </div>
+            <div class="control-group">
+              <?php echo $this->Form->label('name', 'Name', array('class' => 'control-label'));?>
+              <div class="controls">
+                <?php echo $this->Form->input('name', array( 'class' => 'span5', 'placeholder' => 'First Name and Last Name')); ?>
+              </div>
+              <!-- .controls -->
+            </div>			
             <!-- .control-group -->
             <div class="control-group">
               <?php echo $this->Form->label('blank_password', 'Password', array('class' => 'control-label'));?>
@@ -50,7 +58,24 @@
                 <?php echo $this->Form->input('role', array('options' => array('admin' => 'Admin', 'manager' => 'Manager', 'operator' => 'Operator', 'serveradmin' => 'Server Admin'), 'class' => 'span5')); ?>
               </div>
               <!-- .controls -->
-            </div><?php echo $this->Form->hidden('id'); ?>
+            </div>
+			<!-- .control-group -->			
+            <div class="control-group">
+              <?php echo $this->Form->label('email', 'Email', array('class' => 'control-label'));?>
+              <div class="controls">
+                <?php echo $this->Form->input('email', array( 'class' => 'span5', 'placeholder' => 'youremail@yourdomain.com')); ?>
+              </div>
+              <!-- .controls -->
+            </div>
+			<!-- .control-group -->
+            <div class="control-group">
+              <?php echo $this->Form->label('address', 'Address', array('class' => 'control-label'));?>
+              <div class="controls">
+                <?php echo $this->Form->input('address', array( 'class' => 'span7', 'placeholder' => 'Write your address')); ?>
+              </div>
+              <!-- .controls -->
+            </div>
+			<?php echo $this->Form->hidden('id'); ?>
             <!-- .control-group -->
           </fieldset>
           <div class="well">

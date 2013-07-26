@@ -32,15 +32,23 @@
 			  <?php echo __('Id'); ?>
 			</strong>
 		  </td>
-		  <td><?php echo h($user['User']['id']); ?>&#160;</td>
+		  <td><?php echo h($user['User']['id']); ?></td>
 		</tr>
+		<tr>
+		  <td>
+			<strong>
+			  <?php echo __('Name'); ?>
+			</strong>
+		  </td>
+		  <td><?php echo h($user['User']['name']); ?></td>
+		</tr>		
 		<tr>
 		  <td>
 			<strong>
 			  <?php echo __('Username'); ?>
 			</strong>
 		  </td>
-		  <td><?php echo h($user['User']['username']); ?>&#160;</td>
+		  <td><?php echo h($user['User']['username']); ?></td>
 		</tr>
 		<tr>
 		  <td>
@@ -48,7 +56,7 @@
 			  <?php echo __('Password'); ?>
 			</strong>
 		  </td>
-		  <td>**************************&#160;</td>
+		  <td>**************************</td>
 		</tr>
 		<tr>
 		  <td>
@@ -56,15 +64,32 @@
 			  <?php echo __('Role'); ?>
 			</strong>
 		  </td>
-		  <td><?php echo h($user['User']['role']); ?>&#160;</td>
+		  <td><?php echo h($user['User']['role']); ?></td>
+		</tr>		
+		<tr>
+		  <td>
+			<strong>
+			  <?php echo __('Email'); ?>
+			</strong>
+		  </td>
+		  <td><?php echo h($user['User']['email']); ?></td>
 		</tr>
+		<tr>
+		  <td>
+			<strong>
+			  <?php echo __('Address'); ?>
+			</strong>
+		  </td>
+		  <td><?php echo h($user['User']['address']); ?></td>
+		</tr>		
+
 		<tr>
 		  <td>
 			<strong>
 			  <?php echo __('Created'); ?>
 			</strong>
 		  </td>
-		  <td><?php echo h($user['User']['created']); ?>&#160;</td>
+		  <td><?php echo $this->Time->format('F jS, Y H:i', $user['User']['created']); ?></td>
 		</tr>
 		<tr>
 		  <td>
@@ -72,7 +97,7 @@
 			  <?php echo __('Modified'); ?>
 			</strong>
 		  </td>
-		  <td><?php echo h($user['User']['modified']); ?>&#160;</td>
+		  <td><?php echo $this->Time->format('F jS, Y H:i', $user['User']['modified']); ?></td>
 		</tr>
 	  </table>
 	  <!-- .table table-striped table-bordered -->
