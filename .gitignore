@@ -2,6 +2,10 @@
 #################################################
 /app/Config/database.php
 /app/tmp
+/app/tmp/cache/models
+!/app/tmp/cache/models/empty
+/app/tmp/cache/persistent
+!/app/tmp/cache/persistent/empty
 /lib/Cake/Console/Templates/skel/tmp/
 /plugins
 /vendors
