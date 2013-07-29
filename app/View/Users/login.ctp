@@ -1,7 +1,6 @@
 <?php
 
 ?>
-
 	<div class="row-fluid login-wrapper">
 		<a href="index.html">
 			<img class="logo" src="/img/logo.png">

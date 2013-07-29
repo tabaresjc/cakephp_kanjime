@@ -33,18 +33,20 @@ class UsersController extends AppController {
 	public function login() {
 		if ($this->request->is('post')) {
 			if ($this->Auth->login()) {
-				$this->redirect($this->Auth->loginRedirect);
+				$user = $this->Session->read('Auth.User');
+				$this->Session->setFlash('Welcome '. $user['name'] . '!', 'flash/success');
+				$this->redirect($this->Auth->loginRedirect);				
 			} else {
-				$this->Session->setFlash(__('Your username or password was incorrect.'));
+				$this->Session->setFlash(__('Your username or password was incorrect.'), 'flash/error');
 			}
 		} else if ($this->Session->read('Auth.User')) {
-			$this->Session->setFlash('You are logged in!');
+			$this->Session->setFlash('You are logged in!', 'flash/success');
 			$this->redirect($this->Auth->loginRedirect);
 		}
 	}
 
 	public function logout() {
-		$this->Session->setFlash('Good-Bye');
+		$this->Session->setFlash('Good-Bye', 'flash/success');
 		$this->redirect($this->Auth->logout());
 	}
 
@@ -80,6 +82,14 @@ class UsersController extends AppController {
  */
 	public function add() {
 		if ($this->request->is('post')) {
+			$count = $this->User->find('count', array(
+				'conditions' => array('User.username' => $this->request->data['User']['username'])
+			));
+			
+			if($count>0){
+				$this->Session->setFlash(__('This User Name already exist. Please try another name'), 'flash/error');
+			}
+			
 			$this->User->create();
 			if ($this->User->save($this->request->data)) {
 				$this->Session->setFlash(__('The user has been saved'), 'flash/success');
@@ -87,6 +97,15 @@ class UsersController extends AppController {
 			} else {
 				$this->Session->setFlash(__('The user could not be saved. Please, try again.'), 'flash/error');
 			}
+		} else {			
+			$data = array(
+				'username' => '',
+				'password' => '',
+				'confirm_password' => '',
+				'email' => '',
+				'address' => ''
+			);
+			$this->data = array( 'User' => $data );
 		}
 		$groups = $this->User->Group->find('list');
 		$this->set(compact('groups'));
