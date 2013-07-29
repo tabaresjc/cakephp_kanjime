@@ -25,16 +25,16 @@
       <!-- #sidebar .span3 -->
       <div id="page-content" class="span9">
         <div class="users form">
-          <?php echo $this->Form->create('User', array('inputDefaults' => array('label' => false), 'class' => 'form form-horizontal')); ?>
+          <?php echo $this->Form->create('User', array('inputDefaults' => array('label' => false), 'class' => 'form form-horizontal', 'autocomplete'=>'off')); ?>
           <fieldset>
             <h2>
               <?php echo __('Edit User'); ?>
             </h2>
 
             <div class="control-group">
-              <?php echo $this->Form->label('username', 'Username', array('class' => 'control-label'));?>
+              <?php echo $this->Form->label('uname', 'Username', array('class' => 'control-label'));?>
               <div class="controls">
-                <?php echo $this->Form->input('username', array('class' => 'uneditable-input', 'placeholder' => 'Enter Username', 'disabled'=> '1')); ?>
+                <?php echo $this->Form->input('uname', array('class' => 'form-control', 'value' => $this->Form->value('User.username'), 'disabled' => '1')); ?>
               </div>
               <!-- .controls -->
             </div>
@@ -50,14 +50,14 @@
             <div class="control-group">
               <?php echo $this->Form->label('blank_password', 'Password', array('class' => 'control-label'));?>
               <div class="controls">
-                <?php echo $this->Form->input('blank_password', array('class' => 'span5', 'type' => 'password', 'placeholder' => 'Enter Password', 'value' => '')); ?>
+                <?php echo $this->Form->input('blank_password', array('class' => 'span5', 'type' => 'password', 'placeholder' => 'Enter Password')); ?>
               </div>
               <!-- .controls -->
             </div>
 			<div class="control-group">
 			  <?php echo $this->Form->label('blank_password_confirm', 'Confirm password', array('class' => 'control-label'));?>
 			  <div class="controls">
-				<?php echo $this->Form->input('blank_password_confirm', array('type'=>'password', 'class' => 'span5', 'placeholder' => 'Confirm Password', 'value' => '')); ?>
+				<?php echo $this->Form->input('blank_password_confirm', array('type'=>'password', 'class' => 'span5', 'placeholder' => 'Confirm Password')); ?>
 			  </div>
 			  <!-- .controls -->
 			</div>			
@@ -81,11 +81,12 @@
             <div class="control-group">
               <?php echo $this->Form->label('group_id', 'Group', array('class' => 'control-label'));?>
               <div class="controls">
-                <?php echo $this->Form->input('group_id', array('class' => 'span12')); ?>
+                <?php echo $this->Form->input('group_id', array('class' => 'span5')); ?>
               </div>
               <!-- .controls -->
             </div>
 			<?php echo $this->Form->hidden('id'); ?>
+			<?php echo $this->Form->hidden('username'); ?>
             <!-- .control-group -->
           </fieldset>
           <div class="well">

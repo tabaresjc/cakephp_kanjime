@@ -132,6 +132,8 @@ class UsersController extends AppController {
 		} else {
 			$options = array('conditions' => array('User.' . $this->User->primaryKey => $id));
 			$this->request->data = $this->User->find('first', $options);
+			$this->request->data['blank_password'] = '';
+			$this->request->data['blank_password_confirm'] = '';
 		}
 		$groups = $this->User->Group->find('list');
 		$this->set(compact('groups'));

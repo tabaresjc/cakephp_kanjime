@@ -2425,3 +2425,23 @@ Request URL: /favicon.ico
 Stack Trace:
 #0 C:\WorkSpace\Website\sdcmob\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 {main}
+2013-07-29 17:13:36 Error: Fatal Error (4): syntax error, unexpected '=', expecting ')' in [C:\Websites\kanjime\app\View\Users\edit.ctp, line 37]
+2013-07-29 17:13:36 Error: [FatalErrorException] syntax error, unexpected '=', expecting ')'
+Request URL: /users/edit/1
+Stack Trace:
+#0 C:\Websites\kanjime\lib\Cake\Error\ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\Websites\kan...', 37)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\Websites\kan...', 37, Array)
+#2 C:\Websites\kanjime\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\Websites\kan...', 37, Array)
+#3 C:\Websites\kanjime\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-07-29 17:17:09 Error: Fatal Error (4): syntax error, unexpected '=', expecting ')' in [C:\Websites\kanjime\app\View\Users\edit.ctp, line 37]
+2013-07-29 17:17:09 Error: [FatalErrorException] syntax error, unexpected '=', expecting ')'
+Request URL: /users/edit/1
+Stack Trace:
+#0 C:\Websites\kanjime\lib\Cake\Error\ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\Websites\kan...', 37)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\Websites\kan...', 37, Array)
+#2 C:\Websites\kanjime\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\Websites\kan...', 37, Array)
+#3 C:\Websites\kanjime\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}

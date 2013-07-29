@@ -51,14 +51,6 @@
             <tr>
               <td>
                 <strong>
-                  <?php echo __('Password'); ?>
-                </strong>
-              </td>
-              <td><?php echo h($user['User']['password']); ?>&nbsp;</td>
-            </tr>
-            <tr>
-              <td>
-                <strong>
                   <?php echo __('Name'); ?>
                 </strong>
               </td>
