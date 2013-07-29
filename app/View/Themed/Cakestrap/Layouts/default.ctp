@@ -48,32 +48,51 @@ $cakeDescription = __d('cake_dev', 'Kanji Me!');
 	$this->end();
 
 	$this->start('css');
-	echo "\t". '<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">'. "\n";
-	echo "\t". $this->Html->css('core.admin'). "\n";
-	echo "\t". '<!-- HTML5 shim, for IE6-8 support of HTML5 elements and IE Fallback-->' . "\n";
+	echo "\t". '<!-- bootstrap -->' . "\n";
+	echo "\t". '<link href="/admin/css/bootstrap/bootstrap.css" rel="stylesheet" />' . "\n";
+	echo "\t". '<link href="/admin/css/bootstrap/bootstrap-responsive.css" rel="stylesheet" />' . "\n";
+	echo "\t". '<link href="/admin/css/bootstrap/bootstrap-overrides.css" type="text/css" rel="stylesheet" />' . "\n";
+	echo "\t". '' . "\n";
+	echo "\t". '<!-- libraries -->' . "\n";
+	echo "\t". '<link href="/admin/css/lib/jquery-ui-1.10.2.custom.css" rel="stylesheet" type="text/css" />' . "\n";
+	echo "\t". '<link href="/admin/css/lib/font-awesome.css" type="text/css" rel="stylesheet" />' . "\n";
+	echo "\t". '' . "\n";
+	echo "\t". '<!-- global styles -->' . "\n";
+	echo "\t". '<link rel="stylesheet" type="text/css" href="/admin/css/layout.css">' . "\n";
+	echo "\t". '<link rel="stylesheet" type="text/css" href="/admin/css/elements.css">' . "\n";
+	echo "\t". '<link rel="stylesheet" type="text/css" href="/admin/css/icons.css">' . "\n";
+	echo "\t". '' . "\n";
+	echo "\t". '<!-- this page specific styles -->' . "\n";
+	echo "\t". '<link rel="stylesheet" href="/admin/css/compiled/index.css" type="text/css" media="screen" />    ' . "\n";
+	echo "\t". '' . "\n";
+	echo "\t". '<!-- open sans font -->' . "\n";
+	echo "\t". '<link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">' . "\n";
+	echo "\t". '' . "\n";
+	echo "\t". '<!-- lato font -->' . "\n";
+	echo "\t". '<link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic,400italic,700italic,900italic" rel="stylesheet" type="text/css">' . "\n";
+	echo "\t". '' . "\n";
 	echo "\t". '<!--[if lt IE 9]>' . "\n";
-	echo "\t". '<script src="/js/html5shiv.js"></script>' . "\n";
-	echo "\t". '<link href="/css/ie.css" rel="stylesheet">' . "\n";
+	echo "\t". '  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>' . "\n";
 	echo "\t". '<![endif]-->' . "\n";
-	echo "\t". '<!-- Fav and touch icons -->' . "\n";
-	echo "\t". '<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/ico/icon-144.png">' . "\n";
-	echo "\t". '<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/ico/icon-114.png">' . "\n";
-	echo "\t". '<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/ico/icon-72.png">' . "\n";
-	echo "\t". '<link rel="apple-touch-icon-precomposed" sizes="57x57" href="/ico/icon-57.png">' . "\n";
 	$this->end();
 	
 	$this->start('script');
-	echo "\n";
-	echo "\t". '<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>' . "\n";
-	echo "\t". '<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>' . "\n";
+	echo "\t". '<!-- scripts -->' . "\n";
+	echo "\t". '<script src="http://code.jquery.com/jquery-latest.js"></script>' . "\n";
+	echo "\t". '<script src="/admin/js/bootstrap.min.js"></script>' . "\n";
+	echo "\t". '<script src="/admin/js/jquery-ui-1.10.2.custom.min.js"></script>' . "\n";
+	echo "\t". '<!-- knob -->' . "\n";
+	echo "\t". '<script src="/admin/js/jquery.knob.js"></script>' . "\n";
+	echo "\t". '<!-- flot charts -->' . "\n";
+	echo "\t". '<script src="/admin/js/jquery.flot.js"></script>' . "\n";
+	echo "\t". '<script src="/admin/js/jquery.flot.stack.js"></script>' . "\n";
+	echo "\t". '<script src="/admin/js/jquery.flot.resize.js"></script>' . "\n";
+	echo "\t". '<script src="/admin/js/theme.js"></script>' . "\n";
 	$this->end();	
 ?>
 <!DOCTYPE html>
-<html lang="en">
-<!--[if lt IE 7 ]><html class="ie ie6" lang="en" class="no-js"> <![endif]-->
-<!--[if IE 7 ]><html class="ie ie7" lang="en" class="no-js"> <![endif]-->
-<!--[if IE 8 ]><html class="ie ie8" lang="en" class="no-js"> <![endif]-->
-<!--[if (gte IE 9)|!(IE)]><!--><html lang="en" class="no-js"> <!--<![endif]-->
+<html>
+<head>
 	<?php echo $this->Html->charset(); ?>
 	<title><?php echo $cakeDescription ?> | <?php echo $title_for_layout; ?></title>
 	<?php
@@ -109,3 +128,4 @@ $cakeDescription = __d('cake_dev', 'Kanji Me!');
 </body>
 </html>
 <?php endif; ?>
+
