@@ -1,34 +1,5 @@
 <?php
-	$this->start('meta');
-	echo "\t\n";
-	echo "\t". $this->Html->meta(array('name' => 'viewport', 'content' => 'width=device-width, initial-scale=1.0')). "\n";
-	echo "\t". $this->Html->meta('favicon.ico','/img/favicon.ico',array('type' => 'icon')). "\n";
-	$this->end();
-	
-	$this->start('css');
-	echo "\t". '<link href="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/css/bootstrap-combined.min.css" rel="stylesheet">'. "\n";
-	echo "\t". '<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">'. "\n";
-	echo "\t". $this->Html->css('style'). "\n";
-	echo "\t". '<link href="http://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,700" rel="stylesheet" type="text/css">' . "\n";
-	echo "\t". '<!-- HTML5 shim, for IE6-8 support of HTML5 elements and IE Fallback-->' . "\n";
-	echo "\t". '<!--[if lt IE 9]>' . "\n";
-	echo "\t". '<script src="/js/html5shiv.js"></script>' . "\n";
-	echo "\t". '<link href="/css/ie.css" rel="stylesheet">' . "\n";
-	echo "\t". '<![endif]-->' . "\n";
-	echo "\t". '<!-- Fav and touch icons -->' . "\n";
-	echo "\t". '<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/ico/icon-144.png">' . "\n";
-	echo "\t". '<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/ico/icon-114.png">' . "\n";
-	echo "\t". '<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/ico/icon-72.png">' . "\n";
-	echo "\t". '<link rel="apple-touch-icon-precomposed" sizes="57x57" href="/ico/icon-57.png">' . "\n";
-	$this->end();
-	$this->start('script');
-	echo "\t". '<script src="//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>' . "\n";
-	echo "\t". '<script src="//netdna.bootstrapcdn.com/twitter-bootstrap/2.3.2/js/bootstrap.min.js"></script>' . "\n";
-	echo "\t". '<script src="//cdnjs.cloudflare.com/ajax/libs/flexslider/2.1/jquery.flexslider.js"></script> ' . "\n";
-	echo "\t". '<script src="//cdnjs.cloudflare.com/ajax/libs/jquery-scrollTo/1.4.3/jquery.scrollTo.min.js"></script> ' . "\n";
-	echo "\t". '<script src="//cdn.jsdelivr.net/jquery.localscroll/1.2.8b/jquery.localScroll.js"></script> ' . "\n";
-	echo "\t". '<script type="text/javascript" src="/js/big-thing.js"></script>' . "\n";
-	$this->end();
+
 ?>
 
 	<div class="wrapper">

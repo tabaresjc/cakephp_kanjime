@@ -103,26 +103,7 @@
         color: #fff;
         border-bottom-color: #fff; }
 
-/* background switcher */
-.bg-switch {
-  position: absolute;
-  background: rgba(255, 255, 255, 0.8);
-  top: 60px;
-  border-radius: 0px 10px 10px 0px;
-  padding: 10px 10px 0px 10px;
-  z-index: 999; }
-  .bg-switch .bgs .bg {
-    text-align: center;
-    margin-bottom: 13px;
-    text-decoration: none;
-    display: block; }
-    .bg-switch .bgs .bg.active img {
-      border-color: #000; }
-    .bg-switch .bgs .bg img {
-      width: 80px;
-      height: 60px;
-      border: 2px solid #9fcef1;
-      cursor: pointer; }
+
 
 /* responsive */
 @media (max-width: 767px) {

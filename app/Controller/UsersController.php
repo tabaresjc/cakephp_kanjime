@@ -84,30 +84,7 @@ class UsersController extends AppController {
 			$this->data = array( 'User' => $data );
 		}
 	}
-	
-	public function checkUserName() {
-		if ($this->request->is('post')) {
-			$response_data = array();
-			$response_data['username'] = $this->request->data['username'];
-			
-			$response_data['error'] = 0;
-			$response_data['message'] = '';
-			
-			$count = $this->User->find('count', array(
-				'conditions' => array('User.username' => $response_data['username'])
-			));
-			
-			if($count>0){
-				$response_data['error'] = 1;
-				$response_data['message'] = __('This username already exist. Please try another name');
-			} else{
-				$response_data['message'] = __('This username is avalaible!');
-			}
-			
-			
-			return new CakeResponse(array('body'=> json_encode($response_data), 'status' => 200));
-		}
-	}	
+
 
 /**
  * edit method
@@ -154,4 +131,28 @@ class UsersController extends AppController {
 		$this->Session->setFlash(__('User was not deleted'), 'flash/error');
 		$this->redirect(array('action' => 'index'));
 	}
+	
+	public function checkUserName() {
+		if ($this->request->is('post')) {
+			$response_data = array();
+			$response_data['username'] = $this->request->data['username'];
+			
+			$response_data['error'] = 0;
+			$response_data['message'] = '';
+			
+			$count = $this->User->find('count', array(
+				'conditions' => array('User.username' => $response_data['username'])
+			));
+			
+			if($count>0){
+				$response_data['error'] = 1;
+				$response_data['message'] = __('This username already exist. Please try another name');
+			} else{
+				$response_data['message'] = __('This username is avalaible!');
+			}
+			
+			
+			return new CakeResponse(array('body'=> json_encode($response_data), 'status' => 200));
+		}
+	}		
 }

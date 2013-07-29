@@ -44,6 +44,12 @@ class AppController extends Controller {
 			'authError' => 'You must be logged in to view this page.',
         )
     );
+	
+    public $helpers = array(
+        'Html' => array(
+            'className' => 'GenericHtml'
+        )
+    );	
 
     public function beforeFilter() {
         //$this->Auth->allow('index', 'view');
