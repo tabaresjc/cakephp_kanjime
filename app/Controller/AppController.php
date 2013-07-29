@@ -33,33 +33,28 @@ App::uses('Controller', 'Controller');
  */
 class AppController extends Controller {
 	public $theme = "Cakestrap";
-	
     public $components = array(
-		/*'DebugKit.Toolbar',*/
-        'Session',
+        'Acl',
         'Auth' => array(
-            'loginRedirect' => array('controller' => 'admins', 'action' => 'index'),
+            'authorize' => array(
+                'Actions' => array('actionPath' => 'controllers')
+            ),
+			'loginAction' => array('controller' => 'users', 'action' => 'login'),            
             'logoutRedirect' => array('controller' => 'users', 'action' => 'login'),
-			'authorize' => array('Controller'),
-			'authError' => 'You must be logged in to view this page.',
-        )
+			'loginRedirect' => array('controller' => 'admins', 'action' => 'index'),			
+        ),
+        'Session'
     );
 	
     public $helpers = array(
         'Html' => array(
             'className' => 'GenericHtml'
-        )
-    );	
+        ),
+		'Form', 
+		'Session'
+    );
 
-    public function beforeFilter() {
-        //$this->Auth->allow('index', 'view');
-    }
-	
-	public function isAuthorized($user) {
-		if (isset($user['role']) && $user['role'] === 'admin') {
-			return true;
-		}
-		// Default deny
-		return false;
-	}	
+	public function beforeFilter() {
+		$this->Auth->allow('display');
+	}
 }

@@ -1554,3 +1554,837 @@ Request URL: /favicon.ico
 Stack Trace:
 #0 C:\WorkSpace\Website\sdcmob\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
 #1 {main}
+2013-07-29 08:35:53 Error: [MissingTableException] Table aros_acos for model Permission was not found in datasource default.
+Exception Attributes: array (
+  'table' => 'aros_acos',
+  'class' => 'Permission',
+  'ds' => 'default',
+)
+Request URL: /users/logout
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\lib\Cake\Model\Model.php(3243): Model->setSource('aros_acos')
+#1 C:\WorkSpace\Website\sdcmob\lib\Cake\Model\Model.php(1318): Model->getDataSource()
+#2 C:\WorkSpace\Website\sdcmob\lib\Cake\Model\Permission.php(89): Model->schema()
+#3 C:\WorkSpace\Website\sdcmob\lib\Cake\Controller\Component\Acl\DbAcl.php(74): Permission->check(Array, 'controllers/Use...', '*')
+#4 C:\WorkSpace\Website\sdcmob\lib\Cake\Controller\Component\AclComponent.php(110): DbAcl->check(Array, 'controllers/Use...', '*')
+#5 C:\WorkSpace\Website\sdcmob\lib\Cake\Controller\Component\Auth\ActionsAuthorize.php(40): AclComponent->check(Array, 'controllers/Use...')
+#6 C:\WorkSpace\Website\sdcmob\lib\Cake\Controller\Component\AuthComponent.php(412): ActionsAuthorize->authorize(Array, Object(CakeRequest))
+#7 C:\WorkSpace\Website\sdcmob\lib\Cake\Controller\Component\AuthComponent.php(336): AuthComponent->isAuthorized(Array)
+#8 [internal function]: AuthComponent->startup(Object(UsersController))
+#9 C:\WorkSpace\Website\sdcmob\lib\Cake\Utility\ObjectCollection.php(132): call_user_func_array(Array, Array)
+#10 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#11 C:\WorkSpace\Website\sdcmob\lib\Cake\Event\CakeEventManager.php(248): call_user_func(Array, Object(CakeEvent))
+#12 C:\WorkSpace\Website\sdcmob\lib\Cake\Controller\Controller.php(671): CakeEventManager->dispatch(Object(CakeEvent))
+#13 C:\WorkSpace\Website\sdcmob\lib\Cake\Routing\Dispatcher.php(184): Controller->startupProcess()
+#14 C:\WorkSpace\Website\sdcmob\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#15 C:\WorkSpace\Website\sdcmob\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#16 {main}
+2013-07-29 08:36:09 Error: [MissingTableException] Table aros_acos for model Permission was not found in datasource default.
+Exception Attributes: array (
+  'table' => 'aros_acos',
+  'class' => 'Permission',
+  'ds' => 'default',
+)
+Request URL: /admins/
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\lib\Cake\Model\Model.php(3243): Model->setSource('aros_acos')
+#1 C:\WorkSpace\Website\sdcmob\lib\Cake\Model\Model.php(1318): Model->getDataSource()
+#2 C:\WorkSpace\Website\sdcmob\lib\Cake\Model\Permission.php(89): Model->schema()
+#3 C:\WorkSpace\Website\sdcmob\lib\Cake\Controller\Component\Acl\DbAcl.php(74): Permission->check(Array, 'controllers/Adm...', '*')
+#4 C:\WorkSpace\Website\sdcmob\lib\Cake\Controller\Component\AclComponent.php(110): DbAcl->check(Array, 'controllers/Adm...', '*')
+#5 C:\WorkSpace\Website\sdcmob\lib\Cake\Controller\Component\Auth\ActionsAuthorize.php(40): AclComponent->check(Array, 'controllers/Adm...')
+#6 C:\WorkSpace\Website\sdcmob\lib\Cake\Controller\Component\AuthComponent.php(412): ActionsAuthorize->authorize(Array, Object(CakeRequest))
+#7 C:\WorkSpace\Website\sdcmob\lib\Cake\Controller\Component\AuthComponent.php(336): AuthComponent->isAuthorized(Array)
+#8 [internal function]: AuthComponent->startup(Object(AdminsController))
+#9 C:\WorkSpace\Website\sdcmob\lib\Cake\Utility\ObjectCollection.php(132): call_user_func_array(Array, Array)
+#10 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#11 C:\WorkSpace\Website\sdcmob\lib\Cake\Event\CakeEventManager.php(248): call_user_func(Array, Object(CakeEvent))
+#12 C:\WorkSpace\Website\sdcmob\lib\Cake\Controller\Controller.php(671): CakeEventManager->dispatch(Object(CakeEvent))
+#13 C:\WorkSpace\Website\sdcmob\lib\Cake\Routing\Dispatcher.php(184): Controller->startupProcess()
+#14 C:\WorkSpace\Website\sdcmob\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(AdminsController), Object(CakeRequest), Object(CakeResponse))
+#15 C:\WorkSpace\Website\sdcmob\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#16 {main}
+2013-07-29 08:40:14 Error: [MissingTableException] Table aros_acos for model Permission was not found in datasource default.
+Exception Attributes: array (
+  'table' => 'aros_acos',
+  'class' => 'Permission',
+  'ds' => 'default',
+)
+Request URL: /admins/
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\lib\Cake\Model\Model.php(3243): Model->setSource('aros_acos')
+#1 C:\WorkSpace\Website\sdcmob\lib\Cake\Model\Model.php(1318): Model->getDataSource()
+#2 C:\WorkSpace\Website\sdcmob\lib\Cake\Model\Permission.php(89): Model->schema()
+#3 C:\WorkSpace\Website\sdcmob\lib\Cake\Controller\Component\Acl\DbAcl.php(74): Permission->check(Array, 'controllers/Adm...', '*')
+#4 C:\WorkSpace\Website\sdcmob\lib\Cake\Controller\Component\AclComponent.php(110): DbAcl->check(Array, 'controllers/Adm...', '*')
+#5 C:\WorkSpace\Website\sdcmob\lib\Cake\Controller\Component\Auth\ActionsAuthorize.php(40): AclComponent->check(Array, 'controllers/Adm...')
+#6 C:\WorkSpace\Website\sdcmob\lib\Cake\Controller\Component\AuthComponent.php(412): ActionsAuthorize->authorize(Array, Object(CakeRequest))
+#7 C:\WorkSpace\Website\sdcmob\lib\Cake\Controller\Component\AuthComponent.php(336): AuthComponent->isAuthorized(Array)
+#8 [internal function]: AuthComponent->startup(Object(AdminsController))
+#9 C:\WorkSpace\Website\sdcmob\lib\Cake\Utility\ObjectCollection.php(132): call_user_func_array(Array, Array)
+#10 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#11 C:\WorkSpace\Website\sdcmob\lib\Cake\Event\CakeEventManager.php(248): call_user_func(Array, Object(CakeEvent))
+#12 C:\WorkSpace\Website\sdcmob\lib\Cake\Controller\Controller.php(671): CakeEventManager->dispatch(Object(CakeEvent))
+#13 C:\WorkSpace\Website\sdcmob\lib\Cake\Routing\Dispatcher.php(184): Controller->startupProcess()
+#14 C:\WorkSpace\Website\sdcmob\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(AdminsController), Object(CakeRequest), Object(CakeResponse))
+#15 C:\WorkSpace\Website\sdcmob\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#16 {main}
+2013-07-29 09:09:58 Error: [CakeException] AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => User
+    [Aro0.foreign_key] => 1
+)
+"
+Request URL: /users
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\lib\Cake\Model\Permission.php(90): AclNode->node(Array)
+#1 C:\WorkSpace\Website\sdcmob\lib\Cake\Controller\Component\Acl\DbAcl.php(74): Permission->check(Array, 'controllers/Use...', '*')
+#2 C:\WorkSpace\Website\sdcmob\lib\Cake\Controller\Component\AclComponent.php(110): DbAcl->check(Array, 'controllers/Use...', '*')
+#3 C:\WorkSpace\Website\sdcmob\lib\Cake\Controller\Component\Auth\ActionsAuthorize.php(40): AclComponent->check(Array, 'controllers/Use...')
+#4 C:\WorkSpace\Website\sdcmob\lib\Cake\Controller\Component\AuthComponent.php(412): ActionsAuthorize->authorize(Array, Object(CakeRequest))
+#5 C:\WorkSpace\Website\sdcmob\lib\Cake\Controller\Component\AuthComponent.php(336): AuthComponent->isAuthorized(Array)
+#6 [internal function]: AuthComponent->startup(Object(UsersController))
+#7 C:\WorkSpace\Website\sdcmob\lib\Cake\Utility\ObjectCollection.php(132): call_user_func_array(Array, Array)
+#8 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#9 C:\WorkSpace\Website\sdcmob\lib\Cake\Event\CakeEventManager.php(248): call_user_func(Array, Object(CakeEvent))
+#10 C:\WorkSpace\Website\sdcmob\lib\Cake\Controller\Controller.php(671): CakeEventManager->dispatch(Object(CakeEvent))
+#11 C:\WorkSpace\Website\sdcmob\lib\Cake\Routing\Dispatcher.php(184): Controller->startupProcess()
+#12 C:\WorkSpace\Website\sdcmob\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#13 C:\WorkSpace\Website\sdcmob\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2013-07-29 09:10:05 Error: [MissingActionException] Action UsersController::logout() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'logout',
+)
+Request URL: /users/logout
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\lib\Cake\Routing\Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 C:\WorkSpace\Website\sdcmob\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#2 C:\WorkSpace\Website\sdcmob\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-07-29 09:10:08 Error: [MissingActionException] Action UsersController::logout() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'logout',
+)
+Request URL: /users/logout
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\lib\Cake\Routing\Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 C:\WorkSpace\Website\sdcmob\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#2 C:\WorkSpace\Website\sdcmob\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-07-29 09:10:09 Error: [MissingActionException] Action UsersController::logout() could not be found.
+Exception Attributes: array (
+  'controller' => 'UsersController',
+  'action' => 'logout',
+)
+Request URL: /users/logout
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\lib\Cake\Routing\Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#1 C:\WorkSpace\Website\sdcmob\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#2 C:\WorkSpace\Website\sdcmob\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#3 {main}
+2013-07-29 09:41:00 Error: [MissingControllerException] Controller class Favicon.icoController could not be found.
+Exception Attributes: array (
+  'class' => 'Favicon.icoController',
+  'plugin' => NULL,
+)
+Request URL: /favicon.ico
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-29 09:42:21 Error: [MissingControllerException] Controller class Favicon.icoController could not be found.
+Exception Attributes: array (
+  'class' => 'Favicon.icoController',
+  'plugin' => NULL,
+)
+Request URL: /favicon.ico
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-29 09:42:29 Error: [CakeException] AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 0
+)
+"
+Request URL: /users/initDB
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\lib\Cake\Model\Permission.php(90): AclNode->node(Array)
+#1 C:\WorkSpace\Website\sdcmob\lib\Cake\Controller\Component\Acl\DbAcl.php(74): Permission->check(Array, 'controllers/Use...', '*')
+#2 C:\WorkSpace\Website\sdcmob\lib\Cake\Controller\Component\AclComponent.php(110): DbAcl->check(Array, 'controllers/Use...', '*')
+#3 C:\WorkSpace\Website\sdcmob\lib\Cake\Controller\Component\Auth\ActionsAuthorize.php(40): AclComponent->check(Array, 'controllers/Use...')
+#4 C:\WorkSpace\Website\sdcmob\lib\Cake\Controller\Component\AuthComponent.php(412): ActionsAuthorize->authorize(Array, Object(CakeRequest))
+#5 C:\WorkSpace\Website\sdcmob\lib\Cake\Controller\Component\AuthComponent.php(336): AuthComponent->isAuthorized(Array)
+#6 [internal function]: AuthComponent->startup(Object(UsersController))
+#7 C:\WorkSpace\Website\sdcmob\lib\Cake\Utility\ObjectCollection.php(132): call_user_func_array(Array, Array)
+#8 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#9 C:\WorkSpace\Website\sdcmob\lib\Cake\Event\CakeEventManager.php(248): call_user_func(Array, Object(CakeEvent))
+#10 C:\WorkSpace\Website\sdcmob\lib\Cake\Controller\Controller.php(671): CakeEventManager->dispatch(Object(CakeEvent))
+#11 C:\WorkSpace\Website\sdcmob\lib\Cake\Routing\Dispatcher.php(184): Controller->startupProcess()
+#12 C:\WorkSpace\Website\sdcmob\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#13 C:\WorkSpace\Website\sdcmob\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2013-07-29 09:44:34 Error: [CakeException] AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 0
+)
+"
+Request URL: /admins
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\lib\Cake\Model\Permission.php(90): AclNode->node(Array)
+#1 C:\WorkSpace\Website\sdcmob\lib\Cake\Controller\Component\Acl\DbAcl.php(74): Permission->check(Array, 'controllers/Adm...', '*')
+#2 C:\WorkSpace\Website\sdcmob\lib\Cake\Controller\Component\AclComponent.php(110): DbAcl->check(Array, 'controllers/Adm...', '*')
+#3 C:\WorkSpace\Website\sdcmob\lib\Cake\Controller\Component\Auth\ActionsAuthorize.php(40): AclComponent->check(Array, 'controllers/Adm...')
+#4 C:\WorkSpace\Website\sdcmob\lib\Cake\Controller\Component\AuthComponent.php(412): ActionsAuthorize->authorize(Array, Object(CakeRequest))
+#5 C:\WorkSpace\Website\sdcmob\lib\Cake\Controller\Component\AuthComponent.php(336): AuthComponent->isAuthorized(Array)
+#6 [internal function]: AuthComponent->startup(Object(AdminsController))
+#7 C:\WorkSpace\Website\sdcmob\lib\Cake\Utility\ObjectCollection.php(132): call_user_func_array(Array, Array)
+#8 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#9 C:\WorkSpace\Website\sdcmob\lib\Cake\Event\CakeEventManager.php(248): call_user_func(Array, Object(CakeEvent))
+#10 C:\WorkSpace\Website\sdcmob\lib\Cake\Controller\Controller.php(671): CakeEventManager->dispatch(Object(CakeEvent))
+#11 C:\WorkSpace\Website\sdcmob\lib\Cake\Routing\Dispatcher.php(184): Controller->startupProcess()
+#12 C:\WorkSpace\Website\sdcmob\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(AdminsController), Object(CakeRequest), Object(CakeResponse))
+#13 C:\WorkSpace\Website\sdcmob\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2013-07-29 09:44:36 Error: [CakeException] AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 0
+)
+"
+Request URL: /admins
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\lib\Cake\Model\Permission.php(90): AclNode->node(Array)
+#1 C:\WorkSpace\Website\sdcmob\lib\Cake\Controller\Component\Acl\DbAcl.php(74): Permission->check(Array, 'controllers/Adm...', '*')
+#2 C:\WorkSpace\Website\sdcmob\lib\Cake\Controller\Component\AclComponent.php(110): DbAcl->check(Array, 'controllers/Adm...', '*')
+#3 C:\WorkSpace\Website\sdcmob\lib\Cake\Controller\Component\Auth\ActionsAuthorize.php(40): AclComponent->check(Array, 'controllers/Adm...')
+#4 C:\WorkSpace\Website\sdcmob\lib\Cake\Controller\Component\AuthComponent.php(412): ActionsAuthorize->authorize(Array, Object(CakeRequest))
+#5 C:\WorkSpace\Website\sdcmob\lib\Cake\Controller\Component\AuthComponent.php(336): AuthComponent->isAuthorized(Array)
+#6 [internal function]: AuthComponent->startup(Object(AdminsController))
+#7 C:\WorkSpace\Website\sdcmob\lib\Cake\Utility\ObjectCollection.php(132): call_user_func_array(Array, Array)
+#8 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#9 C:\WorkSpace\Website\sdcmob\lib\Cake\Event\CakeEventManager.php(248): call_user_func(Array, Object(CakeEvent))
+#10 C:\WorkSpace\Website\sdcmob\lib\Cake\Controller\Controller.php(671): CakeEventManager->dispatch(Object(CakeEvent))
+#11 C:\WorkSpace\Website\sdcmob\lib\Cake\Routing\Dispatcher.php(184): Controller->startupProcess()
+#12 C:\WorkSpace\Website\sdcmob\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(AdminsController), Object(CakeRequest), Object(CakeResponse))
+#13 C:\WorkSpace\Website\sdcmob\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2013-07-29 09:44:37 Error: [CakeException] AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 0
+)
+"
+Request URL: /admins
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\lib\Cake\Model\Permission.php(90): AclNode->node(Array)
+#1 C:\WorkSpace\Website\sdcmob\lib\Cake\Controller\Component\Acl\DbAcl.php(74): Permission->check(Array, 'controllers/Adm...', '*')
+#2 C:\WorkSpace\Website\sdcmob\lib\Cake\Controller\Component\AclComponent.php(110): DbAcl->check(Array, 'controllers/Adm...', '*')
+#3 C:\WorkSpace\Website\sdcmob\lib\Cake\Controller\Component\Auth\ActionsAuthorize.php(40): AclComponent->check(Array, 'controllers/Adm...')
+#4 C:\WorkSpace\Website\sdcmob\lib\Cake\Controller\Component\AuthComponent.php(412): ActionsAuthorize->authorize(Array, Object(CakeRequest))
+#5 C:\WorkSpace\Website\sdcmob\lib\Cake\Controller\Component\AuthComponent.php(336): AuthComponent->isAuthorized(Array)
+#6 [internal function]: AuthComponent->startup(Object(AdminsController))
+#7 C:\WorkSpace\Website\sdcmob\lib\Cake\Utility\ObjectCollection.php(132): call_user_func_array(Array, Array)
+#8 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#9 C:\WorkSpace\Website\sdcmob\lib\Cake\Event\CakeEventManager.php(248): call_user_func(Array, Object(CakeEvent))
+#10 C:\WorkSpace\Website\sdcmob\lib\Cake\Controller\Controller.php(671): CakeEventManager->dispatch(Object(CakeEvent))
+#11 C:\WorkSpace\Website\sdcmob\lib\Cake\Routing\Dispatcher.php(184): Controller->startupProcess()
+#12 C:\WorkSpace\Website\sdcmob\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(AdminsController), Object(CakeRequest), Object(CakeResponse))
+#13 C:\WorkSpace\Website\sdcmob\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2013-07-29 09:45:43 Error: [CakeException] AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => Group
+    [Aro0.foreign_key] => 0
+)
+"
+Request URL: /users/logout
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\lib\Cake\Model\Permission.php(90): AclNode->node(Array)
+#1 C:\WorkSpace\Website\sdcmob\lib\Cake\Controller\Component\Acl\DbAcl.php(74): Permission->check(Array, 'controllers/Use...', '*')
+#2 C:\WorkSpace\Website\sdcmob\lib\Cake\Controller\Component\AclComponent.php(110): DbAcl->check(Array, 'controllers/Use...', '*')
+#3 C:\WorkSpace\Website\sdcmob\lib\Cake\Controller\Component\Auth\ActionsAuthorize.php(40): AclComponent->check(Array, 'controllers/Use...')
+#4 C:\WorkSpace\Website\sdcmob\lib\Cake\Controller\Component\AuthComponent.php(412): ActionsAuthorize->authorize(Array, Object(CakeRequest))
+#5 C:\WorkSpace\Website\sdcmob\lib\Cake\Controller\Component\AuthComponent.php(336): AuthComponent->isAuthorized(Array)
+#6 [internal function]: AuthComponent->startup(Object(UsersController))
+#7 C:\WorkSpace\Website\sdcmob\lib\Cake\Utility\ObjectCollection.php(132): call_user_func_array(Array, Array)
+#8 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#9 C:\WorkSpace\Website\sdcmob\lib\Cake\Event\CakeEventManager.php(248): call_user_func(Array, Object(CakeEvent))
+#10 C:\WorkSpace\Website\sdcmob\lib\Cake\Controller\Controller.php(671): CakeEventManager->dispatch(Object(CakeEvent))
+#11 C:\WorkSpace\Website\sdcmob\lib\Cake\Routing\Dispatcher.php(184): Controller->startupProcess()
+#12 C:\WorkSpace\Website\sdcmob\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#13 C:\WorkSpace\Website\sdcmob\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2013-07-29 09:46:57 Error: [MissingViewException] View file "C:\WorkSpace\Website\sdcmob\app\View\Themed\Cakestrap\Users\logout.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\WorkSpace\\Website\\sdcmob\\app\\View\\Themed\\Cakestrap\\Users\\logout.ctp',
+)
+Request URL: /users/logout
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\lib\Cake\View\View.php(468): View->_getViewFileName(NULL)
+#1 C:\WorkSpace\Website\sdcmob\lib\Cake\Controller\Controller.php(948): View->render(NULL, NULL)
+#2 C:\WorkSpace\Website\sdcmob\lib\Cake\Routing\Dispatcher.php(194): Controller->render()
+#3 C:\WorkSpace\Website\sdcmob\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\WorkSpace\Website\sdcmob\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2013-07-29 09:47:06 Error: [MissingViewException] View file "C:\WorkSpace\Website\sdcmob\app\View\Themed\Cakestrap\Users\logout.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\WorkSpace\\Website\\sdcmob\\app\\View\\Themed\\Cakestrap\\Users\\logout.ctp',
+)
+Request URL: /users/logout
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\lib\Cake\View\View.php(468): View->_getViewFileName(NULL)
+#1 C:\WorkSpace\Website\sdcmob\lib\Cake\Controller\Controller.php(948): View->render(NULL, NULL)
+#2 C:\WorkSpace\Website\sdcmob\lib\Cake\Routing\Dispatcher.php(194): Controller->render()
+#3 C:\WorkSpace\Website\sdcmob\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\WorkSpace\Website\sdcmob\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2013-07-29 09:47:09 Error: [MissingViewException] View file "C:\WorkSpace\Website\sdcmob\app\View\Themed\Cakestrap\Users\logout.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\WorkSpace\\Website\\sdcmob\\app\\View\\Themed\\Cakestrap\\Users\\logout.ctp',
+)
+Request URL: /users/logout
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\lib\Cake\View\View.php(468): View->_getViewFileName(NULL)
+#1 C:\WorkSpace\Website\sdcmob\lib\Cake\Controller\Controller.php(948): View->render(NULL, NULL)
+#2 C:\WorkSpace\Website\sdcmob\lib\Cake\Routing\Dispatcher.php(194): Controller->render()
+#3 C:\WorkSpace\Website\sdcmob\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\WorkSpace\Website\sdcmob\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2013-07-29 09:47:13 Error: [MissingViewException] View file "C:\WorkSpace\Website\sdcmob\app\View\Themed\Cakestrap\Users\logout.ctp" is missing.
+Exception Attributes: array (
+  'file' => 'C:\\WorkSpace\\Website\\sdcmob\\app\\View\\Themed\\Cakestrap\\Users\\logout.ctp',
+)
+Request URL: /users/logout
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\lib\Cake\View\View.php(468): View->_getViewFileName(NULL)
+#1 C:\WorkSpace\Website\sdcmob\lib\Cake\Controller\Controller.php(948): View->render(NULL, NULL)
+#2 C:\WorkSpace\Website\sdcmob\lib\Cake\Routing\Dispatcher.php(194): Controller->render()
+#3 C:\WorkSpace\Website\sdcmob\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#4 C:\WorkSpace\Website\sdcmob\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#5 {main}
+2013-07-29 09:53:32 Error: Fatal Error (4): syntax error, unexpected ''Auth'' (T_CONSTANT_ENCAPSED_STRING), expecting function (T_FUNCTION) in [C:\WorkSpace\Website\sdcmob\app\Controller\AppController.php, line 55]
+2013-07-29 09:53:32 Error: [FatalErrorException] syntax error, unexpected ''Auth'' (T_CONSTANT_ENCAPSED_STRING), expecting function (T_FUNCTION)
+Request URL: /admins/
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\lib\Cake\Error\ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\WorkSpace\We...', 55)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\WorkSpace\We...', 55, Array)
+#2 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\WorkSpace\We...', 55, Array)
+#3 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-07-29 09:53:32 Error: [MissingControllerException] Controller class Favicon.icoController could not be found.
+Exception Attributes: array (
+  'class' => 'Favicon.icoController',
+  'plugin' => NULL,
+)
+Request URL: /favicon.ico
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-29 09:53:32 Error: Fatal Error (4): syntax error, unexpected ''Auth'' (T_CONSTANT_ENCAPSED_STRING), expecting function (T_FUNCTION) in [C:\WorkSpace\Website\sdcmob\app\Controller\AppController.php, line 55]
+2013-07-29 09:53:32 Error: [FatalErrorException] syntax error, unexpected ''Auth'' (T_CONSTANT_ENCAPSED_STRING), expecting function (T_FUNCTION)
+Request URL: /favicon.ico
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\lib\Cake\Error\ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\WorkSpace\We...', 55)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\WorkSpace\We...', 55, Array)
+#2 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\WorkSpace\We...', 55, Array)
+#3 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-07-29 09:53:57 Error: Fatal Error (4): syntax error, unexpected ''Auth'' (T_CONSTANT_ENCAPSED_STRING), expecting function (T_FUNCTION) in [C:\WorkSpace\Website\sdcmob\app\Controller\AppController.php, line 52]
+2013-07-29 09:53:57 Error: [FatalErrorException] syntax error, unexpected ''Auth'' (T_CONSTANT_ENCAPSED_STRING), expecting function (T_FUNCTION)
+Request URL: /admins/
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\lib\Cake\Error\ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\WorkSpace\We...', 52)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\WorkSpace\We...', 52, Array)
+#2 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\WorkSpace\We...', 52, Array)
+#3 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-07-29 09:53:57 Error: [MissingControllerException] Controller class Favicon.icoController could not be found.
+Exception Attributes: array (
+  'class' => 'Favicon.icoController',
+  'plugin' => NULL,
+)
+Request URL: /favicon.ico
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-29 09:53:57 Error: Fatal Error (4): syntax error, unexpected ''Auth'' (T_CONSTANT_ENCAPSED_STRING), expecting function (T_FUNCTION) in [C:\WorkSpace\Website\sdcmob\app\Controller\AppController.php, line 52]
+2013-07-29 09:53:57 Error: [FatalErrorException] syntax error, unexpected ''Auth'' (T_CONSTANT_ENCAPSED_STRING), expecting function (T_FUNCTION)
+Request URL: /favicon.ico
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\lib\Cake\Error\ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\WorkSpace\We...', 52)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\WorkSpace\We...', 52, Array)
+#2 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\WorkSpace\We...', 52, Array)
+#3 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-07-29 09:53:58 Error: Fatal Error (4): syntax error, unexpected ''Auth'' (T_CONSTANT_ENCAPSED_STRING), expecting function (T_FUNCTION) in [C:\WorkSpace\Website\sdcmob\app\Controller\AppController.php, line 52]
+2013-07-29 09:53:58 Error: [FatalErrorException] syntax error, unexpected ''Auth'' (T_CONSTANT_ENCAPSED_STRING), expecting function (T_FUNCTION)
+Request URL: /admins/
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\lib\Cake\Error\ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\WorkSpace\We...', 52)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\WorkSpace\We...', 52, Array)
+#2 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\WorkSpace\We...', 52, Array)
+#3 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-07-29 09:53:59 Error: [MissingControllerException] Controller class Favicon.icoController could not be found.
+Exception Attributes: array (
+  'class' => 'Favicon.icoController',
+  'plugin' => NULL,
+)
+Request URL: /favicon.ico
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-29 09:53:59 Error: Fatal Error (4): syntax error, unexpected ''Auth'' (T_CONSTANT_ENCAPSED_STRING), expecting function (T_FUNCTION) in [C:\WorkSpace\Website\sdcmob\app\Controller\AppController.php, line 52]
+2013-07-29 09:53:59 Error: [FatalErrorException] syntax error, unexpected ''Auth'' (T_CONSTANT_ENCAPSED_STRING), expecting function (T_FUNCTION)
+Request URL: /favicon.ico
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\lib\Cake\Error\ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\WorkSpace\We...', 52)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\WorkSpace\We...', 52, Array)
+#2 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\WorkSpace\We...', 52, Array)
+#3 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-07-29 09:54:00 Error: Fatal Error (4): syntax error, unexpected ''Auth'' (T_CONSTANT_ENCAPSED_STRING), expecting function (T_FUNCTION) in [C:\WorkSpace\Website\sdcmob\app\Controller\AppController.php, line 52]
+2013-07-29 09:54:00 Error: [FatalErrorException] syntax error, unexpected ''Auth'' (T_CONSTANT_ENCAPSED_STRING), expecting function (T_FUNCTION)
+Request URL: /admins/
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\lib\Cake\Error\ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\WorkSpace\We...', 52)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\WorkSpace\We...', 52, Array)
+#2 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\WorkSpace\We...', 52, Array)
+#3 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-07-29 09:54:00 Error: [MissingControllerException] Controller class Favicon.icoController could not be found.
+Exception Attributes: array (
+  'class' => 'Favicon.icoController',
+  'plugin' => NULL,
+)
+Request URL: /favicon.ico
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-29 09:54:00 Error: Fatal Error (4): syntax error, unexpected ''Auth'' (T_CONSTANT_ENCAPSED_STRING), expecting function (T_FUNCTION) in [C:\WorkSpace\Website\sdcmob\app\Controller\AppController.php, line 52]
+2013-07-29 09:54:00 Error: [FatalErrorException] syntax error, unexpected ''Auth'' (T_CONSTANT_ENCAPSED_STRING), expecting function (T_FUNCTION)
+Request URL: /favicon.ico
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\lib\Cake\Error\ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\WorkSpace\We...', 52)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\WorkSpace\We...', 52, Array)
+#2 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\WorkSpace\We...', 52, Array)
+#3 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-07-29 09:54:01 Error: Fatal Error (4): syntax error, unexpected ''Auth'' (T_CONSTANT_ENCAPSED_STRING), expecting function (T_FUNCTION) in [C:\WorkSpace\Website\sdcmob\app\Controller\AppController.php, line 52]
+2013-07-29 09:54:01 Error: [FatalErrorException] syntax error, unexpected ''Auth'' (T_CONSTANT_ENCAPSED_STRING), expecting function (T_FUNCTION)
+Request URL: /admins/
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\lib\Cake\Error\ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\WorkSpace\We...', 52)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\WorkSpace\We...', 52, Array)
+#2 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\WorkSpace\We...', 52, Array)
+#3 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-07-29 09:54:01 Error: [MissingControllerException] Controller class Favicon.icoController could not be found.
+Exception Attributes: array (
+  'class' => 'Favicon.icoController',
+  'plugin' => NULL,
+)
+Request URL: /favicon.ico
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-29 09:54:01 Error: Fatal Error (4): syntax error, unexpected ''Auth'' (T_CONSTANT_ENCAPSED_STRING), expecting function (T_FUNCTION) in [C:\WorkSpace\Website\sdcmob\app\Controller\AppController.php, line 52]
+2013-07-29 09:54:01 Error: [FatalErrorException] syntax error, unexpected ''Auth'' (T_CONSTANT_ENCAPSED_STRING), expecting function (T_FUNCTION)
+Request URL: /favicon.ico
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\lib\Cake\Error\ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\WorkSpace\We...', 52)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\WorkSpace\We...', 52, Array)
+#2 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\WorkSpace\We...', 52, Array)
+#3 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-07-29 09:54:01 Error: Fatal Error (4): syntax error, unexpected ''Auth'' (T_CONSTANT_ENCAPSED_STRING), expecting function (T_FUNCTION) in [C:\WorkSpace\Website\sdcmob\app\Controller\AppController.php, line 52]
+2013-07-29 09:54:01 Error: [FatalErrorException] syntax error, unexpected ''Auth'' (T_CONSTANT_ENCAPSED_STRING), expecting function (T_FUNCTION)
+Request URL: /admins/
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\lib\Cake\Error\ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\WorkSpace\We...', 52)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\WorkSpace\We...', 52, Array)
+#2 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\WorkSpace\We...', 52, Array)
+#3 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-07-29 09:54:02 Error: [MissingControllerException] Controller class Favicon.icoController could not be found.
+Exception Attributes: array (
+  'class' => 'Favicon.icoController',
+  'plugin' => NULL,
+)
+Request URL: /favicon.ico
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-29 09:54:02 Error: Fatal Error (4): syntax error, unexpected ''Auth'' (T_CONSTANT_ENCAPSED_STRING), expecting function (T_FUNCTION) in [C:\WorkSpace\Website\sdcmob\app\Controller\AppController.php, line 52]
+2013-07-29 09:54:02 Error: [FatalErrorException] syntax error, unexpected ''Auth'' (T_CONSTANT_ENCAPSED_STRING), expecting function (T_FUNCTION)
+Request URL: /favicon.ico
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\lib\Cake\Error\ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\WorkSpace\We...', 52)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\WorkSpace\We...', 52, Array)
+#2 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\WorkSpace\We...', 52, Array)
+#3 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-07-29 09:54:02 Error: Fatal Error (4): syntax error, unexpected ''Auth'' (T_CONSTANT_ENCAPSED_STRING), expecting function (T_FUNCTION) in [C:\WorkSpace\Website\sdcmob\app\Controller\AppController.php, line 52]
+2013-07-29 09:54:02 Error: [FatalErrorException] syntax error, unexpected ''Auth'' (T_CONSTANT_ENCAPSED_STRING), expecting function (T_FUNCTION)
+Request URL: /admins/
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\lib\Cake\Error\ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\WorkSpace\We...', 52)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\WorkSpace\We...', 52, Array)
+#2 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\WorkSpace\We...', 52, Array)
+#3 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-07-29 09:54:02 Error: [MissingControllerException] Controller class Favicon.icoController could not be found.
+Exception Attributes: array (
+  'class' => 'Favicon.icoController',
+  'plugin' => NULL,
+)
+Request URL: /favicon.ico
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-29 09:54:02 Error: Fatal Error (4): syntax error, unexpected ''Auth'' (T_CONSTANT_ENCAPSED_STRING), expecting function (T_FUNCTION) in [C:\WorkSpace\Website\sdcmob\app\Controller\AppController.php, line 52]
+2013-07-29 09:54:02 Error: [FatalErrorException] syntax error, unexpected ''Auth'' (T_CONSTANT_ENCAPSED_STRING), expecting function (T_FUNCTION)
+Request URL: /favicon.ico
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\lib\Cake\Error\ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\WorkSpace\We...', 52)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\WorkSpace\We...', 52, Array)
+#2 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\WorkSpace\We...', 52, Array)
+#3 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-07-29 09:54:03 Error: Fatal Error (4): syntax error, unexpected ''Auth'' (T_CONSTANT_ENCAPSED_STRING), expecting function (T_FUNCTION) in [C:\WorkSpace\Website\sdcmob\app\Controller\AppController.php, line 52]
+2013-07-29 09:54:03 Error: [FatalErrorException] syntax error, unexpected ''Auth'' (T_CONSTANT_ENCAPSED_STRING), expecting function (T_FUNCTION)
+Request URL: /admins/
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\lib\Cake\Error\ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\WorkSpace\We...', 52)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\WorkSpace\We...', 52, Array)
+#2 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\WorkSpace\We...', 52, Array)
+#3 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-07-29 09:54:04 Error: [MissingControllerException] Controller class Favicon.icoController could not be found.
+Exception Attributes: array (
+  'class' => 'Favicon.icoController',
+  'plugin' => NULL,
+)
+Request URL: /favicon.ico
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-29 09:54:04 Error: Fatal Error (4): syntax error, unexpected ''Auth'' (T_CONSTANT_ENCAPSED_STRING), expecting function (T_FUNCTION) in [C:\WorkSpace\Website\sdcmob\app\Controller\AppController.php, line 52]
+2013-07-29 09:54:04 Error: [FatalErrorException] syntax error, unexpected ''Auth'' (T_CONSTANT_ENCAPSED_STRING), expecting function (T_FUNCTION)
+Request URL: /favicon.ico
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\lib\Cake\Error\ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\WorkSpace\We...', 52)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\WorkSpace\We...', 52, Array)
+#2 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\WorkSpace\We...', 52, Array)
+#3 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-07-29 09:54:04 Error: Fatal Error (4): syntax error, unexpected ''Auth'' (T_CONSTANT_ENCAPSED_STRING), expecting function (T_FUNCTION) in [C:\WorkSpace\Website\sdcmob\app\Controller\AppController.php, line 52]
+2013-07-29 09:54:04 Error: [FatalErrorException] syntax error, unexpected ''Auth'' (T_CONSTANT_ENCAPSED_STRING), expecting function (T_FUNCTION)
+Request URL: /admins/
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\lib\Cake\Error\ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\WorkSpace\We...', 52)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\WorkSpace\We...', 52, Array)
+#2 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\WorkSpace\We...', 52, Array)
+#3 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-07-29 09:54:04 Error: [MissingControllerException] Controller class Favicon.icoController could not be found.
+Exception Attributes: array (
+  'class' => 'Favicon.icoController',
+  'plugin' => NULL,
+)
+Request URL: /favicon.ico
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-29 09:54:04 Error: Fatal Error (4): syntax error, unexpected ''Auth'' (T_CONSTANT_ENCAPSED_STRING), expecting function (T_FUNCTION) in [C:\WorkSpace\Website\sdcmob\app\Controller\AppController.php, line 52]
+2013-07-29 09:54:04 Error: [FatalErrorException] syntax error, unexpected ''Auth'' (T_CONSTANT_ENCAPSED_STRING), expecting function (T_FUNCTION)
+Request URL: /favicon.ico
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\lib\Cake\Error\ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\WorkSpace\We...', 52)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\WorkSpace\We...', 52, Array)
+#2 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\WorkSpace\We...', 52, Array)
+#3 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-07-29 10:06:48 Error: Fatal Error (1): Call to a member function read() on a non-object in [C:\WorkSpace\Website\sdcmob\app\Controller\UsersController.php, line 40]
+2013-07-29 10:06:48 Error: [FatalErrorException] Call to a member function read() on a non-object
+Request URL: /users/login
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\lib\Cake\Error\ErrorHandler.php(184): ErrorHandler::handleFatalError(1, 'Call to a membe...', 'C:\WorkSpace\We...', 40)
+#1 [internal function]: ErrorHandler::handleError(1, 'Call to a membe...', 'C:\WorkSpace\We...', 40, Array)
+#2 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 1, 'Call to a membe...', 'C:\WorkSpace\We...', 40, Array)
+#3 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-07-29 10:08:06 Error: Fatal Error (4): syntax error, unexpected '=', expecting ')' in [C:\WorkSpace\Website\sdcmob\app\Controller\AppController.php, line 42]
+2013-07-29 10:08:06 Error: [FatalErrorException] syntax error, unexpected '=', expecting ')'
+Request URL: /users/login
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\lib\Cake\Error\ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\WorkSpace\We...', 42)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\WorkSpace\We...', 42, Array)
+#2 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\WorkSpace\We...', 42, Array)
+#3 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-07-29 10:08:06 Error: [MissingControllerException] Controller class Favicon.icoController could not be found.
+Exception Attributes: array (
+  'class' => 'Favicon.icoController',
+  'plugin' => NULL,
+)
+Request URL: /favicon.ico
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-29 10:08:06 Error: Fatal Error (4): syntax error, unexpected '=', expecting ')' in [C:\WorkSpace\Website\sdcmob\app\Controller\AppController.php, line 42]
+2013-07-29 10:08:06 Error: [FatalErrorException] syntax error, unexpected '=', expecting ')'
+Request URL: /favicon.ico
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\lib\Cake\Error\ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\WorkSpace\We...', 42)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\WorkSpace\We...', 42, Array)
+#2 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\WorkSpace\We...', 42, Array)
+#3 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-07-29 10:08:22 Error: Fatal Error (4): syntax error, unexpected ''loginRedirect'' (T_CONSTANT_ENCAPSED_STRING), expecting ')' in [C:\WorkSpace\Website\sdcmob\app\Controller\AppController.php, line 44]
+2013-07-29 10:08:22 Error: [FatalErrorException] syntax error, unexpected ''loginRedirect'' (T_CONSTANT_ENCAPSED_STRING), expecting ')'
+Request URL: /users/login
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\lib\Cake\Error\ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\WorkSpace\We...', 44)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\WorkSpace\We...', 44, Array)
+#2 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\WorkSpace\We...', 44, Array)
+#3 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-07-29 10:08:23 Error: [MissingControllerException] Controller class Favicon.icoController could not be found.
+Exception Attributes: array (
+  'class' => 'Favicon.icoController',
+  'plugin' => NULL,
+)
+Request URL: /favicon.ico
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-29 10:08:23 Error: Fatal Error (4): syntax error, unexpected ''loginRedirect'' (T_CONSTANT_ENCAPSED_STRING), expecting ')' in [C:\WorkSpace\Website\sdcmob\app\Controller\AppController.php, line 44]
+2013-07-29 10:08:23 Error: [FatalErrorException] syntax error, unexpected ''loginRedirect'' (T_CONSTANT_ENCAPSED_STRING), expecting ')'
+Request URL: /favicon.ico
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\lib\Cake\Error\ErrorHandler.php(184): ErrorHandler::handleFatalError(4, 'syntax error, u...', 'C:\WorkSpace\We...', 44)
+#1 [internal function]: ErrorHandler::handleError(4, 'syntax error, u...', 'C:\WorkSpace\We...', 44, Array)
+#2 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 4, 'syntax error, u...', 'C:\WorkSpace\We...', 44, Array)
+#3 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-07-29 10:13:24 Error: [CakeException] AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => User
+    [Aro0.foreign_key] => 1
+)
+"
+Request URL: /users/edit/1
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\lib\Cake\Model\Behavior\AclBehavior.php(92): AclNode->node(Array)
+#1 C:\WorkSpace\Website\sdcmob\lib\Cake\Model\Behavior\AclBehavior.php(118): AclBehavior->node(Object(User), NULL, 'Aro')
+#2 [internal function]: AclBehavior->afterSave(Object(User), false, Array)
+#3 C:\WorkSpace\Website\sdcmob\lib\Cake\Utility\ObjectCollection.php(132): call_user_func_array(Array, Array)
+#4 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#5 C:\WorkSpace\Website\sdcmob\lib\Cake\Event\CakeEventManager.php(248): call_user_func(Array, Object(CakeEvent))
+#6 C:\WorkSpace\Website\sdcmob\lib\Cake\Model\Model.php(1772): CakeEventManager->dispatch(Object(CakeEvent))
+#7 C:\WorkSpace\Website\sdcmob\app\Controller\UsersController.php(108): Model->save(Array)
+#8 [internal function]: UsersController->edit('1')
+#9 C:\WorkSpace\Website\sdcmob\lib\Cake\Controller\Controller.php(486): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#10 C:\WorkSpace\Website\sdcmob\lib\Cake\Routing\Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#11 C:\WorkSpace\Website\sdcmob\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#12 C:\WorkSpace\Website\sdcmob\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2013-07-29 10:16:08 Error: [CakeException] AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => User
+    [Aro0.foreign_key] => 1
+)
+"
+Request URL: /users/edit/1
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\lib\Cake\Model\Behavior\AclBehavior.php(92): AclNode->node(Array)
+#1 C:\WorkSpace\Website\sdcmob\lib\Cake\Model\Behavior\AclBehavior.php(118): AclBehavior->node(Object(User), NULL, 'Aro')
+#2 [internal function]: AclBehavior->afterSave(Object(User), false, Array)
+#3 C:\WorkSpace\Website\sdcmob\lib\Cake\Utility\ObjectCollection.php(132): call_user_func_array(Array, Array)
+#4 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#5 C:\WorkSpace\Website\sdcmob\lib\Cake\Event\CakeEventManager.php(248): call_user_func(Array, Object(CakeEvent))
+#6 C:\WorkSpace\Website\sdcmob\lib\Cake\Model\Model.php(1772): CakeEventManager->dispatch(Object(CakeEvent))
+#7 C:\WorkSpace\Website\sdcmob\app\Controller\UsersController.php(108): Model->save(Array)
+#8 [internal function]: UsersController->edit('1')
+#9 C:\WorkSpace\Website\sdcmob\lib\Cake\Controller\Controller.php(486): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#10 C:\WorkSpace\Website\sdcmob\lib\Cake\Routing\Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#11 C:\WorkSpace\Website\sdcmob\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#12 C:\WorkSpace\Website\sdcmob\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2013-07-29 10:16:33 Error: [CakeException] AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => User
+    [Aro0.foreign_key] => 2
+)
+"
+Request URL: /users/edit/2
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\lib\Cake\Model\Behavior\AclBehavior.php(92): AclNode->node(Array)
+#1 C:\WorkSpace\Website\sdcmob\lib\Cake\Model\Behavior\AclBehavior.php(118): AclBehavior->node(Object(User), NULL, 'Aro')
+#2 [internal function]: AclBehavior->afterSave(Object(User), false, Array)
+#3 C:\WorkSpace\Website\sdcmob\lib\Cake\Utility\ObjectCollection.php(132): call_user_func_array(Array, Array)
+#4 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#5 C:\WorkSpace\Website\sdcmob\lib\Cake\Event\CakeEventManager.php(248): call_user_func(Array, Object(CakeEvent))
+#6 C:\WorkSpace\Website\sdcmob\lib\Cake\Model\Model.php(1772): CakeEventManager->dispatch(Object(CakeEvent))
+#7 C:\WorkSpace\Website\sdcmob\app\Controller\UsersController.php(108): Model->save(Array)
+#8 [internal function]: UsersController->edit('2')
+#9 C:\WorkSpace\Website\sdcmob\lib\Cake\Controller\Controller.php(486): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#10 C:\WorkSpace\Website\sdcmob\lib\Cake\Routing\Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#11 C:\WorkSpace\Website\sdcmob\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#12 C:\WorkSpace\Website\sdcmob\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2013-07-29 10:22:17 Error: Fatal Error (64): Cannot redeclare UsersController::beforeFilter() in [C:\WorkSpace\Website\sdcmob\app\Controller\UsersController.php, line 16]
+2013-07-29 10:22:17 Error: [FatalErrorException] Cannot redeclare UsersController::beforeFilter()
+Request URL: /users/initDB
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\lib\Cake\Error\ErrorHandler.php(184): ErrorHandler::handleFatalError(64, 'Cannot redeclar...', 'C:\WorkSpace\We...', 16)
+#1 [internal function]: ErrorHandler::handleError(64, 'Cannot redeclar...', 'C:\WorkSpace\We...', 16, Array)
+#2 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(931): call_user_func('ErrorHandler::h...', 64, 'Cannot redeclar...', 'C:\WorkSpace\We...', 16, Array)
+#3 C:\WorkSpace\Website\sdcmob\lib\Cake\Core\App.php(904): App::_checkFatalError()
+#4 [internal function]: App::shutdown()
+#5 {main}
+2013-07-29 10:22:30 Error: [MissingControllerException] Controller class Favicon.icoController could not be found.
+Exception Attributes: array (
+  'class' => 'Favicon.icoController',
+  'plugin' => NULL,
+)
+Request URL: /favicon.ico
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-29 10:22:45 Error: [MissingControllerException] Controller class Favicon.icoController could not be found.
+Exception Attributes: array (
+  'class' => 'Favicon.icoController',
+  'plugin' => NULL,
+)
+Request URL: /favicon.ico
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}
+2013-07-29 10:23:12 Error: [CakeException] AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => User
+    [Aro0.foreign_key] => 2
+)
+"
+Request URL: /users/edit/2
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\lib\Cake\Model\Behavior\AclBehavior.php(92): AclNode->node(Array)
+#1 C:\WorkSpace\Website\sdcmob\lib\Cake\Model\Behavior\AclBehavior.php(118): AclBehavior->node(Object(User), NULL, 'Aro')
+#2 [internal function]: AclBehavior->afterSave(Object(User), false, Array)
+#3 C:\WorkSpace\Website\sdcmob\lib\Cake\Utility\ObjectCollection.php(132): call_user_func_array(Array, Array)
+#4 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#5 C:\WorkSpace\Website\sdcmob\lib\Cake\Event\CakeEventManager.php(248): call_user_func(Array, Object(CakeEvent))
+#6 C:\WorkSpace\Website\sdcmob\lib\Cake\Model\Model.php(1772): CakeEventManager->dispatch(Object(CakeEvent))
+#7 C:\WorkSpace\Website\sdcmob\app\Controller\UsersController.php(112): Model->save(Array)
+#8 [internal function]: UsersController->edit('2')
+#9 C:\WorkSpace\Website\sdcmob\lib\Cake\Controller\Controller.php(486): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#10 C:\WorkSpace\Website\sdcmob\lib\Cake\Routing\Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#11 C:\WorkSpace\Website\sdcmob\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#12 C:\WorkSpace\Website\sdcmob\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2013-07-29 10:26:25 Error: [CakeException] AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => User
+    [Aro0.foreign_key] => 2
+)
+"
+Request URL: /users/edit/2
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\lib\Cake\Model\Behavior\AclBehavior.php(92): AclNode->node(Array)
+#1 C:\WorkSpace\Website\sdcmob\lib\Cake\Model\Behavior\AclBehavior.php(118): AclBehavior->node(Object(User), NULL, 'Aro')
+#2 [internal function]: AclBehavior->afterSave(Object(User), false, Array)
+#3 C:\WorkSpace\Website\sdcmob\lib\Cake\Utility\ObjectCollection.php(132): call_user_func_array(Array, Array)
+#4 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#5 C:\WorkSpace\Website\sdcmob\lib\Cake\Event\CakeEventManager.php(248): call_user_func(Array, Object(CakeEvent))
+#6 C:\WorkSpace\Website\sdcmob\lib\Cake\Model\Model.php(1772): CakeEventManager->dispatch(Object(CakeEvent))
+#7 C:\WorkSpace\Website\sdcmob\app\Controller\UsersController.php(112): Model->save(Array)
+#8 [internal function]: UsersController->edit('2')
+#9 C:\WorkSpace\Website\sdcmob\lib\Cake\Controller\Controller.php(486): ReflectionMethod->invokeArgs(Object(UsersController), Array)
+#10 C:\WorkSpace\Website\sdcmob\lib\Cake\Routing\Dispatcher.php(187): Controller->invokeAction(Object(CakeRequest))
+#11 C:\WorkSpace\Website\sdcmob\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(UsersController), Object(CakeRequest), Object(CakeResponse))
+#12 C:\WorkSpace\Website\sdcmob\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#13 {main}
+2013-07-29 10:32:57 Error: [CakeException] AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => User
+    [Aro0.foreign_key] => 1
+)
+"
+Request URL: /admins
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\lib\Cake\Model\Permission.php(90): AclNode->node(Array)
+#1 C:\WorkSpace\Website\sdcmob\lib\Cake\Controller\Component\Acl\DbAcl.php(74): Permission->check(Array, 'controllers/Adm...', '*')
+#2 C:\WorkSpace\Website\sdcmob\lib\Cake\Controller\Component\AclComponent.php(110): DbAcl->check(Array, 'controllers/Adm...', '*')
+#3 C:\WorkSpace\Website\sdcmob\lib\Cake\Controller\Component\Auth\ActionsAuthorize.php(40): AclComponent->check(Array, 'controllers/Adm...')
+#4 C:\WorkSpace\Website\sdcmob\lib\Cake\Controller\Component\AuthComponent.php(412): ActionsAuthorize->authorize(Array, Object(CakeRequest))
+#5 C:\WorkSpace\Website\sdcmob\lib\Cake\Controller\Component\AuthComponent.php(336): AuthComponent->isAuthorized(Array)
+#6 [internal function]: AuthComponent->startup(Object(AdminsController))
+#7 C:\WorkSpace\Website\sdcmob\lib\Cake\Utility\ObjectCollection.php(132): call_user_func_array(Array, Array)
+#8 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#9 C:\WorkSpace\Website\sdcmob\lib\Cake\Event\CakeEventManager.php(248): call_user_func(Array, Object(CakeEvent))
+#10 C:\WorkSpace\Website\sdcmob\lib\Cake\Controller\Controller.php(671): CakeEventManager->dispatch(Object(CakeEvent))
+#11 C:\WorkSpace\Website\sdcmob\lib\Cake\Routing\Dispatcher.php(184): Controller->startupProcess()
+#12 C:\WorkSpace\Website\sdcmob\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(AdminsController), Object(CakeRequest), Object(CakeResponse))
+#13 C:\WorkSpace\Website\sdcmob\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2013-07-29 10:37:10 Error: [CakeException] AclNode::node() - Couldn't find Aro node identified by "Array
+(
+    [Aro0.model] => User
+    [Aro0.foreign_key] => 1
+)
+"
+Request URL: /admins
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\lib\Cake\Model\Permission.php(90): AclNode->node(Array)
+#1 C:\WorkSpace\Website\sdcmob\lib\Cake\Controller\Component\Acl\DbAcl.php(74): Permission->check(Array, 'controllers/Adm...', '*')
+#2 C:\WorkSpace\Website\sdcmob\lib\Cake\Controller\Component\AclComponent.php(110): DbAcl->check(Array, 'controllers/Adm...', '*')
+#3 C:\WorkSpace\Website\sdcmob\lib\Cake\Controller\Component\Auth\ActionsAuthorize.php(40): AclComponent->check(Array, 'controllers/Adm...')
+#4 C:\WorkSpace\Website\sdcmob\lib\Cake\Controller\Component\AuthComponent.php(412): ActionsAuthorize->authorize(Array, Object(CakeRequest))
+#5 C:\WorkSpace\Website\sdcmob\lib\Cake\Controller\Component\AuthComponent.php(336): AuthComponent->isAuthorized(Array)
+#6 [internal function]: AuthComponent->startup(Object(AdminsController))
+#7 C:\WorkSpace\Website\sdcmob\lib\Cake\Utility\ObjectCollection.php(132): call_user_func_array(Array, Array)
+#8 [internal function]: ObjectCollection->trigger(Object(CakeEvent))
+#9 C:\WorkSpace\Website\sdcmob\lib\Cake\Event\CakeEventManager.php(248): call_user_func(Array, Object(CakeEvent))
+#10 C:\WorkSpace\Website\sdcmob\lib\Cake\Controller\Controller.php(671): CakeEventManager->dispatch(Object(CakeEvent))
+#11 C:\WorkSpace\Website\sdcmob\lib\Cake\Routing\Dispatcher.php(184): Controller->startupProcess()
+#12 C:\WorkSpace\Website\sdcmob\lib\Cake\Routing\Dispatcher.php(162): Dispatcher->_invoke(Object(AdminsController), Object(CakeRequest), Object(CakeResponse))
+#13 C:\WorkSpace\Website\sdcmob\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#14 {main}
+2013-07-29 10:45:13 Error: [MissingControllerException] Controller class Favicon.icoController could not be found.
+Exception Attributes: array (
+  'class' => 'Favicon.icoController',
+  'plugin' => NULL,
+)
+Request URL: /favicon.ico
+Stack Trace:
+#0 C:\WorkSpace\Website\sdcmob\app\webroot\index.php(111): Dispatcher->dispatch(Object(CakeRequest), Object(CakeResponse))
+#1 {main}

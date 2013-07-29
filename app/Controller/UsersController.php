@@ -6,24 +6,45 @@ App::uses('AppController', 'Controller');
  * @property User $User
  */
 class UsersController extends AppController {
-
 	public function beforeFilter() {
 		parent::beforeFilter();
-		$this->Auth->allow('add');
-		$this->Auth->allow('checkUserName');
+		$this->Auth->allow();
+		//$this->Auth->allow('initDB'); // We can remove this line after we're finished
 	}
 
+	public function initDB() {
+		$group = $this->User->Group;
+		//Allow admins to everything
+		$group->id = 1;
+		$this->Acl->allow($group, 'controllers');
+		
+		$group->id = 2;
+		$this->Acl->deny($group, 'controllers');
+		$this->Acl->allow($group, 'controllers/Collections');
+		$this->Acl->allow($group, 'controllers/Pages');
+		
+		$group->id = 3;
+		$this->Acl->deny($group, 'controllers');
+		$this->Acl->allow($group, 'controllers/Pages');
+		echo "all done";
+		exit;
+	}	
+	
 	public function login() {
 		if ($this->request->is('post')) {
 			if ($this->Auth->login()) {
-				$this->redirect($this->Auth->redirect());
+				$this->redirect($this->Auth->loginRedirect);
 			} else {
-				$this->Session->setFlash(__('Invalid username or password, try again'));
+				$this->Session->setFlash(__('Your username or password was incorrect.'));
 			}
+		} else if ($this->Session->read('Auth.User')) {
+			$this->Session->setFlash('You are logged in!');
+			$this->redirect($this->Auth->loginRedirect);
 		}
 	}
 
 	public function logout() {
+		$this->Session->setFlash('Good-Bye');
 		$this->redirect($this->Auth->logout());
 	}
 
@@ -59,32 +80,17 @@ class UsersController extends AppController {
  */
 	public function add() {
 		if ($this->request->is('post')) {
-			$count = $this->User->find('count', array(
-				'conditions' => array('User.username' => $this->request->data['User']['name'])
-			));
-			
-			if($count>0){
-				$this->Session->setFlash(__('This User Name already exist. Please try another name'), 'flash/error');
-			}else{		
-				$this->User->create();
-				if ($this->User->save($this->request->data)) {
-					$this->Session->setFlash(__('The user has been saved'), 'flash/success');
-					$this->redirect(array('action' => 'index'));
-				} else {
-					$this->Session->setFlash(__('The user could not be saved. Please, try again.'), 'flash/error');
-				}
+			$this->User->create();
+			if ($this->User->save($this->request->data)) {
+				$this->Session->setFlash(__('The user has been saved'), 'flash/success');
+				$this->redirect(array('action' => 'index'));
+			} else {
+				$this->Session->setFlash(__('The user could not be saved. Please, try again.'), 'flash/error');
 			}
-		} else {			
-			$data = array(
-				'username' => '',
-				'password' => '',
-				'confirm_password' => '',
-				'role' => 'Admin',
-			);
-			$this->data = array( 'User' => $data );
 		}
+		$groups = $this->User->Group->find('list');
+		$this->set(compact('groups'));
 	}
-
 
 /**
  * edit method
@@ -108,6 +114,8 @@ class UsersController extends AppController {
 			$options = array('conditions' => array('User.' . $this->User->primaryKey => $id));
 			$this->request->data = $this->User->find('first', $options);
 		}
+		$groups = $this->User->Group->find('list');
+		$this->set(compact('groups'));
 	}
 
 /**
@@ -131,28 +139,4 @@ class UsersController extends AppController {
 		$this->Session->setFlash(__('User was not deleted'), 'flash/error');
 		$this->redirect(array('action' => 'index'));
 	}
-	
-	public function checkUserName() {
-		if ($this->request->is('post')) {
-			$response_data = array();
-			$response_data['username'] = $this->request->data['username'];
-			
-			$response_data['error'] = 0;
-			$response_data['message'] = '';
-			
-			$count = $this->User->find('count', array(
-				'conditions' => array('User.username' => $response_data['username'])
-			));
-			
-			if($count>0){
-				$response_data['error'] = 1;
-				$response_data['message'] = __('This username already exist. Please try another name');
-			} else{
-				$response_data['message'] = __('This username is avalaible!');
-			}
-			
-			
-			return new CakeResponse(array('body'=> json_encode($response_data), 'status' => 200));
-		}
-	}		
 }

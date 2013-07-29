@@ -51,6 +51,7 @@
 	if($cur_controller==='pages' && $cur_action==='display') {
 		echo $this->fetch('content'). "\n";
 	} else if($cur_controller==='users' && ($cur_action==='login' || $cur_action==='signup')) {
+		echo $this->Session->flash(). "\n";
 		echo $this->fetch('content'). "\n";
 	} else {
 	?>
