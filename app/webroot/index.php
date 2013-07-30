@@ -70,6 +70,11 @@ if (!defined('APP_DIR')) {
  * Change at your own risk.
  *
  */
+ 
+if (!defined('DATETIME_FORMAT')) {
+	define('DATETIME_FORMAT', 'F jS, Y H:i');
+}
+ 
 if (!defined('WEBROOT_DIR')) {
 	define('WEBROOT_DIR', basename(dirname(__FILE__)));
 }

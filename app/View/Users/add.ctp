@@ -50,7 +50,9 @@
               <?php echo $this->Form->label('password', 'Password', array('class' => 'control-label'));?>
               <div class="controls">
                 <?php echo $this->Form->input('password', array('class' => 'span5', 'placeholder' => 'Enter Password')); ?>
+				<div id="UserPasswordMessage"></div>
               </div>
+			  
               <!-- .controls -->
             </div>
             <div class="control-group">

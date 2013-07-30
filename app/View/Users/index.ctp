@@ -42,7 +42,7 @@
 		<td class="hid">
 			<?php echo $this->Html->link($user['Group']['name'], array('controller' => 'groups', 'action' => 'view', $user['Group']['id'])); ?>
 		</td>
-		<td class="hid"><?php echo $this->Time->format('F jS, Y H:i', $user['User']['modified']); ?>&nbsp;</td>
+		<td class="hid"><?php echo $this->Time->format(DATETIME_FORMAT, $user['User']['modified'], new DateTimeZone('Asia/Tokyo')); ?>&nbsp;</td>
 		<td class="actions">
 			<div class="btn-group">
 				<?php echo $this->Html->link(__('View'), array('action' => 'view', $user['User']['id']), array('class' => 'btn')); ?>

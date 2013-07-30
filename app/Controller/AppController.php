@@ -41,7 +41,7 @@ class AppController extends Controller {
             ),
 			'loginAction' => array('controller' => 'users', 'action' => 'login'),            
             'logoutRedirect' => array('controller' => 'users', 'action' => 'login'),
-			'loginRedirect' => array('controller' => 'admins', 'action' => 'index'),			
+			'loginRedirect' => array('controller' => 'admin', 'action' => 'index')		
         ),
         'Session'
     );
@@ -54,7 +54,5 @@ class AppController extends Controller {
 		'Session'
     );
 
-	public function beforeFilter() {
-		$this->Auth->allow('display');
-	}
+	
 }

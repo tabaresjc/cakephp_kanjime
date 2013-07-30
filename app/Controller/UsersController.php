@@ -9,26 +9,25 @@ class UsersController extends AppController {
 	public function beforeFilter() {
 		parent::beforeFilter();
 		$this->Auth->allow();
-		//$this->Auth->allow('initDB'); // We can remove this line after we're finished
 	}
 
-	public function initDB() {
-		$group = $this->User->Group;
-		//Allow admins to everything
-		$group->id = 1;
-		$this->Acl->allow($group, 'controllers');
+	// public function initDB() {
+		// // $group = $this->User->Group;
+		// // //Allow admins to everything
+		// // $group->id = 1;
+		// // $this->Acl->allow($group, 'controllers');
 		
-		$group->id = 2;
-		$this->Acl->deny($group, 'controllers');
-		$this->Acl->allow($group, 'controllers/Collections');
-		$this->Acl->allow($group, 'controllers/Pages');
+		// // $group->id = 2;
+		// // $this->Acl->deny($group, 'controllers');
+		// // $this->Acl->allow($group, 'controllers/Collections');
+		// // $this->Acl->allow($group, 'controllers/Pages');
 		
-		$group->id = 3;
-		$this->Acl->deny($group, 'controllers');
-		$this->Acl->allow($group, 'controllers/Pages');
-		echo "all done";
-		exit;
-	}	
+		// // $group->id = 3;
+		// // $this->Acl->deny($group, 'controllers');
+		// // $this->Acl->allow($group, 'controllers/Pages');
+		// // echo "all done";
+		// exit;
+	// }	
 	
 	public function login() {
 		if ($this->request->is('post')) {

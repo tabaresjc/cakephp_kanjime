@@ -1,5 +1,7 @@
 <?php
-
+	$this->append('custom_script');
+	echo "\n\t". $this->Html->script('libs/users');
+	$this->end();
 ?>
     <div id="page-container" class="row-fluid">
       <div id="sidebar" class="span3">
@@ -51,6 +53,7 @@
               <?php echo $this->Form->label('blank_password', 'Password', array('class' => 'control-label'));?>
               <div class="controls">
                 <?php echo $this->Form->input('blank_password', array('class' => 'span5', 'type' => 'password', 'placeholder' => 'Enter Password')); ?>
+				<div id="UserPasswordMessage"></div>
               </div>
               <!-- .controls -->
             </div>
@@ -91,7 +94,7 @@
           </fieldset>
           <div class="well">
             <div class="btn-toolbar">
-              <?php echo $this->Form->submit('Submit', array('class' => 'btn btn-large btn-primary pull-right', 'div' => false)); ?>
+              <?php echo $this->Form->submit('Submit', array('id' => 'UserEditFormSubmit', 'class' => 'btn btn-large btn-primary pull-right', 'div' => false)); ?>
             </div>
             <div class="clearfix"></div>
           </div>

@@ -130,8 +130,7 @@ class User extends AppModel {
 			return (strcmp($this->data[$this->alias]['blank_password'],$this->data[$this->alias]['blank_password_confirm']) == 0 );
 		}
 		return true;
-    }	
-	
+    }
 	
 	public function beforeSave($options = array()) {
 		if (isset($this->data[$this->alias]['blank_password'])) {

@@ -3,6 +3,8 @@ jQuery(document).ready(function($) {
 		setup: function(){
 			if($('#UserAddForm').length > 0) {
 				UsersFunction.setupValidationAddUser();
+			} else if($('#UserEditForm').length > 0 ) {
+				UsersFunction.setupValidationEditUser();
 			}
 		},
 		setupValidationAddUser: function(){
@@ -10,15 +12,63 @@ jQuery(document).ready(function($) {
 			$("#UserUsername").keyup(UsersFunction.checkUserName);
 			$("#UserPassword").keyup(UsersFunction.checkPassword);
 		},
+		setupValidationEditUser: function() {
+			$("#UserEditFormSubmit").click(UsersFunction.validateUserEdit);
+			$("#UserBlankPassword").keyup(UsersFunction.checkPassword);			
+		},
+		validateUserEdit: function() {
+			var goNext = true;
+			
+			$(".control-group .controls .input input, select").each(function(index, element){
+				var oId = $(this).attr('id');
+				var value = $(this).val();
+				var message = '';
+				$(this).popover('destroy');
+				
+				if(oId == 'UserName'){
+					if(UsersFunction.testEmptyString(value)){
+						message += 'You can\'t leave the name empty.';
+					} else if(value.length<5 || value.length>30) {
+						message += 'Please enter between 5 to 30 characters';
+					}
+				} else if(oId == 'UserBlankPassword'){
+					if(!UsersFunction.testEmptyString(value)){
+						if(value.length<8) {
+							message += 'Please enter at least 8 characters';
+						}
+					}
+				} else if(oId == 'UserBlankPasswordConfirm'){
+					var cur_pass = $('#UserBlankPassword').val();
+					if(!UsersFunction.testEmptyString(cur_pass)){
+						if(UsersFunction.testEmptyString(value)){
+							message = 'You need to confirm the password';
+						} else if(value!=cur_pass){
+							message = 'These passwords don\'t match';
+						}
+					}
+				}
+				
+				if(!UsersFunction.testEmptyString(message)){
+					goNext = false;
+					$(this).popover({
+						'content' : message,
+						'placement' : 'right',
+						'delay': { show: 100, hide: 100 }
+					});
+					$(this).popover('show');
+				}				
+			});
+			return goNext;
+		},
 		validateUser: function(){
 			var goNext = true;
-			var userPassword = '';
 			$(".control-group .controls .input input, select").each(function(index, element){
 				$(this).popover('destroy');
 				
 				var oId = $(this).attr('id');
 				var value = $(this).val();
 				var message = '';
+				$(this).popover('destroy');
 				
 				if(oId == 'UserUsername'){
 					if(UsersFunction.testEmptyString(value)){
@@ -28,18 +78,23 @@ jQuery(document).ready(function($) {
 					} else if(value.length<5 || value.length>15) {
 						message += 'Please enter between 5 to 15 characters';
 					}
+				} else if(oId == 'UserName'){
+					if(UsersFunction.testEmptyString(value)){
+						message += 'You can\'t leave the name empty.';
+					} else if(value.length<5 || value.length>30) {
+						message += 'Please enter between 5 to 30 characters';
+					}
 				} else if(oId == 'UserPassword'){
 					if(UsersFunction.testEmptyString(value)){
 						message = 'You can\'t leave the password empty.';
 					} else if(value.length<8) {
 						message += 'Please enter at least 8 characters';
-					} else {
-						userPassword = value;
 					}
 				} else if(oId == 'UserPasswordConfirm'){
+					var cur_pass = $('#UserPassword').val();
 					if(UsersFunction.testEmptyString(value)){
 						message = 'You need to confirm the password';
-					} else if(value!=userPassword){
+					} else if(value!=cur_pass){
 						message = 'These passwords don\'t match';
 					}
 				} else if(oId == 'UserRole'){
@@ -84,8 +139,8 @@ jQuery(document).ready(function($) {
 				}
 			}
 		},
-		checkPassword: function(){
-			var up = $('#UserPassword').val();
+		checkPassword: function(id){
+			var up = $(this).val();
 			if(up.length>1){
 				var strength = 0;
 
@@ -93,16 +148,16 @@ jQuery(document).ready(function($) {
 				strength += /[a-z]+/.test(up) ? 1 : 0;
 				strength += /[0-9]+/.test(up) ? 1 : 0;
 				strength += /[\W]+/.test(up) ? 1 : 0;
-
+				$("#UserPasswordMessage").empty();
 				switch(strength) {
 					case 3:
-						$("#userPasswordMessage").html('<span class="label label-info">Strong</span>');
+						$("#UserPasswordMessage").html('<span class="label label-info">Strong</span>');
 						break;
 					case 4:
-						$("#userPasswordMessage").html('<span class="label label-success">Awesome</span>');
+						$("#UserPasswordMessage").html('<span class="label label-success">Awesome</span>');
 						break;
 					default:
-						$("#userPasswordMessage").html('<span class="label label-important">Weak</span>');
+						$("#UserPasswordMessage").html('<span class="label label-important">Weak</span>');
 						break;
 				}
 

@@ -1,53 +1,86 @@
 <?php
-	$user = $this->Session->read('Auth.User');
-	$menu_class = array();
-	$menu_class[] = $this->params['controller']=='collections' ? 'active' : '';
-	$menu_class[] = $this->params['controller']=='users' ? 'active' : '';
+	if($cur_controller==='users' && ($cur_action==='login' || $cur_action==='signup')){
+		return;
+	}
 ?>
-
-			<div class="navbar navbar-inverse">
-				<div class="navbar-inner">
-					<div class="container">
-						<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-							<span class="icon-bar"></span>
-						</a>
-						<?php echo $this->Html->link('Kanji Me!', array('controller' => 'admins', 'action' => 'index'), array('class' => 'brand')); ?>
-						<div class="nav-collapse">
-							<ul class="nav">
-								<li><?php echo $this->Html->link(__('Home'), '/'); ?></li>
-								<?php if(!empty($user)) { ?>
-								<li class="dropdown <?php echo $menu_class[0]; ?>">
-									<?php echo $this->Html->link(__('Names'), '#', array( 'data-toggle' =>'dropdown', 'class' => 'dropdown-toggle', 'inline-html' => '<b class="caret"></b>')); ?>
-									<ul class="dropdown-menu">
-										<li><?php echo $this->Html->link(__('List Names'), array('controller' => 'collections', 'action' => 'index')); ?></li>
-										<li><?php echo $this->Html->link(__('Add Name'), array('controller' => 'collections', 'action' => 'add')); ?></li>
-									</ul>
-								</li>
-								<li class="dropdown <?php echo $menu_class[1]; ?>">
-									<?php echo $this->Html->link(__('Users'), '#', array( 'data-toggle' =>'dropdown', 'class' => 'dropdown-toggle', 'inline-html' => '<b class="caret"></b>')); ?>
-									<ul class="dropdown-menu">
-										<li><?php echo $this->Html->link(__('List Users'), array('controller' => 'users', 'action' => 'index')); ?></li>
-										<li><?php echo $this->Html->link(__('Add User'), array('controller' => 'users', 'action' => 'add')); ?></li>
-									</ul>
-								</li>
-								<?php } ?>
-							</ul>
-							<?php if(!empty($user)) { ?>
-							<ul class="nav pull-right">
-								<li><?php echo $this->Html->link('Hi '. $user['name'], array('controller' => 'users', 'action' => 'view', $user['id'])); ?></li>
-								<li>
-									<?php
-									echo $this->Form->create('User', array('action' => 'logout' , 'class' => 'navbar-form pull-right', 'inputDefaults' => array('label' => false,'div' => false)));
-									echo $this->Form->button('Sign Out', array('type' => 'submit', 'class' => 'btn btn-success'));
-									echo $this->Form->end();
-									?>
-								</li>
-							</ul>
-							<?php } ?>
-						</div>
-					</div>
-				</div>
-			</div>
-			
+    <!-- navbar -->
+    <div class="navbar navbar-inverse">
+        <div class="navbar-inner">
+            <button type="button" class="btn btn-navbar visible-phone" id="menu-toggler">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <?php echo $this->Html->link('', array('controller' => 'admin', 'action' => 'index'), array('class' => 'brand', 'inline-html' => '<img src="/admin/img/logo.png">')); ?>
+			<?php if(!empty($user)) { ?>
+            <ul class="nav pull-right">                
+                <li class="hidden-phone">
+                    <input class="search" type="text" />
+                </li>
+				<!--
+				<li class="notification-dropdown hidden-phone">
+                    <a href="#" class="trigger">
+                        <i class="icon-warning-sign"></i>
+                        <span class="count">8</span>
+                    </a>
+					
+                    <div class="pop-dialog">
+                        <div class="pointer right">
+                            <div class="arrow"></div>
+                            <div class="arrow_border"></div>
+                        </div>
+                        <div class="body">
+                            <a href="#" class="close-icon"><i class="icon-remove-sign"></i></a>
+                            <div class="notifications">
+                                <h3>You have 6 new notifications</h3>
+                                <a href="#" class="item">
+                                    <i class="icon-signin"></i> New user registration
+                                    <span class="time"><i class="icon-time"></i> 13 min.</span>
+                                </a>
+                                <a href="#" class="item">
+                                    <i class="icon-signin"></i> New user registration
+                                    <span class="time"><i class="icon-time"></i> 18 min.</span>
+                                </a>
+                                <a href="#" class="item">
+                                    <i class="icon-envelope-alt"></i> New message from Alejandra
+                                    <span class="time"><i class="icon-time"></i> 28 min.</span>
+                                </a>
+                                <a href="#" class="item">
+                                    <i class="icon-signin"></i> New user registration
+                                    <span class="time"><i class="icon-time"></i> 49 min.</span>
+                                </a>
+                                <a href="#" class="item">
+                                    <i class="icon-download-alt"></i> New order placed
+                                    <span class="time"><i class="icon-time"></i> 1 day.</span>
+                                </a>
+                                <div class="footer">
+                                    <a href="#" class="logout">View all notifications</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+				-->
+                <li class="dropdown">
+                    <a href="#" class="dropdown-toggle hidden-phone" data-toggle="dropdown">
+                        <?php echo $user['name']; ?>
+                        <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu">
+                        <li><?php echo $this->Html->link('Profile', array('controller' => 'users', 'action' => 'edit', $user['id'])); ?></li>
+                        <li><?php echo $this->Html->link(__('Add User'), array('controller' => 'users', 'action' => 'add')); ?></li>
+                        <li><?php echo $this->Html->link(__('List User'), array('controller' => 'users', 'action' => 'index')); ?></li>
+						<li class="divider"></li>
+						<li class="settings hidden-phone">
+							<a href="javascript:void(0);" onclick="document.getElementById('UserLogoutForm').submit();">Logout</a>
+							<?php echo $this->Form->create('User', array('action' => 'logout' , 'class' => 'navbar-form pull-right', 'inputDefaults' => array('label' => false,'div' => false))); ?>
+							<?php echo $this->Form->end(); ?>
+						</li>
+						
+                    </ul>
+                </li>
+            </ul>
+			<?php } ?>
+        </div>
+    </div>
+	<!-- end navbar -->

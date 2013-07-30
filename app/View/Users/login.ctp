@@ -1,12 +1,17 @@
 <?php
-
+	$this->append('custom_css');
+	echo "\t". '<!-- this page specific styles -->' . "\n";
+	echo "\t". '<link rel="stylesheet" href="/admin/css/compiled/signin.css" type="text/css" media="screen" />';
+	$this->end();
 ?>
 	<div class="row-fluid login-wrapper">
+		<!--
 		<a href="index.html">
 			<img class="logo" src="/img/logo.png">
 		</a>
-
-		<?php echo $this->Form->create('User', array('class' => 'span4 box')); ?>
+		-->
+		<div class="box">
+		<?php echo $this->Form->create('User', array('class' => 'content-wrap')); ?>
 			<div class="content-wrap">
 				<h6><?php echo __('Log in'); ?></h6>
 				<?php 
@@ -21,7 +26,7 @@
 				?>
 			</div>
 		<?php echo $this->Form->end(); ?>		
-
+		</div>
 		<div class="span4 no-account">
 			<p>Don't have an account?</p>
 			<a href="signup.html">Sign up</a>

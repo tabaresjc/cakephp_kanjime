@@ -87,7 +87,7 @@
                   <?php echo __('Created'); ?>
                 </strong>
               </td>
-              <td><?php echo h($user['User']['created']); ?>&nbsp;</td>
+              <td><?php echo $this->Time->format(DATETIME_FORMAT,$user['User']['created']); ?>&nbsp;</td>
             </tr>
             <tr>
               <td>
@@ -95,7 +95,7 @@
                   <?php echo __('Modified'); ?>
                 </strong>
               </td>
-              <td><?php echo h($user['User']['modified']); ?>&nbsp;</td>
+              <td><?php echo $this->Time->format(DATETIME_FORMAT,$user['User']['modified']); ?>&nbsp;</td>
             </tr>
           </table>
           <!-- .table table-striped table-bordered -->
