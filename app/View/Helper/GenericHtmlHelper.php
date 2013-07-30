@@ -51,24 +51,21 @@ class GenericHtmlHelper extends HtmlHelper {
 			$css .= "\t" . '<link href="/admin/css/bootstrap/bootstrap.css" rel="stylesheet" />' . "\n";
 			$css .= "\t" . '<link href="/admin/css/bootstrap/bootstrap-responsive.css" rel="stylesheet" />' . "\n";
 			$css .= "\t" . '<link href="/admin/css/bootstrap/bootstrap-overrides.css" type="text/css" rel="stylesheet" />' . "\n";
+			
 			$css .= "\t" . '<!-- libraries -->' . "\n";
-			$css .= "\t" . '<link href="/admin/css/lib/jquery-ui-1.10.2.custom.css" rel="stylesheet" type="text/css" />' . "\n";
 			$css .= "\t" . '<link href="/admin/css/lib/font-awesome.css" type="text/css" rel="stylesheet" />' . "\n";
+			
 			$css .= "\t" . '<!-- global styles -->' . "\n";
 			$css .= "\t" . '<link rel="stylesheet" type="text/css" href="/admin/css/layout.css">' . "\n";
 			$css .= "\t" . '<link rel="stylesheet" type="text/css" href="/admin/css/elements.css">' . "\n";
 			$css .= "\t" . '<link rel="stylesheet" type="text/css" href="/admin/css/icons.css">' . "\n";
-			$css .= "\t" . '<!-- this page specific styles -->' . "\n";
-			$css .= "\t" . '<link rel="stylesheet" href="/admin/css/compiled/index.css" type="text/css" media="screen" />' . "\n";
+
 			$css .= "\t" . '<!-- open sans font -->' . "\n";
 			$css .= "\t" . '<link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">' . "\n";
-			$css .= "\t" . '<!-- lato font -->' . "\n";
-			$css .= "\t" . '<link href="http://fonts.googleapis.com/css?family=Lato:300,400,700,900,300italic,400italic,700italic,900italic" rel="stylesheet" type="text/css">' . "\n";
+
 			$css .= "\t" . '<!--[if lt IE 9]>' . "\n";
 			$css .= "\t" . '  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>' . "\n";
 			$css .= "\t" . '<![endif]-->' . "\n";
-			
-
 		}
 		return $css;
 	}
@@ -86,9 +83,7 @@ class GenericHtmlHelper extends HtmlHelper {
 			$script .= "\t" . '<!-- scripts -->' . "\n";
 			$script .= "\t" . '<script src="http://code.jquery.com/jquery-latest.js"></script>' . "\n";
 			$script .= "\t" . '<script src="/admin/js/bootstrap.min.js"></script>' . "\n";
-			$script .= "\t" . '<script src="/admin/js/jquery-ui-1.10.2.custom.min.js"></script>' . "\n";
 			$script .= "\t" . '<script src="/admin/js/theme.js"></script>' . "\n";
-			
 		} 
 		return $script;		
 	}

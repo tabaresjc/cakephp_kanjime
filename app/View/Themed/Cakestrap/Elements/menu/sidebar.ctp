@@ -12,31 +12,25 @@
                     <div class="arrow"></div>
                     <div class="arrow_border"></div>
                 </div>
-                <a href="index.html">
+                <a href="/">
                     <i class="icon-home"></i>
                     <span>Home</span>
                 </a>
-            </li>            
-            <li>
-                <a href="chart-showcase.html">
-                    <i class="icon-signal"></i>
-                    <span>Charts</span>
-                </a>
             </li>
             <li>
-                <a class="dropdown-toggle" href="#">
+                <a class="dropdown-toggle" href="javascript:void(0);">
                     <i class="icon-group"></i>
                     <span>Users</span>
                     <i class="icon-chevron-down"></i>
                 </a>
                 <ul class="submenu">
-                    <li><a href="user-list.html">User list</a></li>
-                    <li><a href="new-user.html">New user form</a></li>
-                    <li><a href="user-profile.html">User profile</a></li>
+                    <li><?php echo $this->Html->link('User List', array('controller' => 'users', 'action' => 'index'));?></li>
+					<li><?php echo $this->Html->link('Profile', array('controller' => 'users', 'action' => 'edit', $user['id'])); ?></li>
+                    <li><?php echo $this->Html->link('New User', array('controller' => 'users', 'action' => 'add')); ?></li>
                 </ul>
             </li>
             <li>
-                <a class="dropdown-toggle" href="#">
+                <a class="dropdown-toggle" href="javascript:void(0);">
                     <i class="icon-edit"></i>
                     <span>Forms</span>
                     <i class="icon-chevron-down"></i>
@@ -65,7 +59,7 @@
                 </a>
             </li>
             <li>
-                <a class="dropdown-toggle ui-elements" href="#">
+                <a class="dropdown-toggle ui-elements" href="javascript:void(0);">
                     <i class="icon-code-fork"></i>
                     <span>UI Elements</span>
                     <i class="icon-chevron-down"></i>
@@ -82,7 +76,7 @@
                 </a>
             </li>
             <li>
-                <a class="dropdown-toggle" href="#">
+                <a class="dropdown-toggle" href="javascript:void(0);">
                     <i class="icon-share-alt"></i>
                     <span>Extras</span>
                     <i class="icon-chevron-down"></i>

@@ -8,24 +8,24 @@ App::uses('AppController', 'Controller');
 class UsersController extends AppController {
 	public function beforeFilter() {
 		parent::beforeFilter();
-		$this->Auth->allow();
+		$this->Auth->allow('signup');
 	}
 
 	// public function initDB() {
-		// // $group = $this->User->Group;
-		// // //Allow admins to everything
-		// // $group->id = 1;
-		// // $this->Acl->allow($group, 'controllers');
+		// $group = $this->User->Group;
+		// //Allow admins to everything
+		// $group->id = 1;
+		// $this->Acl->allow($group, 'controllers');
 		
-		// // $group->id = 2;
-		// // $this->Acl->deny($group, 'controllers');
-		// // $this->Acl->allow($group, 'controllers/Collections');
-		// // $this->Acl->allow($group, 'controllers/Pages');
+		// $group->id = 2;
+		// $this->Acl->deny($group, 'controllers');
+		// $this->Acl->allow($group, 'controllers/Collections');
+		// $this->Acl->allow($group, 'controllers/Pages');
 		
-		// // $group->id = 3;
-		// // $this->Acl->deny($group, 'controllers');
-		// // $this->Acl->allow($group, 'controllers/Pages');
-		// // echo "all done";
+		// $group->id = 3;
+		// $this->Acl->deny($group, 'controllers');
+		// $this->Acl->allow($group, 'controllers/Pages');
+		// echo "all done";
 		// exit;
 	// }	
 	

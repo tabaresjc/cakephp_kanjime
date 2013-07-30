@@ -58,10 +58,18 @@
 		echo "\n";
 		echo $this->element('menu/top_menu', array('user' => $user_data, 'cur_controller' => $cur_controller, 'cur_action' => $cur_action));
 		echo $this->element('menu/sidebar', array('user' => $user_data, 'cur_controller' => $cur_controller, 'cur_action' => $cur_action));
-		echo $this->element('menu/content_header', array('user' => $user_data, 'cur_controller' => $cur_controller, 'cur_action' => $cur_action));
-		echo $this->Session->flash(). "\n";
-		echo $this->fetch('content'). "\n";
-		echo $this->element('menu/content_footer', array('user' => $user_data, 'cur_controller' => $cur_controller, 'cur_action' => $cur_action));
+		
+		if($cur_controller==='users' && ($cur_action==='login' || $cur_action==='signup')){
+			echo $this->Session->flash(). "\n";
+			echo $this->fetch('content'). "\n";
+		} else {
+			echo $this->element('menu/content_header');
+			echo $this->Session->flash(). "\n";
+			echo $this->fetch('content'). "\n";
+			echo $this->element('menu/content_footer');
+		}
+		
+		
 		if(Configure::read('debug') > 1 ){
 			echo "\t" . '<div class="container">' . "\n";
 			echo "\t" . '	<div class="well">' . "\n";
