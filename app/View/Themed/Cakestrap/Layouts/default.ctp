@@ -16,18 +16,18 @@
  * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
 	$cakeDescription = __d('cake_dev', 'Kanji Me!');
-	
+
 	$cur_controller = $this->params['controller'];
 	$cur_action = $this->params['action'];
-	
+
 	$this->start('htmlstart');
 	echo $this->Html->addHtmlStart($cur_controller,$cur_action);
-	$this->end();	
-	
+	$this->end();
+
 	$this->start('meta');
 	echo $this->Html->addMetaLinks($cur_controller,$cur_action);
 	$this->end();
-	
+
 	$this->start('css');
 	echo $this->Html->addCssLinks($cur_controller,$cur_action);
 	$this->end();
@@ -35,7 +35,15 @@
 	$this->start('script');
 	echo $this->Html->addScriptsLinks($cur_controller,$cur_action);
 	$this->end();
-	
+
+	$this->start('fontlinks');
+	echo $this->Html->addFontsLinks($cur_controller,$cur_action);
+	$this->end();
+
+
+	$this->start('iconlinks');
+	echo $this->Html->addIconsLinks($cur_controller,$cur_action);
+	$this->end();
 	$user_data = $this->Session->read('Auth.User');
 ?>
 <?php echo $this->fetch('htmlstart'); ?>
@@ -46,30 +54,24 @@
 	echo $this->fetch('meta') . "\n";
 	echo $this->fetch('css') . "\n";
 	echo $this->fetch('custom_css') . "\n";
+	echo $this->fetch('fontlinks') . "\n";
+	echo $this->fetch('iconlinks');
 	?>
 </head>
 <body>
 	<?php
 	if($cur_controller==='pages' && $cur_action==='display') {
 		echo $this->fetch('content'). "\n";
+	} else if($cur_controller==='users' && ($cur_action==='login' || $cur_action==='signup')){
+		echo $this->Session->flash(). "\n";
+		echo $this->fetch('content'). "\n";
 	} else {
-	?>
-	<?php 
-		echo "\n";
 		echo $this->element('menu/top_menu', array('user' => $user_data, 'cur_controller' => $cur_controller, 'cur_action' => $cur_action));
 		echo $this->element('menu/sidebar', array('user' => $user_data, 'cur_controller' => $cur_controller, 'cur_action' => $cur_action));
-		
-		if($cur_controller==='users' && ($cur_action==='login' || $cur_action==='signup')){
-			echo $this->Session->flash(). "\n";
-			echo $this->fetch('content'). "\n";
-		} else {
-			echo $this->element('menu/content_header');
-			echo $this->Session->flash(). "\n";
-			echo $this->fetch('content'). "\n";
-			echo $this->element('menu/content_footer');
-		}
-		
-		
+		echo "\n" . $this->element('menu/content_header');
+		echo $this->Session->flash(). "\n";
+		echo $this->fetch('content'). "\n";
+		echo $this->element('menu/content_footer');
 		if(Configure::read('debug') > 1 ){
 			echo "\t" . '<div class="container">' . "\n";
 			echo "\t" . '	<div class="well">' . "\n";
@@ -77,11 +79,11 @@
 			echo $this->element('sql_dump');
 			echo "\t" . '		</small>' . "\n";
 			echo "\t" . '	</div>' . "\n";
-			echo "\t" . '</div>' . "\n";			
+			echo "\t" . '</div>' . "\n";
 		}
 	}
 	echo $this->fetch('script');
-	echo $this->fetch('custom_script');	
+	echo $this->fetch('custom_script');
 	?>
 </body>
 </html>

@@ -6,7 +6,6 @@
 	$first_class = 'first';
 ?>
 
-
 	<div class="users-list">
 		<div class="row-fluid header">
 			<h3><?php echo __('Users'); ?></h3>
@@ -98,7 +97,6 @@
 				echo $this->Paginator->numbers(array('separator' => '', 'currentTag' => 'a', 'tag' => 'li', 'currentClass' => 'active'));
 				echo $this->Paginator->next('>', array('tag' => 'li'), null, array('class' => 'disabled', 'tag' => 'li', 'disabledTag' => 'a'));
 				?>
-				
 			</ul>
 		</div>
 		

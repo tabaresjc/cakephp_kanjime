@@ -1,5 +1,6 @@
 <?php
 App::uses('AppModel', 'Model');
+App::uses('AuthComponent', 'Controller/Component');
 /**
  * User Model
  *
@@ -99,7 +100,6 @@ class User extends AppModel {
 	);
 	*/
     public $belongsTo = array('Group');
-    public $actsAs = array('Acl' => array('type' => 'requester'));
 
 	public function bindNode($user) {
 		return array('model' => 'Group', 'foreign_key' => $user['User']['group_id']);
@@ -133,12 +133,12 @@ class User extends AppModel {
     }
 	
 	public function beforeSave($options = array()) {
-		if (isset($this->data[$this->alias]['blank_password'])) {
-			$this->data[$this->alias]['password'] = AuthComponent::password($this->data[$this->alias]['blank_password']);
-		}
-		
 		if (isset($this->data[$this->alias]['password'])) {
 			$this->data[$this->alias]['password'] = AuthComponent::password($this->data[$this->alias]['password']);
+		}
+		
+		if (isset($this->data[$this->alias]['blank_password']) && strlen($this->data[$this->alias]['blank_password'])>0) {
+			$this->data[$this->alias]['password'] = AuthComponent::password($this->data[$this->alias]['blank_password']);
 		}
 		return true;
 	}	

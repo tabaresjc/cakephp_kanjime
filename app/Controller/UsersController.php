@@ -6,9 +6,13 @@ App::uses('AppController', 'Controller');
  * @property User $User
  */
 class UsersController extends AppController {
+	public $paginate = array(
+		'limit' => 10
+	);
+	
 	public function beforeFilter() {
 		parent::beforeFilter();
-		$this->Auth->allow('signup');
+		//$this->Auth->allow();
 	}
 
 	// public function initDB() {

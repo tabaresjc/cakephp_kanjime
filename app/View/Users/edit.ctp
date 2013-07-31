@@ -1,106 +1,57 @@
 <?php
+	$this->append('custom_css');
+	echo "\t" . '<!-- this page specific styles -->' . "\n";
+	echo "\t" . '<link rel="stylesheet" href="/admin/css/compiled/new-user.css" type="text/css" media="screen" />' . "\n";
+	$this->end();
 	$this->append('custom_script');
 	echo "\n\t". $this->Html->script('libs/users');
 	$this->end();
 ?>
-    <div id="page-container" class="row-fluid">
-      <div id="sidebar" class="span3">
-        <div class="actions">
-          <ul class="nav nav-list bs-docs-sidenav">
-            <li>
-              <?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $this->Form->value('User.id')), null, __('Are you sure you want to delete # %s?', $this->Form->value('User.id'))); ?>
-            </li>
-            <li>
-              <?php echo $this->Html->link(__('List Users'), array('action' => 'index')); ?>
-            </li>
-            <li>
-              <?php echo $this->Html->link(__('List Groups'), array('controller' => 'groups', 'action' => 'index')); ?>
-            </li>
-            <li>
-              <?php echo $this->Html->link(__('New Group'), array('controller' => 'groups', 'action' => 'add')); ?>
-            </li>
-          </ul>
-          <!-- .nav nav-list bs-docs-sidenav -->
-        </div>
-        <!-- .actions -->
-      </div>
-      <!-- #sidebar .span3 -->
-      <div id="page-content" class="span9">
-        <div class="users form">
-          <?php echo $this->Form->create('User', array('inputDefaults' => array('label' => false), 'class' => 'form form-horizontal', 'autocomplete'=>'off')); ?>
-          <fieldset>
-            <h2>
-              <?php echo __('Edit User'); ?>
-            </h2>
+	<div class="new-user">
+		<div class="row-fluid header">
+			<h3><?php echo __('Edit Profile'); ?></h3>
+		</div>
+		<div class="row-fluid form-wrapper">
+			<!-- left column -->
+			<div class="span9">
+				<div class="container">
+					<?php echo $this->Form->create('User', array('id' => 'UserEditForm','inputDefaults' => array('label' => false, 'div' => false), 'class' => 'new_user_form', 'autocomplete'=>'off')); ?>
+						<div class="span12 field-box">
+							<?php echo $this->Form->input('uname', array('label' => 'Username:', 'class' => 'span7', 'value' => $this->Form->value('User.username'), 'maxlength' => '20', 'disabled' => '1')); ?>
+						</div>
+						<div class="span12 field-box">
+							<?php echo $this->Form->input('name', array('label' => 'Name:', 'class' => 'span7', 'placeholder' => 'First Name | Last Name', 'maxlength' => '30')); ?>			
+						</div>
+						<div class="span12 field-box">
+							<?php echo $this->Form->input('blank_password', array('label' => 'Password:', 'type' => 'password', 'class' => 'span7', 'placeholder' => 'Enter Password', 'maxlength' => '20')); ?>
+							<div id="UserPasswordMessage"></div>
+						</div>
+						<div class="span12 field-box">
+							<?php echo $this->Form->input('blank_password_confirm', array('label' => 'Repeat:', 'type'=>'password', 'class' => 'span7', 'placeholder' => 'Confirm Password', 'maxlength' => '20')); ?>
+						</div>
+						<div class="span12 field-box">
+							<?php echo $this->Form->input('email', array('label' => 'Email:', 'type' => 'text', 'class' => 'span7', 'placeholder' => 'youremail@yourdomain.com', 'maxlength' => '100')); ?>
+						</div>	
+						<div class="span12 field-box">
+							<?php echo $this->Form->input('address', array('label' => 'Address:','class' => 'span7', 'placeholder' => 'Write your address', 'maxlength' => '255')); ?>
+						</div>
+						<div class="span12 field-box">
+							<label>Group:</label>
+							<div class="ui-select">
+								<?php echo $this->Form->input('group_id'); ?>
+							</div>
+						</div>
+						<div class="span11 field-box actions">
+							<hr/>
+							<?php echo $this->Html->Link('Cancel', array('controller'=>'users','action'=>'index'),  array('class' => 'btn btn-danger')); ?>
+							<?php echo $this->Form->button('Save Changes', array('id' => 'UserAddFormSubmit', 'type' => 'submit', 'class'=>'btn-glow primary pull-right')); ?>
+						</div>
+						<?php echo $this->Form->hidden('id'); ?>
+						<?php echo $this->Form->hidden('username'); ?>
+					<?php echo $this->Form->end(); ?>
+				</div>
+			</div>
 
-            <div class="control-group">
-              <?php echo $this->Form->label('uname', 'Username', array('class' => 'control-label'));?>
-              <div class="controls">
-                <?php echo $this->Form->input('uname', array('class' => 'form-control', 'value' => $this->Form->value('User.username'), 'disabled' => '1')); ?>
-              </div>
-              <!-- .controls -->
-            </div>
-			<!-- .control-group -->
-            <div class="control-group">
-              <?php echo $this->Form->label('name', 'Name', array('class' => 'control-label'));?>
-              <div class="controls">
-                <?php echo $this->Form->input('name', array( 'class' => 'span5', 'placeholder' => 'First Name and Last Name')); ?>
-              </div>
-              <!-- .controls -->
-            </div>
-            <!-- .control-group -->
-            <div class="control-group">
-              <?php echo $this->Form->label('blank_password', 'Password', array('class' => 'control-label'));?>
-              <div class="controls">
-                <?php echo $this->Form->input('blank_password', array('class' => 'span5', 'type' => 'password', 'placeholder' => 'Enter Password')); ?>
-				<div id="UserPasswordMessage"></div>
-              </div>
-              <!-- .controls -->
-            </div>
-			<div class="control-group">
-			  <?php echo $this->Form->label('blank_password_confirm', 'Confirm password', array('class' => 'control-label'));?>
-			  <div class="controls">
-				<?php echo $this->Form->input('blank_password_confirm', array('type'=>'password', 'class' => 'span5', 'placeholder' => 'Confirm Password')); ?>
-			  </div>
-			  <!-- .controls -->
-			</div>			
-            <!-- .control-group -->
-			<div class="control-group">
-              <?php echo $this->Form->label('email', 'Email', array('class' => 'control-label'));?>
-              <div class="controls">
-                <?php echo $this->Form->input('email', array( 'class' => 'span5', 'placeholder' => 'youremail@yourdomain.com')); ?>
-              </div>
-              <!-- .controls -->
-            </div>
-            <!-- .control-group -->
-            <div class="control-group">
-              <?php echo $this->Form->label('address', 'Address', array('class' => 'control-label'));?>
-              <div class="controls">
-                <?php echo $this->Form->input('address', array( 'class' => 'span7', 'placeholder' => 'Write your address')); ?>
-              </div>
-              <!-- .controls -->
-            </div>
-            <!-- .control-group -->
-            <div class="control-group">
-              <?php echo $this->Form->label('group_id', 'Group', array('class' => 'control-label'));?>
-              <div class="controls">
-                <?php echo $this->Form->input('group_id', array('class' => 'span5')); ?>
-              </div>
-              <!-- .controls -->
-            </div>
-			<?php echo $this->Form->hidden('id'); ?>
-			<?php echo $this->Form->hidden('username'); ?>
-            <!-- .control-group -->
-          </fieldset>
-          <div class="well">
-            <div class="btn-toolbar">
-              <?php echo $this->Form->submit('Submit', array('id' => 'UserEditFormSubmit', 'class' => 'btn btn-large btn-primary pull-right', 'div' => false)); ?>
-            </div>
-            <div class="clearfix"></div>
-          </div>
-		  <?php echo $this->Form->end(); ?>		 
-        </div>
-      </div>
-      <!-- #page-content .span9 -->
-    </div>
-    <!-- #page-container .row-fluid -->
+		</div>
+	</div>
+

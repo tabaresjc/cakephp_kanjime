@@ -19,7 +19,7 @@ jQuery(document).ready(function($) {
 		validateUserEdit: function() {
 			var goNext = true;
 			
-			$(".control-group .controls .input input, select").each(function(index, element){
+			$("#UserEditForm .field-box input, select").each(function(index, element){
 				var oId = $(this).attr('id');
 				var value = $(this).val();
 				var message = '';
@@ -62,7 +62,7 @@ jQuery(document).ready(function($) {
 		},
 		validateUser: function(){
 			var goNext = true;
-			$(".control-group .controls .input input, select").each(function(index, element){
+			$("#UserAddForm .field-box input, select").each(function(index, element){
 				$(this).popover('destroy');
 				
 				var oId = $(this).attr('id');
@@ -75,7 +75,7 @@ jQuery(document).ready(function($) {
 						message += 'You can\'t leave the username empty.';
 					} else if($('#userNameMessage #em').length>0){
 						message += 'Please try another name';
-					} else if(value.length<5 || value.length>15) {
+					} else if(value.length<5 || value.length>20) {
 						message += 'Please enter between 5 to 15 characters';
 					}
 				} else if(oId == 'UserName'){
@@ -141,7 +141,7 @@ jQuery(document).ready(function($) {
 		},
 		checkPassword: function(id){
 			var up = $(this).val();
-			if(up.length>1){
+			if(up.length>0){
 				var strength = 0;
 
 				strength += /[A-Z]+/.test(up) ? 1 : 0;
@@ -162,6 +162,8 @@ jQuery(document).ready(function($) {
 				}
 
 								
+			}else{
+				$("#UserPasswordMessage").empty();
 			}
 		},
 		testEmptyString: function(str) {

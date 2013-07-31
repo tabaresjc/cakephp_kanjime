@@ -6,7 +6,9 @@ App::uses('AppController', 'Controller');
  * @property Collection $Collection
  */
 class CollectionsController extends AppController {
-
+	public $paginate = array(
+		'limit' => 10
+	);
 /**
  * index method
  *

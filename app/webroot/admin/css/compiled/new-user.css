@@ -18,6 +18,8 @@
     font-size: 13px;
     cursor: auto;
     width: 120px; }
+  #UserPasswordMessage {
+	margin-left:120px; }
   .new-user .form-wrapper input[type="text"] {
     margin: 0;
     padding: 3px 6px; }
@@ -49,9 +51,8 @@
       font-size: 13px;
       font-style: italic; }
   .new-user .actions {
-    margin-top: 30px;
-    text-align: right;
-    padding-right: 40px; }
+    margin-top: 0px;
+    }
     .new-user .actions span {
       text-transform: uppercase;
       color: #7e91aa;
@@ -59,9 +60,7 @@
       display: inline-block;
       vertical-align: middle;
       margin: 0 2px 0 8px; }
-    .new-user .actions input.reset {
-      color: #7e91aa;
-      font-weight: 500; }
+    
   .new-user .form-sidebar .alert {
     margin: 20px 0px 60px 0px; }
     .new-user .form-sidebar .alert i {
@@ -78,7 +77,17 @@
     .new-user .form-sidebar ul a {
       text-decoration: underline; }
 
+	
 /* responsive */
+@media (max-width: 979px) {
+  .new-user .form-wrapper .address-fields {
+    margin-top: 30px;
+    width: 100%; }
+  .new-user .form-wrapper input.small {
+    width: inherit;
+    margin: 20px 0px 0px 0px; } 
+}
+
 @media (max-width: 767px) {
   .new-user .form-wrapper .container {
     width: 100%;
@@ -94,6 +103,8 @@
     width: 100%;
     text-align: left;
     margin-bottom: 10px; }
+  #UserPasswordMessage {
+	margin-left:0px; }	
   .new-user .form-wrapper .textarea textarea {
     width: 97%; }
   .new-user .textarea span.charactersleft {
@@ -103,10 +114,3 @@
     margin-top: 0; }
   .new-user .form-sidebar {
     margin-top: 40px; } }
-@media (max-width: 979px) {
-  .new-user .form-wrapper .address-fields {
-    margin-top: 30px;
-    width: 100%; }
-  .new-user .form-wrapper input.small {
-    width: inherit;
-    margin: 20px 0px 0px 0px; } }

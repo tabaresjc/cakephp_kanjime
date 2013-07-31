@@ -8,7 +8,6 @@ body {
 	/*-webkit-font-smoothing: antialiased;*/
 }
 h1,h2,h3,h4,h5 {
-	margin: 0;
 	line-height: inherit;
 	color: #29323d;
 }
@@ -30,7 +29,7 @@ input.search{
 }
 
 .header{
-	margin-bottom: 60px;
+	margin-bottom: 30px;
 }
 .header h1,
 .header h2,
@@ -245,15 +244,13 @@ input.search{
 	margin-top: 6px;
 }
 
-
-
 /* Sidebar */
 #sidebar-nav {
 	position: absolute;
 	width: 180px;
 	float: left;
 	margin: 0em;
-	padding-top: 5.8em;	
+	padding-top: 3em;	
 }
 #dashboard-menu {
 	list-style: none;
@@ -399,7 +396,7 @@ input.search{
 
 #pad-wrapper {
 	padding: 0px 25px;
-	margin-top: 55px;
+	margin-top: 30px;
 }
 #pad-wrapper h4 {
 	margin: 0 0 0 20px;

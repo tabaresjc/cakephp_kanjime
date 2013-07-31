@@ -41,7 +41,7 @@ class AppController extends Controller {
             ),
 			'loginAction' => array('controller' => 'users', 'action' => 'login'),            
             'logoutRedirect' => array('controller' => 'users', 'action' => 'login'),
-			'loginRedirect' => array('controller' => 'admin', 'action' => 'index')		
+			'loginRedirect' => '/'		
         ),
         'Session'
     );
@@ -53,6 +53,4 @@ class AppController extends Controller {
 		'Form', 
 		'Session'
     );
-
-	
 }
