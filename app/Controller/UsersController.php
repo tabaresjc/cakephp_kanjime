@@ -31,7 +31,7 @@ class UsersController extends AppController {
 		// $this->Acl->allow($group, 'controllers/Pages');
 		// echo "all done";
 		// exit;
-	// }	
+	// }
 	
 	public function login() {
 		if ($this->request->is('post')) {
@@ -60,6 +60,12 @@ class UsersController extends AppController {
  */
 	public function index() {
 		$this->User->recursive = 0;
+		$query = '';
+		if(isset($this->request->query['q'])) {
+			$query = $this->request->query['q'];
+            $this->paginate['conditions'][]['User.name LIKE'] = "%$query%";
+        }
+		$this->set('query', $query);
 		$this->set('users', $this->paginate());
 	}
 
@@ -108,7 +114,7 @@ class UsersController extends AppController {
 				'email' => '',
 				'address' => ''
 			);
-			$this->data = array( 'User' => $data );
+			$this->data = array('User' => $data );
 		}
 		$groups = $this->User->Group->find('list');
 		$this->set(compact('groups'));
@@ -162,5 +168,14 @@ class UsersController extends AppController {
 		}
 		$this->Session->setFlash(__('User was not deleted'), 'flash/error');
 		$this->redirect(array('action' => 'index'));
+	}
+	
+	public function search() {
+		if(isset($this->request->query['query'])) {
+			$this->redirect(array('action' => 'index','?' => array('q' => $this->request->query['query'])));
+        } else {
+			$this->redirect(array('action' => 'index'));
+		}
+		
 	}
 }

@@ -3,16 +3,16 @@
   width: 100%;
   margin-bottom: 100px; }
   .table-wrapper .filter-block {
-    margin-bottom: 34px; }
+    margin-bottom: 15px; }
     .table-wrapper .filter-block .ui-select {
       margin-right: 20px;
       top: 1px;
       height: 24px;
       width: 150px; }
     .table-wrapper .filter-block .search {
-      margin: 0 60px 0 0; }
+      margin: 0 0 0 0; }
     .table-wrapper .filter-block .new-product {
-      padding: 4px 14px; }
+      padding: 4px 20px; }
   .table-wrapper .table th input[type="checkbox"] {
     margin-top: 4px; }
   .table-wrapper .table input[type="checkbox"] {
@@ -33,7 +33,6 @@
   .table-wrapper .table tr.first td {
     border-top: 0 none; }
   .table-wrapper .table td a {
-    text-decoration: underline;
     display: inline-block; }
   .table-wrapper .table td.description {
     vertical-align: middle;
@@ -84,13 +83,18 @@
   font-weight: 600;
   font-size: 14px;
   margin: 15px 0 0 0; }
+.table-wrapper.users-table .table a.title {
+  color: #3389d1;
+  font-size: 1.2em; } 
+.table-wrapper.users-table .table span.subtitle {
+  font-size: 1.2em; }   
 .table-wrapper.users-table .table .subtext {
   font-size: 12px;
   margin-left: 0;
   color: #778391;
   font-style: italic;
   margin-top: 0; }
-
+  
 /*Responsive*/
 @media (max-width: 979px) {
   .pointer {
@@ -131,4 +135,15 @@
   .table-wrapper .filter-block .user-search {
     float: left;
     margin: 0;
-    width: 55%; } }
+    width: 55%; } 
+  .table-wrapper.users-table .table .hid {
+		display: none;
+	}
+    .table-wrapper .filter-block .search-form {
+      padding: 0;
+	  width: 100%;
+	  margin-top:20px;}
+    .table-wrapper .filter-block .search-form input[type="text"] {
+      width:100%;
+	  margin:0px;}	  	 
+}

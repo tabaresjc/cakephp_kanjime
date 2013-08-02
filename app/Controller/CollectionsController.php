@@ -16,6 +16,18 @@ class CollectionsController extends AppController {
  */
 	public function index() {
 		$this->Collection->recursive = 0;
+		$query = '';
+		if(isset($this->request->query['q'])) {
+			$query = $this->request->query['q'];
+            $this->paginate['conditions'][] = array(
+				'OR' => array(
+					'Collection.title LIKE' => "%$query%",
+					'Collection.subtitle LIKE' => "%$query%",
+					'Collection.description LIKE' => "%$query%"
+				)
+			);			
+        }
+		$this->set('query', $query);
 		$this->set('collections', $this->paginate());
 	}
 
@@ -112,6 +124,14 @@ class CollectionsController extends AppController {
 		$this->Session->setFlash(__('Collection was not deleted'), 'flash/error');
 		$this->redirect(array('action' => 'index'));
 	}
+	
+	public function search() {
+		if(isset($this->request->query['query'])) {
+			$this->redirect(array('action' => 'index','?' => array('q' => $this->request->query['query'])));
+        } else {
+			$this->redirect(array('action' => 'index'));
+		}
+	}	
 	
 	public function findKanji() {
 		if ($this->request->is('post')) {

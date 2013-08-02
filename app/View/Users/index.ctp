@@ -10,46 +10,12 @@
 		<div class="row-fluid header">
 			<h3><?php echo __('Users'); ?></h3>
 			<div class="span10 pull-right">
-				<input type="text" class="span5 search" placeholder="Type a user's name...">
-				
-				<!-- custom popup filter -->
-				<!-- styles are located in css/elements.css -->
-				<!-- script that enables this dropdown is located in js/theme.js -->
-				<div class="ui-dropdown">
-					<div class="head" data-toggle="tooltip" title="Click me!">
-						Filter users
-						<i class="arrow-down"></i>
-					</div>  
-					<div class="dialog">
-						<div class="pointer">
-							<div class="arrow"></div>
-							<div class="arrow_border"></div>
-						</div>
-						<div class="body">
-							<p class="title">
-								Show users where:
-							</p>
-							<div class="form">
-								<select>
-									<option>Name</option>
-									<option>Email</option>
-									<option>Number of orders</option>
-									<option>Signed up</option>
-									<option>Last seen</option>
-								</select>
-								<select>
-									<option>is equal to</option>
-									<option>is not equal to</option>
-									<option>is greater than</option>
-									<option>starts with</option>
-									<option>contains</option>
-								</select>
-								<input type="text" />
-								<a class="btn-flat small">Add filter</a>
-							</div>
-						</div>
-					</div>
+				<?php echo $this->Form->create(null, array('controller'=>'users','action'=>'search','type'=>'get', 'class' => 'span5', 'id'=>'UserSearchForm','inputDefaults' => array('label' => false, 'div' => false))); ?>
+				<div class="input-append">
+					<?php echo $this->Form->input('query', array('value'=> $query ,'class'=>'span12' , 'placeholder'=>'Type a user\'s name...')); ?>
+					<?php echo $this->Form->button('Search', array('id'=>'UserSearchSubmit','type' => 'submit', 'class'=>'btn')); ?>
 				</div>
+				<?php echo $this->Form->end(); ?>
 				<?php echo $this->Html->link('New User', array('controller' => 'users', 'action' => 'add'), array('class'=>'btn-flat success pull-right')); ?>
 			</div>
 		</div>
@@ -59,10 +25,10 @@
 				<thead>
 					<tr>
 						<th class="span3 sortable"><?php echo $this->Paginator->sort('name', __('Name')); ?></th>
-						<th class="span3 sortable"><?php echo $this->Paginator->sort('email', __('Email')); ?></th>
-						<th class="span2 sortable"><?php echo $this->Paginator->sort('group_id', __('Group')); ?></th>
-						<th class="span2 sortable"><?php echo $this->Paginator->sort('created', __('Signed Up')); ?></th>
-						<th class="span2"></th>
+						<th class="span3 sortable"><span class="line"></span><?php echo $this->Paginator->sort('email', __('Email')); ?></th>
+						<th class="span2 sortable"><span class="line"></span><?php echo $this->Paginator->sort('group_id', __('Group')); ?></th>
+						<th class="span2 sortable"><span class="line"></span><?php echo $this->Paginator->sort('created', __('Signed Up')); ?></th>
+						<th class="span2"><span class="line"></span></th>
 					</tr>
 				</thead>
 				<tbody>
@@ -74,7 +40,7 @@
 							<span class="subtext"><?php echo $user['User']['username']; ?></span>
 						</td>
 						<td><?php echo h($user['User']['email']); ?></td>
-						<td class="hid">
+						<td>
 							<?php echo $this->Html->link($user['Group']['name'], array('controller' => 'groups', 'action' => 'view', $user['Group']['id'])); ?>
 						</td>						
 						<td><?php echo $this->Time->format(DATETIME_FORMAT, $user['User']['created']); ?></td>

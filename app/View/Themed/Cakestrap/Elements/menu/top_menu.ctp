@@ -9,12 +9,14 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <?php echo $this->Html->link('', array('controller' => 'admin', 'action' => 'index'), array('class' => 'brand', 'inline-html' => '<img src="/admin/img/logo.png">')); ?>
+            <?php echo $this->Html->link('', array('controller' => 'admins', 'action' => 'index'), array('class' => 'brand', 'inline-html' => '<img src="/admin/img/logo.png">')); ?>
 			<?php if(!empty($user)) { ?>
             <ul class="nav pull-right">                
-                <li class="hidden-phone">
+                <!--
+				<li class="hidden-phone">
                     <input class="search" type="text" />
                 </li>
+				-->
                 <li class="dropdown">
                     <a href="#" class="dropdown-toggle hidden-phone" data-toggle="dropdown">
                         <?php echo $user['name']; ?>

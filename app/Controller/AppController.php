@@ -34,6 +34,7 @@ App::uses('Controller', 'Controller');
 class AppController extends Controller {
 	public $theme = "Cakestrap";
     public $components = array(
+		/*'DebugKit.Toolbar',*/
         'Acl',
         'Auth' => array(
             'authorize' => array(
@@ -41,7 +42,7 @@ class AppController extends Controller {
             ),
 			'loginAction' => array('controller' => 'users', 'action' => 'login'),            
             'logoutRedirect' => array('controller' => 'users', 'action' => 'login'),
-			'loginRedirect' => '/'		
+			'loginRedirect' => array('controller' => 'admins', 'action' => 'index'),
         ),
         'Session'
     );

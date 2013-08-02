@@ -6,13 +6,29 @@ class GenericHtmlHelper extends HtmlHelper {
         array(
             'icon' => 'icon-home',
 			'name' => 'Home',
-			'url' => array('controller' => 'admin', 'action' => 'index'),
-			'controller' => array('admin')
+			'url' => array('controller' => 'admins', 'action' => 'index'),
+			'controller' => array('admins')
         ),
+		array(
+            'icon' => 'icon-tags',
+			'name' => 'Kanji',
+			'url' => 'javascript:void(0);',
+			'controller' => array('collections'),
+			'childs' => array(
+				array(
+					'name' => 'Kanji List',
+					'url' => array('controller' => 'collections', 'action' => 'index')
+				),
+				array(
+					'name' => 'New Name',
+					'url' => array('controller' => 'collections', 'action' => 'add')
+				)
+			)
+        ),		
 		array(
             'icon' => 'icon-group',
 			'name' => 'Users',
-			'url' => ' ',
+			'url' => 'javascript:void(0);',
 			'controller' => array('users','groups'),
 			'childs' => array(
 				array(
