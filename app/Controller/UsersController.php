@@ -10,17 +10,17 @@ class UsersController extends AppController {
 		'limit' => 10
 	);
 	
-	public function beforeFilter() {
-		parent::beforeFilter();
-		//$this->Auth->allow('initDB');
-	}
+	// public function beforeFilter() {
+		// parent::beforeFilter();
+		// //$this->Auth->allow('initDB');
+	// }
 
 	// public function initDB() {
 		// $group = $this->User->Group;
 		// //Allow admins to everything
 		// $group->id = 1;
 		// $this->Acl->allow($group, 'controllers');
-		// $this->Acl->allow($group, 'controllers/Collections/findKanji');
+		// //$this->Acl->allow($group, 'controllers/Collections/findKanji');
 		
 		// $group->id = 2;
 		// $this->Acl->deny($group, 'controllers');

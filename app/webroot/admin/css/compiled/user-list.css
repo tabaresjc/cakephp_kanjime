@@ -65,3 +65,9 @@
   .ui-dropdown .dialog .body .form a {
     margin-top: 10px;
     margin-left: 18px; } }
+
+@media (max-width: 480px) {
+  .users-list .table .hid {
+		display: none;
+	} 
+}

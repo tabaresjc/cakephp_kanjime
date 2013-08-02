@@ -51,8 +51,8 @@
 			</div>
 			<!-- side right column -->
 			<div class="span3 form-sidebar pull-right">
-				<h6><?php echo __('Import') ?></h6>
-				<ul>
+				<h6><?php echo __('What you can do'); ?></h6>
+				<ul class="nav nav-list bs-docs-sidenav">
 					<li><a href="javascript:void(0);">Upload a vCard file</a></li>
 					<li><a href="javascript:void(0);">Import from a CSV file</a></li>
 					<li><a href="javascript:void(0);">Import from an Excel file</a></li>

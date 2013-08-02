@@ -19,13 +19,14 @@
 ?>
 	<div class="row-fluid">
 			<div class="alert alert-block alert-error fade in">
-				<h2 class="alert-heading">Oh snap! You got an error!</h2>
-				<h5><?php echo __d('cake_dev', 'The action %1$s is not defined in controller %2$s', '<em>' . $action . '</em>', '<em>' . $controller . '</em>'); ?></h5>
-				<p>
-					<?php echo $this->Html->link('Go to Main Page', '/', array('class'=>'btn btn-danger')); ?>
-				</p>
+				<?php echo $this->Html->link('Go to Main Page', '/', array('class'=>'btn btn-danger pull-right')); ?>
+				<h2 class="alert-heading"><?php echo __d('cake', 'Error'); ?></h2>
+				<p><?php echo __d('cake_dev', 'The action %1$s is not defined in controller %2$s', '<em>' . $action . '</em>', '<em>' . $controller . '</em>'); ?></p>
 			</div>
+			<?php if (Configure::read('debug') > 0): ?>
 			<div class="well">
 				<?php echo $this->element('exception_stack_trace'); ?>
 			</div>
+			<?php endif; ?>
 	</div>
+

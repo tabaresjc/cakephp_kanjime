@@ -36,8 +36,7 @@ input.search{
 .header h3,
 .header h4,
 .header h5 {
-	float: left;
-	margin-top: 5px;
+	line-height: normal;	
 }
 
 /* Custom navbar stuff */

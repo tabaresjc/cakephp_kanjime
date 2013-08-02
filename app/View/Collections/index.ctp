@@ -43,7 +43,7 @@
 				<?php foreach ($collections as $collection): ?>
 					<tr class="<?php echo $first_class; ?>">
 						<td>
-							<?php echo $this->Html->link($collection['Collection']['title'], array('action' => 'edit', $collection['Collection']['id']), array('class' => 'title')); ?>
+							<?php echo $this->Html->link($collection['Collection']['title'], array('action' => 'view', $collection['Collection']['id']), array('class' => 'title')); ?>
 						</td>
 						<td class="hid"><span class="subtitle"><?php echo h($collection['Collection']['subtitle']); ?></span></td>
 						<td class="hid"><span class="subtitle"><?php echo h($collection['Collection']['description']); ?></span></td>						

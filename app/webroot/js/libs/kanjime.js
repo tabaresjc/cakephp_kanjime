@@ -2,13 +2,24 @@
 	WPGFunctions = {
 		setup: function() {		
 			// setup the show details for selected movie
-			if($('#kanji_me_updater').length > 0) {
+			if($('#kanji_me_update').length > 0) {
 				WPGFunctions.setupUpdater();
-			}else if($('#kanji_me_breakdown').length > 0) {
+			}else if($('#kanji_me_create').length > 0) {
 				$('#kanji_me_breakdown').click(WPGFunctions.breakDownKanji);
 			} else if($('#kanjime_viewer').length > 0) {
 				WPGFunctions.viewKanjiList();
 			}
+			$('#SubmitFormKanji').click(WPGFunctions.validateForm);
+		},
+		validateForm: function(){
+			var kanjime_title = $('#CollectionTitle').val();
+			var kanjime_subtitle = $('#CollectionSubtitle').val();
+			var kanjime_description = $('#CollectionDescription').val();
+			if(WPGFunctions.testEmptyString(kanjime_title) || WPGFunctions.testEmptyString(kanjime_subtitle) || WPGFunctions.testEmptyString(kanjime_description)){
+				WPGFunctions.setErrorMessage('Please make sure to fill the name, kanji and katakana');
+				return (false);
+			}
+			return true;
 		},
 		setupUpdater: function() {
 			var result = JSON.parse($('#kanjime_body').val());
@@ -22,27 +33,33 @@
 				$('#kanjime_placeholder').append(WPGFunctions.getPreviewPanel);			
 				$("#kanjime_send_to_editor").click(WPGFunctions.previewKanjiList);
 				$('#kanji_me_breakdown').click(WPGFunctions.breakDownKanji);
+				WPGFunctions.previewKanjiList();
 			}			
 		},
 		breakDownKanji: function() {
 			WPGFunctions.clearWorkingSpace();
-			WPGFunctions.enableSpinnerInEditor();
+			
 			var kanjime_title = $('#CollectionTitle').val();
 			var kanjime_subtitle = $('#CollectionSubtitle').val();
 			var kanjime_description = $('#CollectionDescription').val();
-			
+			if(WPGFunctions.testEmptyString(kanjime_title) || WPGFunctions.testEmptyString(kanjime_subtitle) || WPGFunctions.testEmptyString(kanjime_description)){
+				WPGFunctions.setErrorMessage('Please make sure to fill the name, kanji and katakana before the breakdown');
+				return (false);
+			}
+			WPGFunctions.enableSpinnerInEditor();
 			var data = {
 				title: kanjime_title,
 				subtitle: kanjime_subtitle,
 				description: kanjime_description
 			};
 			$.post('/collections/findkanji/', data, function(response) {
-				//alert('Response: '+response);
 				
-				if(response!=undefined && response.length>20){
+				WPGFunctions.disableSpinnerInEditor();
+				if(response!=undefined){
 					var result = JSON.parse(response);
 					if(!WPGFunctions.testEmptyString(result.error)){
 						WPGFunctions.setErrorMessage(result.error);
+						return false;
 					}
 					if(result.kanjiList!=undefined){
 						var ko = result.kanjiList;
@@ -63,10 +80,8 @@
 						$("#kanjime_send_to_editor").click(WPGFunctions.previewKanjiList);
 						WPGFunctions.previewKanjiList();
 					}
-				}
-				WPGFunctions.disableSpinnerInEditor();
-				if(response=='-10'){
-					alert('Error, the server replied invalid request');
+				} else {
+					WPGFunctions.setErrorMessage('No response from the server');
 				}
 			});
 			return(false);
@@ -98,11 +113,10 @@
 			$('#kanjime_preview').hide();
 			$('#kanjime_preview .kanjime_preview_body').empty();
 			$('#kanjime_placeholder').empty().removeClass();
+			$('message_placeholder').empty();
 		},
 		previewKanjiList: function() {
 			$('#kanjime_preview .kanjime_preview_body').empty();
-			
-			
 			WPGFunctions.updateDataFromEditor();
 			
 			var result = JSON.parse($('#kanjime_body').val());
@@ -128,7 +142,7 @@
 			if(result.kanjiList!=undefined){
 				var ko = result.kanjiList;
 				var count = ko.length;
-				$('#kanjime_viewer').append('<h1 style=\"text-align: center;\">'+result.Kanji+'</h1>');				
+				$('#kanjime_viewer').append('<h1 style=\"text-align: center;\">'+result.Kanji+'</h1><br/>');				
 				for(var i=0; i<count;i++){
 					var singleKanji = WPGFunctions.previewSingleKanji(ko[i].kanji,ko[i].kunyomi,ko[i].onyomi,ko[i].meaning);
 					$('#kanjime_viewer').append(singleKanji);
@@ -191,9 +205,10 @@
 		},
 		getPreviewPanel: function(){
 			var singlePanel = '';
-			singlePanel += '<div class="btn-toolbar　clearfix">\n';
-			singlePanel += '	<a href="javascript:void(0)" id="kanjime_send_to_editor" class="btn btn-large btn-primary">Preview</a>\n';
+			singlePanel += '<div class="btn-toolbar">\n';
+			singlePanel += '	<a href="javascript:void(0)" id="kanjime_send_to_editor" class="btn btn-large btn-primary pull-right">Preview</a>\n';
 			singlePanel += '</div>\n';
+			singlePanel += '<div class="clearfix"></div>\n';
 			return(singlePanel);
 		},
 		enableSpinnerInEditor: function(){
@@ -204,7 +219,8 @@
 			$('#kanjime_spinner').remove();
 		},
 		setErrorMessage: function(message){
-			$('#kanjime_placeholder').prepend('<div class="alert"><button type="button" class="close" data-dismiss="alert">×</button>'+message+'</div>');
+			$('#message_placeholder').empty();
+			$('#message_placeholder').prepend('<div class="alert alert-error"><i class="icon-warning-sign"></i>'+message+'</div>');
 		},
 		testEmptyString: function(str) {
 			return (!str || /^\s*$/.test(str));
@@ -370,7 +386,7 @@
 		},
 		formatLine: function(val){
 			return val.replace(/\*(.*?)\*/,'<strong>$1</strong>');
-		},
+		}
 	}
 	$(WPGFunctions.setup);
 });
