@@ -26,8 +26,8 @@
 								<td><?php echo h($group['Group']['modified']); ?></td>
 								<td class="align-right">
 								<div class="btn-group">
-								<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $group['Group']['id']), array('class' => 'btn btn-primary')); ?>
-								<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $group['Group']['id']), array('class' => 'btn btn-danger'), __('Are you sure you want to delete # %s?', $group['Group']['id'])); ?>
+								<?php echo $this->Html->link('<i class="icon-edit"></i>', array('action' => 'edit', $group['Group']['id']), array('class' => 'btn btn-primary', 'escape'=>false)); ?>
+								<?php echo $this->Form->postLink('<i class="icon-trash"></i>', array('action' => 'delete', $group['Group']['id']), array('class' => 'btn btn-danger', 'escape'=>false), __('Are you sure you want to delete # %s?', $group['Group']['id'])); ?>
 								</div>
 								</td>
 								</tr>

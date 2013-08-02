@@ -46,8 +46,8 @@
 						<td class="hid"><?php echo $this->Time->format(DATETIME_FORMAT, $user['User']['created']); ?></td>
 						<td class="align-right">
 							<div class="btn-group">
-								<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $user['User']['id']), array('class' => 'btn btn-primary')); ?>
-								<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $user['User']['id']), array('class' => 'btn btn-danger'), __('Are you sure you want to delete # %s?', $user['User']['id'])); ?>
+								<?php echo $this->Html->link('<i class="icon-edit"></i>', array('action' => 'edit', $user['User']['id']), array('class' => 'btn btn-primary', 'escape'=>false)); ?>
+								<?php echo $this->Form->postLink('<i class="icon-trash"></i>', array('action' => 'delete', $user['User']['id']), array('class' => 'btn btn-danger', 'escape'=>false), __('Are you sure you want to delete # %s?', $user['User']['id'])); ?>
 							</div>
 						</td>
 					</tr>

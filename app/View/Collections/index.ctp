@@ -50,8 +50,8 @@
 						<td class="hid"><?php echo $this->Time->format(DATETIME_FORMAT, $collection['Collection']['created']); ?></td>
 						<td class="align-right">
 							<div class="btn-group">
-								<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $collection['Collection']['id']), array('class' => 'btn btn-primary')); ?>
-								<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $collection['Collection']['id']), array('class' => 'btn btn-danger'), __('Are you sure you want to delete # %s?', $collection['Collection']['id'])); ?>
+								<?php echo $this->Html->link('<i class="icon-edit"></i>', array('action' => 'edit', $collection['Collection']['id']), array('class' => 'btn btn-primary', 'escape' => false)); ?>
+								<?php echo $this->Form->postLink('<i class="icon-trash"></i>', array('action' => 'delete', $collection['Collection']['id']), array('class' => 'btn btn-danger', 'escape' => false), __('Are you sure you want to delete # %s?', $collection['Collection']['id'])); ?>
 							</div>
 						</td>
 					</tr>
