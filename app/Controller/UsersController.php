@@ -12,7 +12,7 @@ class UsersController extends AppController {
 	
 	public function beforeFilter() {
 		parent::beforeFilter();
-		//$this->Auth->allow();
+		//$this->Auth->allow('initDB');
 	}
 
 	// public function initDB() {
@@ -20,6 +20,7 @@ class UsersController extends AppController {
 		// //Allow admins to everything
 		// $group->id = 1;
 		// $this->Acl->allow($group, 'controllers');
+		// $this->Acl->allow($group, 'controllers/Collections/findKanji');
 		
 		// $group->id = 2;
 		// $this->Acl->deny($group, 'controllers');

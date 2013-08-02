@@ -61,6 +61,7 @@
 						$('#kanjime_body').val(JSON.stringify(result));
 						$('#kanjime_placeholder').append(WPGFunctions.getPreviewPanel);			
 						$("#kanjime_send_to_editor").click(WPGFunctions.previewKanjiList);
+						WPGFunctions.previewKanjiList();
 					}
 				}
 				WPGFunctions.disableSpinnerInEditor();
@@ -94,12 +95,13 @@
 			$('#kanjime_placeholder').addClass('well');
 		},
 		clearWorkingSpace: function() {
-			$('#kanjime_preview .modal-body').empty();
+			$('#kanjime_preview').hide();
+			$('#kanjime_preview .kanjime_preview_body').empty();
 			$('#kanjime_placeholder').empty().removeClass();
 		},
 		previewKanjiList: function() {
-			$('#kanjime_preview .modal-body').empty();
-			$('#kanjime_preview').modal();
+			$('#kanjime_preview .kanjime_preview_body').empty();
+			
 			
 			WPGFunctions.updateDataFromEditor();
 			
@@ -107,14 +109,14 @@
 			if(result.kanjiList!=undefined){
 				var ko = result.kanjiList;
 				var count = ko.length;
-				$('#kanjime_preview .modal-body').append('<h1 style=\"text-align: center;\">'+result.Kanji+'</h1>');
+				$('#kanjime_preview .kanjime_preview_body').append('<h1 style=\"text-align: center;\">'+result.Kanji+'</h1>');
 				
 				for(var i=0; i<count;i++){
 					var singleKanji = WPGFunctions.previewSingleKanji(ko[i].kanji,ko[i].kunyomi,ko[i].onyomi,ko[i].meaning);
-					$('#kanjime_preview .modal-body').append(singleKanji);
+					$('#kanjime_preview .kanjime_preview_body').append(singleKanji);
 				}
 			}
-			$('#kanjime_preview').modal('show');
+			$('#kanjime_preview').show();
 			return(false);
 		},
 		viewKanjiList: function() {
@@ -195,8 +197,8 @@
 			return(singlePanel);
 		},
 		enableSpinnerInEditor: function(){
-			$('#kanjime_placeholder').empty();
-			$('#kanjime_placeholder').append('<div id="kanjime_spinner" style="padding: 10px 0px 0px 0px;"><img src="/img/loader.gif" border="0" style="margin:0px auto;display: block;" alt="Loading"></div>');
+			$('#kanjime_spinner').remove();
+			$('.collections .form').append('<div id="kanjime_spinner" style="padding: 10px 0px 0px 0px;"><img src="/img/loader.gif" border="0" style="margin:0px auto;display: block;" alt="Loading"></div>');
 		},
 		disableSpinnerInEditor: function(){
 			$('#kanjime_spinner').remove();

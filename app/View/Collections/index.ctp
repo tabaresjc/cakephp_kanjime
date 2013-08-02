@@ -62,7 +62,7 @@
 		</div>
 		
 		<p><small><?php echo $this->Paginator->counter(array('format' => __('Page {:page} of {:pages}, showing {:current} records out of {:count} total, starting on record {:start}, ending on {:end}')));?></small></p>
-		<div class="pagination pull-right">
+		<div class="pagination inverse pull-right">
 			<ul>
 				<?php
 				echo $this->Paginator->prev('<', array('tag' => 'li'), null, array('class' => 'disabled', 'tag' => 'li', 'disabledTag' => 'a'));

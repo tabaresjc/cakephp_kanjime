@@ -9,6 +9,11 @@ class CollectionsController extends AppController {
 	public $paginate = array(
 		'limit' => 10
 	);
+	
+	public function beforeFilter() {
+		parent::beforeFilter();
+		//$this->Auth->allow('findkanji');
+	}	
 /**
  * index method
  *
@@ -131,9 +136,9 @@ class CollectionsController extends AppController {
         } else {
 			$this->redirect(array('action' => 'index'));
 		}
-	}	
+	}
 	
-	public function findKanji() {
+	public function findkanji() {
 		if ($this->request->is('post')) {
 			$response_data = array();
 			$response_data['Name'] = $this->request->data['title'];

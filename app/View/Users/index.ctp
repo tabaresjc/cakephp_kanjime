@@ -56,7 +56,7 @@
 				</tbody>
 			</table>
 		</div>
-		<div class="pagination pull-right">
+		<div class="pagination inverse pull-right">
 			<ul>
 				<?php
 				echo $this->Paginator->prev('<', array('tag' => 'li'), null, array('class' => 'disabled', 'tag' => 'li', 'disabledTag' => 'a'));
