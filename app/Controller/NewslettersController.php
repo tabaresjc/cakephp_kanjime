@@ -13,7 +13,7 @@ class NewslettersController extends AppController {
 	
 	public function add() {
 		if ($this->request->is('post')) {
-			$message = __('The email has been saved');
+			$message = __('The email has been registered');
 			$error = 0;
 			
 			$count = $this->Newsletter->find('count', array(
@@ -26,6 +26,8 @@ class NewslettersController extends AppController {
 					$error = 1;
 					$message = __('The email could not be saved. Please, try again.');					
 				}
+			} else {
+				$message = __('The email has already been registered');
 			}
 			
 			//if($this->request->is('isajax')){

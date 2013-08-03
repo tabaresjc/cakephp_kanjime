@@ -8,9 +8,10 @@
 			$('#NewsletterForm .alert').remove();
 			var email = $('#NewsletterEmail').val();
 			if(NLFunctions.testEmptyString(email)){
-				alert('Please insert your email');
+				$('#NewsletterForm').append(NLFunctions.getErrorMessage('Please insert your email'));
 				return false;
 			}
+			
 			var data = $('#NewsletterForm').serialize();
 			$.ajax({
 				type: "POST",
@@ -20,19 +21,20 @@
 					var result = JSON.parse(response);
 					
 					if(result.error) {
-						var out = '<div class="alert alert-danger"><i class="icon-exclamation-sign"></i> <button type="button" class="close" data-dismiss="alert">&times;</button>'+result.message+'</div>';
-						$('#NewsletterForm').append(out);
+						$('#NewsletterForm').append(NLFunctions.getErrorMessage(result.message));
 					}else{
-						var out = '<div class="alert alert-success"><i class="icon-ok-sign"></i> <button type="button" class="close" data-dismiss="alert">&times;</button>'+result.message+'</div>';
 						$('#NewsletterForm').empty();
-						$('#NewsletterForm').append(out);	
+						$('#NewsletterForm').append(NLFunctions.getSuccessMessage(result.message));
 					}
-					
 				}
 			});
-			
-			
 			return false;			
+		},
+		getErrorMessage: function(message) {
+			return '<div class="alert alert-danger" style="margin: 0px 10px;"><i class="icon-exclamation-sign"></i> <button type="button" class="close" data-dismiss="alert">&times;</button>'+message+'</div>';
+		},
+		getSuccessMessage: function(message) {
+			return '<div class="alert alert-success" style="margin: 0px 10px;"><i class="icon-ok-sign"></i> <button type="button" class="close" data-dismiss="alert">&times;</button>'+message+'</div>';
 		},
 		testEmptyString: function(str) {
 			return (!str || /^\s*$/.test(str));
