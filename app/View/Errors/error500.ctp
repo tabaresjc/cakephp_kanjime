@@ -23,7 +23,6 @@
 				<h2 class="alert-heading"><?php echo __d('cake', 'Error'); ?></h2>
 				<h5><?php echo __d('cake', 'An Internal Error Has Occurred.'); ?></h5>
 				<p><?php echo $name; ?></p>
-				
 			</div>
 			<div class="well">
 				<?php echo $this->element('exception_stack_trace'); ?>

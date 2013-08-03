@@ -15,8 +15,10 @@
  * @since         CakePHP(tm) v 0.10.0.1076
  * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
-	$cakeDescription = __d('cake_dev', 'Kanji Me!');
-
+	if (!defined('SITE_NAME')) {
+		define('SITE_NAME', __d('cake_dev', 'Kanji Me!'));
+	}
+	
 	$cur_controller = $this->params['controller'];
 	$cur_action = $this->params['action'];
 
@@ -49,7 +51,7 @@
 <?php echo $this->fetch('htmlstart'); ?>
 <head>
 	<?php echo $this->Html->charset(); ?>
-	<title><?php echo $cakeDescription ?> | <?php echo $title_for_layout; ?></title>
+	<title><?php echo SITE_NAME ?> | <?php echo $title_for_layout; ?></title>
 	<?php
 	echo $this->fetch('meta') . "\n";
 	echo $this->fetch('css') . "\n";

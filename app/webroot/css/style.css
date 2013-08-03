@@ -581,7 +581,8 @@ html[xmlns] .slides {display: block;}
 	margin-bottom: 0;
 }
 
-.newsletter form input {
+.newsletter form input ,
+.newsletter form #NewsletterSubmit{
 	margin-bottom: 20px;
 }
 

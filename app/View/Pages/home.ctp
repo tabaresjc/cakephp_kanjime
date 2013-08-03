@@ -1,5 +1,7 @@
 <?php
-
+	$this->append('custom_script');
+		echo $this->Html->script('libs/newsletter');
+	$this->end();
 ?>
 
 	<div class="wrapper">
@@ -20,11 +22,13 @@
 						</a>
 						<nav id="main-menu" class="nav-collapse collapse">
 							<h2 class="hide">Main Navigation</h2>
+							<!--
 							<ul class="nav pull-right">
 								<li><a href="#features-section">Features</a></li>
-								<!--<li><a href="#testimonials-section">Testimonials</a></li>-->
+								<li><a href="#testimonials-section">Testimonials</a></li>
 								<li><a href="#call-to-action">Download now</a></li>
 							</ul>
+							-->
 						</nav>
 					</div>
 				</div>
@@ -38,8 +42,10 @@
 				<div class="span6 hero-text">
 					<h2 class="heading">Kanji Me!</h2>
 					<p class="description">Would you like to know How your name is written in Kanji?</p>
+					<!--
 					<img id="img-app-icon" src="/img/kanjime-logo.png" alt="Kanji Me!" />
 					<a href="/" class="btn btn-primary"><img id="img-app-button" src="/img/btn-app-store.png" alt="Get App"/></a>
+					-->					
 				</div>
 				<div class="span6 hero-image">					
 					<div id="hero-carousel" class="carousel slide">
@@ -62,6 +68,7 @@
 
 		<!-- begins main content -->
 		<div class="main-content">
+			<!--
 			<section id="features-section" class="container section features">
 				<div class="row-fluid feature-item">
 					<div class="span6">
@@ -95,7 +102,8 @@
 				</div>
 				<hr />
 			</section>
-			<!--
+			
+			
 			<section class="container section features-more">
 				<h2 class="heading">and more...</h2>
 				<div class="row-fluid">
@@ -161,14 +169,15 @@
 			<br/>
 			<br/>
 			<section id="call-to-action" class="container section call-to-action">
-				<div class="row-fluid inner">
+				<div class="row-fluid inner" style="margin-bottom:40px;">
 					<div class="span7">
-						<h2 class="heading">Discover Now</h2>
-						<p class="description">We do want you to create a great app, the next big thing. Let the landing page becomes our part, so you can save more time and focus on your app instead. </p>
-						<a href="#" class="btn btn-primary"><img src="/img/btn-app-store.png" alt="Get App" /></a>
+						<h2 class="heading">Coming out soon</h2>
+						<p class="description">We are currently developing this application for iOS and will release very soon, Enter your email in the form below and we'll notify you as soon as we're ready.</p>
+						
+						<!--<a href="#" class="btn btn-primary"><img src="/img/btn-app-store.png" alt="Get App" /></a>-->
 					</div>
 					<div class="span5 image-wrapper">
-						<img src="/img/call-to-action-iphone.png" class="pull-right" alt="iPhone App" />
+						<img src="/img/iTunesArtwork.png" class="pull-right" alt="iPhone App Icon" style="width:60%;" />
 					</div>
 				</div>
 			</section>
@@ -184,10 +193,12 @@
 						<p class="description">Stay up to date with the latest news by subscribing to our newsletter.</p>
 					</div>
 					<div class="span6">
-						<form class="form-inline pull-right">
-							<input type="email" name="email" placeholder="youremail@domain.com">
-							<input type="submit" class="btn btn-primary" value="Subscribe Now">
-						</form>	
+						<?php echo $this->Form->create('Newsletter', array('id'=>'NewsletterForm', 'type' => 'post', 'url' => array('controller' => 'newsletters', 'action' => 'add'), 'inputDefaults' => array('label' => false, 'div'=>false), 'class' => 'form-inline pull-right')); ?>
+							<?php
+							echo $this->Form->input('email', array('id'=>'NewsletterEmail', 'type'=>'email', 'placeholder'=>'youremail@domain.com'));
+							echo $this->Form->submit('Suscribe Now', array('id'=>'NewsletterSubmit', 'div'=>false, 'class' => 'btn btn-primary', 'value'=>'Subscribe Now'));
+							?>
+						<?php echo $this->Form->end(); ?>
 					</div>
 				</div>
 			</div>
@@ -198,10 +209,9 @@
 					<div class="span6 copyright">Powered by Learn Japanese Language & Culture, Copyright 2013. All Rights Reserved.</div>
 					<div class="span6 social">
 						<ul>
-							<li><a href="#"><i class="socicon facebookcircle"></i></a></li>
-							<li><a href="#"><i class="socicon twittercircle"></i></a></li>
-							<li><a href="#"><i class="socicon dribbblecircle"></i></a></li>
-							<li><a href="#"><i class="socicon googlecircle"></i></a></li>
+							<li><a href="https://www.facebook.com/Japanese.Language.Culture"><i class="socicon facebookcircle"></i></a></li>
+							<li><a href="https://twitter.com/japanese123"><i class="socicon twittercircle"></i></a></li>
+							<li><a href="https://plus.google.com/105449602868059056192"><i class="socicon googlecircle"></i></a></li>
 						</ul>	
 					</div>
 				</div>
