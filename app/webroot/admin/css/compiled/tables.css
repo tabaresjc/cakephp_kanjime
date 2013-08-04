@@ -135,10 +135,7 @@
   .table-wrapper .filter-block .user-search {
     float: left;
     margin: 0;
-    width: 55%; } 
-  .table-wrapper.users-table .table .hid {
-		display: none;
-	}
+    width: 55%; }
     .table-wrapper .filter-block .search-form {
       padding: 0;
 	  width: 100%;

@@ -11,13 +11,14 @@
 			<div id="top-nav" class="navbar">
 				<div class="navbar-inner">
 					<div class="container">
+						<!--
 						<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-							<!--
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
-							-->
-						</a>					
+							
+						</a>
+						-->						
 						<a class="brand" data-section="body" href="/">
 							<img src="/img/kanjime-logo.png" width="60" alt="Kanji Me!" />
 							<h1 class="hide">KanjiMe! | Find out your name in Japanese</h1>

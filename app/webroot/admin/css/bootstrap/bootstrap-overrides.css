@@ -362,4 +362,10 @@ table th span.line{
 	height: 10px;
 }
 
+@media (max-width: 767px) {
+	.table .hid {
+		display: none !important; 
+	}
+}
+
 
