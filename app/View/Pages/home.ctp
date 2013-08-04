@@ -12,16 +12,18 @@
 				<div class="navbar-inner">
 					<div class="container">
 						<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+							<!--
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
+							-->
 						</a>					
 						<a class="brand" data-section="body" href="/">
 							<img src="/img/kanjime-logo.png" width="60" alt="Kanji Me!" />
 							<h1 class="hide">KanjiMe! | Find out your name in Japanese</h1>
 						</a>
 						<nav id="main-menu" class="nav-collapse collapse">
-							<h2 class="hide">Main Navigation</h2>
+							<h2 class="hide">Main Navigation</h2>							
 							<!--
 							<ul class="nav pull-right">
 								<li><a href="#features-section">Features</a></li>
@@ -42,6 +44,7 @@
 				<div class="span6 hero-text">
 					<h2 class="heading">Kanji Me!</h2>
 					<p class="description">Would you like to know How your name is written in Kanji?</p>
+					<p style="color:black;font-weight: 500;">Basically Kanji for foreigner uses phonetic equivalent, Therefore there are few-several ways to be written in Kanji depending on the pronuntiation of the name in its original language, only in this case we will make sure to select cool & positive Kanji for your name!</p>
 					<!--
 					<img id="img-app-icon" src="/img/kanjime-logo.png" alt="Kanji Me!" />
 					<a href="/" class="btn btn-primary"><img id="img-app-button" src="/img/btn-app-store.png" alt="Get App"/></a>

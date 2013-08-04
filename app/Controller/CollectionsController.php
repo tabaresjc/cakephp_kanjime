@@ -144,7 +144,7 @@ class CollectionsController extends AppController {
 			$response_data = array();
 			$error = array();
 			$list = array();
-			if(!empty($this->request->data['title']) && !empty($this->request->data['subtitle']) && !empty($response_data['Katakana'])){
+			if(!empty($this->request->data['title']) && !empty($this->request->data['subtitle']) && !empty($this->request->data['description'])){
 				$response_data['Name'] = $this->request->data['title'];
 				$response_data['Kanji'] = $this->request->data['subtitle'];
 				$response_data['Katakana'] = $this->request->data['description'];
