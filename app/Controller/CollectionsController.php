@@ -6,34 +6,70 @@ App::uses('AppController', 'Controller');
  * @property Collection $Collection
  */
 class CollectionsController extends AppController {
+	public $components = array (
+        'Rest.Rest' => array(
+            'catchredir' => true,
+            'actions' => array(
+                'extract' => array(
+                    'index' => array('collections'),
+                ),
+            ),
+        )
+    );
+
 	public $paginate = array(
 		'limit' => 10
 	);
 	
-	public function beforeFilter() {
-		parent::beforeFilter();
-		//$this->Auth->allow('findkanji');
-	}	
+	public function beforeFilter () {
+        if (!$this->Auth->user()) {
+            // Try to login user via REST
+            if ($this->Rest->isActive()) {
+                $this->Auth->autoRedirect = false;
+                $data = array(
+                    $this->Auth->userModel => array(
+                        'username' => $credentials['username'],
+                        'password' => $credentials['password'],
+                    ),
+                );
+                $data = $this->Auth->hashPasswords($data);
+                if (!$this->Auth->login($data)) {
+                    $msg = sprintf('Unable to log you in with the supplied credentials. ');
+                    return $this->Rest->abort(array('status' => '403', 'error' => $msg));
+                }
+            }
+        }
+        parent::beforeFilter();
+    }
+	
+	protected function _isRest() {
+		return !empty($this->Rest) && is_object($this->Rest) && $this->Rest->isActive();
+	}
 /**
  * index method
  *
  * @return void
  */
 	public function index() {
-		$this->Collection->recursive = 0;
-		$query = '';
-		if(isset($this->request->query['q'])) {
-			$query = $this->request->query['q'];
-            $this->paginate['conditions'][] = array(
-				'OR' => array(
-					'Collection.title LIKE' => "%$query%",
-					'Collection.subtitle LIKE' => "%$query%",
-					'Collection.description LIKE' => "%$query%"
-				)
-			);			
-        }
-		$this->set('query', $query);
-		$this->set('collections', $this->paginate());
+		if(!$this->_isRest()){
+			$this->Collection->recursive = 0;
+			$query = '';
+			if(isset($this->request->query['q'])) {
+				$query = $this->request->query['q'];
+				$this->paginate['conditions'][] = array(
+					'OR' => array(
+						'Collection.title LIKE' => "%$query%",
+						'Collection.subtitle LIKE' => "%$query%",
+						'Collection.description LIKE' => "%$query%"
+					)
+				);			
+			}
+			$this->set('query', $query);
+			$this->set('collections', $this->paginate());			
+		} else {
+			$collections =  $this->Collection->find('all');
+			$this->set(compact('collections'));		
+		}
 	}
 
 /**
