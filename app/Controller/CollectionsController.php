@@ -11,7 +11,7 @@ class CollectionsController extends AppController {
             'catchredir' => true,
             'actions' => array(
                 'extract' => array(
-                    'index' => array('collections'),
+                    'index' => array('collection'),
                 ),
             ),
         )
@@ -64,11 +64,11 @@ class CollectionsController extends AppController {
 					)
 				);			
 			}
-			$this->set('query', $query);
-			$this->set('collections', $this->paginate());			
+			$collections = $this->paginate();
+			$this->set(compact('collections','query'));
 		} else {
-			$collections =  $this->Collection->find('all');
-			$this->set(compact('collections'));		
+			$collections = $this->Collection->find('all');
+			$this->set(compact('collections'));
 		}
 	}
 
