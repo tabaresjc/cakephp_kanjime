@@ -1,6 +1,8 @@
 <?php
 	$this->append('custom_script');
-		echo $this->Html->script('libs/newsletter');
+		echo "\n\t". $this->Html->script('libs/newsletter');
+		echo "\n\t". '<script type="text/javascript">var addthis_config = {"data_track_addressbar":true};</script>';
+		echo "\n\t". '<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-51ff608d10328f65"></script>';		
 	$this->end();
 ?>
 
@@ -11,14 +13,13 @@
 			<div id="top-nav" class="navbar">
 				<div class="navbar-inner">
 					<div class="container">
-						<!--
 						<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+							<!--
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
-							
-						</a>
-						-->						
+							-->
+						</a>					
 						<a class="brand" data-section="body" href="/">
 							<img src="/img/kanjime-logo.png" width="60" alt="Kanji Me!" />
 							<h1 class="hide">KanjiMe! | Find out your name in Japanese</h1>
@@ -49,7 +50,17 @@
 					<!--
 					<img id="img-app-icon" src="/img/kanjime-logo.png" alt="Kanji Me!" />
 					<a href="/" class="btn btn-primary"><img id="img-app-button" src="/img/btn-app-store.png" alt="Get App"/></a>
-					-->					
+					-->
+					<!-- AddThis Button BEGIN -->
+					<div class="addthis_toolbox addthis_default_style addthis_32x32_style">
+					<a class="addthis_button_preferred_1"></a>
+					<a class="addthis_button_preferred_2"></a>
+					<a class="addthis_button_preferred_3"></a>
+					<a class="addthis_button_preferred_4"></a>
+					<a class="addthis_button_compact"></a>
+					<a class="addthis_counter addthis_bubble_style"></a>
+					</div>
+					<!-- AddThis Button END -->			
 				</div>
 				<div class="span6 hero-image">					
 					<div id="hero-carousel" class="carousel slide">
