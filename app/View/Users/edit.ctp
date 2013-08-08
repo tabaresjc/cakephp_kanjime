@@ -48,6 +48,7 @@
 						</div>
 						<?php echo $this->Form->hidden('id'); ?>
 						<?php echo $this->Form->hidden('username'); ?>
+						<?php echo $this->Form->hidden('created'); ?>
 					<?php echo $this->Form->end(); ?>
 				</div>
 			</div>

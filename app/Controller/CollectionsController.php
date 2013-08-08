@@ -184,7 +184,7 @@ class CollectionsController extends AppController {
  * @return void
  */	
 	public function apiv1_index() {
-		$collections = $this->paginate();
+		$collections = $this->Collection->find('all');
 		$this->set(compact('collections'));
 	}
 /**

@@ -140,6 +140,7 @@ class User extends AppModel {
 		if (isset($this->data[$this->alias]['blank_password']) && strlen($this->data[$this->alias]['blank_password'])>0) {
 			$this->data[$this->alias]['password'] = AuthComponent::password($this->data[$this->alias]['blank_password']);
 		}
+		$this->data[$this->alias]['account_sid'] = hash_hmac('ripemd160', $this->data[$this->alias]['username'] . $this->data[$this->alias]['created'], 'Pri8PrcL4pRm');
 		return true;
 	}	
 }
