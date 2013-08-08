@@ -13,9 +13,12 @@ class CollectionsController extends AppController {
             'catchredir' => true, // Recommended unless you implement something yourself
             'debug' => 1,
             'actions' => array(
-                'api_v1_index' => array(
+                'apiv1_index' => array(
                     'extract' => array('collections')
                 ),
+				'apiv1_view' => array(
+                    'extract' => array('collection')
+                ),				
             ),
             'log' => array(
                 'pretty' => true,
@@ -79,11 +82,6 @@ class CollectionsController extends AppController {
 		$this->set(compact('collections','query'));
 	}
 	
-	public function api_v1_index() {
-		$collections = $this->paginate();
-		$this->set(compact('collections'));
-	}	
-
 /**
  * view method
  *
@@ -177,6 +175,36 @@ class CollectionsController extends AppController {
 		$this->Session->setFlash(__('Collection was not deleted'), 'flash/error');
 		$this->redirect(array('action' => 'index'));
 	}
+/**
+ * REST Index method
+ *
+ * @throws NotFoundException
+ * @throws MethodNotAllowedException
+ * @param string $id
+ * @return void
+ */	
+	public function apiv1_index() {
+		$collections = $this->paginate();
+		$this->set(compact('collections'));
+	}
+/**
+ * REST View method
+ *
+ * @throws NotFoundException
+ * @throws MethodNotAllowedException
+ * @param string $id
+ * @return void
+ */	
+	public function apiv1_view($id = null) {
+		if (!$this->Collection->exists($id)) {
+			$msg = sprintf('Insufficient data');
+			return $this->Rest->abort(array('status' => '403', 'error' => $msg));
+		}
+		$options = array('conditions' => array('Collection.' . $this->Collection->primaryKey => $id));
+		$collection = $this->Collection->find('first', $options);
+		
+		$this->set(compact('collection'));
+	}	
 	
 	public function search() {
 		if(isset($this->request->query['query'])) {
