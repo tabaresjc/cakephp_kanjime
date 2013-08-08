@@ -6,41 +6,28 @@ App::uses('AppController', 'Controller');
  * @property Collection $Collection
  */
 class CollectionsController extends AppController {
-	public $components = array (
+	public $components = array(
+        'RequestHandler',
         'Rest.Rest' => array(
-            'catchredir' => true,
+            'catchredir' => true, // Recommended unless you implement something yourself
+            'debug' => 0,
             'actions' => array(
-                'extract' => array(
-                    'index' => array('collection'),
+                'api_v1_index' => array(
+                    'extract' => array('collections')
                 ),
             ),
-        )
+            'log' => array(
+                'pretty' => true,
+            ),
+            'ratelimit' => array(
+                'enable' => false
+            ),			
+        ),
     );
 
 	public $paginate = array(
 		'limit' => 10
 	);
-	
-	public function beforeFilter () {
-        if (!$this->Auth->user()) {
-            // Try to login user via REST
-            if ($this->Rest->isActive()) {
-                $this->Auth->autoRedirect = false;
-                $data = array(
-                    $this->Auth->userModel => array(
-                        'username' => $credentials['username'],
-                        'password' => $credentials['password'],
-                    ),
-                );
-                $data = $this->Auth->hashPasswords($data);
-                if (!$this->Auth->login($data)) {
-                    $msg = sprintf('Unable to log you in with the supplied credentials. ');
-                    return $this->Rest->abort(array('status' => '403', 'error' => $msg));
-                }
-            }
-        }
-        parent::beforeFilter();
-    }
 	
 	protected function _isRest() {
 		return !empty($this->Rest) && is_object($this->Rest) && $this->Rest->isActive();
@@ -51,26 +38,27 @@ class CollectionsController extends AppController {
  * @return void
  */
 	public function index() {
-		if(!$this->_isRest()){
-			$this->Collection->recursive = 0;
-			$query = '';
-			if(isset($this->request->query['q'])) {
-				$query = $this->request->query['q'];
-				$this->paginate['conditions'][] = array(
-					'OR' => array(
-						'Collection.title LIKE' => "%$query%",
-						'Collection.subtitle LIKE' => "%$query%",
-						'Collection.description LIKE' => "%$query%"
-					)
-				);			
-			}
-			$collections = $this->paginate();
-			$this->set(compact('collections','query'));
-		} else {
-			$collections = $this->Collection->find('all');
-			$this->set(compact('collections'));
+
+		$this->Collection->recursive = 0;
+		$query = '';
+		if(isset($this->request->query['q'])) {
+			$query = $this->request->query['q'];
+			$this->paginate['conditions'][] = array(
+				'OR' => array(
+					'Collection.title LIKE' => "%$query%",
+					'Collection.subtitle LIKE' => "%$query%",
+					'Collection.description LIKE' => "%$query%"
+				)
+			);			
 		}
+		$collections = $this->paginate();
+		$this->set(compact('collections','query'));
 	}
+	
+	public function api_v1_index() {
+		$collections = $this->paginate();
+		$this->set(compact('collections'));
+	}	
 
 /**
  * view method

@@ -26,15 +26,24 @@
  * its action called 'display', and we pass a param to select the view file
  * to use (in this case, /app/View/Pages/home.ctp)...
  */
+ 
+	$prefix = 'api_v1';
+	// Add an element for each controller that you want to open up
+	// in the REST API 
+	Router::connect("/api/v1/:plugin/:controller", array('action' => 'index', 'prefix' => $prefix, $prefix => true));
+	Router::connect("/api/v1/:plugin/:controller/:action/*", array('prefix' => $prefix, $prefix => true));
+	Router::connect("/api/v1/:controller", array('action' => 'index', 'prefix' => $prefix, $prefix => true));
+	Router::connect("/api/v1/:controller/:action/*", array('prefix' => $prefix, $prefix => true));
+	
     //Router::connect('/', array('controller' => 'pages', 'action' => 'display', 'home'));
 	Router::connect('/', array('controller' => 'pages', 'action' => 'display', 'home'));
-/**
- * ...and connect the rest of 'Pages' controller's urls.
- */
+
 	Router::connect('/pages/*', array('controller' => 'pages', 'action' => 'display'));
-	Router::mapResources(array('collections'));
+	Router::connect('/dashboard/*', array('controller' => 'admins', 'action' => 'index'));
+	Router::connect('/names/:action/*', array('controller' => 'collections'));
+		
 	// Add XML + JSON to your parseExtensions
-	Router::parseExtensions('json', 'xml');	
+	Router::parseExtensions('xml', 'json');
 /**
  * Load all plugin routes. See the CakePlugin documentation on
  * how to customize the loading of plugin routes.
