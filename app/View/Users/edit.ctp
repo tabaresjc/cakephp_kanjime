@@ -20,6 +20,9 @@
 							<?php echo $this->Form->input('uname', array('label' => 'Username:', 'class' => 'span7', 'value' => $this->Form->value('User.username'), 'maxlength' => '20', 'disabled' => '1')); ?>
 						</div>
 						<div class="span12 field-box">
+							<?php echo $this->Form->input('account_sid', array('label' => 'Account SID:', 'class' => 'span7', 'disabled' => '1')); ?>
+						</div>						
+						<div class="span12 field-box">
 							<?php echo $this->Form->input('name', array('label' => 'Name:', 'class' => 'span7', 'placeholder' => 'First Name | Last Name', 'maxlength' => '30')); ?>			
 						</div>
 						<div class="span12 field-box">
