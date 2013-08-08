@@ -1,5 +1,6 @@
 <?php
 App::uses('AppController', 'Controller');
+
 /**
  * Collections Controller
  *
@@ -10,7 +11,7 @@ class CollectionsController extends AppController {
         'RequestHandler',
         'Rest.Rest' => array(
             'catchredir' => true, // Recommended unless you implement something yourself
-            'debug' => 0,
+            'debug' => 1,
             'actions' => array(
                 'api_v1_index' => array(
                     'extract' => array('collections')
@@ -20,7 +21,7 @@ class CollectionsController extends AppController {
                 'pretty' => true,
             ),
             'ratelimit' => array(
-                'enable' => false
+                'enable' => true
             ),			
         ),
     );
@@ -32,6 +33,29 @@ class CollectionsController extends AppController {
 	protected function _isRest() {
 		return !empty($this->Rest) && is_object($this->Rest) && $this->Rest->isActive();
 	}
+	public function beforeFilter () {
+        if (!$this->Auth->user()) {
+            // Try to login user via REST
+            if ($this->Rest->isActive()) {
+                $this->Auth->autoRedirect = false;
+				$this->loadModel('User');
+				$this->loadModel('Group');
+				$credentials = $this->Rest->credentials();
+                $user = $this->User->find('first', array(
+					'conditions' => array('User.username' => $credentials['username'])
+				));
+                
+                if ($this->Auth->login($user)) {
+					$this->Auth->allow($this->params['action']);
+				}else {
+                    $msg = sprintf('Unable to log you in with the supplied credentials. ');
+                    return $this->Rest->abort(array('status' => '403', 'error' => $msg));
+                }
+            }
+        }
+        parent::beforeFilter();
+    }
+    
 /**
  * index method
  *
