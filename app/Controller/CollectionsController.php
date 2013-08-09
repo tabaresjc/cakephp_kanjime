@@ -12,20 +12,37 @@ class CollectionsController extends AppController {
         'Rest.Rest' => array(
             'catchredir' => true, // Recommended unless you implement something yourself
             'debug' => 0,
-            'actions' => array(
+			'actions' => array(
                 'apiv1_index' => array(
-                    'extract' => array('collections')
+                    'extract' => array('collections', 'limit', 'offset', 'total')
                 ),
 				'apiv1_view' => array(
                     'extract' => array('collection')
                 ),				
             ),
+			'auth' => array(
+				'requireSecure' => false,
+				'keyword' => 'KMW',
+				'fields' => array(
+					'class' => 'class',
+					'apikey' => 'apikey',
+					'username' => 'username',
+				),
+			),
             'log' => array(
                 'pretty' => true,
             ),
-            'ratelimit' => array(
-                'enable' => true
-            ),			
+			'ratelimit' => array(
+				'enable' => true,
+				'default' => 'Collections',
+				'classlimits' => array(
+					'Collections' => array('-1 hour', 5),
+				),
+				'ip_limit' => array('-1 hour', 5),  // For those not logged in
+			),
+			'meta' => array(
+				'enable' => true
+			),	
         ),
     );
 
@@ -36,6 +53,7 @@ class CollectionsController extends AppController {
 	protected function _isRest() {
 		return !empty($this->Rest) && is_object($this->Rest) && $this->Rest->isActive();
 	}
+	
 	public function beforeFilter () {
         if (!$this->Auth->user()) {
             // Try to login user via REST
@@ -43,12 +61,13 @@ class CollectionsController extends AppController {
                 $this->Auth->autoRedirect = false;
 				$this->loadModel('User');
 				$this->loadModel('Group');
-				$credentials = $this->Rest->credentials();
+				$credentials = $this->Rest->credentials(true);
                 $user = $this->User->find('first', array(
-					'conditions' => array('User.username' => $credentials['username'])
+					'conditions' => array('User.username' => $credentials['username'],
+										  'User.account_sid' => $credentials['apikey'])
 				));
                 
-                if ($this->Auth->login($user)) {
+                if (!empty($user) && $this->Auth->login($user)) {
 					$this->Auth->allow($this->params['action']);
 				}else {
                     $msg = sprintf('Unable to log you in with the supplied credentials. ');
@@ -183,8 +202,18 @@ class CollectionsController extends AppController {
  * @return void
  */	
 	public function apiv1_index() {
-		$collections = $this->Collection->find('all');
-		$this->set(compact('collections'));
+		$offset = isset($this->request->query['offset']) ? $this->request->query['offset'] : '1';
+		$limit = isset($this->request->query['limit']) ? $this->request->query['limit'] : '10';
+		
+		if(!preg_match('/^[1-9][0-9]*$/',$offset) || !preg_match('/^[1-9][0-9]*$/',$limit)) {
+			$msg = sprintf(__('Please check if "offset" or "limit" are set as numeric numbers from 1 to 999999'));
+			return $this->Rest->abort(array('status' => '400', 'error' => $msg));		
+		}
+		$total = $this->Collection->find('count');
+		$options = array('limit' => $limit, 'offset'=> $offset - 1 );
+		$collections = $this->Collection->find('all', $options);
+		
+		$this->set(compact('collections', 'limit', 'offset', 'total'));
 	}
 /**
  * REST View method
@@ -197,7 +226,7 @@ class CollectionsController extends AppController {
 	public function apiv1_view($id = null) {
 		if (!$this->Collection->exists($id)) {
 			$msg = sprintf('Insufficient data');
-			return $this->Rest->abort(array('status' => '403', 'error' => $msg));
+			return $this->Rest->abort(array('status' => '400', 'error' => $msg));
 		}
 		$options = array('conditions' => array('Collection.' . $this->Collection->primaryKey => $id));
 		$collection = $this->Collection->find('first', $options);

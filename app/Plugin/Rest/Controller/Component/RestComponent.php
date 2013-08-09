@@ -859,10 +859,9 @@ Class RestComponent extends Component {
 			$serverKeys = array_flip($this->settings['meta']['requestKeys']);
 			$server = array_intersect_key($_SERVER, $serverKeys);
 			foreach ($server as $k=>$v) {
-				if ($k === ($lc = strtolower($k))) {
-					continue;
-				}
-				$server[$lc] = $v;
+				$lc = strtolower($k);
+				
+				$server[$lc] = htmlspecialchars($v, ENT_QUOTES);
 				unset($server[$k]);
 			}
 
