@@ -22,10 +22,10 @@ class CollectionsController extends AppController {
             ),
 			'auth' => array(
 				'requireSecure' => false,
-				'keyword' => 'KMW',
+				'keyword' => 'KMW_AUTH',
 				'fields' => array(
 					'class' => 'class',
-					'apikey' => 'apikey',
+					'apikey' => 'account_sid',
 					'username' => 'username',
 				),
 			),
@@ -64,7 +64,7 @@ class CollectionsController extends AppController {
 				$credentials = $this->Rest->credentials(true);
                 $user = $this->User->find('first', array(
 					'conditions' => array('User.username' => $credentials['username'],
-										  'User.account_sid' => $credentials['apikey'])
+										  'User.account_sid' => $credentials['account_sid'])
 				));
                 
                 if (!empty($user) && $this->Auth->login($user)) {
