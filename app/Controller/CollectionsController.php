@@ -1,19 +1,64 @@
 <?php
 App::uses('AppController', 'Controller');
+
 /**
  * Collections Controller
  *
  * @property Collection $Collection
  */
 class CollectionsController extends AppController {
+	public $components = array(
+        'RequestHandler',
+        'Rest.Rest' => array(
+            'catchredir' => true, // Recommended unless you implement something yourself
+            'debug' => 0,
+            'actions' => array(
+                'apiv1_index' => array(
+                    'extract' => array('collections')
+                ),
+				'apiv1_view' => array(
+                    'extract' => array('collection')
+                ),				
+            ),
+            'log' => array(
+                'pretty' => true,
+            ),
+            'ratelimit' => array(
+                'enable' => true
+            ),			
+        ),
+    );
+
 	public $paginate = array(
 		'limit' => 10
 	);
 	
-	public function beforeFilter() {
-		parent::beforeFilter();
-		//$this->Auth->allow('findkanji');
-	}	
+	protected function _isRest() {
+		return !empty($this->Rest) && is_object($this->Rest) && $this->Rest->isActive();
+	}
+	public function beforeFilter () {
+        if (!$this->Auth->user()) {
+            // Try to login user via REST
+            if ($this->Rest->isActive()) {
+                $this->Auth->autoRedirect = false;
+				$this->loadModel('User');
+				$this->loadModel('Group');
+				$credentials = $this->Rest->credentials();
+                $user = $this->User->find('first', array(
+					'conditions' => array('User.username' => $credentials['username'])
+				));
+                
+                if ($this->Auth->login($user)) {
+					$this->Auth->allow($this->params['action']);
+				}else {
+                    $msg = sprintf('Unable to log you in with the supplied credentials. ');
+                    return $this->Rest->abort(array('status' => '403', 'error' => $msg));
+                }
+            }
+        }
+        parent::beforeFilter();
+    }
+    
 /**
  * index method
  *
@@ -24,18 +69,18 @@ class CollectionsController extends AppController {
 		$query = '';
 		if(isset($this->request->query['q'])) {
 			$query = $this->request->query['q'];
-            $this->paginate['conditions'][] = array(
+			$this->paginate['conditions'][] = array(
 				'OR' => array(
 					'Collection.title LIKE' => "%$query%",
 					'Collection.subtitle LIKE' => "%$query%",
 					'Collection.description LIKE' => "%$query%"
 				)
 			);			
-        }
-		$this->set('query', $query);
-		$this->set('collections', $this->paginate());
+		}
+		$collections = $this->paginate();
+		$this->set(compact('collections','query'));
 	}
-
+	
 /**
  * view method
  *
@@ -129,6 +174,36 @@ class CollectionsController extends AppController {
 		$this->Session->setFlash(__('Collection was not deleted'), 'flash/error');
 		$this->redirect(array('action' => 'index'));
 	}
+/**
+ * REST Index method
+ *
+ * @throws NotFoundException
+ * @throws MethodNotAllowedException
+ * @param string $id
+ * @return void
+ */	
+	public function apiv1_index() {
+		$collections = $this->Collection->find('all');
+		$this->set(compact('collections'));
+	}
+/**
+ * REST View method
+ *
+ * @throws NotFoundException
+ * @throws MethodNotAllowedException
+ * @param string $id
+ * @return void
+ */	
+	public function apiv1_view($id = null) {
+		if (!$this->Collection->exists($id)) {
+			$msg = sprintf('Insufficient data');
+			return $this->Rest->abort(array('status' => '403', 'error' => $msg));
+		}
+		$options = array('conditions' => array('Collection.' . $this->Collection->primaryKey => $id));
+		$collection = $this->Collection->find('first', $options);
+		
+		$this->set(compact('collection'));
+	}	
 	
 	public function search() {
 		if(isset($this->request->query['query'])) {

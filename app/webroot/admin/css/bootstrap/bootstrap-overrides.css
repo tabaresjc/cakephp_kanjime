@@ -368,4 +368,12 @@ table th span.line{
 	}
 }
 
+input[disabled],
+select[disabled],
+textarea[disabled],
+input[readonly],
+select[readonly],
+textarea[readonly] {
+  cursor: default !important;
+}
 

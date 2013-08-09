@@ -16,15 +16,23 @@
 			<?php echo __('Id'); ?>
 			</strong>
 			</td>
-			<td><?php echo h($user['User']['id']); ?>&nbsp;</td>
+			<td><?php echo h($user['User']['id']); ?></td>
 			</tr>
+			<tr>
+			<td>
+			<strong>
+			<?php echo __('Account SID'); ?>
+			</strong>
+			</td>
+			<td><?php echo h($user['User']['account_sid']); ?></td>
+			</tr>			
 			<tr>
 			<td>
 			<strong>
 			<?php echo __('Username'); ?>
 			</strong>
 			</td>
-			<td><?php echo h($user['User']['username']); ?>&nbsp;</td>
+			<td><?php echo h($user['User']['username']); ?></td>
 			</tr>
 			<tr>
 			<td>
@@ -32,7 +40,7 @@
 			<?php echo __('Name'); ?>
 			</strong>
 			</td>
-			<td><?php echo h($user['User']['name']); ?>&nbsp;</td>
+			<td><?php echo h($user['User']['name']); ?></td>
 			</tr>
 			<tr>
 			<td>						
@@ -40,7 +48,7 @@
 			<?php echo __('Email'); ?>
 			</strong>
 			</td>
-			<td><?php echo h($user['User']['email']); ?>&nbsp;</td>
+			<td><?php echo h($user['User']['email']); ?></td>
 			</tr>
 			<tr>
 			<td>
@@ -48,7 +56,7 @@
 			<?php echo __('Address'); ?>
 			</strong>
 			</td>
-			<td><?php echo h($user['User']['address']); ?>&nbsp;</td>
+			<td><?php echo h($user['User']['address']); ?></td>
 			</tr>
 			<tr>
 			<td>
@@ -57,7 +65,7 @@
 			</strong>
 			</td>
 			<td>
-			<?php echo $this->Html->link($user['Group']['name'], array('controller' => 'groups', 'action' => 'view', $user['Group']['id']), array('class' => '')); ?>&nbsp;</td>
+			<?php echo $this->Html->link($user['Group']['name'], array('controller' => 'groups', 'action' => 'view', $user['Group']['id']), array('class' => '')); ?></td>
 			</tr>
 			<tr>
 			<td>
@@ -65,7 +73,7 @@
 			<?php echo __('Created'); ?>
 			</strong>
 			</td>
-			<td><?php echo $this->Time->format(DATETIME_FORMAT,$user['User']['created']); ?>&nbsp;</td>
+			<td><?php echo $this->Time->format(DATETIME_FORMAT,$user['User']['created']); ?></td>
 			</tr>
 			<tr>
 			<td>
@@ -73,7 +81,7 @@
 			<?php echo __('Modified'); ?>
 			</strong>
 			</td>
-			<td><?php echo $this->Time->format(DATETIME_FORMAT,$user['User']['modified']); ?>&nbsp;</td>
+			<td><?php echo $this->Time->format(DATETIME_FORMAT,$user['User']['modified']); ?></td>
 			</tr>
 			</table>
 		</div>			

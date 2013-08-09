@@ -127,7 +127,7 @@ class GenericHtmlHelper extends HtmlHelper {
 	public function addIconsLinks($controller, $action) {
 		$out = '';		
 		$out .= "\t". '<!-- Fav and touch icons -->' . "\n";
-		$out .= "\t". $this->meta('icon','/ico/icon-57.png'). "\n";
+		$out .= "\t". $this->meta('icon','/favicon.png'). "\n";
 		$out .= "\t". '<link rel="apple-touch-icon-precomposed" sizes="144x144" href="/ico/icon-144.png">' . "\n";
 		$out .= "\t". '<link rel="apple-touch-icon-precomposed" sizes="114x114" href="/ico/icon-114.png">' . "\n";
 		$out .= "\t". '<link rel="apple-touch-icon-precomposed" sizes="72x72" href="/ico/icon-72.png">' . "\n";
