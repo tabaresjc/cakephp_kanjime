@@ -11,7 +11,7 @@ class CollectionsController extends AppController {
         'RequestHandler',
         'Rest.Rest' => array(
             'catchredir' => true, // Recommended unless you implement something yourself
-            'debug' => 1,
+            'debug' => 0,
             'actions' => array(
                 'apiv1_index' => array(
                     'extract' => array('collections')
@@ -65,7 +65,6 @@ class CollectionsController extends AppController {
  * @return void
  */
 	public function index() {
-
 		$this->Collection->recursive = 0;
 		$query = '';
 		if(isset($this->request->query['q'])) {
