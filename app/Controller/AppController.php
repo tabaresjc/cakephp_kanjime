@@ -36,6 +36,8 @@ class AppController extends Controller {
     public $components = array(
 		/*'DebugKit.Toolbar',*/
         'Acl',
+		'RequestHandler',
+		'Session',
         'Auth' => array(
             'authorize' => array(
                 'Actions' => array('actionPath' => 'controllers')
@@ -44,14 +46,39 @@ class AppController extends Controller {
             'logoutRedirect' => array('controller' => 'users', 'action' => 'login'),
 			'loginRedirect' => array('controller' => 'admins', 'action' => 'index'),
         ),
-        'Session'
+        'Rest.Rest' => array(
+            'debug' => 0,
+			'auth' => array(
+				'requireSecure' => false,
+				'keyword' => 'KMW_AUTH',
+				'fields' => array(
+					'class' => 'class',
+					'apikey' => 'account_sid',
+					'username' => 'username',
+				),
+			),
+            'log' => array(
+                'pretty' => true,
+            ),
+			'ratelimit' => array(
+				'enable' => false,
+				'default' => 'Collections',
+				'classlimits' => array(
+					'Collections' => array('-1 hour', 5),
+				),
+				'ip_limit' => array('-1 hour', 5),  // For those not logged in
+			),
+			'meta' => array(
+				'enable' => true
+			),	
+        )		
     );
 	
     public $helpers = array(
         'Html' => array(
             'className' => 'GenericHtml'
         ),
-		'Form', 
+		'Form',
 		'Session'
     );
 }

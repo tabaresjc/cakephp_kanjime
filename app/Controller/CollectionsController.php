@@ -7,8 +7,7 @@ App::uses('AppController', 'Controller');
  * @property Collection $Collection
  */
 class CollectionsController extends AppController {
-	public $components = array(
-        'RequestHandler',
+    public $components = array(
         'Rest.Rest' => array(
             'catchredir' => true, // Recommended unless you implement something yourself
             'debug' => 0,
@@ -19,32 +18,9 @@ class CollectionsController extends AppController {
 				'apiv1_view' => array(
                     'extract' => array('collection')
                 ),				
-            ),
-			'auth' => array(
-				'requireSecure' => false,
-				'keyword' => 'KMW_AUTH',
-				'fields' => array(
-					'class' => 'class',
-					'apikey' => 'account_sid',
-					'username' => 'username',
-				),
-			),
-            'log' => array(
-                'pretty' => true,
-            ),
-			'ratelimit' => array(
-				'enable' => true,
-				'default' => 'Collections',
-				'classlimits' => array(
-					'Collections' => array('-1 hour', 5),
-				),
-				'ip_limit' => array('-1 hour', 5),  // For those not logged in
-			),
-			'meta' => array(
-				'enable' => true
-			),	
-        ),
-    );
+            )
+		)
+	);
 
 	public $paginate = array(
 		'limit' => 10
