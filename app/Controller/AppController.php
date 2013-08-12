@@ -46,10 +46,10 @@ class AppController extends Controller {
             'logoutRedirect' => array('controller' => 'users', 'action' => 'login'),
 			'loginRedirect' => array('controller' => 'admins', 'action' => 'index'),
         ),
-        'Rest.Rest' => array(
-            'debug' => 0,
+		'Rest.Rest' => array(
+			'catchredir' => true,
+			'debug' => 0,
 			'auth' => array(
-				'requireSecure' => false,
 				'keyword' => 'KMW_AUTH',
 				'fields' => array(
 					'class' => 'class',
@@ -57,21 +57,37 @@ class AppController extends Controller {
 					'username' => 'username',
 				),
 			),
-            'log' => array(
-                'pretty' => true,
-            ),
 			'ratelimit' => array(
-				'enable' => false,
-				'default' => 'Collections',
+				'enable' => true,
+				'default' => 'Collection',
 				'classlimits' => array(
-					'Collections' => array('-1 hour', 5),
+					'Collection' => array('-1 hour', 1000)
 				),
-				'ip_limit' => array('-1 hour', 5),  // For those not logged in
+				'identfield' => 'apikey',
+				'ip_limit' => array('-1 hour', 60),  // For those not logged in
 			),
+			'actions' => array(
+                'apiv1_index' => array(
+                    'extract' => array('data')
+                ),
+				'apiv1_view' => array(
+                    'extract' => array('data')
+                ),				
+            ),
 			'meta' => array(
-				'enable' => true
-			),	
-        )		
+				'enable' => true,
+				'requestKeys' => array(
+					'HTTP_HOST',
+					'HTTP_USER_AGENT',
+					'REMOTE_ADDR',
+					'REQUEST_METHOD',
+					'REQUEST_TIME',
+					'REQUEST_URI',
+					'SERVER_ADDR',
+					'SERVER_PROTOCOL'
+				),
+			),			
+		)
     );
 	
     public $helpers = array(
@@ -81,4 +97,8 @@ class AppController extends Controller {
 		'Form',
 		'Session'
     );
+	
+	protected function _isRest() {
+		return !empty($this->Rest) && is_object($this->Rest) && $this->Rest->isActive();
+	}	
 }

@@ -7,28 +7,9 @@ App::uses('AppController', 'Controller');
  * @property Collection $Collection
  */
 class CollectionsController extends AppController {
-    public $components = array(
-        'Rest.Rest' => array(
-            'catchredir' => true, // Recommended unless you implement something yourself
-            'debug' => 0,
-			'actions' => array(
-                'apiv1_index' => array(
-                    'extract' => array('collections', 'limit', 'offset', 'total')
-                ),
-				'apiv1_view' => array(
-                    'extract' => array('collection')
-                ),				
-            )
-		)
-	);
-
 	public $paginate = array(
 		'limit' => 10
 	);
-	
-	protected function _isRest() {
-		return !empty($this->Rest) && is_object($this->Rest) && $this->Rest->isActive();
-	}
 	
 	public function beforeFilter () {
         if (!$this->Auth->user()) {
@@ -45,6 +26,7 @@ class CollectionsController extends AppController {
                 
                 if (!empty($user) && $this->Auth->login($user)) {
 					$this->Auth->allow($this->params['action']);
+					$this->Session->destroy();
 				}else {
                     $msg = sprintf('Unable to log you in with the supplied credentials. ');
                     return $this->Rest->abort(array('status' => '403', 'error' => $msg));
@@ -178,6 +160,7 @@ class CollectionsController extends AppController {
  * @return void
  */	
 	public function apiv1_index() {
+		$data = array();
 		$offset = isset($this->request->query['offset']) ? $this->request->query['offset'] : '1';
 		$limit = isset($this->request->query['limit']) ? $this->request->query['limit'] : '10';
 		
@@ -185,11 +168,14 @@ class CollectionsController extends AppController {
 			$msg = sprintf(__('Please check if "offset" or "limit" are set as numeric numbers from 1 to 999999'));
 			return $this->Rest->abort(array('status' => '400', 'error' => $msg));		
 		}
-		$total = $this->Collection->find('count');
-		$options = array('limit' => $limit, 'offset'=> $offset - 1 );
-		$collections = $this->Collection->find('all', $options);
 		
-		$this->set(compact('collections', 'limit', 'offset', 'total'));
+		$options = array('limit' => $limit, 'offset'=> $offset - 1 );
+		$data['collections'] = $this->Collection->find('all', $options);
+		$data['total'] = $this->Collection->find('count');
+		$data['offset'] = $offset;
+		$data['limit'] = $limit;
+		
+		$this->set(compact('data'));
 	}
 /**
  * REST View method
@@ -205,9 +191,9 @@ class CollectionsController extends AppController {
 			return $this->Rest->abort(array('status' => '400', 'error' => $msg));
 		}
 		$options = array('conditions' => array('Collection.' . $this->Collection->primaryKey => $id));
-		$collection = $this->Collection->find('first', $options);
+		$data = $this->Collection->find('first', $options);
 		
-		$this->set(compact('collection'));
+		$this->set(compact('data'));
 	}	
 	
 	public function search() {
