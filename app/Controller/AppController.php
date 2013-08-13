@@ -67,10 +67,16 @@ class AppController extends Controller {
 				'ip_limit' => array('-1 hour', 60),  // For those not logged in
 			),
 			'actions' => array(
-                'apiv1_index' => array(
+                'index' => array(
                     'extract' => array('data')
                 ),
-				'apiv1_view' => array(
+				'view' => array(
+                    'extract' => array('data')
+                ),
+				'update' => array(
+                    'extract' => array('data')
+                ),
+				'delete' => array(
                     'extract' => array('data')
                 ),				
             ),
@@ -98,7 +104,7 @@ class AppController extends Controller {
 		'Session'
     );
 	
-	protected function _isRest() {
+	public function isRest() {
 		return !empty($this->Rest) && is_object($this->Rest) && $this->Rest->isActive();
 	}	
 }
