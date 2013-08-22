@@ -798,19 +798,19 @@ Class RestComponent extends Component {
 	 *
 	 * @return array
 	 */
-	public function response ($data = array()) {
+	public function response ($apiresponse = array()) {
 		// In case of edit, return what post data was received
-		if (empty($data) && !empty($this->postData)) {
-			$data = $this->postData;
+		if (empty($apiresponse) && !empty($this->postData)) {
+			$apiresponse = $this->postData;
 
 			// In case of add, enrich the postdata with the primary key of the
 			// added record. Nice if you e.g. first create a parent, and then
 			// immediately need the ID to add it's children
 			if (!empty($this->Controller->modelClass)) {
 				$modelClass = $this->Controller->modelClass;
-				if (!empty($data[$modelClass]) && ($Model = @$this->Controller->{$modelClass})) {
-					if (empty($data[$modelClass][$Model->primaryKey]) && $Model->id) {
-						$data[$modelClass][$Model->primaryKey] = $Model->id;
+				if (!empty($apiresponse[$modelClass]) && ($Model = @$this->Controller->{$modelClass})) {
+					if (empty($apiresponse[$modelClass][$Model->primaryKey]) && $Model->id) {
+						$apiresponse[$modelClass][$Model->primaryKey] = $Model->id;
 					}
 				}
 
@@ -850,19 +850,18 @@ Class RestComponent extends Component {
 			: 'ok';
 
 		if (false === ($embed = @$this->settings['actions'][$this->Controller->action]['embed'])) {
-			$response = $data;
+			$response = $apiresponse;
 		} else {
-			$response = compact('data');
+			$response = compact('apiresponse');
 		}
 
 		if ($this->settings['meta']['enable']) {
 			$serverKeys = array_flip($this->settings['meta']['requestKeys']);
 			$server = array_intersect_key($_SERVER, $serverKeys);
 			foreach ($server as $k=>$v) {
-				if ($k === ($lc = strtolower($k))) {
-					continue;
-				}
-				$server[$lc] = $v;
+				$lc = strtolower($k);
+				
+				$server[$lc] = htmlspecialchars($v, ENT_QUOTES);
 				unset($server[$k]);
 			}
 
@@ -885,7 +884,7 @@ Class RestComponent extends Component {
 
 		$dump = array(
 			'data_in' => $this->postData,
-			'data_out' => $data,
+			'data_out' => $apiresponse,
 		);
 		if ($this->settings['meta']['enable']) {
 			$dump['meta'] = $response['meta'];

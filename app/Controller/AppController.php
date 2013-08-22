@@ -36,6 +36,8 @@ class AppController extends Controller {
     public $components = array(
 		/*'DebugKit.Toolbar',*/
         'Acl',
+		'RequestHandler',
+		'Session',
         'Auth' => array(
             'authorize' => array(
                 'Actions' => array('actionPath' => 'controllers')
@@ -44,14 +46,65 @@ class AppController extends Controller {
             'logoutRedirect' => array('controller' => 'users', 'action' => 'login'),
 			'loginRedirect' => array('controller' => 'admins', 'action' => 'index'),
         ),
-        'Session'
+		'Rest.Rest' => array(
+			'catchredir' => true,
+			'debug' => 0,
+			'auth' => array(
+				'keyword' => 'KMW_AUTH',
+				'fields' => array(
+					'class' => 'class',
+					'apikey' => 'account_sid',
+					'username' => 'username',
+				),
+			),
+			'ratelimit' => array(
+				'enable' => true,
+				'default' => 'Collection',
+				'classlimits' => array(
+					'Collection' => array('-1 hour', 1000)
+				),
+				'identfield' => 'apikey',
+				'ip_limit' => array('-1 hour', 60),  // For those not logged in
+			),
+			'actions' => array(
+                'index' => array(
+                    'extract' => array('data')
+                ),
+				'view' => array(
+                    'extract' => array('data')
+                ),
+				'update' => array(
+                    'extract' => array('data')
+                ),
+				'delete' => array(
+                    'extract' => array('data')
+                ),				
+            ),
+			'meta' => array(
+				'enable' => true,
+				'requestKeys' => array(
+					'HTTP_HOST',
+					'HTTP_USER_AGENT',
+					'REMOTE_ADDR',
+					'REQUEST_METHOD',
+					'REQUEST_TIME',
+					'REQUEST_URI',
+					'SERVER_ADDR',
+					'SERVER_PROTOCOL'
+				),
+			),			
+		)
     );
 	
     public $helpers = array(
         'Html' => array(
             'className' => 'GenericHtml'
         ),
-		'Form', 
+		'Form',
 		'Session'
     );
+	
+	public function isRest() {
+		return !empty($this->Rest) && is_object($this->Rest) && $this->Rest->isActive();
+	}	
 }
