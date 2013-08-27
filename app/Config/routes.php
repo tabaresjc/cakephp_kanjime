@@ -33,10 +33,6 @@
 	/*Router::connect('/names/:action/*', array('controller' => 'collections'));*/
 	Router::connect('/', array('controller' => 'admins', 'action' => 'index'));
 	Router::connect('/login', array('controller' => 'users', 'action' => 'login'));
-	
-	//Add XML + JSON to your parseExtensions
-	Router::mapResources(array('collections'));
-	Router::parseExtensions('xml', 'json');
 /**
  * Load all plugin routes. See the CakePlugin documentation on
  * how to customize the loading of plugin routes.

@@ -5,22 +5,19 @@ App::uses('HtmlHelper', 'View/Helper');
 
 class GenericHtmlHelper extends HtmlHelper {
 	var $helpers = array('Session');
-	
     protected $accessMenus = array(
 		'Administrators' => array(
 			array(
 				'icon' => 'icon-home',
 				'name' => 'Home',
 				'url' => array('plugin'=>'','controller' => 'admins', 'action' => 'index'),
-				'controller' => array('admins'),
-				'visible' => array('Administrators','Managers','Users'),
+				'controller' => array('admins')
 			),
 			array(
-				'icon' => 'icon-group',
+				'icon' => 'icon-user',
 				'name' => 'Users',
 				'url' => 'javascript:void(0);',
-				'controller' => array('users','groups'),
-				'visible' => array('Administrators','Managers','Users'),
+				'controller' => array('users'),
 				'childs' => array(
 					array(
 						'name' => 'User List',
@@ -29,42 +26,32 @@ class GenericHtmlHelper extends HtmlHelper {
 					array(
 						'name' => 'New User',
 						'url' => array('plugin'=>'', 'controller' => 'users', 'action' => 'add')
-					),
-					array(
-						'name' => 'Groups',
-						'url' => array('plugin'=>'', 'controller' => 'groups', 'action' => 'index')
 					)
 				)
 			),
 			array(
 				'icon' => 'icon-group',
-				'name' => 'Users',
+				'name' => 'Group',
 				'url' => 'javascript:void(0);',
-				'controller' => array('users','groups'),
-				'visible' => array('Administrators','Managers','Users'),
+				'controller' => array('groups'),
 				'childs' => array(
 					array(
-						'name' => 'User List',
-						'url' => array('plugin'=>'', 'controller' => 'users', 'action' => 'index')
+						'name' => 'Group List',
+						'url' => array('plugin'=>'', 'controller' => 'groups', 'action' => 'index')
 					),
 					array(
 						'name' => 'New User',
-						'url' => array('plugin'=>'', 'controller' => 'users', 'action' => 'add')
-					),
-					array(
-						'name' => 'Groups',
-						'url' => array('plugin'=>'', 'controller' => 'groups', 'action' => 'index')
+						'url' => array('plugin'=>'', 'controller' => 'groups', 'action' => 'add')
 					)
 				)
-			)			
+			)
 		),
 		'Managers' => array(
 			array(
 				'icon' => 'icon-home',
 				'name' => 'Home',
 				'url' => array('plugin'=>'','controller' => 'admins', 'action' => 'index'),
-				'controller' => array('admins'),
-				'visible' => array('Administrators','Managers','Users'),
+				'controller' => array('admins')
 			),
 			array(
 				'icon' => 'icon-tags',
@@ -88,7 +75,6 @@ class GenericHtmlHelper extends HtmlHelper {
 				'name' => 'Users',
 				'url' => 'javascript:void(0);',
 				'controller' => array('users','groups'),
-				'visible' => array('Administrators','Managers','Users'),
 				'childs' => array(
 					array(
 						'name' => 'User List',
@@ -110,9 +96,8 @@ class GenericHtmlHelper extends HtmlHelper {
 				'icon' => 'icon-home',
 				'name' => 'Home',
 				'url' => array('plugin'=>'','controller' => 'admins', 'action' => 'index'),
-				'controller' => array('admins'),
-				'visible' => array('Administrators','Managers','Users'),
-			),
+				'controller' => array('admins')
+			)
 		)
     );
 	
