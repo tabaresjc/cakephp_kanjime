@@ -54,27 +54,10 @@ class GenericHtmlHelper extends HtmlHelper {
 				'controller' => array('admins')
 			),
 			array(
-				'icon' => 'icon-tags',
-				'name' => 'Kanji',
-				'url' => 'javascript:void(0);',
-				'controller' => array('collections'),
-				'visible' => array('Administrators','Managers'),
-				'childs' => array(
-					array(
-						'name' => 'Kanji List',
-						'url' => array('plugin'=>'', 'controller' => 'collections', 'action' => 'index')
-					),
-					array(
-						'name' => 'New Name',
-						'url' => array('plugin'=>'', 'controller' => 'collections', 'action' => 'add')
-					)
-				)
-			),		
-			array(
-				'icon' => 'icon-group',
+				'icon' => 'icon-user',
 				'name' => 'Users',
 				'url' => 'javascript:void(0);',
-				'controller' => array('users','groups'),
+				'controller' => array('users'),
 				'childs' => array(
 					array(
 						'name' => 'User List',
@@ -83,10 +66,22 @@ class GenericHtmlHelper extends HtmlHelper {
 					array(
 						'name' => 'New User',
 						'url' => array('plugin'=>'', 'controller' => 'users', 'action' => 'add')
+					)
+				)
+			),
+			array(
+				'icon' => 'icon-group',
+				'name' => 'Group',
+				'url' => 'javascript:void(0);',
+				'controller' => array('groups'),
+				'childs' => array(
+					array(
+						'name' => 'Group List',
+						'url' => array('plugin'=>'', 'controller' => 'groups', 'action' => 'index')
 					),
 					array(
-						'name' => 'Groups',
-						'url' => array('plugin'=>'', 'controller' => 'groups', 'action' => 'index')
+						'name' => 'New User',
+						'url' => array('plugin'=>'', 'controller' => 'groups', 'action' => 'add')
 					)
 				)
 			)
