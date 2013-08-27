@@ -24,12 +24,17 @@ class UsersController extends AppController {
 		
 		// $group->id = 2;
 		// $this->Acl->deny($group, 'controllers');
+		// $this->Acl->allow($group, 'controllers/Admins/index');
 		// $this->Acl->allow($group, 'controllers/Collections');
-		// $this->Acl->allow($group, 'controllers/Pages');
+		// $this->Acl->allow($group, 'controllers/Users');
 		
 		// $group->id = 3;
 		// $this->Acl->deny($group, 'controllers');
-		// $this->Acl->allow($group, 'controllers/Pages');
+		// $this->Acl->allow($group, 'controllers/Admins/index');
+		// $this->Acl->allow($group, 'controllers/Users/view');
+		// $this->Acl->allow($group, 'controllers/Users/login');
+		// $this->Acl->allow($group, 'controllers/Users/logout');
+		
 		// echo "all done";
 		// exit;
 	// }
@@ -38,10 +43,12 @@ class UsersController extends AppController {
 		if ($this->request->is('post')) {
 			if ($this->Auth->login()) {
 				$user = $this->Session->read('Auth.User');
+			
 				$this->Session->setFlash('Welcome '. $user['name'] . '!', 'flash/success');
 				$this->redirect($this->Auth->loginRedirect);				
 			} else {
 				$this->Session->setFlash(__('Your username or password was incorrect.'), 'flash/error');
+				$this->redirect($this->Auth->logout());
 			}
 		} else if ($this->Session->read('Auth.User')) {
 			$this->Session->setFlash('You are logged in!', 'flash/success');
@@ -50,6 +57,7 @@ class UsersController extends AppController {
 	}
 
 	public function logout() {
+		$this->Session->delete('Auth.Permissions');
 		$this->Session->setFlash('Good-Bye', 'flash/success');
 		$this->redirect($this->Auth->logout());
 	}

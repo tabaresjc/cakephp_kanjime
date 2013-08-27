@@ -1,11 +1,10 @@
 <?php
 	if(!$user) return;
 ?>
-	
-    <!-- sidebar -->
+	<!-- sidebar -->
     <div id="sidebar-nav">
         <ul id="dashboard-menu">
-			<?php echo $this->Html->getLinksToControllers($user, $cur_controller, $cur_action) ?>
+			<?php echo $this->Html->getLinksToControllers($cur_controller, $cur_action) ?>
         </ul>
     </div>
     <!-- end sidebar -->

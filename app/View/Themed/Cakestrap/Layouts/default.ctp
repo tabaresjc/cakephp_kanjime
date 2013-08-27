@@ -16,7 +16,7 @@
  * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
 	if (!defined('SITE_NAME')) {
-		define('SITE_NAME', __d('cake_dev', 'Kanji Me!'));
+		define('SITE_NAME', __d('cake_dev', 'SDCmob Online'));
 	}
 	
 	$cur_controller = $this->params['controller'];
@@ -74,6 +74,7 @@
 		echo $this->Session->flash(). "\n";
 		echo $this->fetch('content'). "\n";
 		echo $this->element('menu/content_footer');
+		
 		if(Configure::read('debug') > 1 ){
 			echo "\t" . '<div class="container">' . "\n";
 			echo "\t" . '	<div class="well">' . "\n";

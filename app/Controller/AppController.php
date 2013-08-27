@@ -38,6 +38,7 @@ class AppController extends Controller {
         'Acl',
 		'RequestHandler',
 		'Session',
+		'Security',
         'Auth' => array(
             'authorize' => array(
                 'Actions' => array('actionPath' => 'controllers')
@@ -104,7 +105,12 @@ class AppController extends Controller {
 		'Session'
     );
 	
-	public function isRest() {
+    protected function isAuthorized($user) {
+        // return false;
+        return $this->Auth->loggedIn();
+    }	
+	
+	protected function isRest() {
 		return !empty($this->Rest) && is_object($this->Rest) && $this->Rest->isActive();
 	}	
 }

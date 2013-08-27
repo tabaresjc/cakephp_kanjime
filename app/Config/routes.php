@@ -27,13 +27,14 @@
  * to use (in this case, /app/View/Pages/home.ctp)...
  */
  
-    //Router::connect('/', array('controller' => 'pages', 'action' => 'display', 'home'));
-	Router::connect('/pages/*', array('controller' => 'pages', 'action' => 'display'));
-	Router::connect('/dashboard/*', array('controller' => 'admins', 'action' => 'index'));
-	Router::connect('/names/:action/*', array('controller' => 'collections'));
-	Router::connect('/', array('controller' => 'pages', 'action' => 'display', 'home'));
+    /*Router::connect('/', array('controller' => 'pages', 'action' => 'display', 'home'));*/
+	/*Router::connect('/pages/*', array('controller' => 'pages', 'action' => 'display'));*/
+	/*Router::connect('/dashboard/*', array('controller' => 'admins', 'action' => 'index'));*/
+	/*Router::connect('/names/:action/*', array('controller' => 'collections'));*/
+	Router::connect('/', array('controller' => 'admins', 'action' => 'index'));
+	Router::connect('/login', array('controller' => 'users', 'action' => 'login'));
 	
-	// Add XML + JSON to your parseExtensions
+	//Add XML + JSON to your parseExtensions
 	Router::mapResources(array('collections'));
 	Router::parseExtensions('xml', 'json');
 /**

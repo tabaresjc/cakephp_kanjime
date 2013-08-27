@@ -7,6 +7,9 @@ App::uses('AppController', 'Controller');
  * @property Collection $Collection
  */
 class CollectionsController extends AppController {
+
+	
+
 	public $paginate = array(
 		'limit' => 10
 	);
@@ -34,6 +37,7 @@ class CollectionsController extends AppController {
             }
         }
         parent::beforeFilter();
+		$this->Security->unlockedActions = array('findkanji');
     }
     
 /**

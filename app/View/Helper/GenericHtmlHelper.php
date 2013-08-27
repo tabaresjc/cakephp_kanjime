@@ -1,52 +1,121 @@
 <?php
 // app/View/Helper/MyHtmlHelper.php
 App::uses('HtmlHelper', 'View/Helper');
-class GenericHtmlHelper extends HtmlHelper {
-    protected $listOfLink = array(
-        array(
-            'icon' => 'icon-home',
-			'name' => 'Home',
-			'url' => array('controller' => 'admins', 'action' => 'index'),
-			'controller' => array('admins')
-        ),
-		array(
-            'icon' => 'icon-tags',
-			'name' => 'Kanji',
-			'url' => 'javascript:void(0);',
-			'controller' => array('collections'),
-			'childs' => array(
-				array(
-					'name' => 'Kanji List',
-					'url' => array('controller' => 'collections', 'action' => 'index')
-				),
-				array(
-					'name' => 'New Name',
-					'url' => array('controller' => 'collections', 'action' => 'add')
-				)
-			)
-        ),		
-		array(
-            'icon' => 'icon-group',
-			'name' => 'Users',
-			'url' => 'javascript:void(0);',
-			'controller' => array('users','groups'),
-			'childs' => array(
-				array(
-					'name' => 'User List',
-					'url' => array('controller' => 'users', 'action' => 'index')
-				),
-				array(
-					'name' => 'New User',
-					'url' => array('controller' => 'users', 'action' => 'add')
-				),
-				array(
-					'name' => 'Groups',
-					'url' => array('controller' => 'groups', 'action' => 'index')
-				)
-			)
-        ),
-    );
 
+
+class GenericHtmlHelper extends HtmlHelper {
+	var $helpers = array('Session');
+	
+    protected $accessMenus = array(
+		'Administrators' => array(
+			array(
+				'icon' => 'icon-home',
+				'name' => 'Home',
+				'url' => array('plugin'=>'','controller' => 'admins', 'action' => 'index'),
+				'controller' => array('admins'),
+				'visible' => array('Administrators','Managers','Users'),
+			),
+			array(
+				'icon' => 'icon-group',
+				'name' => 'Users',
+				'url' => 'javascript:void(0);',
+				'controller' => array('users','groups'),
+				'visible' => array('Administrators','Managers','Users'),
+				'childs' => array(
+					array(
+						'name' => 'User List',
+						'url' => array('plugin'=>'', 'controller' => 'users', 'action' => 'index')
+					),
+					array(
+						'name' => 'New User',
+						'url' => array('plugin'=>'', 'controller' => 'users', 'action' => 'add')
+					),
+					array(
+						'name' => 'Groups',
+						'url' => array('plugin'=>'', 'controller' => 'groups', 'action' => 'index')
+					)
+				)
+			),
+			array(
+				'icon' => 'icon-group',
+				'name' => 'Users',
+				'url' => 'javascript:void(0);',
+				'controller' => array('users','groups'),
+				'visible' => array('Administrators','Managers','Users'),
+				'childs' => array(
+					array(
+						'name' => 'User List',
+						'url' => array('plugin'=>'', 'controller' => 'users', 'action' => 'index')
+					),
+					array(
+						'name' => 'New User',
+						'url' => array('plugin'=>'', 'controller' => 'users', 'action' => 'add')
+					),
+					array(
+						'name' => 'Groups',
+						'url' => array('plugin'=>'', 'controller' => 'groups', 'action' => 'index')
+					)
+				)
+			)			
+		),
+		'Managers' => array(
+			array(
+				'icon' => 'icon-home',
+				'name' => 'Home',
+				'url' => array('plugin'=>'','controller' => 'admins', 'action' => 'index'),
+				'controller' => array('admins'),
+				'visible' => array('Administrators','Managers','Users'),
+			),
+			array(
+				'icon' => 'icon-tags',
+				'name' => 'Kanji',
+				'url' => 'javascript:void(0);',
+				'controller' => array('collections'),
+				'visible' => array('Administrators','Managers'),
+				'childs' => array(
+					array(
+						'name' => 'Kanji List',
+						'url' => array('plugin'=>'', 'controller' => 'collections', 'action' => 'index')
+					),
+					array(
+						'name' => 'New Name',
+						'url' => array('plugin'=>'', 'controller' => 'collections', 'action' => 'add')
+					)
+				)
+			),		
+			array(
+				'icon' => 'icon-group',
+				'name' => 'Users',
+				'url' => 'javascript:void(0);',
+				'controller' => array('users','groups'),
+				'visible' => array('Administrators','Managers','Users'),
+				'childs' => array(
+					array(
+						'name' => 'User List',
+						'url' => array('plugin'=>'', 'controller' => 'users', 'action' => 'index')
+					),
+					array(
+						'name' => 'New User',
+						'url' => array('plugin'=>'', 'controller' => 'users', 'action' => 'add')
+					),
+					array(
+						'name' => 'Groups',
+						'url' => array('plugin'=>'', 'controller' => 'groups', 'action' => 'index')
+					)
+				)
+			)
+		),
+		'Users' => array(
+			array(
+				'icon' => 'icon-home',
+				'name' => 'Home',
+				'url' => array('plugin'=>'','controller' => 'admins', 'action' => 'index'),
+				'controller' => array('admins'),
+				'visible' => array('Administrators','Managers','Users'),
+			),
+		)
+    );
+	
 	public function addHtmlStart($controller, $action) {
 		$out = '';
 		if($controller==='pages' && $action==='display'){
@@ -122,7 +191,7 @@ class GenericHtmlHelper extends HtmlHelper {
 			$out .= "\t" . '<link href="http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">' . "\n";
 		}
 		return $out;	
-	}		
+	}
 	
 	public function addIconsLinks($controller, $action) {
 		$out = '';		
@@ -139,9 +208,12 @@ class GenericHtmlHelper extends HtmlHelper {
 		return $out;		
 	}
 	
-	public function getLinksToControllers($user = null, $controller, $action){
+	public function getLinksToControllers($controller, $action){
 		$out = '';
-		foreach($this->listOfLink as $single){
+		$user = $this->Session->read('Auth.User');
+		$user_menus = $this->accessMenus[$user['Group']['name']];
+		
+		foreach($user_menus as $single){
 			$contr_class =  in_array($controller,$single['controller']) ? 'active' : '';
 			$out .= "\t" . '<li class="'. $contr_class .'">' . "\n";
 			
@@ -174,11 +246,13 @@ class GenericHtmlHelper extends HtmlHelper {
 				$out .= "\t" . '		<i class="'.$single['icon'].'"></i>' . "\n";
 				$out .= "\t" . '		<span>'.$single['name'].'</span>' . "\n";
 				$out .= "\t" . '	</a>' . "\n";
-					
 			}
 			$out .= "\t" . '</li>' . "\n";		
 		}
 		
 		return $out;
 	}
+	
+	
+	
 }

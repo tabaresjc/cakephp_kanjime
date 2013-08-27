@@ -9,7 +9,7 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <?php echo $this->Html->link('<i class="icon-cloud"></i> <span style="text-transform: none;">Admin</span>', array('controller' => 'admins', 'action' => 'index'), array('class' => 'brand', 'escape' => false)); ?>
+            <?php echo $this->Html->link('<i class="icon-cloud"></i> <span style="text-transform: none;">Admin</span>', array('plugin'=>'','controller' => 'admins', 'action' => 'index'), array('class' => 'brand', 'escape' => false)); ?>
 			<?php if(!empty($user)) { ?>
             <ul class="nav pull-right">                
                 <!--

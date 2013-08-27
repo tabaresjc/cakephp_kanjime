@@ -94,7 +94,7 @@ Configure::write('Dispatcher.filters', array(
 	'AssetDispatcher',
 	'CacheDispatcher'
 ));
-
+CakePlugin::load('AclManager', array('bootstrap' => true));
 /**
  * Configures default file logging options
  */
@@ -104,11 +104,29 @@ CakeLog::config('debug', array(
 	'types' => array('notice', 'info', 'debug'),
 	'file' => 'debug',
 ));
+
 CakeLog::config('error', array(
 	'engine' => 'FileLog',
 	'types' => array('warning', 'error', 'critical', 'alert', 'emergency'),
 	'file' => 'error',
 ));
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
