@@ -848,7 +848,7 @@ Class RestComponent extends Component {
 		$status = ($hasErrors || $hasValidationErrors)
 			? 'error'
 			: 'ok';
-
+		
 		if (false === ($embed = @$this->settings['actions'][$this->Controller->action]['embed'])) {
 			$response = $apiresponse;
 		} else {

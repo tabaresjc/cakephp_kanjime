@@ -7,6 +7,7 @@ App::uses('AppController', 'Controller');
  * @property Collection $Collection
  */
 class CollectionsController extends AppController {
+	protected $orderbylist = array('title','subtitle','created','description','modified');
 	public $paginate = array(
 		'limit' => 10
 	);
@@ -46,18 +47,20 @@ class CollectionsController extends AppController {
 			$data = array();
 			$offset = isset($this->request->query['offset']) ? $this->request->query['offset'] : '1';
 			$limit = isset($this->request->query['limit']) ? $this->request->query['limit'] : '10';
+			$order = (isset($this->request->query['orderby']) && in_array($this->request->query['orderby'], $this->orderbylist)) ? 'Collection.' . $this->request->query['orderby'] : 'Collection.id';
 			
 			if(!preg_match('/^[1-9][0-9]*$/',$offset) || !preg_match('/^[1-9][0-9]*$/',$limit)) {
 				$msg = sprintf(__('Please check if "offset" or "limit" are set as numeric numbers from 1 to 999999'));
 				return $this->Rest->abort(array('status' => '400', 'error' => $msg));		
 			}
 			
-			$options = array('limit' => $limit, 'offset'=> $offset - 1 );
+			
+			
+			$options = array('limit' => $limit, 'offset'=> $offset - 1, 'order' => $order);
 			$data['collections'] = $this->Collection->find('all', $options);
 			$data['total'] = $this->Collection->find('count');
 			$data['offset'] = $offset;
 			$data['limit'] = $limit;
-			
 			$this->set(compact('data'));
 		} else {
 			$this->Collection->recursive = 0;
@@ -329,7 +332,7 @@ class CollectionsController extends AppController {
 			$this->Session->setFlash(__('Invalid Action'), 'flash/error');
 			$this->redirect('/');
 		}
-	}	
+	}
 	
 	function mbStringToArray ($string) {
 	  $strlen = mb_strlen($string);
