@@ -1,7 +1,7 @@
 KanjiMe! 
 ========
 
-[![KanjiMe](http://kanjime.learnjapanese123.com/img/iTunesArtwork.png)](http://kanjime.learnjapanese123.com)
+[![KanjiMe](http://kanjime.learnjapanese123.com/ico/icon-114.png)](http://kanjime.learnjapanese123.com)
 
 KanjiMe is a Web Aplication that provides a basic landing page and a RestFul Web service for the iOS KanjiMe Aplication.
 
