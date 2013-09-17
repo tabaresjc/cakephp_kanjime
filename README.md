@@ -19,7 +19,13 @@ Technical resources
 * MVC Pattern
 * Routing & Redirection
 * jSON / XML
-* HTTP Authentication 
+* HTTP Authentication
+
+Requerimentes
+-------------
+* PHP 5.2.8 or greater
+* MySQL 5.5
+* Tested & Deployed over Apache 2.2 (mod_rewrite will be required)
 
 Some Links
 ----------------
