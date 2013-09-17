@@ -1,39 +1,32 @@
-CakePHP
-=======
+KanjiMe! 
+========
 
-[![CakePHP](http://cakephp.org/img/cake-logo.png)](http://www.cakephp.org)
+[![KanjiMe](http://kanjime.learnjapanese123.com/img/iTunesArtwork.png)](http://kanjime.learnjapanese123.com)
+
+KanjiMe is a Web Aplication that provides a basic landing page and a RestFul Web service for the iOS KanjiMe Aplication.
+
+The KanjiMe is an aplication targeted for fans of the Japanese Language & Culture that would like to know how their names could be converted to Japanese Kanji. 
+
+Also the fans will be able to request their names to be converted and to be published along with hundreds of names that are already converted.
 
 CakePHP is a rapid development framework for PHP which uses commonly known design patterns like Active Record, Association Data Mapping, Front Controller and MVC.
 Our primary goal is to provide a structured framework that enables PHP users at all levels to rapidly develop robust web applications, without any loss to flexibility.
 
-Some Handy Links
+
+Technical resources
+-------------------
+
+* Frontend: HTML5, CSS3, jQuery and AJAX
+* Backend: HTML5, CSS3, jQuery and AJAX
+* RestFul WebService with the CakePhp Rest Plugin (https://github.com/kvz/cakephp-rest-plugin)
+* MVC Pattern
+* Routing & Redirection
+* jSON / XML
+* HTTP Authentication 
+
+Some Links
 ----------------
 
-[CakePHP](http://www.cakephp.org) - The rapid development PHP framework
+[LearnJapanese123](http://www.learnjapanese123.com/) - Learn Japanese Language & Culture
+[Blog LearnJapanese123](http://blog.learnjapanese123.com/) - A commonplace of the Japanese Culture that everyone would like to talk about
 
-[Cookbook](http://book.cakephp.org) - THE Cake user documentation; start learning here!
-
-[Plugins](http://plugins.cakephp.org/) - A repository of extensions to the framework
-
-[The Bakery](http://bakery.cakephp.org) - Tips, tutorials and articles
-
-[API](http://api.cakephp.org) - A reference to Cake's classes
-
-[CakePHP TV](http://tv.cakephp.org) - Screen casts from events and video tutorials
-
-[The Cake Software Foundation](http://cakefoundation.org/) - promoting development related to CakePHP
-
-Get Support!
-------------
-
-[Our Google Group](https://groups.google.com/group/cake-php) - community mailing list and forum
-
-[#cakephp](http://webchat.freenode.net/?channels=#cakephp) on irc.freenode.net - Come chat with us, we have cake.
-
-[Q & A](http://ask.cakephp.org/) - Ask questions here, all questions welcome
-
-[Lighthouse](https://cakephp.lighthouseapp.com/) - Got issues? Please tell us!
-
-[![Bake Status](https://secure.travis-ci.org/cakephp/cakephp.png?branch=master)](http://travis-ci.org/cakephp/cakephp)
-
-![Cake Power](https://raw.github.com/cakephp/cakephp/master/lib/Cake/Console/Templates/skel/webroot/img/cake.power.gif)
