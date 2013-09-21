@@ -614,7 +614,7 @@ html[xmlns] .slides {display: block;}
 
 .social ul {
 	list-style-type: none;
-	text-align: right;
+	text-align: left;
 }
 
 .social li {
@@ -622,6 +622,8 @@ html[xmlns] .slides {display: block;}
 	display: inline-block;
 	zoom: 1;
 	*display: inline;
+	margin-right: 10px;
+	margin-bottom: 10px;
 }
 
 .social li a {
@@ -645,8 +647,7 @@ html[xmlns] .slides {display: block;}
 
 .social li [class^="socicon"], 
 .social li [class*=" socicon"] {
-	width: inherit;
-	margin-left: 14px;
+	width: inherit
 }
 
 #img-app-icon{
@@ -684,7 +685,7 @@ html[xmlns] .slides {display: block;}
 	}
 
 	.testimonials {
-		padding: 65px 0;
+		padding: 50px 20px;
 	}
 
 	#top-nav .nav-collapse.in {
@@ -728,6 +729,16 @@ html[xmlns] .slides {display: block;}
 	.footer {
 		
 	}
+	
+	.testimonials,
+	.newsletter	{
+		padding-left:20px;
+		padding-right:20px;
+	}
+
+	.testimonial-content{
+		font-size: 0.6em;
+	}		
 
 	.testimonials ul {
 		text-align: left;

@@ -151,9 +151,32 @@
 								New Kanji names will be update twice a week, so stay tuned with us after downloading this App even you don’t find yours. Your name might be introduced sooner or later!					
 							</p>								
 						</div>
-					
 					</div>
+					
 					<div class="span4">
+						<div class="well">
+							
+							<div class="row-fluid">
+								<div class="span12 social">
+									<h3 class="heading" style="font-size: 1.5em;"><i class="icon icon-question-sign"></i> LearnJapanese123</h3>
+									<ul style="text-align: left;">
+										<li><a href="http://blog.learnjapanese123.com/" target="_blank"><img src="/img/wordpress_48.png" alt="Blog LearnJapanese123" /></a></li>
+										<li><a href="https://www.facebook.com/Japanese.Language.Culture" target="_blank"><img src="/img/facebook_48.png" alt="Facebook for Japanese Language and and Culture"  /></a></li>
+										<li><a href="https://plus.google.com/105449602868059056192?rel=author" target="_blank"><img src="/img/google_48.png" alt="Google+ for Japanese Language and and Culture"  /></a></li>
+										<li>
+											<a href="https://twitter.com/japanese123" target="_blank">
+												<img src="/img/twitter_48.png" alt="Twitter for Japanese Language and and Culture"  />
+											</a>
+										</li>
+										<li>
+											<a href="http://www.youtube.com/user/10minsJapanese" target="_blank">
+												<img src="/img/youtube_48.png" alt="Youtube Channel for Japanese Language and and Culture"  />
+											</a>
+										</li>
+									</ul>	
+								</div>
+							</div>
+						</div>						
 						<div class="well">
 							<a href="http://www.learnjapanese123.com/kanji/introduction" class="heading" style="font-size: 1.5em;"><i class="icon icon-question-sign"></i> BTW What is Kanji?</a>
 							<br/>
@@ -163,29 +186,7 @@
 							</p>
 							<a href="http://www.learnjapanese123.com/kanji/introduction" target="_blank">Learn More</a>
 						</div>
-						<div class="well">
-							<h3 class="heading" style="font-size: 1.5em;"><i class="icon icon-question-sign"></i> LearnJapanese123</h3>
-							<br/>
-							<div class="btn-group">
-								<a href="http://blog.learnjapanese123.com/" target="_blank">
-									<img src="/img/wordpress_48.png" alt="Blog LearnJapanese123" />
-								</a>
-								<a href="https://www.facebook.com/Japanese.Language.Culture" target="_blank">
-									<img src="/img/facebook_48.png" alt="Facebook for Japanese Language and and Culture" style="margin-left:10px;" />
-								</a>
-								<a href="https://plus.google.com/105449602868059056192?rel=author" target="_blank">
-									<img src="/img/google_48.png" alt="Google+ for Japanese Language and and Culture" style="margin-left:10px;" />
-								</a>
-								<a href="https://twitter.com/japanese123" target="_blank">
-									<img src="/img/twitter_48.png" alt="Twitter for Japanese Language and and Culture" style="margin-left:10px;" />
-								</a>				
-								<a href="http://www.youtube.com/user/10minsJapanese" target="_blank">
-									<img src="/img/youtube_48.png" alt="Youtube Channel for Japanese Language and and Culture" style="margin-left:10px;" />
-								</a>									
-							</div>
-							
-							
-						</div>						
+
 					</div>
 				</div>
 			</section>
