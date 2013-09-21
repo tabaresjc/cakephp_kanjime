@@ -40,6 +40,14 @@
 				  <!-- .controls -->
 				</div>
 				<!-- .control-group -->
+				<div class="control-group">
+				  <?php echo $this->Form->label('status', 'Status', array('class' => 'control-label'));?>
+				  <div class="controls">
+					<?php echo $this->Form->input('status', array('options' => $this->Collection->getStatusDescriptor(),'value'=>'2')); ?>
+				  </div>
+				  <!-- .controls -->
+				</div>
+				<!-- .control-group -->
 				<?php echo $this->Form->hidden('body', array('value' => 'kanji:null', 'id' => 'kanjime_body')); ?>
 				<!-- .control-group -->
 			  </fieldset>

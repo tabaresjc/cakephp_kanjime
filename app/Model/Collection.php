@@ -30,6 +30,15 @@ class Collection extends AppModel {
                 'rule' => array('notEmpty'),
                 'message' => 'The body of the document is required'
             )
+        ),
+        'status' => array(
+            'valid' => array(
+                'rule' => array('inList', array('1', '2')),
+                'message' => 'Please enter a valid status',
+                'allowEmpty' => false
+            )
         )		
     );
+	
+
 }

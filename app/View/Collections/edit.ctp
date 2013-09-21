@@ -40,6 +40,14 @@
 				  <!-- .controls -->
 				</div>
 				<!-- .control-group -->
+				<div class="control-group">
+				  <?php echo $this->Form->label('status', 'Status', array('class' => 'control-label'));?>
+				  <div class="controls">
+					<?php echo $this->Form->input('status', array('options' => array('1' => 'Published', '2' => 'Draft'))); ?>
+				  </div>
+				  <!-- .controls -->
+				</div>				
+				<!-- .control-group -->
 				<?php echo $this->Form->hidden('body', array('id' => 'kanjime_body')); ?>
 				<?php echo $this->Form->hidden('id'); ?>					
 				<!-- .control-group -->

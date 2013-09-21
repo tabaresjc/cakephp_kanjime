@@ -35,6 +35,9 @@ class AppController extends Controller {
 	public $theme = "Cakestrap";
     public $components = array(
 		/*'DebugKit.Toolbar',*/
+		'Security' => array(
+			'csrfExpires' => '+1 hour'
+		),
         'Acl',
 		'RequestHandler',
 		'Session',

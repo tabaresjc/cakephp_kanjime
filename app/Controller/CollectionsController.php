@@ -34,6 +34,7 @@ class CollectionsController extends AppController {
             }
         }
         parent::beforeFilter();
+		$this->Security->unlockedActions = array('delete');
     }
     
 /**
@@ -52,9 +53,11 @@ class CollectionsController extends AppController {
 				return $this->Rest->abort(array('status' => '400', 'error' => $msg));		
 			}
 			
-			$options = array('limit' => $limit, 'offset'=> $offset - 1 );
+			$options = array('conditions' => array('Collection.status' => '1'), 'limit' => $limit, 'offset'=> $offset - 1 );
+			
 			$data['collections'] = $this->Collection->find('all', $options);
-			$data['total'] = $this->Collection->find('count');
+			$data['total'] = $this->Collection->find('count', $options);
+			
 			$data['offset'] = $offset;
 			$data['limit'] = $limit;
 			

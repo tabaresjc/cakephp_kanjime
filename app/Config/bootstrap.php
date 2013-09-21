@@ -110,5 +110,5 @@ CakeLog::config('error', array(
 	'file' => 'error',
 ));
 
-
+date_default_timezone_set('Asia/Tokyo');
 

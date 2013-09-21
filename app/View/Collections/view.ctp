@@ -75,7 +75,7 @@
 			<h6><?php echo __('What you can do'); ?></h6>
 			<ul class="nav nav-list bs-docs-sidenav">
 				<li><?php echo $this->Html->link(__('Edit Name'), array('action' => 'edit', $collection['Collection']['id']), array('class' => '')); ?></li>
-				<li><?php echo $this->Form->postLink(__('Delete Name'), array('action' => 'delete', $collection['Collection']['id']), array('class' => ''), __('Are you sure you want to delete # %s?', $collection['Collection']['id'])); ?></li>
+				<li><?php echo $this->Form->postLink(__('Delete Name'), array('action' => 'delete', $collection['Collection']['id']), array('class' => ''), __('Are you sure you want to delete %s?', $collection['Collection']['title'])); ?></li>
 				<li><?php echo $this->Html->link(__('New Name'), array('action' => 'add'), array('class' => '')); ?></li>
 			</ul>			
 		</div>		
