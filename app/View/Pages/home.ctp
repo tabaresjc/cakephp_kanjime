@@ -5,7 +5,6 @@
 		echo "\n\t". '<script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-51ff608d10328f65"></script>';		
 	$this->end();
 ?>
-
 	<div class="wrapper">
 		<!-- begins header -->
 		<header class="header">
@@ -13,27 +12,29 @@
 			<div id="top-nav" class="navbar">
 				<div class="navbar-inner">
 					<div class="container">
+						<!--
 						<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-							<!--
+							
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
 							<span class="icon-bar"></span>
-							-->
-						</a>					
+							
+						</a>
+						-->						
 						<a class="brand" data-section="body" href="/">
 							<img src="/img/kanjime-logo.png" width="60" alt="Kanji Me!" />
 							<h1 class="hide">KanjiMe! | Find out your name in Japanese</h1>
 						</a>
+						<!--
 						<nav id="main-menu" class="nav-collapse collapse">
 							<h2 class="hide">Main Navigation</h2>							
-							<!--
 							<ul class="nav pull-right">
 								<li><a href="#features-section">Features</a></li>
 								<li><a href="#testimonials-section">Testimonials</a></li>
 								<li><a href="#call-to-action">Download now</a></li>
-							</ul>
-							-->
+							</ul>							
 						</nav>
+						-->
 					</div>
 				</div>
 			</div>
@@ -46,11 +47,10 @@
 				<div class="span6 hero-text">
 					<h2 class="heading">Kanji Me!</h2>
 					<p class="description">Would you like to know How your name is written in Kanji?</p>
-					<p style="color:black;font-weight: 500;">Basically Kanji for foreigner uses phonetic equivalent, Therefore there are few-several ways to be written in Kanji depending on the pronuntiation of the name in its original language, only in this case we will make sure to select cool & positive Kanji for your name!</p>
-					<!--
-					<img id="img-app-icon" src="/img/kanjime-logo.png" alt="Kanji Me!" />
-					<a href="/" class="btn btn-primary"><img id="img-app-button" src="/img/btn-app-store.png" alt="Get App"/></a>
-					-->
+					<p style="color:black;font-weight: 500;">Come and check cool & positive Kanjis for your name!, Avalaible for free in the App Store</p>
+					
+					<a href="/" class="btn btn-primary" style="margin-bottom:20px;" ><img id="img-app-button" src="/img/btn-app-store.png" alt="Get App"/></a>
+					
 					<!-- AddThis Button BEGIN -->
 					<div class="addthis_toolbox addthis_default_style addthis_32x32_style">
 					<a class="addthis_button_preferred_1"></a>
@@ -83,119 +83,145 @@
 
 		<!-- begins main content -->
 		<div class="main-content">
-			<!--
+
 			<section id="features-section" class="container section features">
 				<div class="row-fluid feature-item">
-					<div class="span6">
-						<img src="http://placehold.it/480x300" alt="Feature" />
+					<div class="span8">
+						<div class="well">
+							<h2 class="heading"><i class="icon icon-leaf"></i> What this app is all about</h2>
+							<p>You might learn that your name is written in Katakana because your teacher said foreign words are written in Katakana customarily, like James: ジェームズ<br/><br/>
+							However, foreign names can be written in Kanji if you like！ like most of Japanese have their own names in Kanji.<br/> 
+							(e.g.Tanaka: 田中、Yamada: 山田、Sato: 佐藤)
+							<br/><br/>
+							For Kanji, there are 'on' reading and 'kun' rading.<br/>
+							"on" reading is resemble to the Chinese way of reading. Whereas "kun" reading is Japanese original way of reading. For example
+							</p>
+							<br/>
+							<div class="row-fluid">
+								<div class="span4">
+									<p style="text-align: center;font-size: 4em;margin-top: 20px;padding: 0;">山</p>
+								</div>
+								<div class="span8">
+									Means: increase wealth
+									<ul>
+										<li>san (on reading) : 富士<b>山</b>: fujisan (Mt. Fuji)</li>
+										<li>yama (kun reading)  : <b>山</b>にのぼる: yama ni noboru (Climb a mountain)</li>
+									</ul>
+								</div>								
+							</div>
+							<br/>
+							<p>
+							So basically Kanji for foreigner uses phonetic equivalent. Therefore there are several ways to be written in Kanji depending on its name. Since each Kanji has its meaning in it, the impression will be different.<br/><br/> 
+							For example, “Thomas” could be written as
+							</p>
+							<br/>
+							<div class="row-fluid">
+								<div class="span4">
+									<p style="text-align: center;font-size: 4em;margin-top: 20px;padding: 0;">富増</p>
+								</div>
+								<div class="span8">
+									Means: increase wealth
+									<ul>
+										<li>富: on-reading: fu, fuu,  kun-reading: <b>to</b>, tomi</li>
+										<li>増: on-reading: zou,  kun-reading: fu, ma, mashi, <b>masu</b></li>
+									</ul>
+								</div>								
+							</div>
+							<p>but it could also be written as </p>
+							<br/>
+							<div class="row-fluid">
+								<div class="span4">
+									<p style="text-align: center;font-size: 4em;margin-top: 20px;padding: 0;">戸間酢</p>
+								</div>
+								<div class="span8">
+									Means: door-between/space-vinegar
+									<ul>
+										<li>戸: on-reading: ko,  kun-reading: <b>to</b>, e, he</li>
+										<li>間: on-readin: kan, ken,  kun-reading: ai, aida, <b>ma</b></li>
+										<li>酢: on-readin: saku,  kun-reading: <b>su</b></li>
+									</ul>
+								</div>								
+							</div>							
+							<p>I guess no Thomas would want to use the latter right? </p>		
+							<br/>
+							<p>
+								So in this App, I'll carefully select cool & positive Kanji for your name! (also showing other reading option for the Kanji.)
+								Please download popular names in Kanji for free!<br/><br/>
+
+								New Kanji names will be update twice a week, so stay tuned with us after downloading this App even you don’t find yours. Your name might be introduced sooner or later!					
+							</p>								
+						</div>
+					
 					</div>
-					<div class="span6 right-text">
-						<h2 class="heading">Feature 1</h2>
-						<p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-					</div>					
+					<div class="span4">
+						<div class="well">
+							<a href="http://www.learnjapanese123.com/kanji/introduction" class="heading" style="font-size: 1.5em;"><i class="icon icon-question-sign"></i> BTW What is Kanji?</a>
+							<br/>
+							<br/>
+							<p>Kanji was originally introduced from China around 300 AC, even before Japanese original letters Hiragana and Katakana were invented.<br><br> 
+							Kanji is an ideograph meaning that the whole character conveys a meaning rather than just a sound (as in the case of hiragana and katakana letters). Kanji was originally drawn as pictures from nature but it gradually transformed to more generalized representations							
+							</p>
+							<a href="http://www.learnjapanese123.com/kanji/introduction" target="_blank">Learn More</a>
+						</div>
+						<div class="well">
+							<h3 class="heading" style="font-size: 1.5em;"><i class="icon icon-question-sign"></i> LearnJapanese123</h3>
+							<br/>
+							<div class="btn-group">
+								<a href="http://blog.learnjapanese123.com/" target="_blank">
+									<img src="/img/wordpress_48.png" alt="Blog LearnJapanese123" />
+								</a>
+								<a href="https://www.facebook.com/Japanese.Language.Culture" target="_blank">
+									<img src="/img/facebook_48.png" alt="Facebook for Japanese Language and and Culture" style="margin-left:10px;" />
+								</a>
+								<a href="https://plus.google.com/105449602868059056192?rel=author" target="_blank">
+									<img src="/img/google_48.png" alt="Google+ for Japanese Language and and Culture" style="margin-left:10px;" />
+								</a>
+								<a href="https://twitter.com/japanese123" target="_blank">
+									<img src="/img/twitter_48.png" alt="Twitter for Japanese Language and and Culture" style="margin-left:10px;" />
+								</a>				
+								<a href="http://www.youtube.com/user/10minsJapanese" target="_blank">
+									<img src="/img/youtube_48.png" alt="Youtube Channel for Japanese Language and and Culture" style="margin-left:10px;" />
+								</a>									
+							</div>
+							
+							
+						</div>						
+					</div>
 				</div>
-				<hr />
-				<div class="row-fluid feature-item">
-					<div class="span6">
-						<h2 class="heading">Feature 2</h2>
-						<p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-					</div>
-					<div class="span6">
-						<img src="http://placehold.it/480x300" alt="Feature" />
-					</div>					
-				</div>
-				<hr />
-				
-				<div class="row-fluid feature-item">
-					<div class="span6">
-						<img src="http://placehold.it/480x300" alt="Feature" />
-					</div>
-					<div class="span6 right-text">
-						<h2 class="heading">Feature 3</h2>
-						<p class="description">Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
-					</div>
-				</div>
-				<hr />
 			</section>
 			
-			
-			<section class="container section features-more">
-				<h2 class="heading">and more...</h2>
-				<div class="row-fluid">
-					<div class="span3 more-item">
-						<h3 class="heading"><i class="icon icon-html5"></i> HTML5 &amp; CSS3</h3>
-						<div class="description">
-							<p>Credibly exploit cutting-edge alignments for parallel experiences. Credibly utilize worldwide leadership through high-payoff deliverables. Progressively network intermandated human capital.</p>
-							<a href="#" class="learn-more pull-right">Learn More &rarr;</a>
-						</div>
-					</div>
-					<div class="span3 more-item">
-						<h3 class="heading"><i class="icon icon-money"></i> Pricing Tables</h3>
-						<div class="description">
-							<p>Synergistically seize front-end information after client-centered results. Dramatically parallel task adaptive testing procedures rather than intermandated ROI. Synergistically leverage.</p>
-							<a href="#" class="learn-more pull-right">Learn More &rarr;</a>
-						</div>
-					</div>
-					<div class="span3 more-item">
-						<h3 class="heading"><i class="icon icon-bar-chart"></i> SEO Optimized</h3>
-						<div class="description">
-							<p>Dynamically embrace goal-oriented core competencies without timely platforms. Appropriately exploit inexpensive sources for customized resources. Authoritatively deliver bleeding-edge portals.</p>
-							<a href="#" class="learn-more pull-right">Learn More &rarr;</a>
-						</div>
-					</div>
-					<div class="span3 more-item">
-						<h3 class="heading"><i class="icon icon-file-alt"></i> Well Documented</h3>
-						<div class="description">
-							<p>Monotonectally negotiate best-of-breed convergence whereas highly efficient networks. Compellingly expedite optimal infomediaries and mission-critical deliverables. Credibly foster cooperative results.</p>
-							<a href="#" class="learn-more pull-right">Learn More &rarr;</a>
-						</div>
-					</div>
-				</div>				
-			</section>			
-			
 			<div class="full-width">
-				
 				<section id="testimonials-section" class="container testimonials flexslider">
-					<h2 class="hide">Testimonial</h2>
+					<h3>Here are some of the names</h3>
 					<ul class="slides">
 						<li>
 							<i class="icon-quote-left icon-4x pull-left"></i>
-							<p class="testimonial-content">Big Thing is just perfect, it allows me to create my version of landing page fast.
-							<span class="author">- Jane Watson, CEO of Fantasy Corp.</span>
-							</p>
+							<p class="testimonial-content">William/ウィリアム<br/>羽衣利編</p>
 						</li>
 						<li>
 							<i class="icon-quote-left icon-4x pull-left"></i>
-							<p class="testimonial-content">Professional design, clean and modern. Totally recommended!
-							<span class="author">- Mandy, Art Director of Dream Team</span>
-							</p>
+							<p class="testimonial-content">Emily/エミリー<br/>恵美理</p>
 						</li>
 						<li>
 							<i class="icon-quote-left icon-4x pull-left"></i>
-							<p class="testimonial-content">It saves our time, so we can focus on the app development.
-							<span class="author">- Steven, Manager of Lucid</span>
-							</p>
+							<p class="testimonial-content">Ian/イアン<br/>偉案 </p>
 						</li>
 					</ul>
 				</section>
-				
 			</div>
-			-->
-			<br/>
-			<br/>
+			
 			<section id="call-to-action" class="container section call-to-action">
 				<div class="row-fluid inner" style="margin-bottom:40px;">
 					<div class="span7">
-						<h2 class="heading">Coming out soon</h2>
-						<p class="description">We are currently developing this application for iOS and will release very soon, Enter your email in the form below and we'll notify you as soon as we're ready.</p>
+						<h2 class="heading">New names every week!</h2>
+						<p class="description">New Kanji names will be update twice a week, so stay tuned with us after downloading this App even you don’t find yours. Your name might be introduced sooner or later!</p>
 						
-						<!--<a href="#" class="btn btn-primary"><img src="/img/btn-app-store.png" alt="Get App" /></a>-->
 					</div>
 					<div class="span5 image-wrapper">
-						<img src="/img/iTunesArtwork.png" class="pull-right" alt="iPhone App Icon" style="width:60%;" />
+						<img src="/img/iTunesArtwork.png" class="pull-right" alt="iPhone App Icon" style="width:40%;" />
 					</div>
 				</div>
-			</section>
+			</section>			
 		</div>
 		<!-- ends main content -->
 
@@ -221,7 +247,7 @@
 		<footer class="full-width footer">
 			<div class="container">
 				<div class="row-fluid">
-					<div class="span6 copyright">Powered by Learn Japanese Language & Culture, Copyright 2013. All Rights Reserved.</div>
+					<div class="span6 copyright">Powered by LearnJapanese123, Copyright 2013. All Rights Reserved.</div>
 					<div class="span6 social">
 						<ul>
 							<li><a href="https://www.facebook.com/Japanese.Language.Culture"><i class="socicon facebookcircle"></i></a></li>

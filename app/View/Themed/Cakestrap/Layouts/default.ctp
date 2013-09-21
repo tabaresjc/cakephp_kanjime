@@ -60,8 +60,7 @@
 	echo $this->fetch('iconlinks');
 	?>
 </head>
-<body>
-	<?php
+<body><?php
 	if($cur_controller==='pages' && $cur_action==='display') {
 		echo $this->fetch('content'). "\n";
 	} else if($cur_controller==='users' && ($cur_action==='login' || $cur_action==='signup')){

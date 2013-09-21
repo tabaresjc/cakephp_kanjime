@@ -288,7 +288,7 @@ html[xmlns] .slides {display: block;}
 
 /* section */
 .section .heading {
-	font-size: 4em;
+	font-size: 2em;
 	font-weight: 700;
 	color: #006dcc;
 	text-shadow: 1px 1px 0px #fff;
@@ -297,7 +297,7 @@ html[xmlns] .slides {display: block;}
 }
 
 .section .description {
-	font-size: 1.8em;	
+	font-size: 1.2em;	
 	font-weight: 300;
 	line-height: 1.6;
 }
@@ -332,7 +332,7 @@ html[xmlns] .slides {display: block;}
 -------------------------------------------------- */
 
 .header {
-	margin-bottom: 85px;
+	margin-bottom: 40px;
 	background-image: url(/img/hero-unit-bg.jpg);
 	background-position: top center;
 	
@@ -491,7 +491,7 @@ html[xmlns] .slides {display: block;}
 .testimonials {
 	color: #f2f2f2;
 	font-size: 2em;
-	margin-top: 35px;
+	
 	margin-bottom: 65px;
 	margin-left: auto;
 	margin-right: auto;
@@ -726,7 +726,7 @@ html[xmlns] .slides {display: block;}
 	.main-content,
 	.newsletter,
 	.footer {
-		text-align: center;
+		
 	}
 
 	.testimonials ul {
