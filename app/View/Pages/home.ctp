@@ -158,7 +158,7 @@
 							
 							<div class="row-fluid">
 								<div class="span12 social">
-									<h3 class="heading" style="font-size: 1.5em;"><i class="icon icon-question-sign"></i> LearnJapanese123</h3>
+									<h3 class="heading" style="font-size: 1.5em;"><i class="icon icon-bookmark"></i> LearnJapanese123</h3>
 									<ul style="text-align: left;">
 										<li><a href="http://blog.learnjapanese123.com/" target="_blank"><img src="/img/wordpress_48.png" alt="Blog LearnJapanese123" /></a></li>
 										<li><a href="https://www.facebook.com/Japanese.Language.Culture" target="_blank"><img src="/img/facebook_48.png" alt="Facebook for Japanese Language and and Culture"  /></a></li>
@@ -215,7 +215,7 @@
 				<div class="row-fluid inner" style="margin-bottom:40px;">
 					<div class="span7">
 						<h2 class="heading">New names every week!</h2>
-						<p class="description">New Kanji names will be update twice a week, so stay tuned with us after downloading this App even you don’t find yours. Your name might be introduced sooner or later!</p>
+						<p class="description">New Kanji names will be update twice a week, so stay tuned with us after downloading this App even if you don’t find yours. Your name might be introduced sooner or later!</p>
 						
 					</div>
 					<div class="span5 image-wrapper">
