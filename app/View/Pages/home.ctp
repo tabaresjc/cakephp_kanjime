@@ -94,7 +94,7 @@
 							(e.g.Tanaka: 田中、Yamada: 山田、Sato: 佐藤)
 							<br/><br/>
 							For Kanji, there are 'on' reading and 'kun' rading.<br/>
-							"on" reading is resemble to the Chinese way of reading. Whereas "kun" reading is Japanese original way of reading. For example
+							"on" reading resembles the Chinese way of reading. Whereas "kun" reading is the Japanese original way of reading. For example
 							</p>
 							<br/>
 							<div class="row-fluid">
@@ -155,7 +155,6 @@
 					
 					<div class="span4">
 						<div class="well">
-							
 							<div class="row-fluid">
 								<div class="span12 social">
 									<h3 class="heading" style="font-size: 1.5em;"><i class="icon icon-bookmark"></i> LearnJapanese123</h3>
@@ -178,13 +177,13 @@
 							</div>
 						</div>						
 						<div class="well">
-							<a href="http://www.learnjapanese123.com/kanji/introduction" class="heading" style="font-size: 1.5em;"><i class="icon icon-question-sign"></i> BTW What is Kanji?</a>
+							<h3 class="heading" style="font-size: 1.5em;"><i class="icon icon-question-sign"></i> BTW What is Kanji?</h3>
 							<br/>
-							<br/>
-							<p>Kanji was originally introduced from China around 300 AC, even before Japanese original letters Hiragana and Katakana were invented.<br><br> 
+							<p>Many Kanji were originally introduced from China around 300 AC, even before Japanese original letters Hiragana and Katakana were invented.<br><br> 
 							Kanji is an ideograph meaning that the whole character conveys a meaning rather than just a sound (as in the case of hiragana and katakana letters). Kanji was originally drawn as pictures from nature but it gradually transformed to more generalized representations							
 							</p>
-							<a href="http://www.learnjapanese123.com/kanji/introduction" target="_blank">Learn More</a>
+							<a href="http://www.learnjapanese123.com/kanji/introduction" target="_blank" class="pull-right">Learn More</a>
+							<div class="clearfix"></div>
 						</div>
 
 					</div>
