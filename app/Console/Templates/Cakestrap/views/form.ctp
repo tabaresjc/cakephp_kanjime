@@ -17,48 +17,8 @@
  */
 ?>
 
-<?php
-	echo "<?php\n";
-	echo "\t\$this->Html->addCrumb(__('List " . $pluralHumanName . "'), array('action' => 'index'));\n";
-	if (strpos($action, 'add') === false) {
-		echo "\t\$this->Html->addCrumb(__('Edit " . $singularHumanName . "'), null);\n";
-	} else {
-		echo "\t\$this->Html->addCrumb(__('New " . $singularHumanName . "'), null);\n";
-	}
-	echo "?>\n";
-?>
-
-<div id="page-container" class="row-fluid">
-
-	<div id="sidebar" class="span3">
-		
-		<div class="actions">
-		
-			<ul class="nav nav-list bs-docs-sidenav">
-				<?php if (strpos($action, 'add') === false): ?>
-						<li><?php echo "<?php echo \$this->Form->postLink(__('Delete'), array('action' => 'delete', \$this->Form->value('{$modelClass}.{$primaryKey}')), null, __('Are you sure you want to delete # %s?', \$this->Form->value('{$modelClass}.{$primaryKey}'))); ?>"; ?></li>
-				<?php endif; ?>
-						<li><?php echo "<?php echo \$this->Html->link(__('List " . $pluralHumanName . "'), array('action' => 'index')); ?>"; ?></li>
-				<?php
-						$done = array();
-						foreach ($associations as $type => $data) {
-							foreach ($data as $alias => $details) {
-								if ($details['controller'] != $this->name && !in_array($details['controller'], $done)) {
-									echo "\t\t<li><?php echo \$this->Html->link(__('List " . Inflector::humanize($details['controller']) . "'), array('controller' => '{$details['controller']}', 'action' => 'index')); ?> </li>\n";
-									echo "\t\t<li><?php echo \$this->Html->link(__('New " . Inflector::humanize(Inflector::underscore($alias)) . "'), array('controller' => '{$details['controller']}', 'action' => 'add')); ?> </li>\n";
-									$done[] = $details['controller'];
-								}
-							}
-						}
-				?>
-			</ul><!-- .nav nav-list bs-docs-sidenav -->
-		
-		</div><!-- .actions -->
-		
-	</div><!-- #sidebar .span3 -->
-	
-	<div id="page-content" class="span9">
-
+<div class="row-fluid">	
+	<div class="span9">
 		<div class="<?php echo $pluralVar; ?> form">
 		
 			<?php echo "<?php echo \$this->Form->create('{$modelClass}', array('inputDefaults' => array('label' => false), 'class' => 'form form-horizontal')); ?>\n"; ?>
@@ -93,5 +53,28 @@
 		</div>
 			
 	</div><!-- #page-content .span9 -->
-
+	<div class="span3">		
+		<div class="actions">		
+			<ul class="nav nav-list bs-docs-sidenav">
+				<?php if (strpos($action, 'add') === false): ?>
+						<li><?php echo "<?php echo \$this->Form->postLink(__('Delete'), array('action' => 'delete', \$this->Form->value('{$modelClass}.{$primaryKey}')), null, __('Are you sure you want to delete # %s?', \$this->Form->value('{$modelClass}.{$primaryKey}'))); ?>"; ?></li>
+				<?php endif; ?>
+						<li><?php echo "<?php echo \$this->Html->link(__('List " . $pluralHumanName . "'), array('action' => 'index')); ?>"; ?></li>
+				<?php
+						$done = array();
+						foreach ($associations as $type => $data) {
+							foreach ($data as $alias => $details) {
+								if ($details['controller'] != $this->name && !in_array($details['controller'], $done)) {
+									echo "\t\t<li><?php echo \$this->Html->link(__('List " . Inflector::humanize($details['controller']) . "'), array('controller' => '{$details['controller']}', 'action' => 'index')); ?> </li>\n";
+									echo "\t\t<li><?php echo \$this->Html->link(__('New " . Inflector::humanize(Inflector::underscore($alias)) . "'), array('controller' => '{$details['controller']}', 'action' => 'add')); ?> </li>\n";
+									$done[] = $details['controller'];
+								}
+							}
+						}
+				?>
+			</ul><!-- .nav nav-list bs-docs-sidenav -->
+		
+		</div><!-- .actions -->
+		
+	</div><!-- #sidebar .span3 -->
 </div><!-- #page-container .row-fluid -->

@@ -16,17 +16,79 @@
  * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
 ?>
-<?php
-	echo "<?php\n";
-	echo "\t\$this->Html->addCrumb(__('List " . $pluralHumanName . "'), null);\n";
-	echo "?>\n";
-?>
-<div id="page-container" class="row-fluid">
 
-	<div id="sidebar" class="span3">
-		
-		<div class="actions">
-		
+<div class="row-fluid">
+	<div class="span9">
+		<div class="<?php echo $pluralVar; ?> index">		
+			<h2><?php echo "<?php echo __('{$pluralHumanName}'); ?>"; ?></h2>			
+			<table class="table table-bordered table-condensed">
+				<thead>
+					<tr>
+						<?php  foreach ($fields as $field): ?>
+							<th><?php echo "<?php echo \$this->Paginator->sort('{$field}'); ?>"; ?></th>
+						<?php endforeach; ?>
+							<th class="actions"><?php echo "<?php echo __('Actions'); ?>"; ?></th>
+					</tr>
+				</thead>
+				<tbody>
+					<?php
+					echo "<?php
+					foreach (\${$pluralVar} as \${$singularVar}): ?>\n";
+					echo "\t<tr>\n";
+						foreach ($fields as $field) {
+							$isKey = false;
+							if (!empty($associations['belongsTo'])) {
+								foreach ($associations['belongsTo'] as $alias => $details) {
+									if ($field === $details['foreignKey']) {
+										$isKey = true;
+										echo "\t\t<td>\n\t\t\t<?php echo \$this->Html->link(\${$singularVar}['{$alias}']['{$details['displayField']}'], array('controller' => '{$details['controller']}', 'action' => 'view', \${$singularVar}['{$alias}']['{$details['primaryKey']}'])); ?>\n\t\t</td>\n";
+										break;
+									}
+								}
+							}
+							if ($isKey !== true) {
+								echo "\t\t<td><?php echo h(\${$singularVar}['{$modelClass}']['{$field}']); ?>&nbsp;</td>\n";
+							}
+						}
+
+						echo "\t\t<td class=\"actions\">\n";
+						echo "\t\t\t<div class=\"btn-group\">\n";
+						echo "\t\t\t\t<?php echo \$this->Html->link(__('View'), array('action' => 'view', \${$singularVar}['{$modelClass}']['{$primaryKey}']), array('class' => 'btn')); ?>\n";
+						echo "\t\t\t\t<?php echo \$this->Html->link(__('Edit'), array('action' => 'edit', \${$singularVar}['{$modelClass}']['{$primaryKey}']), array('class' => 'btn btn-primary')); ?>\n";
+						echo "\t\t\t\t<?php echo \$this->Form->postLink(__('Delete'), array('action' => 'delete', \${$singularVar}['{$modelClass}']['{$primaryKey}']), array('class' => 'btn btn-danger'), __('Are you sure you want to delete # %s?', \${$singularVar}['{$modelClass}']['{$primaryKey}'])); ?>\n";
+						echo "\t\t\t</div>\n";
+						echo "\t\t</td>\n";
+					echo "\t</tr>\n";
+
+					echo "<?php endforeach; ?>\n";
+					?>
+				</tbody>
+			</table>
+			
+			<p><small>
+				<?php echo "<?php
+				echo \$this->Paginator->counter(array(
+				'format' => __('Page {:page} of {:pages}, showing {:current} records out of {:count} total, starting on record {:start}, ending on {:end}')
+				));
+				?>"; ?>
+			</small></p>
+
+			<div class="pagination inverse pull-right">
+				<ul>
+					<?php
+						echo "<?php\n";
+						echo "\t\techo \$this->Paginator->prev('&#8249;', array('tag' => 'li'), null, array('class' => 'disabled', 'tag' => 'li', 'disabledTag' => 'a', 'escape'=>false));\n";
+						echo "\t\techo \$this->Paginator->numbers(array('separator' => '', 'currentTag' => 'a', 'tag' => 'li', 'currentClass' => 'disabled'));\n";
+						echo "\t\techo \$this->Paginator->next('&#8250;', array('tag' => 'li'), null, array('class' => 'disabled', 'tag' => 'li', 'disabledTag' => 'a', 'escape'=>false));\n";
+						echo "\t?>\n";
+					?>
+				</ul>
+			</div><!-- .pagination -->
+			
+		</div><!-- .index -->
+	</div><!-- #page-content .span9 -->
+	<div class="span3">
+		<div class="actions">		
 			<ul class="nav nav-list bs-docs-sidenav">
 				<?php echo "<li><?php echo \$this->Html->link(__('New " . $singularHumanName . "'), array('action' => 'add'), array('class' => '')); ?></li>"; ?>
 				<?php
@@ -42,79 +104,7 @@
 					}
 				?>
 			</ul><!-- .nav nav-list bs-docs-sidenav -->
-			
 		</div><!-- .actions -->
 		
 	</div><!-- #sidebar .span3 -->
-	
-	<div id="page-content" class="span9">
-
-		<div class="<?php echo $pluralVar; ?> index">
-		
-			<h2><?php echo "<?php echo __('{$pluralHumanName}'); ?>"; ?></h2>
-			
-			<table cellpadding="0" cellspacing="0" class="table table-striped table-bordered">
-				<tr>
-					<?php  foreach ($fields as $field): ?>
-						<th><?php echo "<?php echo \$this->Paginator->sort('{$field}'); ?>"; ?></th>
-					<?php endforeach; ?>
-						<th class="actions"><?php echo "<?php echo __('Actions'); ?>"; ?></th>
-				</tr>
-				<?php
-				echo "<?php
-				foreach (\${$pluralVar} as \${$singularVar}): ?>\n";
-				echo "\t<tr>\n";
-					foreach ($fields as $field) {
-						$isKey = false;
-						if (!empty($associations['belongsTo'])) {
-							foreach ($associations['belongsTo'] as $alias => $details) {
-								if ($field === $details['foreignKey']) {
-									$isKey = true;
-									echo "\t\t<td>\n\t\t\t<?php echo \$this->Html->link(\${$singularVar}['{$alias}']['{$details['displayField']}'], array('controller' => '{$details['controller']}', 'action' => 'view', \${$singularVar}['{$alias}']['{$details['primaryKey']}'])); ?>\n\t\t</td>\n";
-									break;
-								}
-							}
-						}
-						if ($isKey !== true) {
-							echo "\t\t<td><?php echo h(\${$singularVar}['{$modelClass}']['{$field}']); ?>&nbsp;</td>\n";
-						}
-					}
-
-					echo "\t\t<td class=\"actions\">\n";
-					echo "\t\t\t<div class=\"btn-group\">\n";
-					echo "\t\t\t\t<?php echo \$this->Html->link(__('View'), array('action' => 'view', \${$singularVar}['{$modelClass}']['{$primaryKey}']), array('class' => 'btn')); ?>\n";
-					echo "\t\t\t\t<?php echo \$this->Html->link(__('Edit'), array('action' => 'edit', \${$singularVar}['{$modelClass}']['{$primaryKey}']), array('class' => 'btn btn-primary')); ?>\n";
-					echo "\t\t\t\t<?php echo \$this->Form->postLink(__('Delete'), array('action' => 'delete', \${$singularVar}['{$modelClass}']['{$primaryKey}']), array('class' => 'btn btn-danger'), __('Are you sure you want to delete # %s?', \${$singularVar}['{$modelClass}']['{$primaryKey}'])); ?>\n";
-					echo "\t\t\t</div>\n";
-					echo "\t\t</td>\n";
-				echo "\t</tr>\n";
-
-				echo "<?php endforeach; ?>\n";
-				?>
-			</table>
-			
-			<p><small>
-				<?php echo "<?php
-				echo \$this->Paginator->counter(array(
-				'format' => __('Page {:page} of {:pages}, showing {:current} records out of {:count} total, starting on record {:start}, ending on {:end}')
-				));
-				?>"; ?>
-			</small></p>
-
-			<div class="pagination">
-				<ul>
-					<?php
-						echo "<?php\n";
-						echo "\t\techo \$this->Paginator->prev('< ' . __('Previous'), array('tag' => 'li'), null, array('class' => 'disabled', 'tag' => 'li', 'disabledTag' => 'a'));\n";
-						echo "\t\techo \$this->Paginator->numbers(array('separator' => '', 'currentTag' => 'a', 'tag' => 'li', 'currentClass' => 'disabled'));\n";
-						echo "\t\techo \$this->Paginator->next(__('Next') . ' >', array('tag' => 'li'), null, array('class' => 'disabled', 'tag' => 'li', 'disabledTag' => 'a'));\n";
-						echo "\t?>\n";
-					?>
-				</ul>
-			</div><!-- .pagination -->
-			
-		</div><!-- .index -->
-	
-	</div><!-- #page-content .span9 -->
-
 </div><!-- #page-container .row-fluid -->

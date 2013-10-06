@@ -16,46 +16,10 @@
  * @license       MIT License (http://www.opensource.org/licenses/mit-license.php)
  */
 ?>
-<?php
-	echo "<?php\n";
-	echo "\t\$this->Html->addCrumb(__('List " . $pluralHumanName . "'), array('action' => 'index'));\n";
-	echo "\t\$this->Html->addCrumb(__('View " . $singularHumanName . "'), null);\n";
-	echo "?>\r\n";
-?>
-<div id="page-container" class="row-fluid">
 
-	<div id="sidebar" class="span3">
-		
-		<div class="actions">
-			
-			<ul class="nav nav-list bs-docs-sidenav">			
-				<?php
-					echo "\t\t<li><?php echo \$this->Html->link(__('Edit " . $singularHumanName ."'), array('action' => 'edit', \${$singularVar}['{$modelClass}']['{$primaryKey}']), array('class' => '')); ?> </li>\n";
-					echo "\t\t<li><?php echo \$this->Form->postLink(__('Delete " . $singularHumanName . "'), array('action' => 'delete', \${$singularVar}['{$modelClass}']['{$primaryKey}']), array('class' => ''), __('Are you sure you want to delete # %s?', \${$singularVar}['{$modelClass}']['{$primaryKey}'])); ?> </li>\n";
-					echo "\t\t<li><?php echo \$this->Html->link(__('List " . $pluralHumanName . "'), array('action' => 'index'), array('class' => '')); ?> </li>\n";
-					echo "\t\t<li><?php echo \$this->Html->link(__('New " . $singularHumanName . "'), array('action' => 'add'), array('class' => '')); ?> </li>\n";
-
-					$done = array();
-					foreach ($associations as $type => $data) {
-						foreach ($data as $alias => $details) {
-							if ($details['controller'] != $this->name && !in_array($details['controller'], $done)) {
-								echo "\t\t<li><?php echo \$this->Html->link(__('List " . Inflector::humanize($details['controller']) . "'), array('controller' => '{$details['controller']}', 'action' => 'index'), array('class' => '')); ?> </li>\n";
-								echo "\t\t<li><?php echo \$this->Html->link(__('New " .  Inflector::humanize(Inflector::underscore($alias)) . "'), array('controller' => '{$details['controller']}', 'action' => 'add'), array('class' => '')); ?> </li>\n";
-								$done[] = $details['controller'];
-							}
-						}
-					}
-				?>				
-			</ul><!-- .nav nav-list bs-docs-sidenav -->
-			
-		</div><!-- .actions -->
-		
-	</div><!-- #sidebar .span3 -->
-	
-	<div id="page-content" class="span9">
-		
+<div class="row-fluid">
+	<div class="span9">		
 		<div class="<?php echo $pluralVar; ?> view">
-
 			<h2><?php echo "<?php  echo __('{$singularHumanName}'); ?>"; ?></h2>
 
 			<table class="table table-striped table-bordered">
@@ -170,5 +134,28 @@
 		<?php endforeach; ?>
 	
 	</div><!-- #page-content .span9 -->
+	<div class="span3">
+		<div class="actions">
+			<ul class="nav nav-list bs-docs-sidenav">			
+				<?php
+					echo "\t\t<li><?php echo \$this->Html->link(__('Edit " . $singularHumanName ."'), array('action' => 'edit', \${$singularVar}['{$modelClass}']['{$primaryKey}']), array('class' => '')); ?> </li>\n";
+					echo "\t\t<li><?php echo \$this->Form->postLink(__('Delete " . $singularHumanName . "'), array('action' => 'delete', \${$singularVar}['{$modelClass}']['{$primaryKey}']), array('class' => ''), __('Are you sure you want to delete # %s?', \${$singularVar}['{$modelClass}']['{$primaryKey}'])); ?> </li>\n";
+					echo "\t\t<li><?php echo \$this->Html->link(__('List " . $pluralHumanName . "'), array('action' => 'index'), array('class' => '')); ?> </li>\n";
+					echo "\t\t<li><?php echo \$this->Html->link(__('New " . $singularHumanName . "'), array('action' => 'add'), array('class' => '')); ?> </li>\n";
+
+					$done = array();
+					foreach ($associations as $type => $data) {
+						foreach ($data as $alias => $details) {
+							if ($details['controller'] != $this->name && !in_array($details['controller'], $done)) {
+								echo "\t\t<li><?php echo \$this->Html->link(__('List " . Inflector::humanize($details['controller']) . "'), array('controller' => '{$details['controller']}', 'action' => 'index'), array('class' => '')); ?> </li>\n";
+								echo "\t\t<li><?php echo \$this->Html->link(__('New " .  Inflector::humanize(Inflector::underscore($alias)) . "'), array('controller' => '{$details['controller']}', 'action' => 'add'), array('class' => '')); ?> </li>\n";
+								$done[] = $details['controller'];
+							}
+						}
+					}
+				?>				
+			</ul><!-- .nav nav-list bs-docs-sidenav -->
+		</div><!-- .actions -->
+	</div><!-- #sidebar .span3 -->	
 
 </div><!-- #page-container .row-fluid -->
