@@ -337,13 +337,7 @@ textarea::-webkit-input-placeholder {
 	text-decoration: underline;
 }
 .table thead th{
-	font-weight: bold;
-	position: relative;
-	padding-bottom: 20px;
-	padding-top: 5px;
-	text-transform: uppercase;
-	font-size: 11px;
-	vertical-align: top;
+	
 }
 .table td{
 	color: #526273;

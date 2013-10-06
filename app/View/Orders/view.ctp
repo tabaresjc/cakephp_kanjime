@@ -35,6 +35,11 @@
 			<?php echo h($order['Order']['payment_key']); ?>
 			&nbsp;
 		</td>
+</tr><tr>		<td><strong><?php echo __('Payment Status'); ?></strong></td>
+		<td>
+			<?php echo h($order['Order']['payment_status']); ?>
+			&nbsp;
+		</td>
 </tr><tr>		<td><strong><?php echo __('Payment Description'); ?></strong></td>
 		<td>
 			<?php echo h($order['Order']['payment_description']); ?>

@@ -13,17 +13,16 @@
 		<div class="box">
 		<?php echo $this->Form->create('User', array('class' => 'content-wrap')); ?>
 			<div class="content-wrap">
-				<h6><?php echo __('Log in'); ?></h6>
+				<h6><?php echo __('Sign in'); ?></h6>
 				<?php 
 				echo $this->Form->input('username', array( 'label' => false, 'class' => 'span12', 'placeholder' => 'Your Username' ));
 				echo $this->Form->input('password', array( 'label' => false, 'class' => 'span12', 'placeholder' => 'Your Password' ));
-				echo "\t" . '<a href="#" class="forgot">Forgot password?</a>' . "\n";
-				echo "\t" . '<div class="remember">' . "\n";
-				echo "\t" . '	<input id="remember-me" type="checkbox">' . "\n";
-				echo "\t" . '	<label for="remember-me">Remember me</label>' . "\n";
-				echo "\t" . '</div>' . "\n";
-				echo $this->Form->button('Log in', array('type' => 'submit', 'class' => 'btn-glow primary login'));
 				?>
+				<div class="remember">
+					<?php /*echo $this->Form->checkbox('remember_me');*/ ?>
+					<?php /*echo $this->Form->label('remember_me', 'Remember me');*/ ?>
+				</div>
+				<?php echo $this->Form->button('Log in', array('type' => 'submit', 'class' => 'btn-glow primary login')); ?>
 			</div>
 		<?php echo $this->Form->end(); ?>		
 		

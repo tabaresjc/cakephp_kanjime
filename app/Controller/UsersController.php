@@ -35,7 +35,10 @@ class UsersController extends AppController {
 	// }
 	
 	public function login() {
+		$this->layout = 'signin';
 		if ($this->request->is('post')) {
+			$cookie_rm = $this->data['User']['remember_me'];			
+			unset($this->data['User']['remember_me']);
 			if ($this->Auth->login()) {
 				$user = $this->Session->read('Auth.User');
 				$this->Session->setFlash('Welcome '. $user['name'] . '!', 'flash/success');

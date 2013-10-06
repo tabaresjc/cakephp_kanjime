@@ -32,8 +32,7 @@
 				</thead>
 				<tbody>
 					<?php
-					echo "<?php
-					foreach (\${$pluralVar} as \${$singularVar}): ?>\n";
+					echo "<?php foreach (\${$pluralVar} as \${$singularVar}): ?>\n";
 					echo "\t<tr>\n";
 						foreach ($fields as $field) {
 							$isKey = false;
@@ -59,12 +58,10 @@
 						echo "\t\t\t</div>\n";
 						echo "\t\t</td>\n";
 					echo "\t</tr>\n";
-
 					echo "<?php endforeach; ?>\n";
 					?>
 				</tbody>
 			</table>
-			
 			<p><small>
 				<?php echo "<?php
 				echo \$this->Paginator->counter(array(

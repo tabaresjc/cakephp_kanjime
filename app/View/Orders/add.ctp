@@ -42,6 +42,13 @@
 </div><!-- .control-group -->
 
 <div class="control-group">
+	<?php echo $this->Form->label('payment_status', 'payment_status', array('class' => 'control-label'));?>
+	<div class="controls">
+		<?php echo $this->Form->input('payment_status', array('class' => 'span12')); ?>
+	</div><!-- .controls -->
+</div><!-- .control-group -->
+
+<div class="control-group">
 	<?php echo $this->Form->label('payment_description', 'payment_description', array('class' => 'control-label'));?>
 	<div class="controls">
 		<?php echo $this->Form->input('payment_description', array('class' => 'span12')); ?>
