@@ -203,6 +203,11 @@
 	Configure::write('Security.cipherSeed', '52maiZnwJuTQoNBHeywBJB43yccMX');
 
 /**
+ * A random numeric string (digits only) used to hash strings.
+ */
+	Configure::write('Security.cipherHash', 'Pri8PrcL4pRm');	
+	
+/**
  * Apply timestamps with the last modified time to static assets (js, css, images).
  * Will append a query string parameter containing the time the file was modified. This is
  * useful for invalidating browser caches.

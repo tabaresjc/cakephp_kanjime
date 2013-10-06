@@ -26,16 +26,17 @@
  * its action called 'display', and we pass a param to select the view file
  * to use (in this case, /app/View/Pages/home.ctp)...
  */
- 
+ 	// Add XML + JSON to your parseExtensions
+	Router::mapResources(array('collections', 'orders'));
+	Router::parseExtensions('xml', 'json');
+	
     //Router::connect('/', array('controller' => 'pages', 'action' => 'display', 'home'));
 	Router::connect('/pages/*', array('controller' => 'pages', 'action' => 'display'));
 	Router::connect('/dashboard/*', array('controller' => 'admins', 'action' => 'index'));
 	Router::connect('/names/:action/*', array('controller' => 'collections'));
 	Router::connect('/', array('controller' => 'pages', 'action' => 'display', 'home'));
 	
-	// Add XML + JSON to your parseExtensions
-	Router::mapResources(array('collections'));
-	Router::parseExtensions('xml', 'json');
+
 /**
  * Load all plugin routes. See the CakePlugin documentation on
  * how to customize the loading of plugin routes.

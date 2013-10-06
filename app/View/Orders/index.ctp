@@ -8,8 +8,8 @@
 					<tr>
 						<th class="span3 sortable"><?php echo $this->Paginator->sort('payment_key', 'Id'); ?></th>
 						<th class="span3 sortable"><?php echo $this->Paginator->sort('name'); ?></th>
-						<th class="span1 sortable hid"><?php echo $this->Paginator->sort('payment_status', 'Status'); ?></th>
-						<th class="span1 sortable hid"><?php echo $this->Paginator->sort('payment_amount', 'Amount'); ?></th>
+						<th class="span2 sortable hid"><?php echo $this->Paginator->sort('payment_status', 'Status'); ?></th>
+						<th class="span2 sortable hid"><?php echo $this->Paginator->sort('payment_amount', 'Amount'); ?></th>
 						<th class="sortable hid"><?php echo $this->Paginator->sort('modified', 'Updated'); ?></th>
 						<th><?php echo __('Actions'); ?></th>
 					</tr>
@@ -17,19 +17,19 @@
 				<tbody>
 					<?php foreach ($orders as $order): ?>
 					<tr>
-						<td><?php echo h($order['Order']['payment_key']); ?></td>
 						<td>
-							<p><strong><?php echo h($order['Order']['name']); ?></strong></p>
-							<p><?php echo h($order['Order']['email']); ?></p>
+							<?php echo $this->Html->link(h($order['Order']['payment_key']), array('action' => 'view', $order['Order']['id'])); ?>
+						<td>
+							<strong><?php echo h($order['Order']['name']); ?></strong><br/>
+							<?php echo h($order['Order']['email']); ?>
 						</td>
-						<td><?php echo h($order['Order']['payment_status']); ?></td>
-						<td><?php echo h($order['Order']['payment_amount']) . ' ' . h($order['Order']['payment_currency']); ?></td>
-						<td><?php echo h($order['Order']['modified']); ?></td>
+						<td class="hid"><?php echo h($order['Order']['payment_status']); ?></td>
+						<td class="hid"><?php echo h($order['Order']['payment_amount']) . ' ' . h($order['Order']['payment_currency']); ?></td>
+						<td class="hid"><?php echo h($order['Order']['modified']); ?></td>
 						<td class="actions">
 							<div class="btn-group">
-								<?php echo $this->Html->link(__('View'), array('action' => 'view', $order['Order']['id']), array('class' => 'btn')); ?>
-								<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $order['Order']['id']), array('class' => 'btn btn-primary')); ?>
-								<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $order['Order']['id']), array('class' => 'btn btn-danger'), __('Are you sure you want to delete # %s?', $order['Order']['id'])); ?>
+								<?php echo $this->Html->link('<i class="icon-edit"></i>', array('action' => 'edit', $order['Order']['id']), array('class' => 'btn btn-primary', 'escape' => false)); ?>
+								<?php echo $this->Form->postLink('<i class="icon-trash"></i>', array('action' => 'delete', $order['Order']['id']), array('class' => 'btn btn-danger', 'escape' => false), __('Are you sure you want to delete # %s ?', $order['Order']['payment_key'])); ?>
 							</div>
 						</td>
 					</tr>
@@ -49,9 +49,9 @@
 			<div class="pagination inverse pull-right">
 				<ul>
 				<?php
-					echo $this->Paginator->prev('&#8249;', array('tag' => 'li'), null, array('class' => 'disabled', 'tag' => 'li', 'disabledTag' => 'a', 'escape'=>false));
+					echo $this->Paginator->prev('<', array('tag' => 'li'), null, array('class' => 'disabled', 'tag' => 'li', 'disabledTag' => 'a'));
 					echo $this->Paginator->numbers(array('separator' => '', 'currentTag' => 'a', 'tag' => 'li', 'currentClass' => 'disabled'));
-					echo $this->Paginator->next('&#8250;', array('tag' => 'li'), null, array('class' => 'disabled', 'tag' => 'li', 'disabledTag' => 'a', 'escape'=>false));
+					echo $this->Paginator->next('>', array('tag' => 'li'), null, array('class' => 'disabled', 'tag' => 'li', 'disabledTag' => 'a'));
 				?>
 				</ul>
 			</div><!-- .pagination -->

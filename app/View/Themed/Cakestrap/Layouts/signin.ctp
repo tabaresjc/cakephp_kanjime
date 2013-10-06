@@ -23,7 +23,7 @@
 	$user_data = $this->Session->read('Auth.User');
 ?>
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
 	<?php echo $this->Html->charset(); ?>
 	<title><?php echo SITE_NAME ?> | <?php echo $title_for_layout; ?></title>

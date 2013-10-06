@@ -61,10 +61,11 @@ class AppController extends Controller {
 				),
 			),
 			'ratelimit' => array(
-				'enable' => true,
-				'default' => 'Collection',
+				'enable' => false,
+				'default' => 'Order',
 				'classlimits' => array(
-					'Collection' => array('-1 hour', 1000)
+					'Collection' => array('-1 hour', 1000),
+					'Order' => array('-1 hour', 1000)
 				),
 				'identfield' => 'apikey',
 				'ip_limit' => array('-1 hour', 60),  // For those not logged in
@@ -73,7 +74,7 @@ class AppController extends Controller {
                 'index' => array(
                     'extract' => array('data')
                 ),
-				'view' => array(
+				'add' => array(
                     'extract' => array('data')
                 ),
 				'update' => array(
@@ -81,7 +82,10 @@ class AppController extends Controller {
                 ),
 				'delete' => array(
                     'extract' => array('data')
-                ),				
+                ),
+				'view' => array(
+                    'extract' => array('data')
+                )
             ),
 			'meta' => array(
 				'enable' => true,
@@ -107,7 +111,28 @@ class AppController extends Controller {
 		'Session'
     );
 	
-	public function isRest() {
+	protected function isRest() {
 		return !empty($this->Rest) && is_object($this->Rest) && $this->Rest->isActive();
-	}	
+	}
+
+	public function beforeFilter() {		
+		// Try to login user via REST
+		if ($this->isRest()) {
+			$this->Auth->autoRedirect = false;
+			$this->loadModel('User');
+			$this->loadModel('Group');
+			$credentials = $this->Rest->credentials(true);
+			$user = $this->User->find('first', array(
+				'conditions' => array('User.username' => $credentials['username'],
+									  'User.account_sid' => $credentials['account_sid'])
+			));			
+			if (!empty($user) /*&& $this->Auth->login($user)*/) {
+				$this->Auth->allow($this->params['action']);
+				$this->Security->unlockedActions = $this->params['action'];				
+			}else {
+				$msg = sprintf('Unable to log you in with the supplied credentials. ');
+				return $this->Rest->abort(array('status' => '403', 'error' => $msg));
+			}
+		}       
+	}
 }

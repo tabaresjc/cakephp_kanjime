@@ -11,30 +11,8 @@ class CollectionsController extends AppController {
 		'limit' => 10
 	);
 	
-	public function beforeFilter () {
-        if (!$this->Auth->user()) {
-            // Try to login user via REST
-            if ($this->Rest->isActive()) {
-                $this->Auth->autoRedirect = false;
-				$this->loadModel('User');
-				$this->loadModel('Group');
-				$credentials = $this->Rest->credentials(true);
-                $user = $this->User->find('first', array(
-					'conditions' => array('User.username' => $credentials['username'],
-										  'User.account_sid' => $credentials['account_sid'])
-				));
-                
-                if (!empty($user) /*&& $this->Auth->login($user)*/) {
-					$this->Auth->allow($this->params['action']);
-					$this->Session->destroy();
-				}else {
-                    $msg = sprintf('Unable to log you in with the supplied credentials. ');
-                    return $this->Rest->abort(array('status' => '403', 'error' => $msg));
-                }
-            }
-        }
+	public function beforeFilter () {        
         parent::beforeFilter();
-		$this->Security->unlockedActions = array('delete');
     }
     
 /**
@@ -46,7 +24,7 @@ class CollectionsController extends AppController {
 		if($this->isRest()){
 			$data = array();
 			$offset = isset($this->request->query['offset']) ? $this->request->query['offset'] : '1';
-			$limit = isset($this->request->query['limit']) ? $this->request->query['limit'] : '10';
+			$limit = isset($this->request->query['limit']) ? $this->request->query['limit'] : '100';
 			
 			if(!preg_match('/^[1-9][0-9]*$/',$offset) || !preg_match('/^[1-9][0-9]*$/',$limit)) {
 				$msg = sprintf(__('Please check if "offset" or "limit" are set as numeric numbers from 1 to 999999'));

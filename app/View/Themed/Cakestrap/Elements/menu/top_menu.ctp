@@ -23,7 +23,7 @@
                         <b class="caret"></b>
                     </a>
                     <ul class="dropdown-menu">
-                        <li><?php echo $this->Html->link('Profile', array('controller' => 'users', 'action' => 'edit', $user['id'])); ?></li>
+                        <li><?php echo $this->Html->link('Profile', array('controller' => 'users', 'action' => 'view', $user['id'])); ?></li>
                         <li><?php echo $this->Html->link(__('Add User'), array('controller' => 'users', 'action' => 'add')); ?></li>
                         <li><?php echo $this->Html->link(__('List User'), array('controller' => 'users', 'action' => 'index')); ?></li>
 						<li class="divider"></li>

@@ -142,9 +142,9 @@ class User extends AppModel {
 		}
 		
 		if (empty($this->data[$this->alias]['account_sid']) || strlen($this->data[$this->alias]['account_sid'])<=0) {
-			$this->data[$this->alias]['account_sid'] = hash_hmac('ripemd160', $this->data[$this->alias]['username'] . $this->data[$this->alias]['created'], 'Pri8PrcL4pRm');
+			$cipherHash = Configure::write('Security.cipherHash');
+			$this->data[$this->alias]['account_sid'] = hash_hmac('ripemd160', $this->data[$this->alias]['username'] . $this->data[$this->alias]['created'], $cipherHash);
 		}
-		
 		return true;
 	}	
 }
