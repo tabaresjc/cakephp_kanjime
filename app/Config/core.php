@@ -189,7 +189,7 @@
 	Configure::write('Session', array(
 		'defaults' => 'php',
 		'cookie' => 'kanjime',
-		'timeout' => 60 //1 Hour
+		'timeout' => 4320 //1 Hour
 	));
 
 /**

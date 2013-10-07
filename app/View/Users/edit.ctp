@@ -47,7 +47,7 @@
 						<div class="span11 field-box actions">
 							<hr/>
 							<?php echo $this->Html->Link('Cancel', array('controller'=>'users','action'=>'index'),  array('class' => 'btn btn-danger')); ?>
-							<?php echo $this->Form->button('Save Changes', array('id' => 'UserAddFormSubmit', 'type' => 'submit', 'class'=>'btn-glow primary pull-right')); ?>
+							<?php echo $this->Form->button('Save Changes', array('id' => 'UserAddFormSubmit', 'type' => 'submit', 'class'=>'btn-glow primary')); ?>
 						</div>
 						<?php echo $this->Form->hidden('id'); ?>
 						<?php echo $this->Form->hidden('username'); ?>
@@ -55,7 +55,11 @@
 					<?php echo $this->Form->end(); ?>
 				</div>
 			</div>
-
+			<div class="span3">
+				<a href="http://gravatar.com/emails" target="_blank" class="thumbnail" style="display: inline-block;">
+					<?php echo $this->Html->getAvatarForEmail($this->Form->value('User.email'),128); ?>
+				</a>				
+			</div>
 		</div>
 	</div>
 

@@ -44,20 +44,21 @@
 						<div class="span11 field-box actions">
 							<hr/>
 							<?php echo $this->Html->Link('Cancel', array('controller'=>'users','action'=>'index'),  array('class' => 'btn btn-danger')); ?>
-							<?php echo $this->Form->button('Create user', array('id' => 'UserAddFormSubmit', 'type' => 'submit', 'class'=>'btn-glow primary pull-right')); ?>
+							<?php echo $this->Form->button('Create user', array('id' => 'UserAddFormSubmit', 'type' => 'submit', 'class'=>'btn-glow primary')); ?>
 						</div>
 					<?php echo $this->Form->end(); ?>
 				</div>
 			</div>
 			<!-- side right column -->
 			<div class="span3 form-sidebar pull-right">
-				<h6><?php echo __('What you can do'); ?></h6>
+				<!--
+				<h6><?php /*echo __('What you can do');*/ ?></h6>
 				<ul class="nav nav-list bs-docs-sidenav">
 					<li><a href="javascript:void(0);">Upload a vCard file</a></li>
 					<li><a href="javascript:void(0);">Import from a CSV file</a></li>
 					<li><a href="javascript:void(0);">Import from an Excel file</a></li>
 				</ul>
-
+				-->
 			</div>
 		</div>
 	</div>
