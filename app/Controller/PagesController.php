@@ -47,7 +47,9 @@ class PagesController extends AppController {
 	
 	public function beforeFilter() {
 		parent::beforeFilter();
-		$this->Auth->allow('display'); 
+		if(strcmp('/dashboard',$this->request->here)!=0){
+			$this->Auth->allow('display');
+		}
 	}
 
 /**
@@ -81,7 +83,6 @@ class PagesController extends AppController {
 		} else {
 			$this->layout = 'home';
 		}
-		
 		$this->set(compact('page', 'subpage', 'title_for_layout'));
 		$this->render(implode('/', $path));
 	}
