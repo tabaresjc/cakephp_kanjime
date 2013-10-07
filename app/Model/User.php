@@ -1,6 +1,8 @@
 <?php
 App::uses('AppModel', 'Model');
 App::uses('AuthComponent', 'Controller/Component');
+App::uses('CakeSession', 'Model/Datasource');
+
 /**
  * User Model
  *
@@ -142,9 +144,14 @@ class User extends AppModel {
 		}
 		
 		if (empty($this->data[$this->alias]['account_sid']) || strlen($this->data[$this->alias]['account_sid'])<=0) {
-			$cipherHash = Configure::write('Security.cipherHash');
-			$this->data[$this->alias]['account_sid'] = hash_hmac('ripemd160', $this->data[$this->alias]['username'] . $this->data[$this->alias]['created'], $cipherHash);
+			$cipherHash = Configure::read('Security.cipherHash');
+			$this->data[$this->alias]['account_sid'] = hash_hmac('ripemd160', $this->data[$this->alias]['username'] . date("Y-m-d H:i:s"), $cipherHash);
 		}
 		return true;
-	}	
+	}
+	
+	public function isCurrentUser($id) {
+		$uid = CakeSession::read("Auth.User.id");
+		return $uid == $id;
+	}
 }

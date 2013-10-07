@@ -6,7 +6,7 @@ class GenericHtmlHelper extends HtmlHelper {
         array(
             'icon' => 'icon-home',
 			'name' => 'Home',
-			'url' => array('controller' => 'admins', 'action' => 'index'),
+			'url' => array('controller' => 'pages', 'action' => 'display', 'dashboard'),
 			'controller' => array('admins')
         ),
 		array(
@@ -94,5 +94,15 @@ class GenericHtmlHelper extends HtmlHelper {
 		}
 		
 		return $out;
+	}
+	
+	public function getAvatarForEmail($email, $size = 64, $imgclass = null) {
+		if(!$imgclass){
+			$imgclass = "img-thumbnail";
+		}
+		$gravatar_id = md5(strtolower($email));		
+		$gravatar_url = "https://secure.gravatar.com/avatar/". $gravatar_id ."?s=". $size;   
+		
+		return $this->image($gravatar_url, array('class' => $imgclass));
 	}
 }

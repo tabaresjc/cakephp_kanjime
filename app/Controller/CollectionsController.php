@@ -13,6 +13,11 @@ class CollectionsController extends AppController {
 	
 	public function beforeFilter () {        
         parent::beforeFilter();
+		if ($this->isRest()) {
+			$this->Security->unlockedActions = array($this->params['action']);
+		} else {
+			$this->Security->unlockedActions = array('delete');
+		}
     }
     
 /**
@@ -88,6 +93,10 @@ class CollectionsController extends AppController {
  * @return void
  */
 	public function add() {
+		if($this->isRest()){
+			return $this->Rest->abort(array('status' => '400', 'error' => __('Method not supported')));
+		}
+		
 		if ($this->request->is('post')) {
 			
 			$count = $this->Collection->find('count', array(
@@ -124,30 +133,22 @@ class CollectionsController extends AppController {
  */
 	public function edit($id = null) {
 		if($this->isRest()){
-			$data = array();
-			$this->Collection->id = $id;
-			
-			if (!$this->Collection->exists()) {
-				return $this->Rest->abort(array('status' => '400', 'error' => __('Invalid collection')));
+			return $this->Rest->abort(array('status' => '400', 'error' => __('Method not supported')));
+		}
+	
+		if (!$this->Collection->exists($id)) {
+			throw new NotFoundException(__('Invalid collection'));
+		}
+		if ($this->request->is('post') || $this->request->is('put')) {
+			if ($this->Collection->save($this->request->data)) {
+				$this->Session->setFlash(__('The collection has been saved'), 'flash/success');
+				$this->redirect(array('action' => 'index'));
 			} else {
-				
+				$this->Session->setFlash(__('The collection could not be saved. Please, try again.'), 'flash/error');
 			}
-			$this->set(compact('data'));		
 		} else {
-			if (!$this->Collection->exists($id)) {
-				throw new NotFoundException(__('Invalid collection'));
-			}
-			if ($this->request->is('post') || $this->request->is('put')) {
-				if ($this->Collection->save($this->request->data)) {
-					$this->Session->setFlash(__('The collection has been saved'), 'flash/success');
-					$this->redirect(array('action' => 'index'));
-				} else {
-					$this->Session->setFlash(__('The collection could not be saved. Please, try again.'), 'flash/error');
-				}
-			} else {
-				$options = array('conditions' => array('Collection.' . $this->Collection->primaryKey => $id));
-				$this->request->data = $this->Collection->find('first', $options);
-			}
+			$options = array('conditions' => array('Collection.' . $this->Collection->primaryKey => $id));
+			$this->request->data = $this->Collection->find('first', $options);
 		}
 	}
 
@@ -161,78 +162,22 @@ class CollectionsController extends AppController {
  */
 	public function delete($id = null) {
 		if($this->isRest()){
-			$data = array();
-			$this->Collection->id = $id;
-			
-			if (!$this->Collection->exists()) {
-				return $this->Rest->abort(array('status' => '400', 'error' => __('Invalid collection')));
-			} else {
-				if ($this->Collection->delete()) {
-					$data['message'] = __('Collection deleted');
-				} else {
-					return $this->Rest->abort(array('status' => '400', 'error' => __('Fail to delete the collection')));			
-				}
-			}
-			$this->set(compact('data'));
-			
-		} else {
-			$this->Collection->id = $id;
-			if (!$this->Collection->exists()) {
-				throw new NotFoundException(__('Invalid collection'));
-			}
-			$this->request->onlyAllow('post', 'delete');
-			if ($this->Collection->delete()) {
-				$this->Session->setFlash(__('Collection deleted'), 'flash/success');
-				$this->redirect(array('action' => 'index'));
-			}
-			$this->Session->setFlash(__('Collection was not deleted'), 'flash/error');
+			return $this->Rest->abort(array('status' => '400', 'error' => __('Method not supported')));
+		}
+		
+		$this->Collection->id = $id;
+		if (!$this->Collection->exists()) {
+			throw new NotFoundException(__('Invalid collection'));
+		}
+		$this->request->onlyAllow('post', 'delete');
+		if ($this->Collection->delete()) {
+			$this->Session->setFlash(__('Collection deleted'), 'flash/success');
 			$this->redirect(array('action' => 'index'));
 		}
+		$this->Session->setFlash(__('Collection was not deleted'), 'flash/error');
+		$this->redirect(array('action' => 'index'));
+
 	}
-/**
- * REST Index method
- *
- * @throws NotFoundException
- * @throws MethodNotAllowedException
- * @param string $id
- * @return void
- */	
-	public function apiv1_index() {
-		$data = array();
-		$offset = isset($this->request->query['offset']) ? $this->request->query['offset'] : '1';
-		$limit = isset($this->request->query['limit']) ? $this->request->query['limit'] : '10';
-		
-		if(!preg_match('/^[1-9][0-9]*$/',$offset) || !preg_match('/^[1-9][0-9]*$/',$limit)) {
-			$msg = sprintf(__('Please check if "offset" or "limit" are set as numeric numbers from 1 to 999999'));
-			return $this->Rest->abort(array('status' => '400', 'error' => $msg));		
-		}
-		
-		$options = array('limit' => $limit, 'offset'=> $offset - 1 );
-		$data['collections'] = $this->Collection->find('all', $options);
-		$data['total'] = $this->Collection->find('count');
-		$data['offset'] = $offset;
-		$data['limit'] = $limit;
-		
-		$this->set(compact('data'));
-	}
-/**
- * REST View method
- *
- * @throws NotFoundException
- * @throws MethodNotAllowedException
- * @param string $id
- * @return void
- */	
-	public function apiv1_view($id = null) {
-		if (!$this->Collection->exists($id)) {
-			$msg = sprintf('Invalid collection');
-			return $this->Rest->abort(array('status' => '400', 'error' => $msg));
-		}
-		$options = array('conditions' => array('Collection.' . $this->Collection->primaryKey => $id));
-		$data = $this->Collection->find('first', $options);
-		
-		$this->set(compact('data'));
-	}	
 	
 	public function search() {
 		if(isset($this->request->query['query'])) {

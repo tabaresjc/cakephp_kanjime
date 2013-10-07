@@ -35,7 +35,7 @@
 				<?php foreach ($users as $user): ?>
 					<tr class="<?php echo $first_class; ?>">
 						<td>
-							<img src="/admin/img/<?php echo strtolower($user['Group']['name']);?>_64.png" class="img-circle avatar hidden-phone" />
+							<?php echo $this->Html->getAvatarForEmail($user['User']['email'],64,"img-circle avatar hidden-phone"); ?>
 							<?php echo $this->Html->link($user['User']['name'], array('action' => 'view', $user['User']['id']), array('class' => 'name')); ?>
 							<span class="subtext"><?php echo $user['User']['username']; ?></span>
 						</td>

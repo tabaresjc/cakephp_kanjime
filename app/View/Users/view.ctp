@@ -87,26 +87,23 @@
 		</div>			
 		<!-- side right column -->
 		<div class="span3">
+			<div class="thumbnail" style="display: inline-block;">
+				<?php echo $this->Html->getAvatarForEmail($user['User']['email'],128); ?>
+			</div>
 			<h6><?php echo __('What you can do'); ?></h6>
 			<ul class="nav nav-list bs-docs-sidenav">
-			<li>
-			  <?php echo $this->Html->link(__('Edit User'), array('action' => 'edit', $user['User']['id']), array('class' => '')); ?>
-			</li>
-			<li>
-			  <?php echo $this->Form->postLink(__('Delete User'), array('action' => 'delete', $user['User']['id']), array('class' => ''), __('Are you sure you want to delete # %s?', $user['User']['id'])); ?>
-			</li>
-			<li>
-			  <?php echo $this->Html->link(__('List Users'), array('action' => 'index'), array('class' => '')); ?>
-			</li>
-			<li>
-			  <?php echo $this->Html->link(__('New User'), array('action' => 'add'), array('class' => '')); ?>
-			</li>
-			<li>
-			  <?php echo $this->Html->link(__('List Groups'), array('controller' => 'groups', 'action' => 'index'), array('class' => '')); ?>
-			</li>
-			<li>
-			  <?php echo $this->Html->link(__('New Group'), array('controller' => 'groups', 'action' => 'add'), array('class' => '')); ?>
-			</li>
+				<li>
+				  <?php echo $this->Html->link(__('Edit User'), array('action' => 'edit', $user['User']['id']), array('class' => '')); ?>
+				</li>
+				<li>
+				  <?php echo $this->Form->postLink(__('Delete User'), array('action' => 'delete', $user['User']['id']), array('class' => ''), __('Are you sure you want to delete # %s?', $user['User']['id'])); ?>
+				</li>
+				<li>
+				  <?php echo $this->Html->link(__('List Users'), array('action' => 'index'), array('class' => '')); ?>
+				</li>
+				<li>
+				  <?php echo $this->Html->link(__('New User'), array('action' => 'add'), array('class' => '')); ?>
+				</li>
 			</ul>
 		</div>		
 	<div>

@@ -55,13 +55,17 @@
 	  <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->
 </head>
-<body class="login-bg" style="background-image: url(/admin/img/bgs/14.jpg);">
+<body class="login-bg">
 	<?php echo "\n"; ?>
 	<div style="margin:20px;">
 		<?php echo $this->Session->flash(). "\n";?>	
 	</div>
 	<?php echo $this->fetch('content'). "\n";?>
 </body>
-
+	<!-- scripts -->
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+	<script src="/admin/js/bootstrap.min.js"></script>
+	<script src="/admin/js/theme.js"></script>
+	<?php echo $this->fetch('custom_script'); ?>
 </html>
 

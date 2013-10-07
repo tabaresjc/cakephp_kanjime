@@ -36,8 +36,8 @@ class Order extends AppModel {
 	
 	public function beforeSave($options = array()) {
 		if (empty($this->data[$this->alias]['token']) || strlen($this->data[$this->alias]['token'])<=0) {
-			$cipherHash = Configure::write('Security.cipherHash');
-			$this->data[$this->alias]['token'] = hash_hmac('ripemd160', $this->data[$this->alias]['name'] . $this->data[$this->alias]['created'], $cipherHash);
+			$cipherHash = Configure::read('Security.cipherHash');
+			$this->data[$this->alias]['token'] = hash_hmac('ripemd160', $this->data[$this->alias]['name'] . date("Y-m-d H:i:s"), $cipherHash);
 		}
 		return true;
 	}	

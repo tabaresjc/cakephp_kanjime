@@ -47,7 +47,7 @@ class AppController extends Controller {
             ),
 			'loginAction' => array('controller' => 'users', 'action' => 'login'),            
             'logoutRedirect' => array('controller' => 'users', 'action' => 'login'),
-			'loginRedirect' => array('controller' => 'admins', 'action' => 'index'),
+			'loginRedirect' => array('controller' => 'pages', 'action' => 'display', 'dashboard'),
         ),
 		'Rest.Rest' => array(
 			'catchredir' => true,
@@ -74,16 +74,16 @@ class AppController extends Controller {
                 'index' => array(
                     'extract' => array('data')
                 ),
+				'view' => array(
+                    'extract' => array('data')
+                ),
 				'add' => array(
                     'extract' => array('data')
                 ),
-				'update' => array(
+				'edit' => array(
                     'extract' => array('data')
                 ),
 				'delete' => array(
-                    'extract' => array('data')
-                ),
-				'view' => array(
                     'extract' => array('data')
                 )
             ),
@@ -127,11 +127,9 @@ class AppController extends Controller {
 									  'User.account_sid' => $credentials['account_sid'])
 			));			
 			if (!empty($user) /*&& $this->Auth->login($user)*/) {
-				$this->Auth->allow($this->params['action']);
-				$this->Security->unlockedActions = $this->params['action'];				
-			}else {
-				$msg = sprintf('Unable to log you in with the supplied credentials. ');
-				return $this->Rest->abort(array('status' => '403', 'error' => $msg));
+				$this->Auth->allow($this->params['action']);								
+			} else {
+				return $this->Rest->abort(array('status' => '403', 'error' => 'Unable to log you in with the supplied credentials'));
 			}
 		}       
 	}

@@ -6,12 +6,7 @@
 			<?php echo $this->Form->create('Order', array('inputDefaults' => array('label' => false), 'class' => 'form form-horizontal')); ?>
 				<fieldset>
 					<h2><?php echo __('Edit Order'); ?></h2>
-			<div class="control-group">
-	<?php echo $this->Form->label('id', 'id', array('class' => 'control-label'));?>
-	<div class="controls">
-		<?php echo $this->Form->input('id', array('class' => 'span12')); ?>
-	</div><!-- .controls -->
-</div><!-- .control-group -->
+			
 
 <div class="control-group">
 	<?php echo $this->Form->label('name', 'name', array('class' => 'control-label'));?>
@@ -82,7 +77,9 @@
 		<?php echo $this->Form->input('payment_env', array('class' => 'span12')); ?>
 	</div><!-- .controls -->
 </div><!-- .control-group -->
-
+				<?php echo $this->Form->hidden('id'); ?>
+				<?php echo $this->Form->hidden('created'); ?>
+				<?php echo $this->Form->hidden('token'); ?>
 				</fieldset>
 			<?php echo $this->Form->submit('Submit', array('class' => 'btn btn-large btn-primary')); ?>
 <?php echo $this->Form->end(); ?>

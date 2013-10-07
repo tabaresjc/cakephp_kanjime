@@ -7,6 +7,11 @@ App::uses('AppController', 'Controller');
  */
 class GroupsController extends AppController {
 
+	public function beforeFilter() {
+		parent::beforeFilter();
+		$this->Security->unlockedActions = array('delete');
+	}
+
 /**
  * index method
  *

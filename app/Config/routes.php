@@ -31,11 +31,12 @@
 	Router::parseExtensions('xml', 'json');
 	
     //Router::connect('/', array('controller' => 'pages', 'action' => 'display', 'home'));
-	Router::connect('/pages/*', array('controller' => 'pages', 'action' => 'display'));
-	Router::connect('/dashboard/*', array('controller' => 'admins', 'action' => 'index'));
+	//Router::connect('/pages/*', array('controller' => 'pages', 'action' => 'display'));
 	Router::connect('/names/:action/*', array('controller' => 'collections'));
 	Router::connect('/', array('controller' => 'pages', 'action' => 'display', 'home'));
+	Router::connect('/dashboard/*', array('controller' => 'pages', 'action' => 'display', 'dashboard'));
 	
+	Router::connect('/login/*', array('controller' => 'users', 'action' => 'login'));
 
 /**
  * Load all plugin routes. See the CakePlugin documentation on

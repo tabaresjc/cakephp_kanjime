@@ -76,8 +76,9 @@
 	?>
 </body>
 	<!-- scripts -->
-	<script src="http://code.jquery.com/jquery-latest.js"></script>
-	<script src="/admin/js/bootstrap.min.js"></script>
-	<script src="/admin/js/theme.js"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="/admin/js/bootstrap.min.js"></script>
+    <script src="/admin/js/jquery-ui-1.10.2.custom.min.js"></script>
+	<script src="/admin/js/theme.js"></script>	
 	<?php echo $this->fetch('custom_script'); ?>
 </html>

@@ -10,10 +10,10 @@ class UsersController extends AppController {
 		'limit' => 10
 	);
 	
-	// public function beforeFilter() {
-		// parent::beforeFilter();
-		// $this->Auth->allow();
-	// }
+	public function beforeFilter() {
+		parent::beforeFilter();
+		$this->Security->unlockedActions = array('delete');
+	}
 
 	// public function initDB() {
 		// $group = $this->User->Group;
@@ -37,8 +37,9 @@ class UsersController extends AppController {
 	public function login() {
 		$this->layout = 'signin';
 		if ($this->request->is('post')) {
-			/*$cookie_rm = $this->data['User']['remember_me'];*/
-			unset($this->data['User']['remember_me']);
+			if(isset($this->data['User']['remember_me'])){
+				unset($this->data['User']['remember_me']);
+			}
 			if ($this->Auth->login()) {
 				$user = $this->Session->read('Auth.User');
 				$this->Session->setFlash('Welcome '. $user['name'] . '!', 'flash/success');
@@ -161,11 +162,19 @@ class UsersController extends AppController {
  * @return void
  */
 	public function delete($id = null) {
+		
 		$this->User->id = $id;
 		if (!$this->User->exists()) {
 			throw new NotFoundException(__('Invalid user'));
 		}
-		$this->request->onlyAllow('post', 'delete');
+		
+		$this->request->onlyAllow('post', 'delete');		
+		
+		if ($this->User->isCurrentUser($id)) {
+			$this->Session->setFlash(__('You are not allowed to remove your info'), 'flash/error');
+			$this->redirect(array('action' => 'index'));
+		}
+		
 		if ($this->User->delete()) {
 			$this->Session->setFlash(__('User deleted'), 'flash/success');
 			$this->redirect(array('action' => 'index'));

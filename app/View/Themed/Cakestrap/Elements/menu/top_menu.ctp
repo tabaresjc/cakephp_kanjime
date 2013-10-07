@@ -8,8 +8,9 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
+				<span class="icon-bar"></span>
             </button>
-            <?php echo $this->Html->link('<i class="icon-cloud"></i> <span style="text-transform: none;">Admin</span>', array('controller' => 'admins', 'action' => 'index'), array('class' => 'brand', 'escape' => false)); ?>
+            <?php echo $this->Html->link('<i class="icon-cloud"></i> <span style="text-transform: none;">Admin</span>', array('controller' => 'pages', 'action' => 'display', 'dashboard'), array('class' => 'brand', 'escape' => false)); ?>
 			<?php if(!empty($user)) { ?>
             <ul class="nav pull-right">                
                 <!--
@@ -24,11 +25,11 @@
                     </a>
                     <ul class="dropdown-menu">
                         <li><?php echo $this->Html->link('Profile', array('controller' => 'users', 'action' => 'view', $user['id'])); ?></li>
-                        <li><?php echo $this->Html->link(__('Add User'), array('controller' => 'users', 'action' => 'add')); ?></li>
-                        <li><?php echo $this->Html->link(__('List User'), array('controller' => 'users', 'action' => 'index')); ?></li>
+
 						<li class="divider"></li>
 						<li class="settings hidden-phone">
 							<a href="javascript:void(0);" onclick="document.getElementById('UserLogoutForm').submit();">Logout</a>
+							
 							<?php echo $this->Form->create('User', array('action' => 'logout' , 'class' => 'navbar-form pull-right', 'inputDefaults' => array('label' => false,'div' => false))); ?>
 							<?php echo $this->Form->end(); ?>
 						</li>
