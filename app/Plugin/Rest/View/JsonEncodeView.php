@@ -38,12 +38,18 @@ class JsonEncodeView extends View {
 	}
 
 	public function encode ($response, $pretty = false) {
-		if ($pretty) {
-			$encoded = $this->_encode($response);
-			$pretty = $this->json_format($encoded);
-			return $pretty;
-		}
-		return $this->_encode($response);
+		$newjson = json_encode($response);
+
+		$newjson = preg_replace("/\\\\u([0-9abcdef]{4})/", "&#x$1;", $newjson);	
+		$newjson = mb_convert_encoding($newjson, 'UTF-8', 'HTML-ENTITIES');
+
+		return $newjson;
+		// if ($pretty) {
+			// $encoded = $this->_encode($response);
+			// $pretty = $this->json_format($encoded);
+			// return $pretty;
+		// }
+		// return $this->_encode($response);
 	}
 
 

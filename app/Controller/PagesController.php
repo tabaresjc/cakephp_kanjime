@@ -47,7 +47,7 @@ class PagesController extends AppController {
 	
 	public function beforeFilter() {
 		parent::beforeFilter();
-		if(strcmp('/dashboard',$this->request->here)!=0){
+		if(!preg_match('/dashboard/',$this->request->here)){
 			$this->Auth->allow('display');
 		}
 	}
@@ -78,11 +78,12 @@ class PagesController extends AppController {
 			$title_for_layout = Inflector::humanize($path[$count - 1]);
 		}
 		
-		if(strcmp($page,"dashboard")==0){
+		if(preg_match('/dashboard/',$this->request->here)){
 			$this->layout = 'default';
 		} else {
 			$this->layout = 'home';
 		}
+		
 		$this->set(compact('page', 'subpage', 'title_for_layout'));
 		$this->render(implode('/', $path));
 	}
