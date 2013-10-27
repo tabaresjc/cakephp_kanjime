@@ -27,7 +27,7 @@
  * to use (in this case, /app/View/Pages/home.ctp)...
  */
  	// Add XML + JSON to your parseExtensions
-	Router::mapResources(array('collections', 'orders'));
+	Router::mapResources(array('collections', 'orders', 'devices'));
 	Router::parseExtensions('xml', 'json');
 	
     //Router::connect('/', array('controller' => 'pages', 'action' => 'display', 'home'));

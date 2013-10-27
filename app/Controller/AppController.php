@@ -65,7 +65,8 @@ class AppController extends Controller {
 				'default' => 'Order',
 				'classlimits' => array(
 					'Collection' => array('-1 hour', 1000),
-					'Order' => array('-1 hour', 1000)
+					'Order' => array('-1 hour', 1000),
+					'Device' => array('-1 hour', 1000)
 				),
 				'identfield' => 'apikey',
 				'ip_limit' => array('-1 hour', 60),  // For those not logged in
