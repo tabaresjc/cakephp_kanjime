@@ -16,8 +16,9 @@ class CollectionsController extends AppController {
 		if ($this->isRest()) {
 			$this->Security->unlockedActions = array($this->params['action']);
 		} else {
-			$this->Security->unlockedActions = array('delete');
+			$this->Security->unlockedActions = array('delete','findkanji');
 		}
+		$this->Security->unlockedFields = array('title','subtitle','description','status','body');
     }
     
 /**

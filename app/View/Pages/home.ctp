@@ -49,7 +49,7 @@
 					<p class="description">Would you like to know How your name is written in Kanji?</p>
 					<p style="color:black;font-weight: 500;">Come and check cool & positive Kanjis for your name!, Avalaible for free in the App Store</p>
 					
-					<a href="/" class="btn btn-primary" style="margin-bottom:20px;" ><img id="img-app-button" src="/img/btn-app-store.png" alt="Get App"/></a>
+					<a href="https://itunes.apple.com/us/app/kanjime/id729354439" class="btn btn-primary" style="margin-bottom:20px;" target="_blank" ><img id="img-app-button" src="/img/btn-app-store.png" alt="Get App"/></a>
 					
 					<!-- AddThis Button BEGIN -->
 					<div class="addthis_toolbox addthis_default_style addthis_32x32_style">
@@ -93,7 +93,7 @@
 							However, foreign names can be written in Kanji if you like！ like most of Japanese have their own names in Kanji.<br/> 
 							(e.g.Tanaka: 田中、Yamada: 山田、Sato: 佐藤)
 							<br/><br/>
-							For Kanji, there are 'on' reading and 'kun' rading.<br/>
+							For Kanji, there are "on" reading and "kun" reading.<br/>
 							"on" reading resembles the Chinese way of reading. Whereas "kun" reading is the Japanese original way of reading. For example
 							</p>
 							<br/>

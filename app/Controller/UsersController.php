@@ -13,7 +13,7 @@ class UsersController extends AppController {
 	public function beforeFilter() {
 		parent::beforeFilter();
 		$this->Security->unlockedActions = array('delete');
-		//$this->Auth->allow();
+		//$this->Auth->allow('initDB');
 	}
 
 	// public function initDB() {
@@ -21,12 +21,13 @@ class UsersController extends AppController {
 		// //Allow admins to everything
 		// $group->id = 1;
 		// $this->Acl->allow($group, 'controllers');
-		// //$this->Acl->allow($group, 'controllers/Collections/findKanji');
+		// //$this->Acl->allow($group, 'controllers/Collections/findkanji');
 		
 		// $group->id = 2;
 		// $this->Acl->deny($group, 'controllers');
 		// $this->Acl->allow($group, 'controllers/Collections');
 		// $this->Acl->allow($group, 'controllers/Pages');
+		// $this->Acl->allow($group, 'controllers/Collections/findkanji');
 		
 		// $group->id = 3;
 		// $this->Acl->deny($group, 'controllers');
