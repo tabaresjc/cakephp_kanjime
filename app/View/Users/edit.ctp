@@ -1,10 +1,12 @@
 <?php
 	$this->append('custom_css');
-	echo "\t" . '<!-- this page specific styles -->' . "\n";
-	echo "\t" . '<link rel="stylesheet" href="/admin/css/compiled/new-user.css" type="text/css" media="screen" />' . "\n";
+		echo "\t" . '<!-- this page specific styles -->' . "\n";
+		echo "\t" . '<link rel="stylesheet" href="/admin/css/compiled/new-user.css" type="text/css" media="screen" />' . "\n";
+		echo "\t". '<link rel="stylesheet" href="/admin/css/compiled/ui-elements.css" type="text/css" media="screen" />';	
 	$this->end();
+	
 	$this->append('custom_script');
-	echo "\n\t". $this->Html->script('libs/users');
+		echo "\n\t". $this->Html->script('libs/users');
 	$this->end();
 ?>
 	<div class="new-user">
@@ -55,11 +57,38 @@
 					<?php echo $this->Form->end(); ?>
 				</div>
 			</div>
+
 			<div class="span3">
-				<a href="http://gravatar.com/emails" target="_blank" class="thumbnail" style="display: inline-block;">
-					<?php echo $this->Html->getAvatarForEmail($this->Form->value('User.email'),128); ?>
-				</a>				
-			</div>
+				<div class="pop-dialog full">
+					<div class="body">                        
+						<div class="settings">
+							<div class="items">
+								<div class="item">
+									<a href="http://gravatar.com/emails" target="_blank" class="thumbnail" style="display: inline-block;">
+										<?php echo $this->Html->getAvatarForEmail($this->Form->value('User.email'),128); ?>
+									</a>
+								</div>						
+								<div class="item">
+									<i class="icon-reorder"></i>
+									<?php echo $this->Html->link(__('List Users'), array('action' => 'index'), array('class' => '')); ?>
+								</div>
+								<div class="item">
+									<i class="icon-edit icon-formatted"></i>
+									<?php echo $this->Html->link(__('Edit User'), array('action' => 'edit', $this->Form->value('User.id')), array('class' => '')); ?>
+								</div>
+								<div class="item">
+									<i class="icon-trash icon-formatted"></i>
+									<?php echo $this->Form->postLink(__('Delete User'), array('action' => 'delete', $this->Form->value('User.id')), array('class' => ''), __('Are you sure you want to delete # %s?', $this->Form->value('User.id'))); ?>
+								</div>							
+								<div class="item">
+									<i class="icon-plus icon-formatted"></i>
+									<?php echo $this->Html->link(__('New User'), array('action' => 'add'), array('class' => '')); ?>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>				
 		</div>
 	</div>
 

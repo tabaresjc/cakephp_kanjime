@@ -73,7 +73,7 @@ class DevicesController extends AppController {
 			}
 			$data = array();
 			
-			$request_data = $this->RestUtilities->filterFieldsOfRequest($this->request->data, $this->allowedCreateFields);			
+			$request_data = $this->RestUtilities->filterFieldsOfRequest($this->request->data, $this->allowedCreateFields);
 			$request_data['Device']['device_token'] = preg_replace('/\s+/', '', $request_data['Device']['token']);
 			unset($request_data['Device']['token']);
 			
@@ -96,8 +96,20 @@ class DevicesController extends AppController {
 			$data['status'] = "ok";
 			$this->set(compact('data'));
 		} else if ($this->request->is('post')) {
-			$this->Device->create();
-			if ($this->Device->save($this->request->data)) {
+			$request_data = $this->request->data;
+			
+			$request_data['Device']['device_token'] = preg_replace('/\s+/', '', $request_data['Device']['device_token']);		
+			$options = array('conditions' => array('Device.device_token' => $request_data['Device']['device_token']));
+			$count = $this->Device->find('count', $options);
+			
+			if($count > 0) {				
+				$device = $this->Device->find('first', $options);
+				$request_data['Device']['id'] = $device['Device']['id'];
+			} else {
+				$this->Device->create();
+			}
+			
+			if ($this->Device->save($request_data)) {
 				$this->Session->setFlash(__('The device has been saved'), 'flash/success');
 				$this->redirect(array('action' => 'index'));
 			} else {

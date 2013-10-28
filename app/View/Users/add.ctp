@@ -1,10 +1,11 @@
 <?php
 	$this->append('custom_css');
-	echo "\t" . '<!-- this page specific styles -->' . "\n";
-	echo "\t" . '<link rel="stylesheet" href="/admin/css/compiled/new-user.css" type="text/css" media="screen" />' . "\n";
+		echo "\t" . '<!-- this page specific styles -->' . "\n";
+		echo "\t" . '<link rel="stylesheet" href="/admin/css/compiled/new-user.css" type="text/css" media="screen" />' . "\n";
+		echo "\t". '<link rel="stylesheet" href="/admin/css/compiled/ui-elements.css" type="text/css" media="screen" />';	
 	$this->end();	
 	$this->append('custom_script');
-	echo "\n\t". $this->Html->script('libs/users');
+		echo "\n\t". $this->Html->script('libs/users');
 	$this->end();
 ?>
 	<div class="new-user">
@@ -50,16 +51,25 @@
 				</div>
 			</div>
 			<!-- side right column -->
-			<div class="span3 form-sidebar pull-right">
-				<!--
-				<h6><?php /*echo __('What you can do');*/ ?></h6>
-				<ul class="nav nav-list bs-docs-sidenav">
-					<li><a href="javascript:void(0);">Upload a vCard file</a></li>
-					<li><a href="javascript:void(0);">Import from a CSV file</a></li>
-					<li><a href="javascript:void(0);">Import from an Excel file</a></li>
-				</ul>
-				-->
-			</div>
+
+			<div class="span3 pull-right">
+				<div class="pop-dialog full">
+					<div class="body">                        
+						<div class="settings">
+							<div class="items">
+								<div class="item">
+									<i class="icon-reorder"></i>
+									<?php echo $this->Html->link(__('List Users'), array('action' => 'index'), array('class' => '')); ?>
+								</div>
+								<div class="item">
+									<i class="icon-reorder"></i>
+									<?php echo $this->Html->link(__('List Groups'), array('controller' => 'groups', 'action' => 'index'), array('class' => '')); ?>
+								</div>								
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>				
 		</div>
 	</div>
 	

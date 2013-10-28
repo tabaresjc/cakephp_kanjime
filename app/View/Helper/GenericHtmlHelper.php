@@ -30,7 +30,23 @@ class GenericHtmlHelper extends HtmlHelper {
 					'url' => array('controller' => 'collections', 'action' => 'add')
 				)
 			)
-        ),			
+        ),
+		array(
+            'icon' => 'icon-tablet',
+			'name' => 'Devices',
+			'url' => 'javascript:void(0);',
+			'controller' => array('devices'),
+			'childs' => array(
+				array(
+					'name' => 'Device List',
+					'url' => array('controller' => 'devices', 'action' => 'index')
+				),
+				array(
+					'name' => 'New Device',
+					'url' => array('controller' => 'devices', 'action' => 'add')
+				)
+			)
+        ),		
 		array(
             'icon' => 'icon-group',
 			'name' => 'Users',
@@ -51,6 +67,7 @@ class GenericHtmlHelper extends HtmlHelper {
 				)
 			)
         ),
+	
     );
 
 	public function getLinksToControllers($user = null, $controller, $action){

@@ -1,4 +1,8 @@
 <?php
+	$this->append('custom_css');
+		echo "\t". '<!-- this page specific styles -->' . "\n";
+		echo "\t". '<link rel="stylesheet" href="/admin/css/compiled/ui-elements.css" type="text/css" media="screen" />';
+	$this->end();	
 	$this->append('custom_script');
 		echo $this->Html->script('libs/kanjime');
 	$this->end();
@@ -72,12 +76,30 @@
 		</div>			
 		<!-- side right column -->
 		<div class="span3">
-			<h6><?php echo __('What you can do'); ?></h6>
-			<ul class="nav nav-list bs-docs-sidenav">
-				<li><?php echo $this->Html->link(__('Edit Name'), array('action' => 'edit', $collection['Collection']['id']), array('class' => '')); ?></li>
-				<li><?php echo $this->Form->postLink(__('Delete Name'), array('action' => 'delete', $collection['Collection']['id']), array('class' => ''), __('Are you sure you want to delete %s?', $collection['Collection']['title'])); ?></li>
-				<li><?php echo $this->Html->link(__('New Name'), array('action' => 'add'), array('class' => '')); ?></li>
-			</ul>			
+			<div class="pop-dialog full">
+				<div class="body">                        
+					<div class="settings">
+						<div class="items">
+							<div class="item">
+								<i class="icon-reorder"></i>
+								<?php echo $this->Html->link(__('List Names'), array('action' => 'index')); ?>
+							</div>						
+							<div class="item">
+								<i class="icon-edit icon-formatted"></i>
+								<?php echo $this->Html->link(__('Edit Name'), array('action' => 'edit', $collection['Collection']['id'])); ?>
+							</div>
+							<div class="item">
+								<i class="icon-trash icon-formatted"></i>
+								<?php echo $this->Form->postLink(__('Delete Name'), array('action' => 'delete', $collection['Collection']['id']), null, __('Are you sure you want to delete %s?', $collection['Collection']['title'])); ?>
+							</div>
+							<div class="item">
+								<i class="icon-plus icon-formatted"></i>
+								<?php echo $this->Html->link(__('New Name'), array('action' => 'add')); ?>
+							</div>							
+						</div>
+					</div>
+				</div>
+			</div>				
 		</div>		
 	<div>
 	

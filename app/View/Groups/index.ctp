@@ -1,5 +1,8 @@
 <?php
-
+	$this->append('custom_css');
+		echo "\t". '<!-- this page specific styles -->' . "\n";
+		echo "\t". '<link rel="stylesheet" href="/admin/css/compiled/ui-elements.css" type="text/css" media="screen" />';
+	$this->end();	
 ?>
 
 	<div class="new-user">
@@ -24,7 +27,7 @@
 								<td><?php echo $this->Html->link($group['Group']['name'], array('action' => 'view', $group['Group']['id']), array('class' => 'title')); ?></td>
 								<td class="hid"><?php echo h($group['Group']['created']); ?></td>
 								<td class="hid"><?php echo h($group['Group']['modified']); ?></td>
-								<td class="align-right">
+								<td>
 								<div class="btn-group">
 								<?php echo $this->Html->link('<i class="icon-edit"></i>', array('action' => 'edit', $group['Group']['id']), array('class' => 'btn btn-primary', 'escape'=>false)); ?>
 								<?php echo $this->Form->postLink('<i class="icon-trash"></i>', array('action' => 'delete', $group['Group']['id']), array('class' => 'btn btn-danger', 'escape'=>false), __('Are you sure you want to delete # %s?', $group['Group']['id'])); ?>
@@ -54,11 +57,23 @@
 				</div>				
 			</div>
 			<!-- side right column -->
-			<div class="span3 form-sidebar pull-right">
-				<h6><?php echo __('What you can do'); ?></h6>
-				<ul class="nav nav-list bs-docs-sidenav">
-					<li><?php echo $this->Html->link(__('New Group'), array('action' => 'add'), array('class' => '')); ?></li>
-				</ul>
+			<div class="span3">	
+				<div class="pop-dialog full">
+					<div class="body">                        
+						<div class="settings">
+							<div class="items">
+								<div class="item">
+									<i class="icon-plus icon-formatted"></i>
+									<?php echo $this->Html->link(__('New Group'), array('action' => 'add'), array('class' => '')); ?>
+								</div>
+								<div class="item">
+									<i class="icon-user icon-formatted"></i>
+									<?php echo $this->Html->link(__('New User'), array('controller' => 'users', 'action' => 'add')); ?>
+								</div>								
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
 	</div>
