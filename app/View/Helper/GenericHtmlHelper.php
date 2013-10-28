@@ -7,7 +7,7 @@ class GenericHtmlHelper extends HtmlHelper {
             'icon' => 'icon-home',
 			'name' => 'Home',
 			'url' => array('controller' => 'pages', 'action' => 'display', 'dashboard'),
-			'controller' => array('admins')
+			'controller' => array('pages')
         ),
 		array(
             'icon' => 'icon-credit-card',
@@ -73,7 +73,7 @@ class GenericHtmlHelper extends HtmlHelper {
 	public function getLinksToControllers($user = null, $controller, $action){
 		$out = '';
 		foreach($this->listOfLink as $single){
-			$contr_class =  in_array($controller,$single['controller']) ? 'active' : '';
+			$contr_class =  in_array($controller, $single['controller']) ? 'active' : '';
 			$out .= "\t" . '<li class="'. $contr_class .'">' . "\n";
 			
 			if(!empty($contr_class)){

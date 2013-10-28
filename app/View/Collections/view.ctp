@@ -7,66 +7,66 @@
 		echo $this->Html->script('libs/kanjime');
 	$this->end();
 ?>
-	<div class="row-fluid header">
-		<div id="message_placeholder">
-		</div>		
+	<div class="row header">
 		<h3><?php echo $collection['Collection']['title']; ?></h3>
 	</div>
-	<div class="row-fluid">
+	<div class="row">
 		<!-- left column -->
-		<div class="span9">
+		<div class="col-md-9">
 			<div id="kanjime_viewer"></div>
 			<div class="collections view">
-			  <table class="table table-striped table-bordered">
-				<tr>
-				  <td>
-					<strong>
-					  <?php echo __('Id'); ?>
-					</strong>
-				  </td>
-				  <td><?php echo h($collection['Collection']['id']); ?>&#160;</td>
-				</tr>
-				<tr>
-				  <td>
-					<strong>
-					  <?php echo __('Name'); ?>
-					</strong>
-				  </td>
-				  <td><?php echo h($collection['Collection']['title']); ?>&#160;</td>
-				</tr>
-				<tr>
-				  <td>
-					<strong>
-					  <?php echo __('Kanji'); ?>
-					</strong>
-				  </td>
-				  <td><?php echo h($collection['Collection']['subtitle']); ?>&#160;</td>
-				</tr>
-				<tr>
-				  <td>
-					<strong>
-					  <?php echo __('Katakana'); ?>
-					</strong>
-				  </td>
-				  <td><?php echo h($collection['Collection']['description']); ?>&#160;</td>
-				</tr>
-
-				<tr>
-				  <td>
-					<strong>
-					  <?php echo __('Created'); ?>
-					</strong>
-				  </td>
-				  <td><?php echo $this->Time->format('F jS, Y H:i', $collection['Collection']['created']); ?>&#160;</td>
-				</tr>
-				<tr>
-				  <td>
-					<strong>
-					  <?php echo __('Modified'); ?>
-					</strong>
-				  </td>
-				  <td><?php echo $this->Time->format('F jS, Y H:i', $collection['Collection']['modified']); ?>&#160;</td>
-				</tr>
+			  <table class="table table-bordered table-striped">
+		  
+				
+					<tr>
+					  <td>
+						<strong>
+						  <?php echo __('Id'); ?>
+						</strong>
+					  </td>
+					  <td><?php echo h($collection['Collection']['id']); ?>&#160;</td>
+					</tr>
+					<tr>
+					  <td>
+						<strong>
+						  <?php echo __('Name'); ?>
+						</strong>
+					  </td>
+					  <td><?php echo h($collection['Collection']['title']); ?>&#160;</td>
+					</tr>
+					<tr>
+					  <td>
+						<strong>
+						  <?php echo __('Kanji'); ?>
+						</strong>
+					  </td>
+					  <td><?php echo h($collection['Collection']['subtitle']); ?>&#160;</td>
+					</tr>
+					<tr>
+					  <td>
+						<strong>
+						  <?php echo __('Katakana'); ?>
+						</strong>
+					  </td>
+					  <td><?php echo h($collection['Collection']['description']); ?>&#160;</td>
+					</tr>
+					<tr>
+					  <td>
+						<strong>
+						  <?php echo __('Created'); ?>
+						</strong>
+					  </td>
+					  <td><?php echo $this->Time->format('F jS, Y H:i', $collection['Collection']['created']); ?>&#160;</td>
+					</tr>
+					<tr>
+					  <td>
+						<strong>
+						  <?php echo __('Modified'); ?>
+						</strong>
+					  </td>
+					  <td><?php echo $this->Time->format('F jS, Y H:i', $collection['Collection']['modified']); ?>&#160;</td>
+					</tr>
+				
 			  </table>
 			  
 			  <?php echo $this->Form->hidden('Collection.body', array('id' => 'kanjime_body', 'value'=> $collection['Collection']['body'])); ?>
@@ -75,7 +75,7 @@
 			<!-- .view -->
 		</div>			
 		<!-- side right column -->
-		<div class="span3">
+		<div class="col-md-3">
 			<div class="pop-dialog full">
 				<div class="body">                        
 					<div class="settings">

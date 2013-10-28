@@ -121,7 +121,7 @@
     font-weight: normal;
   }
 }
-@media (max-width: 767px) {
+@media (max-width: 768px) {
   .user-profile .profile .bio {
     border-right: 0 none;
     border-bottom: 1px solid #edeef1;

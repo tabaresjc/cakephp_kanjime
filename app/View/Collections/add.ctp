@@ -5,52 +5,50 @@
 ?>
 
 
-	<div class="row-fluid header">
-		<div id="message_placeholder">
-		</div>		
+	<div class="row header">
 		<h3><?php echo __('Create a new name'); ?></h3>
 	</div>
-	<div class="row-fluid form-wrapper">
+	<div class="row form-wrapper">
 		<!-- left column -->
-		<div class="span12 with-sidebar">			
+		<div class="col-md-12">			
 			<div id="kanji_me_create" class="collections form">
 			  <?php echo $this->Form->create('Collection', array('inputDefaults' => array('label' => false), 'class' => 'form form-horizontal')); ?>
-			  <fieldset>
-				<div class="control-group">
-				  <?php echo $this->Form->label('title', 'Name', array('class' => 'control-label'));?>
-				  <div class="controls">
-					<?php echo $this->Form->input('title', array('class' => 'span12')); ?>
+			  
+				<div class="form-group">
+				  <?php echo $this->Form->label('title', 'Name', array('class' => 'col-lg-2 control-label'));?>
+				  <div class="col-lg-10">
+					<?php echo $this->Form->input('title', array('class' => 'form-control')); ?>
 				  </div>
-				  <!-- .controls -->
+				  <!-- .col-lg-10 -->
 				</div>
-				<!-- .control-group -->
-				<div class="control-group">
-				  <?php echo $this->Form->label('subtitle', 'Kanji', array('class' => 'control-label'));?>
-				  <div class="controls">
-					<?php echo $this->Form->input('subtitle', array('class' => 'span12')); ?>
+				<!-- .form-group -->
+				<div class="form-group">
+				  <?php echo $this->Form->label('subtitle', 'Kanji', array('class' => 'col-lg-2 control-label'));?>
+				  <div class="col-lg-10">
+					<?php echo $this->Form->input('subtitle', array('class' => 'form-control')); ?>
 				  </div>
-				  <!-- .controls -->
+				  <!-- .col-lg-10 -->
 				</div>
-				<!-- .control-group -->
-				<div class="control-group">
-				  <?php echo $this->Form->label('description', 'Katakana', array('class' => 'control-label'));?>
-				  <div class="controls">
-					<?php echo $this->Form->input('description', array('class' => 'span12')); ?>
+				<!-- .form-group -->
+				<div class="form-group">
+				  <?php echo $this->Form->label('description', 'Katakana', array('class' => 'col-lg-2 control-label'));?>
+				  <div class="col-lg-10">
+					<?php echo $this->Form->input('description', array('class' => 'form-control')); ?>
 				  </div>
-				  <!-- .controls -->
+				  <!-- .col-lg-10 -->
 				</div>
-				<!-- .control-group -->
-				<div class="control-group">
-				  <?php echo $this->Form->label('status', 'Status', array('class' => 'control-label'));?>
-				  <div class="controls">
+				<!-- .form-group -->
+				<div class="form-group">
+				  <?php echo $this->Form->label('status', 'Status', array('class' => 'col-lg-2 control-label'));?>
+				  <div class="col-lg-10">
 					<?php echo $this->Form->input('status', array('options' => $this->Collection->getStatusDescriptor(),'value'=>'2')); ?>
 				  </div>
-				  <!-- .controls -->
+				  <!-- .col-lg-10 -->
 				</div>
-				<!-- .control-group -->
+				<!-- .form-group -->
 				<?php echo $this->Form->hidden('body', array('value' => 'kanji:null', 'id' => 'kanjime_body')); ?>
-				<!-- .control-group -->
-			  </fieldset>
+				<!-- .form-group -->
+			  
 			  <div class="well">
 				<div class="btn-toolbar">
 					<?php echo $this->Html->link('Breakdown', 'javascript:void(0)', array('id' => 'kanji_me_breakdown', 'class' => 'btn btn-large btn-warning')); ?>
@@ -61,14 +59,14 @@
 			</div>
 		</div>
 	</div>
-	<div class="row-fluid">
+	<div class="row">
 		<!-- left column -->
-		<div class="span6">
+		<div class="col-md-6">
 			<div id="kanjime_placeholder" class="">
 			</div>
 		</div>			
 		<!-- side right column -->
-		<div class="span6">
+		<div class="col-md-6">
 			<div id="kanjime_preview" style="display:none;" class="well">
 				<div class="kanjime_preview_body">
 				</div>

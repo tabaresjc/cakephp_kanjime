@@ -110,6 +110,7 @@
 			$('#kanjime_placeholder').addClass('well');
 		},
 		clearWorkingSpace: function() {
+			$('.header .alert').remove();
 			$('#kanjime_preview').hide();
 			$('#kanjime_preview .kanjime_preview_body').empty();
 			$('#kanjime_placeholder').empty().removeClass();
@@ -173,30 +174,30 @@
 		},		
 		getKanjiAdminTableForm: function(index,kanji,kun,on,meaning) {
 			var singleTable = '';
-			singleTable += '<form class="kanji-form form-horizontal">\n';
-			singleTable += '	<h3>Kanji #'+index+'</h3>\n';
-			singleTable += '	<div class="control-group">\n';
-			singleTable += '		<label for="km_picvalue" class="control-label">Kanji</label>\n';
-			singleTable += '		<div class="controls">\n';
-			singleTable += '			<input id="km_picvalue" name="km_picvalue" class="span12" type="text" value="'+kanji+'" >\n';
+			singleTable += '<form class="form-horizontal kanji-form">\n';
+			singleTable += '	<span class="label label-success">Kanji #'+index+'</span>\n';
+			singleTable += '	<div class="form-group">\n';
+			singleTable += '		<label for="km_picvalue" class="col-lg-2 control-label">Kanji</label>\n';
+			singleTable += '		<div class="col-lg-10">\n';
+			singleTable += '			<input id="km_picvalue" name="km_picvalue" type="text" class="form-control" value="'+kanji+'" >\n';
 			singleTable += '		</div>\n';
 			singleTable += '	</div>\n';
-			singleTable += '	<div class="control-group">\n';
-			singleTable += '		<label for="km_kyvalue" class="control-label">Kun-Yomi</label>\n';
-			singleTable += '		<div class="controls">\n';
-			singleTable += '			<input id="km_kyvalue" name="km_kyvalue" class="span12" type="text" value="'+kun+'" >\n';
+			singleTable += '	<div class="form-group">\n';
+			singleTable += '		<label for="km_kyvalue" class="col-lg-2 control-label">Kun-Yomi</label>\n';
+			singleTable += '		<div class="col-lg-10">\n';
+			singleTable += '			<input id="km_kyvalue" name="km_kyvalue" type="text" class="form-control" value="'+kun+'" >\n';
 			singleTable += '		</div>\n';
 			singleTable += '	</div>\n';
-			singleTable += '	<div class="control-group">\n';
-			singleTable += '		<label for="km_oyvalue" class="control-label">On-Yomi</label>\n';
-			singleTable += '		<div class="controls">\n';
-			singleTable += '			<input id="km_oyvalue" name="km_oyvalue" class="span12" type="text" value="'+on+'" >\n';
+			singleTable += '	<div class="form-group">\n';
+			singleTable += '		<label for="km_oyvalue" class="col-lg-2 control-label">On-Yomi</label>\n';
+			singleTable += '		<div class="col-lg-10">\n';
+			singleTable += '			<input id="km_oyvalue" name="km_oyvalue" type="text" class="form-control" value="'+on+'" >\n';
 			singleTable += '		</div>\n';
 			singleTable += '	</div>\n';
-			singleTable += '	<div class="control-group">\n';
-			singleTable += '		<label for="km_meaningvalue" class="control-label">Meaning</label>\n';
-			singleTable += '		<div class="controls">\n';
-			singleTable += '			<input id="km_meaningvalue" name="km_meaningvalue" class="span12" type="text" value="'+meaning+'" >\n';
+			singleTable += '	<div class="form-group">\n';
+			singleTable += '		<label for="km_meaningvalue" class="col-lg-2 control-label">Meaning</label>\n';
+			singleTable += '		<div class="col-lg-10">\n';
+			singleTable += '			<input id="km_meaningvalue" name="km_meaningvalue" type="text" class="form-control" value="'+meaning+'" >\n';
 			singleTable += '		</div>\n';
 			singleTable += '	</div>\n';
 			singleTable += '</form>\n';	
@@ -219,8 +220,8 @@
 			$('#kanjime_spinner').remove();
 		},
 		setErrorMessage: function(message){
-			$('#message_placeholder').empty();
-			$('#message_placeholder').prepend('<div class="alert alert-error"><i class="icon-warning-sign"></i>'+message+'</div>');
+			$('.header .alert').remove();
+			$('.header').prepend('<div class="alert alert-danger"><i class="icon-remove-sign"></i>'+message+'</div>');
 		},
 		testEmptyString: function(str) {
 			return (!str || /^\s*$/.test(str));
@@ -385,7 +386,7 @@
 			return arr[val];
 		},
 		formatLine: function(val){
-			return val.replace(/\*(.*?)\*/,'<strong>$1</strong>');
+			return val.replace(/\*(.*?)\*/,'<span class="label label-primary">$1</span>');
 		}
 	}
 	$(WPGFunctions.setup);
