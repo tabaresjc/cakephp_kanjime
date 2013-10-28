@@ -9,9 +9,8 @@ body {
 }
 
 h1, h2, h3, h4, h5 {
-  margin: 0;
+  margin: 0px;
   line-height: inherit;
-  color: #29323d;
 }
 h1 small, h2 small, h3 small, h4 small, h5 small {
   margin-left: 15px;
@@ -48,11 +47,11 @@ input.search {
 }
 
 .header {
-  margin-bottom: 60px;
+  margin-bottom: 30px;
 }
 .header h1, .header h2, .header h3, .header h4, .header h5 {
   float: left;
-  margin-top: 5px;
+  /*margin-top: 5px;*/
 }
 
 /* Custom navbar stuff */

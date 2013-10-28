@@ -19,7 +19,7 @@ jQuery(document).ready(function($) {
 		validateUserEdit: function() {
 			var goNext = true;
 			
-			$("#UserEditForm .field-box input, select").each(function(index, element){
+			$("#UserEditForm .form-group .col-lg-10 input, select").each(function(index, element){
 				var oId = $(this).attr('id');
 				var value = $(this).val();
 				var message = '';
@@ -62,7 +62,7 @@ jQuery(document).ready(function($) {
 		},
 		validateUser: function(){
 			var goNext = true;
-			$("#UserAddForm .field-box input, select").each(function(index, element){
+			$("#UserAddForm .form-group .col-lg-10 input, select").each(function(index, element){
 				$(this).popover('destroy');
 				
 				var oId = $(this).attr('id');
@@ -149,6 +149,7 @@ jQuery(document).ready(function($) {
 				strength += /[0-9]+/.test(up) ? 1 : 0;
 				strength += /[\W]+/.test(up) ? 1 : 0;
 				$("#UserPasswordMessage").empty();
+				$("#UserPasswordMessage").css('margin-top','10px');
 				switch(strength) {
 					case 3:
 						$("#UserPasswordMessage").html('<span class="label label-info">Strong</span>');
@@ -157,10 +158,10 @@ jQuery(document).ready(function($) {
 						$("#UserPasswordMessage").html('<span class="label label-success">Awesome</span>');
 						break;
 					default:
-						$("#UserPasswordMessage").html('<span class="label label-important">Weak</span>');
+						$("#UserPasswordMessage").html('<span class="label label-danger">Weak</span>');
 						break;
 				}
-
+				
 								
 			}else{
 				$("#UserPasswordMessage").empty();

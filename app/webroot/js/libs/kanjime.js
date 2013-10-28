@@ -110,7 +110,7 @@
 			$('#kanjime_placeholder').addClass('well');
 		},
 		clearWorkingSpace: function() {
-			$('.header .alert').remove();
+			$('#pad-wrapper .alert').remove();
 			$('#kanjime_preview').hide();
 			$('#kanjime_preview .kanjime_preview_body').empty();
 			$('#kanjime_placeholder').empty().removeClass();
@@ -153,54 +153,61 @@
 		},		
 		previewSingleKanji: function(kanji,kun,on,meaning) {
 			var singleKanji = '';
-			singleKanji += '<table class=\"table table-bordered table-condensed\">\n';
-			singleKanji += '   <tr style=\"background-color: #333;color: white;\">\n';
-			singleKanji += '       <td colspan=\"2\"><h3>'+WPGFunctions.formatLine(kanji)+'</h3></td>\n';
-			singleKanji += '   </tr>\n';
-			singleKanji += '   <tr>\n';
-			singleKanji += '       <td style=\"width:30%%;\"><strong>Kun</strong></td>\n';
-			singleKanji += '       <td>'+WPGFunctions.formatLine(kun)+'</td>\n';
-			singleKanji += '   </tr>\n';
-			singleKanji += '   <tr>\n';
-			singleKanji += '       <td><strong>On</strong></td>\n';
-			singleKanji += '       <td>'+WPGFunctions.formatLine(on)+'</td>\n';
-			singleKanji += '   </tr>\n';
-			singleKanji += '   <tr>\n';
-			singleKanji += '       <td><strong>Meaning</strong></td>\n';
-			singleKanji += '       <td>'+WPGFunctions.formatLine(meaning)+'</td>\n';
-			singleKanji += '   </tr>\n';
-			singleKanji += '</table>\n';
+			singleKanji += '<div class="panel panel-info">';
+			singleKanji += '  <div class="panel-heading">'+WPGFunctions.formatLine(kanji)+'</div>';
+			singleKanji += '		<table class=\"table table-condensed\">\n';
+			singleKanji += '		   <tr>\n';
+			singleKanji += '		       <td style=\"width:30%%;\"><strong>Kun</strong></td>\n';
+			singleKanji += '		       <td>'+WPGFunctions.formatLine(kun)+'</td>\n';
+			singleKanji += '		   </tr>\n';
+			singleKanji += '		   <tr>\n';
+			singleKanji += '		       <td><strong>On</strong></td>\n';
+			singleKanji += '		       <td>'+WPGFunctions.formatLine(on)+'</td>\n';
+			singleKanji += '		   </tr>\n';
+			singleKanji += '		   <tr>\n';
+			singleKanji += '		       <td><strong>Meaning</strong></td>\n';
+			singleKanji += '		       <td>'+WPGFunctions.formatLine(meaning)+'</td>\n';
+			singleKanji += '		   </tr>\n';
+			singleKanji += '		</table>\n';
+			singleKanji += '</div>';
+
 			return singleKanji;			
 		},		
 		getKanjiAdminTableForm: function(index,kanji,kun,on,meaning) {
 			var singleTable = '';
-			singleTable += '<form class="form-horizontal kanji-form">\n';
-			singleTable += '	<span class="label label-success">Kanji #'+index+'</span>\n';
-			singleTable += '	<div class="form-group">\n';
-			singleTable += '		<label for="km_picvalue" class="col-lg-2 control-label">Kanji</label>\n';
-			singleTable += '		<div class="col-lg-10">\n';
-			singleTable += '			<input id="km_picvalue" name="km_picvalue" type="text" class="form-control" value="'+kanji+'" >\n';
-			singleTable += '		</div>\n';
-			singleTable += '	</div>\n';
-			singleTable += '	<div class="form-group">\n';
-			singleTable += '		<label for="km_kyvalue" class="col-lg-2 control-label">Kun-Yomi</label>\n';
-			singleTable += '		<div class="col-lg-10">\n';
-			singleTable += '			<input id="km_kyvalue" name="km_kyvalue" type="text" class="form-control" value="'+kun+'" >\n';
-			singleTable += '		</div>\n';
-			singleTable += '	</div>\n';
-			singleTable += '	<div class="form-group">\n';
-			singleTable += '		<label for="km_oyvalue" class="col-lg-2 control-label">On-Yomi</label>\n';
-			singleTable += '		<div class="col-lg-10">\n';
-			singleTable += '			<input id="km_oyvalue" name="km_oyvalue" type="text" class="form-control" value="'+on+'" >\n';
-			singleTable += '		</div>\n';
-			singleTable += '	</div>\n';
-			singleTable += '	<div class="form-group">\n';
-			singleTable += '		<label for="km_meaningvalue" class="col-lg-2 control-label">Meaning</label>\n';
-			singleTable += '		<div class="col-lg-10">\n';
-			singleTable += '			<input id="km_meaningvalue" name="km_meaningvalue" type="text" class="form-control" value="'+meaning+'" >\n';
-			singleTable += '		</div>\n';
-			singleTable += '	</div>\n';
-			singleTable += '</form>\n';	
+			singleTable += '<div class="panel panel-info">';
+			singleTable += '	<div class="panel-heading">';
+			singleTable += '		<h6 class="panel-title">Kanji #'+index+'</h6>';
+			singleTable += '	</div>';
+			singleTable += '	<div class="panel-body">';
+			singleTable += '		<form class="form-horizontal kanji-form">\n';
+			singleTable += '			<div class="form-group">\n';
+			singleTable += '				<label for="km_picvalue" class="col-lg-3 control-label">Kanji</label>\n';
+			singleTable += '				<div class="col-lg-9">\n';
+			singleTable += '					<input id="km_picvalue" name="km_picvalue" type="text" class="form-control" value="'+kanji+'" >\n';
+			singleTable += '				</div>\n';
+			singleTable += '			</div>\n';
+			singleTable += '			<div class="form-group">\n';
+			singleTable += '				<label for="km_kyvalue" class="col-lg-3 control-label">Kun-Yomi</label>\n';
+			singleTable += '				<div class="col-lg-9">\n';
+			singleTable += '					<input id="km_kyvalue" name="km_kyvalue" type="text" class="form-control" value="'+kun+'" >\n';
+			singleTable += '				</div>\n';
+			singleTable += '			</div>\n';
+			singleTable += '			<div class="form-group">\n';
+			singleTable += '				<label for="km_oyvalue" class="col-lg-3 control-label">On-Yomi</label>\n';
+			singleTable += '				<div class="col-lg-9">\n';
+			singleTable += '					<input id="km_oyvalue" name="km_oyvalue" type="text" class="form-control" value="'+on+'" >\n';
+			singleTable += '				</div>\n';
+			singleTable += '			</div>\n';
+			singleTable += '			<div class="form-group">\n';
+			singleTable += '				<label for="km_meaningvalue" class="col-lg-3 control-label">Meaning</label>\n';
+			singleTable += '				<div class="col-lg-9">\n';
+			singleTable += '					<input id="km_meaningvalue" name="km_meaningvalue" type="text" class="form-control" value="'+meaning+'" >\n';
+			singleTable += '				</div>\n';
+			singleTable += '			</div>\n';
+			singleTable += '		</form>\n';	
+			singleTable += '	</div>';
+			singleTable += '</div>';
 
 			$('#kanjime_placeholder').append(singleTable);
 		},
@@ -220,8 +227,8 @@
 			$('#kanjime_spinner').remove();
 		},
 		setErrorMessage: function(message){
-			$('.header .alert').remove();
-			$('.header').prepend('<div class="alert alert-danger"><i class="icon-remove-sign"></i>'+message+'</div>');
+			$('#pad-wrapper .alert').remove();
+			$('#pad-wrapper').prepend('<div class="alert alert-danger"><i class="icon-remove-sign"></i>'+message+'</div>');
 		},
 		testEmptyString: function(str) {
 			return (!str || /^\s*$/.test(str));

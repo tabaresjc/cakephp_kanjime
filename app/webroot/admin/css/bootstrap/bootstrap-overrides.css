@@ -301,7 +301,6 @@ textarea::-webkit-input-placeholder {
 	font-weight: bold;
 	position: relative;
 	font-size: 11px;
-	border-bottom: 0px !important;
 }
 .table td{
 	color: #526273;

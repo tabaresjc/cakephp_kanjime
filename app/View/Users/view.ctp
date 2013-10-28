@@ -4,100 +4,96 @@
 		echo "\t". '<link rel="stylesheet" href="/admin/css/compiled/ui-elements.css" type="text/css" media="screen" />';
 	$this->end();	
 ?>
-	<div class="row-fluid header">
-		<div id="message_placeholder">
-		</div>		
-		<h3><?php echo h($user['User']['name']); ?></h3>
+	<div class="row header">
+		<h3>Details for User <?php echo h($user['User']['name']); ?></h3>
 	</div>
-	<div class="row-fluid">
+	<div class="row">
 		<!-- left column -->
-		<div class="span9">
-			<table class="table table-striped table-bordered">
-			<tr>
-			<td>
-			<strong>
-			<?php echo __('Id'); ?>
-			</strong>
-			</td>
-			<td><?php echo h($user['User']['id']); ?></td>
-			</tr>
-			<tr>
-			<td>
-			<strong>
-			<?php echo __('Account SID'); ?>
-			</strong>
-			</td>
-			<td><?php echo h($user['User']['account_sid']); ?></td>
-			</tr>			
-			<tr>
-			<td>
-			<strong>
-			<?php echo __('Username'); ?>
-			</strong>
-			</td>
-			<td><?php echo h($user['User']['username']); ?></td>
-			</tr>
-			<tr>
-			<td>
-			<strong>
-			<?php echo __('Name'); ?>
-			</strong>
-			</td>
-			<td><?php echo h($user['User']['name']); ?></td>
-			</tr>
-			<tr>
-			<td>						
-			<strong>
-			<?php echo __('Email'); ?>
-			</strong>
-			</td>
-			<td><?php echo h($user['User']['email']); ?></td>
-			</tr>
-			<tr>
-			<td>
-			<strong>
-			<?php echo __('Address'); ?>
-			</strong>
-			</td>
-			<td><?php echo h($user['User']['address']); ?></td>
-			</tr>
-			<tr>
-			<td>
-			<strong>
-			<?php echo __('Group'); ?>
-			</strong>
-			</td>
-			<td>
-			<?php echo $this->Html->link($user['Group']['name'], array('controller' => 'groups', 'action' => 'view', $user['Group']['id']), array('class' => '')); ?></td>
-			</tr>
-			<tr>
-			<td>
-			<strong>
-			<?php echo __('Created'); ?>
-			</strong>
-			</td>
-			<td><?php echo $this->Time->format(DATETIME_FORMAT,$user['User']['created']); ?></td>
-			</tr>
-			<tr>
-			<td>
-			<strong>
-			<?php echo __('Modified'); ?>
-			</strong>
-			</td>
-			<td><?php echo $this->Time->format(DATETIME_FORMAT,$user['User']['modified']); ?></td>
-			</tr>
-			</table>
+		<div class="col-md-9">
+			<div class="panel panel-primary">
+			  <div class="panel-heading">Details</div>		
+				<table class="table table-striped table-condensed">
+				<tr>
+				<td class="col-md-3"><strong><?php echo __('Id'); ?></strong></td>
+				<td><?php echo h($user['User']['id']); ?></td>
+				</tr>
+				<tr>
+				<td>
+				<strong>
+				<?php echo __('Account SID'); ?>
+				</strong>
+				</td>
+				<td><?php echo h($user['User']['account_sid']); ?></td>
+				</tr>			
+				<tr>
+				<td>
+				<strong>
+				<?php echo __('Username'); ?>
+				</strong>
+				</td>
+				<td><?php echo h($user['User']['username']); ?></td>
+				</tr>
+				<tr>
+				<td>
+				<strong>
+				<?php echo __('Name'); ?>
+				</strong>
+				</td>
+				<td><?php echo h($user['User']['name']); ?></td>
+				</tr>
+				<tr>
+				<td>						
+				<strong>
+				<?php echo __('Email'); ?>
+				</strong>
+				</td>
+				<td><?php echo h($user['User']['email']); ?></td>
+				</tr>
+				<tr>
+				<td>
+				<strong>
+				<?php echo __('Address'); ?>
+				</strong>
+				</td>
+				<td><?php echo h($user['User']['address']); ?></td>
+				</tr>
+				<tr>
+				<td>
+				<strong>
+				<?php echo __('Group'); ?>
+				</strong>
+				</td>
+				<td>
+				<?php echo $this->Html->link($user['Group']['name'], array('controller' => 'groups', 'action' => 'view', $user['Group']['id']), array('class' => '')); ?></td>
+				</tr>
+				<tr>
+				<td>
+				<strong>
+				<?php echo __('Created'); ?>
+				</strong>
+				</td>
+				<td><?php echo $this->Time->format(DATETIME_FORMAT,$user['User']['created']); ?></td>
+				</tr>
+				<tr>
+				<td>
+				<strong>
+				<?php echo __('Modified'); ?>
+				</strong>
+				</td>
+				<td><?php echo $this->Time->format(DATETIME_FORMAT,$user['User']['modified']); ?></td>
+				</tr>
+				</table>
+			</div>
 		</div>			
 		<!-- side right column -->
-		<div class="span3">
+		<div class="col-md-3">
 			<div class="pop-dialog full">
 				<div class="body">                        
 					<div class="settings">
 						<div class="items">
 							<div class="item">
-								<div class="thumbnail" style="display: inline-block; margin:0 auto;">
-									<?php echo $this->Html->getAvatarForEmail($user['User']['email'],128); ?>
-								</div>	
+								<?php echo $this->Html->getAvatarForEmail($user['User']['email'],128); ?>
+								
 							</div>						
 							<div class="item">
 								<i class="icon-reorder"></i>
