@@ -122,4 +122,13 @@ class GenericHtmlHelper extends HtmlHelper {
 		
 		return $this->image($gravatar_url, array('class' => $imgclass));
 	}
+	
+	public function booleanLabel($value) {
+		if($value) return h('Yes');
+		else return h('No');
+	}
+	
+	public function booleanLabels() {
+		return array( '1' => h('Yes'), '0' => h('No') );
+	}
 }

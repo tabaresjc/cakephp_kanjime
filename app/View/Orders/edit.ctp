@@ -88,8 +88,9 @@
 					<?php echo $this->Form->hidden('token'); ?>
 				</div>
 				<div class="panel-footer">
-					<?php echo $this->Form->submit('Submit', array('class' => 'btn btn-large btn-primary')); ?>
-				</div>
+					<?php echo $this->Form->button('Clear', array('type' => 'reset', 'class' => 'btn btn-large btn-danger')); ?>
+					<?php echo $this->Form->button('Save', array('type' => 'submit','class' => 'btn btn-large btn-primary pull-right')); ?>
+				</div>		
 			<?php echo $this->Form->end(); ?>
 		</div>
 			

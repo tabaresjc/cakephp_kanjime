@@ -67,7 +67,7 @@
 						<?php echo $this->Form->hidden('username'); ?>
 						<?php echo $this->Form->hidden('created'); ?>						
 						<div class="panel-footer">
-							<?php echo $this->Html->Link('Cancel', array('controller'=>'users','action'=>'index'),  array('class' => 'btn btn-danger')); ?>
+							<?php echo $this->Form->button('Clear', array('type' => 'reset', 'class' => 'btn btn-large btn-danger')); ?>
 							<?php echo $this->Form->button('Save Changes', array('id' => 'UserEditFormSubmit', 'type' => 'submit', 'class'=>'btn btn-primary pull-right')); ?>
 						</div>
 						

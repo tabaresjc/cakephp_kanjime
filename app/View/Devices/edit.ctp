@@ -4,39 +4,38 @@
 		echo "\t". '<link rel="stylesheet" href="/admin/css/compiled/ui-elements.css" type="text/css" media="screen" />';
 	$this->end();	
 ?>
-<div class="row-fluid header">	
-	<h2><?php echo __('Edit Device'); ?></h2>
-</div>
-<div class="row-fluid">	
-	<div class="span9">
-		<div class="devices form">
-		
+<div class="row">	
+	<div class="col-md-9">
+		<div class="panel panel-primary">
+			<div class="panel-heading">
+			  <h3 class="panel-title"><?php echo __('Edit Device'); ?></h3>
+			</div>
 			<?php echo $this->Form->create('Device', array('inputDefaults' => array('label' => false), 'class' => 'form form-horizontal')); ?>
-				<fieldset>
-					<div class="control-group">
-						<?php echo $this->Form->label('device_token', 'Device Token', array('class' => 'control-label'));?>
-						<div class="controls">
-							<?php echo $this->Form->input('device_token', array('class' => 'span12', 'disabled' => '1')); ?>
-						</div><!-- .controls -->
-					</div><!-- .control-group -->
-
-					<div class="control-group">
-					  <?php echo $this->Form->label('enabled', 'Enabled', array('class' => 'control-label'));?>
-					  <div class="controls">
-						<?php echo $this->Form->input('enabled', array('options' => array('1' => 'Yes', '0' => 'No'),'value'=>'1')); ?>
+				<div class="panel-body">
+					<div class="form-group">
+						<?php echo $this->Form->label('device_token', 'Device Token', array('class' => 'col-lg-2 control-label'));?>
+						<div class="col-lg-10">
+							<?php echo $this->Form->input('device_token', array('class' => 'form-control', 'disabled' => '1')); ?>
+						</div><!-- .col-lg-10 -->
+					</div><!-- .form-group -->
+					<div class="form-group">
+					  <?php echo $this->Form->label('enabled', 'Enabled', array('class' => 'col-lg-2 control-label'));?>
+					  <div class="col-lg-10">
+						<?php echo $this->Form->input('enabled', array('options' => $this->Html->booleanLabels(), 'value'=>'1')); ?>
 					  </div>
-					  <!-- .controls -->
-					</div>		
-					<?php echo $this->Form->hidden('id'); ?>
-					
-				</fieldset>
-				<?php echo $this->Form->submit('Submit', array('class' => 'btn btn-large btn-primary')); ?>
-			<?php echo $this->Form->end(); ?>
-			
+					  <!-- .col-lg-10 -->
+					</div><!-- .form-group -->
+				</div>
+				<?php echo $this->Form->hidden('id'); ?>
+				<div class="panel-footer">
+					<?php echo $this->Form->button('Clear', array('type' => 'reset', 'class' => 'btn btn-large btn-danger')); ?>
+					<?php echo $this->Form->button('Save', array('type' => 'submit','class' => 'btn btn-large btn-primary pull-right')); ?>
+				</div>			
+			<?php echo $this->Form->end(); ?>		
 		</div>
-			
-	</div><!-- #page-content .span9 -->
-	<div class="span3">	
+	</div>
+	<!-- side right column -->
+	<div class="col-md-3">	
 		<div class="pop-dialog full">
 			<div class="body">                        
 				<div class="settings">
@@ -57,5 +56,5 @@
 				</div>
 			</div>
 		</div>
-	</div><!-- #sidebar .span3 -->
-</div><!-- #page-container .row-fluid -->
+	</div>		
+</div>
