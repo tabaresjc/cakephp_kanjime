@@ -28,7 +28,7 @@
 						<?php echo __('Name'); ?>
 					  </strong>
 					</td>
-					<td><?php echo h($order['Order']['name']); ?> </td>
+					<td><?php echo h($order['Order']['name']); ?></td>
 				  </tr>
 				  <tr>
 					<td>
@@ -36,7 +36,7 @@
 						<?php echo __('Email'); ?>
 					  </strong>
 					</td>
-					<td><?php echo h($order['Order']['email']); ?> </td>
+					<td><?php echo h($order['Order']['email']); ?></td>
 				  </tr>
 				  <tr>
 					<td>
@@ -44,7 +44,7 @@
 						<?php echo __('Comments'); ?>
 					  </strong>
 					</td>
-					<td><?php echo h($order['Order']['comments']); ?> </td>
+					<td><?php echo h($order['Order']['comments']); ?></td>
 				  </tr>
 				  <tr>
 					<td>
@@ -52,7 +52,7 @@
 						<?php echo __('Payment Kind'); ?>
 					  </strong>
 					</td>
-					<td><?php echo h($order['Order']['payment_kind']); ?> </td>
+					<td><?php echo h($order['Order']['payment_kind']); ?></td>
 				  </tr>
 				  <tr>
 					<td>
@@ -60,7 +60,7 @@
 						<?php echo __('Payment Key'); ?>
 					  </strong>
 					</td>
-					<td><?php echo h($order['Order']['payment_key']); ?> </td>
+					<td><?php echo h($order['Order']['payment_key']); ?></td>
 				  </tr>
 				  <tr>
 					<td>
@@ -68,7 +68,7 @@
 						<?php echo __('Payment Status'); ?>
 					  </strong>
 					</td>
-					<td><?php echo h($order['Order']['payment_status']); ?> </td>
+					<td><?php echo h($order['Order']['payment_status']); ?></td>
 				  </tr>
 				  <tr>
 					<td>
@@ -76,7 +76,7 @@
 						<?php echo __('Payment Description'); ?>
 					  </strong>
 					</td>
-					<td><?php echo h($order['Order']['payment_description']); ?> </td>
+					<td><?php echo h($order['Order']['payment_description']); ?></td>
 				  </tr>
 				  <tr>
 					<td>
@@ -84,7 +84,7 @@
 						<?php echo __('Payment Amount'); ?>
 					  </strong>
 					</td>
-					<td><?php echo h($order['Order']['payment_amount']); ?> </td>
+					<td><?php echo $this->Number->currency($order['Order']['payment_amount'], h($order['Order']['payment_currency'])); ?></td>
 				  </tr>
 				  <tr>
 					<td>
@@ -92,7 +92,7 @@
 						<?php echo __('Payment Currency'); ?>
 					  </strong>
 					</td>
-					<td><?php echo h($order['Order']['payment_currency']); ?> </td>
+					<td><?php echo h($order['Order']['payment_currency']); ?></td>
 				  </tr>
 				  <tr>
 					<td>
@@ -100,7 +100,7 @@
 						<?php echo __('Payment Env'); ?>
 					  </strong>
 					</td>
-					<td><?php echo h($order['Order']['payment_env']); ?> </td>
+					<td><?php echo h($order['Order']['payment_env']); ?></td>
 				  </tr>
 				  <tr>
 					<td>
@@ -108,7 +108,7 @@
 						<?php echo __('Created'); ?>
 					  </strong>
 					</td>
-					<td><?php echo h($order['Order']['created']); ?> </td>
+					<td><?php echo h($order['Order']['created']); ?></td>
 				  </tr>
 				  <tr>
 					<td>
@@ -116,7 +116,7 @@
 						<?php echo __('Modified'); ?>
 					  </strong>
 					</td>
-					<td><?php echo h($order['Order']['modified']); ?> </td>
+					<td><?php echo h($order['Order']['modified']); ?></td>
 				  </tr>
 				</table>
 				<!-- .table table-striped table-bordered -->

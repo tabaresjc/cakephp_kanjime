@@ -26,7 +26,7 @@
 								<?php echo h($order['Order']['email']); ?>
 							</td>
 							<td class="visible-lg"><?php echo h($order['Order']['payment_status']); ?></td>
-							<td class="visible-lg"><?php echo h($order['Order']['payment_amount']) . ' ' . h($order['Order']['payment_currency']); ?></td>
+							<td class="visible-lg"><?php echo $this->Number->currency($order['Order']['payment_amount'], h($order['Order']['payment_currency'])); ?></td>
 							<td class="visible-lg"><?php echo h($order['Order']['modified']); ?></td>
 							<td class="actions">
 								<div class="btn-group">

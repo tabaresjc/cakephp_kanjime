@@ -109,7 +109,8 @@ class AppController extends Controller {
             'className' => 'GenericHtml'
         ),
 		'Form',
-		'Session'
+		'Session',
+		'Number'
     );
 	
 	protected function isRest() {
