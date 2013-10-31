@@ -9,22 +9,22 @@
 				<table cellpadding="0" cellspacing="0" class="table table-striped table-bordered">
 					<thead>
 						<tr>
-														<th><?php echo $this->Paginator->sort('id'); ?></th>
-														<th><?php echo $this->Paginator->sort('device_token'); ?></th>
-														<th><?php echo $this->Paginator->sort('enabled'); ?></th>
-														<th><?php echo $this->Paginator->sort('created'); ?></th>
-														<th><?php echo $this->Paginator->sort('modified'); ?></th>
-														<th class="actions"><?php echo __('Actions'); ?></th>
+							<th><?php echo $this->Paginator->sort('id'); ?></th>
+							<th class="visible-lg"><?php echo $this->Paginator->sort('device_token'); ?></th>
+							<th class="visible-lg"><?php echo $this->Paginator->sort('enabled'); ?></th>
+							<th class="visible-lg"><?php echo $this->Paginator->sort('created'); ?></th>
+							<th class="visible-lg"><?php echo $this->Paginator->sort('modified'); ?></th>
+							<th class="actions"><?php echo __('Actions'); ?></th>
 						</tr>
 					</thead>
 					<tbody>
 						<?php foreach ($devices as $device): ?>
 						<tr>
 							<td><?php echo h($device['Device']['id']); ?></td>
-							<td><?php echo $this->Html->link(h($device['Device']['device_token']), array('action' => 'view', $device['Device']['id']), array('class' => 'title')); ?></td>
-							<td><?php echo $this->Html->booleanLabel($device['Device']['enabled']); ?></td>
-							<td><?php echo h($device['Device']['created']); ?></td>
-							<td><?php echo h($device['Device']['modified']); ?></td>
+							<td class="visible-lg"><?php echo $this->Html->link(h($device['Device']['device_token']), array('action' => 'view', $device['Device']['id']), array('class' => 'title')); ?></td>
+							<td class="visible-lg"><?php echo $this->Html->booleanLabel($device['Device']['enabled']); ?></td>
+							<td class="visible-lg"><?php echo h($device['Device']['created']); ?></td>
+							<td class="visible-lg"><?php echo h($device['Device']['modified']); ?></td>
 							<td>
 								<div class="btn-group">
 									<?php echo $this->Html->link('<i class="icon-edit"></i>', array('action' => 'edit', $device['Device']['id']), array('class' => 'btn btn-primary', 'escape' => false)); ?>

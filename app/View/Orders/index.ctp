@@ -8,10 +8,10 @@
 				<table class="table table-bordered table-condensed">
 					<thead>
 						<tr>
-							<th class="span4 sortable"><?php echo $this->Paginator->sort('payment_key', 'Paymend Id'); ?></th>
-							<th class="span3 sortable"><?php echo $this->Paginator->sort('name'); ?></th>
-							<th class="span2 sortable visible-lg"><?php echo $this->Paginator->sort('payment_status', 'Status'); ?></th>
-							<th class="span2 sortable visible-lg"><?php echo $this->Paginator->sort('payment_amount', 'Amount'); ?></th>
+							<th class="col-md-3 sortable"><?php echo $this->Paginator->sort('payment_key', 'Paymend Id'); ?></th>
+							<th class="sortable"><?php echo $this->Paginator->sort('name'); ?></th>
+							<th class="sortable visible-lg"><?php echo $this->Paginator->sort('payment_status', 'Status'); ?></th>
+							<th class="sortable visible-lg"><?php echo $this->Paginator->sort('payment_amount', 'Amount'); ?></th>
 							<th class="sortable visible-lg"><?php echo $this->Paginator->sort('modified', 'Updated'); ?></th>
 							<th><?php echo __('Actions'); ?></th>
 						</tr>

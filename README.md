@@ -21,7 +21,7 @@ Technical resources
 * jSON / XML
 * HTTP Authentication
 
-Requerimentes
+Requeriments
 -------------
 * PHP 5.2.8 or greater
 * MySQL 5.5

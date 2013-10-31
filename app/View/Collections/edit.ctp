@@ -52,6 +52,7 @@
 							<?php echo $this->Form->hidden('id'); ?>					
 							<!-- .form-group -->
 						</div>
+						<div id="panel-spinner"></div>
 						<div class="panel-footer">
 							<div class="btn-toolbar">
 								<?php echo $this->Html->link('Breakdown', 'javascript:void(0)', array('id' => 'kanji_me_breakdown', 'class' => 'btn btn-large btn-warning')); ?>

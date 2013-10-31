@@ -38,12 +38,13 @@
 		},
 		breakDownKanji: function() {
 			WPGFunctions.clearWorkingSpace();
-			
+			$('#kanji_me_breakdown').attr('disabled','disabled');
 			var kanjime_title = $('#CollectionTitle').val();
 			var kanjime_subtitle = $('#CollectionSubtitle').val();
 			var kanjime_description = $('#CollectionDescription').val();
 			if(WPGFunctions.testEmptyString(kanjime_title) || WPGFunctions.testEmptyString(kanjime_subtitle) || WPGFunctions.testEmptyString(kanjime_description)){
 				WPGFunctions.setErrorMessage('Please make sure to fill the name, kanji and katakana before the breakdown');
+				$('#kanji_me_breakdown').removeAttr('disabled');
 				return (false);
 			}
 			WPGFunctions.enableSpinnerInEditor();
@@ -53,7 +54,7 @@
 				description: kanjime_description
 			};
 			$.post('/collections/findkanji/', data, function(response) {
-				
+				$('#kanji_me_breakdown').removeAttr('disabled');
 				WPGFunctions.disableSpinnerInEditor();
 				if(response!=undefined){
 					var result = JSON.parse(response);
@@ -84,6 +85,7 @@
 					WPGFunctions.setErrorMessage('No response from the server');
 				}
 			});
+			
 			return(false);
 		},
 		updateDataFromEditor: function() {
@@ -114,7 +116,7 @@
 			$('#kanjime_preview').hide();
 			$('#kanjime_preview .kanjime_preview_body').empty();
 			$('#kanjime_placeholder').empty().removeClass();
-			$('message_placeholder').empty();
+			$('#message_placeholder').empty();
 		},
 		previewKanjiList: function() {
 			$('#kanjime_preview .kanjime_preview_body').empty();
@@ -220,11 +222,11 @@
 			return(singlePanel);
 		},
 		enableSpinnerInEditor: function(){
-			$('#kanjime_spinner').remove();
-			$('.collections .form').append('<div id="kanjime_spinner" style="padding: 10px 0px 0px 0px;"><img src="/img/loader.gif" border="0" style="margin:0px auto;display: block;" alt="Loading"></div>');
+			$('#panel-spinner').empty();
+			$('#panel-spinner').append('<div style="padding: 10px 0px 10px 0px;"><img src="/img/loader.gif" border="0" style="margin:0px auto;display: block;" alt="Loading"></div>');
 		},
 		disableSpinnerInEditor: function(){
-			$('#kanjime_spinner').remove();
+			$('#panel-spinner').empty();
 		},
 		setErrorMessage: function(message){
 			$('#pad-wrapper .alert').remove();

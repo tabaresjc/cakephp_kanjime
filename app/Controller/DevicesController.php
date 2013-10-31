@@ -126,6 +126,10 @@ class DevicesController extends AppController {
  * @return void
  */
 	public function edit($id = null) {
+		if($this->isRest()){
+			return $this->Rest->abort(array('status' => '400', 'error' => __('Method not supported')));
+		}
+		
 		if (!$this->Device->exists($id)) {
 			throw new NotFoundException(__('Invalid device'));
 		}
@@ -151,6 +155,9 @@ class DevicesController extends AppController {
  * @return void
  */
 	public function delete($id = null) {
+		if($this->isRest()){
+			return $this->Rest->abort(array('status' => '400', 'error' => __('Method not supported')));
+		}	
 		$this->Device->id = $id;
 		if (!$this->Device->exists()) {
 			throw new NotFoundException(__('Invalid device'));

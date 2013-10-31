@@ -31,16 +31,16 @@
 			<table cellpadding="0" cellspacing="0" class="table table-striped table-bordered">
 				<tr>
 					<th><?php echo $this->Paginator->sort('name'); ?></th>
-					<th class="hid"><?php echo $this->Paginator->sort('created'); ?></th>
-					<th class="hid"><?php echo $this->Paginator->sort('modified'); ?></th>
+					<th class="visible-lg"><?php echo $this->Paginator->sort('created'); ?></th>
+					<th class="visible-lg"><?php echo $this->Paginator->sort('modified'); ?></th>
 					<th class="actions"></th>
 				</tr>
 				<?php
 				foreach ($groups as $group): ?>
 					<tr>
 					<td><?php echo $this->Html->link($group['Group']['name'], array('action' => 'view', $group['Group']['id']), array('class' => 'title')); ?></td>
-					<td class="hid"><?php echo h($group['Group']['created']); ?></td>
-					<td class="hid"><?php echo h($group['Group']['modified']); ?></td>
+					<td class="visible-lg"><?php echo h($group['Group']['created']); ?></td>
+					<td class="visible-lg"><?php echo h($group['Group']['modified']); ?></td>
 					<td>
 					<div class="btn-group">
 					<?php echo $this->Html->link('<i class="icon-edit"></i>', array('action' => 'edit', $group['Group']['id']), array('class' => 'btn btn-primary', 'escape'=>false)); ?>
