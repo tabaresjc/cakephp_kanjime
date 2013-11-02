@@ -13,7 +13,8 @@
 						<th><?php echo $this->Paginator->sort('settings'); ?></th>
 						<th><?php echo $this->Paginator->sort('status'); ?></th>
 						<th><?php echo $this->Paginator->sort('created'); ?></th>
-						<th><th class="actions"><?php echo __('Actions'); ?></th>
+						<th><?php echo $this->Paginator->sort('updated'); ?></th>
+						<th><?php echo __('Actions'); ?></th>
 					</thead>
 					<tbody>
 						<?php foreach ($notifications as $notification): ?>
@@ -23,9 +24,10 @@
 							<td><?php echo h($notification['Notification']['settings']); ?></td>
 							<td><?php echo h($notification['Notification']['status']); ?></td>
 							<td><?php echo h($notification['Notification']['created']); ?></td>
+							<td><?php echo h($notification['Notification']['updated']); ?></td>
 							<td>
 								<div class="btn-group">
-									<?php echo $this->Html->link(__('View'), array('action' => 'view', $notification['Notification']['id']), array('class' => 'btn')); ?>
+									<?php echo $this->Html->link(__('View'), array('action' => 'view', $notification['Notification']['id']), array('class' => 'btn btn-default')); ?>
 									<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $notification['Notification']['id']), array('class' => 'btn btn-primary')); ?>
 									<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $notification['Notification']['id']), array('class' => 'btn btn-danger'), __('Are you sure you want to delete # %s?', $notification['Notification']['id'])); ?>
 								</div>

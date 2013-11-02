@@ -29,7 +29,7 @@
 						foreach ($fields as $field){
 							echo "\n\t\t\t\t\t\t<th><?php echo \$this->Paginator->sort('{$field}'); ?></th>";
 						}
-						echo "\n\t\t\t\t\t\t<th><th class=\"actions\"><?php echo __('Actions'); ?></th>\n";
+						echo "\n\t\t\t\t\t\t<th><?php echo __('Actions'); ?></th>\n";
 						?>
 					</thead>
 					<tbody><?php
@@ -52,7 +52,7 @@
 						}
 						echo "\t\t\t\t\t\t\t<td>\n";
 						echo "\t\t\t\t\t\t\t\t<div class=\"btn-group\">\n";
-						echo "\t\t\t\t\t\t\t\t\t<?php echo \$this->Html->link(__('View'), array('action' => 'view', \${$singularVar}['{$modelClass}']['{$primaryKey}']), array('class' => 'btn')); ?>\n";
+						echo "\t\t\t\t\t\t\t\t\t<?php echo \$this->Html->link(__('View'), array('action' => 'view', \${$singularVar}['{$modelClass}']['{$primaryKey}']), array('class' => 'btn btn-default')); ?>\n";
 						echo "\t\t\t\t\t\t\t\t\t<?php echo \$this->Html->link(__('Edit'), array('action' => 'edit', \${$singularVar}['{$modelClass}']['{$primaryKey}']), array('class' => 'btn btn-primary')); ?>\n";
 						echo "\t\t\t\t\t\t\t\t\t<?php echo \$this->Form->postLink(__('Delete'), array('action' => 'delete', \${$singularVar}['{$modelClass}']['{$primaryKey}']), array('class' => 'btn btn-danger'), __('Are you sure you want to delete # %s?', \${$singularVar}['{$modelClass}']['{$primaryKey}'])); ?>\n";
 						echo "\t\t\t\t\t\t\t\t</div>\n";
