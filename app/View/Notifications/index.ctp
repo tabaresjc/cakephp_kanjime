@@ -3,33 +3,38 @@
 			<h3><?php echo __('Notifications'); ?></h3>
 		</div>
 	</div>
+	<hr/>
+	<div class="row">
+		<div class="col-md-12">
+			<?php echo $this->Html->link('New Notification', array('controller' => 'notifications', 'action' => 'add'), array('class'=>'btn btn-success pull-right')); ?>
+		</div>
+	</div>
+	<hr/>
 	<div class="row">
 		<div class="col-md-12">
 			<div class="notifications index">
 				<table class="table table-bordered table-condensed">
 					<thead>
-						<th><?php echo $this->Paginator->sort('id'); ?></th>
-						<th><?php echo $this->Paginator->sort('message'); ?></th>
-						<th><?php echo $this->Paginator->sort('settings'); ?></th>
-						<th><?php echo $this->Paginator->sort('status'); ?></th>
-						<th><?php echo $this->Paginator->sort('created'); ?></th>
-						<th><?php echo $this->Paginator->sort('updated'); ?></th>
+						<th class="visible-lg"><?php echo $this->Paginator->sort('id'); ?></th>
+						<th class="col-md-3"><?php echo $this->Paginator->sort('message'); ?></th>						
+						<th class="visible-lg"><?php echo $this->Paginator->sort('status'); ?></th>
+						<th class="visible-lg"><?php echo $this->Paginator->sort('created'); ?></th>
+						<th class="visible-lg"><?php echo $this->Paginator->sort('updated'); ?></th>
 						<th><?php echo __('Actions'); ?></th>
 					</thead>
 					<tbody>
 						<?php foreach ($notifications as $notification): ?>
 						<tr>
-							<td><?php echo h($notification['Notification']['id']); ?></td>
+							<td class="visible-lg"><?php echo h($notification['Notification']['id']); ?></td>
 							<td><?php echo h($notification['Notification']['message']); ?></td>
-							<td><?php echo h($notification['Notification']['settings']); ?></td>
-							<td><?php echo h($notification['Notification']['status']); ?></td>
-							<td><?php echo h($notification['Notification']['created']); ?></td>
-							<td><?php echo h($notification['Notification']['updated']); ?></td>
+							<td class="visible-lg"><?php echo h($notification['Notification']['status']); ?></td>
+							<td class="visible-lg"><?php echo h($notification['Notification']['created']); ?></td>
+							<td class="visible-lg"><?php echo h($notification['Notification']['updated']); ?></td>
 							<td>
 								<div class="btn-group">
-									<?php echo $this->Html->link(__('View'), array('action' => 'view', $notification['Notification']['id']), array('class' => 'btn btn-default')); ?>
-									<?php echo $this->Html->link(__('Edit'), array('action' => 'edit', $notification['Notification']['id']), array('class' => 'btn btn-primary')); ?>
-									<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $notification['Notification']['id']), array('class' => 'btn btn-danger'), __('Are you sure you want to delete # %s?', $notification['Notification']['id'])); ?>
+									<?php echo $this->Html->link('<i class="icon-search"></i>', array('action' => 'view', $notification['Notification']['id']), array('class' => 'btn btn-default', 'escape'=>false)); ?>
+									<?php echo $this->Html->link('<i class="icon-edit"></i>', array('action' => 'edit', $notification['Notification']['id']), array('class' => 'btn btn-primary', 'escape'=>false)); ?>
+									<?php echo $this->Form->postLink('<i class="icon-trash"></i>', array('action' => 'delete', $notification['Notification']['id']), array('class' => 'btn btn-danger', 'escape'=>false), __('Are you sure you want to delete # %s?', $notification['Notification']['id'])); ?>
 								</div>
 							</td>
 						</tr>

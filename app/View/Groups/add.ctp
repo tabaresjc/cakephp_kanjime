@@ -40,7 +40,16 @@
 						<div class="item">
 							<i class="icon-trash icon-formatted"></i>
 							<?php echo $this->Form->postLink(__('Delete'), array('action' => 'delete', $this->Form->value('Group.id')), null, __('Are you sure you want to delete # %s?', $this->Form->value('Group.id'))); ?>
-						</div>					
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<hr/>		
+		<div class="pop-dialog full">
+			<div class="body">                        
+				<div class="settings">
+					<div class="items">
 						<div class="item">
 							<i class="icon-reorder"></i>
 							<?php echo $this->Html->link(__('List Users'), array('controller' => 'users', 'action' => 'index')); ?>
@@ -53,7 +62,7 @@
 				</div>
 			</div>
 		</div>
-	</div>		
+	</div>	
 </div>
 
 

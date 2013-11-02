@@ -49,7 +49,7 @@
 							</div>				
 							<!-- .form-group -->
 							<?php echo $this->Form->hidden('body', array('id' => 'kanjime_body')); ?>
-							<?php echo $this->Form->hidden('id'); ?>					
+							<?php echo $this->Form->hidden('id'); ?>
 							<!-- .form-group -->
 						</div>
 						<div id="panel-spinner"></div>

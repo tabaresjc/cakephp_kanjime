@@ -42,7 +42,7 @@
 					</table><!-- .table table-striped table-bordered -->
 				</div><!-- .panel-primary -->
 			</div><!-- .view -->
-						
+									
 		</div>
 		<div class="col-md-3">
 			<div class="pop-dialog full">

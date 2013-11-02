@@ -87,6 +87,7 @@
 			foreach ($associations as $type => $data) {
 					foreach ($data as $alias => $details) {
 							if ($details['controller'] != $this->name && !in_array($details['controller'], $done)) {
+									echo "\n		<hr/>\n";
 									echo "		<div class=\"pop-dialog full\">\n";
 									echo "			<div class=\"body\">\n";
 									echo "				<div class=\"settings\">\n";
@@ -95,12 +96,12 @@
 									echo "							<i class=\"icon-reorder\"></i>\n";
 									echo "							<?php echo \$this->Html->link(__('List " . Inflector::humanize($details['controller']) . "'), array('controller' => '{$details['controller']}', 'action' => 'index')); ?>\n";
 									echo "						</div>\n";
-									echo "						<?php if (strpos($action, 'add') === false): ?>\n";
+									
 									echo "						<div class=\"item\">\n";
 									echo "							<i class=\"icon-plus icon-formatted\"></i>\n";
 									echo "							<?php echo \$this->Html->link(__('New " . Inflector::humanize(Inflector::underscore($alias)) . "'), array('controller' => '{$details['controller']}', 'action' => 'add')); ?>\n";
 									echo "						</div>\n";
-									echo "						<?php endif; ?>\n";
+									
 									echo "					</div>\n";
 									echo "				</div>\n";
 									echo "			</div>\n";

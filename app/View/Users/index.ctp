@@ -10,8 +10,8 @@
 			<h3><?php echo __('List of Users'); ?></h3>
 		</div>
 		<div class="row">			
-			<div class="col-md-8">
-				<?php echo $this->Form->create(null, array('controller'=>'users','action'=>'search','type'=>'get', 'class' => 'col-md-5 pull-right', 'id'=>'UserSearchForm','inputDefaults' => array('label' => false, 'div' => false))); ?>
+			<div class="col-xs-8">
+				<?php echo $this->Form->create(null, array('controller'=>'users','action'=>'search','type'=>'get', 'class' => 'col-xs-12', 'id'=>'UserSearchForm','inputDefaults' => array('label' => false, 'div' => false))); ?>
 					<div class="input-group">
 						<?php echo $this->Form->input('query', array('value'=> $query ,'class'=>'form-control' , 'placeholder'=>'Type a user\'s name...')); ?>
 						<span class="input-group-btn">
@@ -19,9 +19,9 @@
 						</span>						
 					</div><!-- /input-group -->
 				<?php echo $this->Form->end(); ?>
-			</div>
-			<div class="col-md-4">
-				<?php echo $this->Html->link('New User', array('controller' => 'users', 'action' => 'add'), array('class'=>'btn-flat success pull-right')); ?>
+			</div>			
+			<div class="col-xs-4">
+				<?php echo $this->Html->link('New User', array('controller' => 'users', 'action' => 'add'), array('class'=>'btn btn-success pull-right')); ?>
 			</div>
 		</div>
 		<br/><br/>

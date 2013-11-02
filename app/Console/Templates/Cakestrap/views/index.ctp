@@ -52,9 +52,9 @@
 						}
 						echo "\t\t\t\t\t\t\t<td>\n";
 						echo "\t\t\t\t\t\t\t\t<div class=\"btn-group\">\n";
-						echo "\t\t\t\t\t\t\t\t\t<?php echo \$this->Html->link(__('View'), array('action' => 'view', \${$singularVar}['{$modelClass}']['{$primaryKey}']), array('class' => 'btn btn-default')); ?>\n";
-						echo "\t\t\t\t\t\t\t\t\t<?php echo \$this->Html->link(__('Edit'), array('action' => 'edit', \${$singularVar}['{$modelClass}']['{$primaryKey}']), array('class' => 'btn btn-primary')); ?>\n";
-						echo "\t\t\t\t\t\t\t\t\t<?php echo \$this->Form->postLink(__('Delete'), array('action' => 'delete', \${$singularVar}['{$modelClass}']['{$primaryKey}']), array('class' => 'btn btn-danger'), __('Are you sure you want to delete # %s?', \${$singularVar}['{$modelClass}']['{$primaryKey}'])); ?>\n";
+						echo "\t\t\t\t\t\t\t\t\t<?php echo \$this->Html->link('<i class=\"icon-search\"></i>', array('action' => 'view', \${$singularVar}['{$modelClass}']['{$primaryKey}']), array('class' => 'btn btn-default', 'escape'=>false)); ?>\n";
+						echo "\t\t\t\t\t\t\t\t\t<?php echo \$this->Html->link('<i class=\"icon-edit\"></i>', array('action' => 'edit', \${$singularVar}['{$modelClass}']['{$primaryKey}']), array('class' => 'btn btn-primary', 'escape'=>false)); ?>\n";
+						echo "\t\t\t\t\t\t\t\t\t<?php echo \$this->Form->postLink('<i class=\"icon-trash\"></i>', array('action' => 'delete', \${$singularVar}['{$modelClass}']['{$primaryKey}']), array('class' => 'btn btn-danger', 'escape'=>false), __('Are you sure you want to delete # %s?', \${$singularVar}['{$modelClass}']['{$primaryKey}'])); ?>\n";
 						echo "\t\t\t\t\t\t\t\t</div>\n";
 						echo "\t\t\t\t\t\t\t</td>\n";						
 						echo "\t\t\t\t\t\t</tr>\n";

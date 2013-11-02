@@ -12,13 +12,7 @@
 				<div class="panel-heading"><h3 class="panel-title"><?php echo __('Edit Notification'); ?></h3></div>			
 				<?php echo $this->Form->create('Notification', array('inputDefaults' => array('label' => false), 'class' => 'form form-horizontal')); ?>
 					<div class="panel-body">
-						<div class="form-group">
-							<?php echo $this->Form->label('id', 'Id', array('class' => 'col-lg-2 control-label'));?>
-							<div class="col-lg-10">
-								<?php echo $this->Form->input('id', array('class' => 'form-control')); ?>
-							</div><!-- .col-lg-10 -->
-						</div><!-- .form-group -->
-
+						<?php echo $this->Form->hidden('id'); ?>
 						<div class="form-group">
 							<?php echo $this->Form->label('message', 'Message', array('class' => 'col-lg-2 control-label'));?>
 							<div class="col-lg-10">

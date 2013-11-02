@@ -10,12 +10,6 @@ class GenericHtmlHelper extends HtmlHelper {
 			'controller' => array('pages')
         ),
 		array(
-            'icon' => 'icon-credit-card',
-			'name' => 'Orders',
-			'url' => array('controller' => 'orders', 'action' => 'index'),
-			'controller' => array('orders')
-        ),
-		array(
             'icon' => 'icon-tags',
 			'name' => 'Kanji',
 			'url' => 'javascript:void(0);',
@@ -31,6 +25,18 @@ class GenericHtmlHelper extends HtmlHelper {
 				)
 			)
         ),
+		array(
+            'icon' => 'icon-share',
+			'name' => 'Notifications',
+			'url' => array('controller' => 'notifications', 'action' => 'index'),
+			'controller' => array('notifications')
+        ),
+		array(
+            'icon' => 'icon-credit-card',
+			'name' => 'Orders',
+			'url' => array('controller' => 'orders', 'action' => 'index'),
+			'controller' => array('orders')
+        ),		
 		array(
             'icon' => 'icon-tablet',
 			'name' => 'Devices',

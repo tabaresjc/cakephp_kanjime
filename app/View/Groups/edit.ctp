@@ -45,6 +45,16 @@
 							<i class="icon-plus icon-formatted"></i>
 							<?php echo $this->Html->link(__('New Group'), array('action' => 'add')); ?>
 						</div>						
+
+					</div>
+				</div>
+			</div>
+		</div>
+		<hr/>
+		<div class="pop-dialog full">
+			<div class="body">                        
+				<div class="settings">
+					<div class="items">				
 						<div class="item">
 							<i class="icon-reorder"></i>
 							<?php echo $this->Html->link(__('List Users'), array('controller' => 'users', 'action' => 'index')); ?>
@@ -57,7 +67,7 @@
 					</div>
 				</div>
 			</div>
-		</div>
+		</div>		
 	</div>		
 </div>
 
