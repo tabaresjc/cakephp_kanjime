@@ -15,32 +15,53 @@ class Notification extends AppModel {
 		'message' => array(
 			'notempty' => array(
 				'rule' => array('notempty'),
-				//'message' => 'Your custom message here',
+				'message' => 'We require a message in order to Push a new Notification',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
+            'between' => array(
+                'rule'    => array('between', 20, 100),
+                'message' => 'You can only send messages with 20 to 100 characters long'
+            )
 		),
-		'settings' => array(
-			'notempty' => array(
-				'rule' => array('notempty'),
-				//'message' => 'Your custom message here',
-				//'allowEmpty' => false,
-				//'required' => false,
-				//'last' => false, // Stop validation after this rule
-				//'on' => 'create', // Limit validation to 'create' or 'update' operations
-			),
-		),
-		'status' => array(
+		'badge' => array(
 			'numeric' => array(
 				'rule' => array('numeric'),
-				//'message' => 'Your custom message here',
+				'message' => 'Please enter only numeric values',
 				//'allowEmpty' => false,
 				//'required' => false,
 				//'last' => false, // Stop validation after this rule
 				//'on' => 'create', // Limit validation to 'create' or 'update' operations
 			),
+            'between' => array(
+                'rule'    => array('between', 0, 100),
+                'message' => 'You can only set from 0 to 100 in the badge'
+            )			
+		),
+		'status' => array(
+			'valid' => array(
+                'rule' => array('inList', array('1','2','3','4','5')),
+                'message' => 'Please enter a valid status',
+                'allowEmpty' => false
+            )
 		),
 	);
+	
+	public function beforeSave($options = array()) {
+		if (isset($this->data[$this->alias]['minutes'])) {
+			$initDate = new DateTime(date("Y-m-d H:i:s"));
+			
+			$initDate->add(new DateInterval("PT".$this->data[$this->alias]['minutes']."M"));
+			$this->data[$this->alias]['push_time'] = $initDate->format("Y-m-d H:i:s");					
+			unset($this->data[$this->alias]['minutes']);
+		} else {
+			$initDate = new DateTime(date("Y-m-d H:i:s"));		
+			$initDate->add(new DateInterval("PT60M"));
+			$this->data[$this->alias]['push_time'] = $initDate->format("Y-m-d H:i:s");		
+		}
+		
+		return true;
+	}
 }

@@ -70,7 +70,7 @@
 						<?php if (strpos($action, 'add') === false): ?>
 						<div class="item">
 							<i class="icon-trash icon-formatted"></i>
-							<?php echo "<?php echo \$this->Form->postLink(__('Delete'), array('action' => 'delete', \$this->Form->value('{$modelClass}.{$primaryKey}')), null, __('Are you sure you want to delete # %s?', \$this->Form->value('{$modelClass}.{$primaryKey}'))); ?>\n"; ?>
+							<?php echo "<?php echo \$this->Form->postLink(__('Remove " . $singularHumanName . "'), array('action' => 'delete', \$this->Form->value('{$modelClass}.{$primaryKey}')), null, __('Are you sure you want to delete # %s?', \$this->Form->value('{$modelClass}.{$primaryKey}'))); ?>\n"; ?>
 						</div>
 						<div class="item">
 							<i class="icon-plus icon-formatted"></i>

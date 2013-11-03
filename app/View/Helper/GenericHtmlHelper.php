@@ -26,7 +26,7 @@ class GenericHtmlHelper extends HtmlHelper {
 			)
         ),
 		array(
-            'icon' => 'icon-share',
+            'icon' => 'icon-retweet',
 			'name' => 'Notifications',
 			'url' => array('controller' => 'notifications', 'action' => 'index'),
 			'controller' => array('notifications')
@@ -38,7 +38,7 @@ class GenericHtmlHelper extends HtmlHelper {
 			'controller' => array('orders')
         ),		
 		array(
-            'icon' => 'icon-tablet',
+            'icon' => 'icon-desktop',
 			'name' => 'Devices',
 			'url' => 'javascript:void(0);',
 			'controller' => array('devices'),

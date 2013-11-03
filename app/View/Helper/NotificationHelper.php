@@ -30,20 +30,35 @@ App::uses('Helper', 'View');
  *
  * @package       app.View.Helper
  */
-class CollectionHelper extends AppHelper {
+class NotificationHelper extends AppHelper {
 	protected $status_descriptor = array(
-		'1' => 'Published',
-		'2' => 'Draft'
-	);
-
-	protected $status_descriptor_class = array(
-		'1' => 'label label-success',
-		'2' => 'label label-default'
+		'1' => 'In Proccess',
+		'2' => 'Sending',
+		'3' => 'Completed',
+		'4' => 'Error',
+		'5' => 'Stop'
 	);
 	
+	protected $status_descriptor_edit = array(
+		'1' => 'In Proccess',
+		'5' => 'Stop'
+	);	
+
+	protected $status_descriptor_class = array(
+		'1' => 'label label-default',
+		'2' => 'label label-primary',
+		'3' => 'label label-success',
+		'4' => 'label label-danger',
+		'5' => 'label label-warning'
+	);
+
 	public function getStatusDescriptors() {
 		return $this->status_descriptor;
 	}
+	
+	public function getStatusEditDescriptors() {
+		return $this->status_descriptor_edit;
+	}	
 	
 	public function getStatusDescriptor($value) {
 		return $this->status_descriptor[$value];
@@ -52,4 +67,12 @@ class CollectionHelper extends AppHelper {
 	public function getStatusDescriptorClass($value) {
 		return $this->status_descriptor_class[$value];
 	}
+	
+	public function getMinutesOptions() {
+		$minutes = array();
+		for($i=1;$i<=60;$i++) {
+			$minutes[$i] = $i;
+		}
+		return $minutes;
+	}	
 }

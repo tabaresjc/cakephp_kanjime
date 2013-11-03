@@ -1,7 +1,3 @@
-<?php
-	$first_class = 'first';
-	$status_list = $this->Collection->getStatusDescriptor();
-?>
 		<div class="row header">
 			<div class="col-md-12">
 				<h3><?php echo __('List of Kanjis & Names'); ?></h3>
@@ -35,23 +31,23 @@
 							</tr>	
 						</thead>
 						<tbody>
-						<?php foreach ($collections as $collection): ?>						
-							<tr class="<?php echo $first_class; ?>">
+						
+						<?php foreach ($collections as $collection): ?>				
+							<tr>
 								<td>
 									<?php echo $this->Html->link($collection['Collection']['title'], array('action' => 'view', $collection['Collection']['id']), array('class' => 'title')); ?>
 								</td>
 								<td class="visible-lg"><span class="subtitle"><?php echo h($collection['Collection']['subtitle']); ?></span></td>
 								<td class="visible-lg"><span class="subtitle"><?php echo h($collection['Collection']['description']); ?></span></td>
 								<td class="visible-lg"><?php echo $this->Time->format(DATETIME_FORMAT, $collection['Collection']['created']); ?></td>
-								<td class="visible-lg"><span class="subtitle"><?php echo $status_list[$collection['Collection']['status']]; ?></span></td>
+								<td class="visible-lg"><span class="<?php echo $this->Collection->getStatusDescriptorClass($collection['Collection']['status']); ?>"><?php echo $this->Collection->getStatusDescriptor($collection['Collection']['status']); ?></span></td>
 								<td>
 									<div class="btn-group">
 										<?php echo $this->Html->link('<i class="icon-edit"></i>', array('action' => 'edit', $collection['Collection']['id']), array('class' => 'btn btn-primary', 'escape' => false)); ?>
 										<?php echo $this->Form->postLink('<i class="icon-trash"></i>', array('action' => 'delete', $collection['Collection']['id']), array('class' => 'btn btn-danger', 'escape' => false), __('Are you sure you want to delete %s?', $collection['Collection']['title'])); ?>
 									</div>
 								</td>
-							</tr>
-							<?php $first_class = ''; ?>
+							</tr>							
 						<?php endforeach; ?>
 						</tbody>
 					</table>

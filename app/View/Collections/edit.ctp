@@ -43,7 +43,7 @@
 							<div class="form-group">
 							  <?php echo $this->Form->label('status', 'Status', array('class' => 'col-lg-2 control-label'));?>
 							  <div class="col-lg-10">
-								<?php echo $this->Form->input('status', array('options' => array('1' => 'Published', '2' => 'Draft'))); ?>
+								<?php echo $this->Form->input('status', array('options' => $this->Collection->getStatusDescriptors())); ?>
 							  </div>
 							  <!-- .col-lg-10 -->
 							</div>				

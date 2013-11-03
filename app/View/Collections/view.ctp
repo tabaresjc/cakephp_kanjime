@@ -52,6 +52,14 @@
 					<tr>
 					  <td>
 						<strong>
+						  <?php echo __('Status'); ?>
+						</strong>
+					  </td>
+					  <td><span class="<?php echo $this->Collection->getStatusDescriptorClass($collection['Collection']['status']); ?>"><?php echo $this->Collection->getStatusDescriptor($collection['Collection']['status']); ?></span></td>
+					</tr>					
+					<tr>
+					  <td>
+						<strong>
 						  <?php echo __('Created'); ?>
 						</strong>
 					  </td>

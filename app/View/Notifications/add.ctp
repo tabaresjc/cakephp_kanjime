@@ -20,18 +20,20 @@
 						</div><!-- .form-group -->
 
 						<div class="form-group">
-							<?php echo $this->Form->label('settings', 'Settings', array('class' => 'col-lg-2 control-label'));?>
-							<div class="col-lg-10">
-								<?php echo $this->Form->input('settings', array('class' => 'form-control')); ?>
+							<?php echo $this->Form->label('badge', 'Badge', array('class' => 'col-lg-2 control-label'));?>
+							<div class="col-lg-5">
+								<?php echo $this->Form->input('badge', array('class' => 'form-control', 'value'=>'0')); ?>
 							</div><!-- .col-lg-10 -->
 						</div><!-- .form-group -->
-
+						
 						<div class="form-group">
-							<?php echo $this->Form->label('status', 'Status', array('class' => 'col-lg-2 control-label'));?>
-							<div class="col-lg-10">
-								<?php echo $this->Form->input('status', array('class' => 'form-control')); ?>
+							<?php echo $this->Form->label('minutes', 'Send in (Minutes)', array('class' => 'col-lg-2 control-label'));?>
+							<div class="col-lg-5">
+								<?php echo $this->Form->input('minutes', array('options'=> $this->Notification->getMinutesOptions(), 'default'=>'1', 'class' => 'form-control')); ?>
 							</div><!-- .col-lg-10 -->
 						</div><!-- .form-group -->
+						<?php echo $this->Form->hidden('settings', array('value' => '')); ?>
+						<?php echo $this->Form->hidden('status', array('value' => '1')); ?>						
 					</div>
 					<div class="panel-footer">
 						<?php echo $this->Form->button('Clear', array('type' => 'reset', 'class' => 'btn btn-large btn-danger')); ?>

@@ -41,7 +41,7 @@
 							<div class="form-group">
 							  <?php echo $this->Form->label('status', 'Status', array('class' => 'col-lg-2 control-label'));?>
 							  <div class="col-lg-10">
-								<?php echo $this->Form->input('status', array('options' => $this->Collection->getStatusDescriptor(),'value'=>'2')); ?>
+								<?php echo $this->Form->input('status', array('options' => $this->Collection->getStatusDescriptors(), 'value'=>'2')); ?>
 							  </div>
 							  <!-- .col-lg-10 -->
 							</div>

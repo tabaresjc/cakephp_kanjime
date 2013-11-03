@@ -24,12 +24,12 @@
 							<td><?php echo h($notification['Notification']['message']); ?></td>
 						</tr>
 						<tr>
-							<td><strong><?php echo __('Settings'); ?></strong></td>
-							<td><?php echo h($notification['Notification']['settings']); ?></td>
+							<td><strong><?php echo __('Badge'); ?></strong></td>
+							<td><?php echo h($notification['Notification']['badge']); ?></td>
 						</tr>
 						<tr>
-							<td><strong><?php echo __('Status'); ?></strong></td>
-							<td><?php echo h($notification['Notification']['status']); ?></td>
+						  <td><strong><?php echo __('Status'); ?></strong></td>
+						  <td><span class="<?php echo $this->Notification->getStatusDescriptorClass($notification['Notification']['status']); ?>"><?php echo $this->Notification->getStatusDescriptor($notification['Notification']['status']); ?></span></td>
 						</tr>
 						<tr>
 							<td><strong><?php echo __('Created'); ?></strong></td>
@@ -40,9 +40,9 @@
 							<td><?php echo h($notification['Notification']['updated']); ?></td>
 						</tr>					
 					</table><!-- .table table-striped table-bordered -->
+					<?php echo $this->Form->hidden('Notification.settings', array('id' => 'notification_settings', 'value'=> $notification['Notification']['settings'])); ?>
 				</div><!-- .panel-primary -->
-			</div><!-- .view -->
-									
+			</div><!-- .view -->									
 		</div>
 		<div class="col-md-3">
 			<div class="pop-dialog full">
@@ -60,7 +60,7 @@
 							</div>							
 							<div class="item">
 								<i class="icon-trash icon-formatted"></i>
-								<?php echo $this->Form->postLink(__('Delete Notification'), array('action' => 'delete', $notification['Notification']['id']), array('class' => ''), __('Are you sure you want to delete # %s?', $notification['Notification']['id'])); ?>
+								<?php echo $this->Form->postLink(__('Remove Notification'), array('action' => 'delete', $notification['Notification']['id']), array('class' => ''), __('Are you sure you want to stop # %s?', $notification['Notification']['id'])); ?>
 							</div>
 							<div class="item">
 								<i class="icon-plus icon-formatted"></i>

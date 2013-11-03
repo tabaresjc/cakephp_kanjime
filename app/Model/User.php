@@ -29,7 +29,7 @@ class User extends AppModel {
             'between' => array(
                 'rule'    => array('between', 5, 15),
                 'message' => 'Between 5 to 15 characters'
-            )			
+            )
         ),
         'name' => array(
             'required' => array(
