@@ -1,3 +1,45 @@
+<?php
+	$this->append('custom_css');
+		echo "\t". '<!-- this page specific styles -->' . "\n";
+		echo "\t". '<link rel="stylesheet" href="/admin/css/compiled/index.css" type="text/css" media="screen" />';
+	$this->end();	
+?>
+
+<?php  $this->start('main-stats'); ?>
+	<div class="row stats-row">
+		<div class="col-md-3 col-sm-3 stat">
+			<div class="data">
+				<span class="number"><?php echo $stats['count_publish_names']; ?></span>
+				names
+			</div>
+			<span class="date"><?php echo "draft {$stats['count_draft_names']}"; ?></span>
+		</div>
+		
+		<div class="col-md-3 col-sm-3 stat">
+			<div class="data">
+				<span class="number"><?php echo $stats['count_devices']; ?></span>
+				devices
+			</div>
+			<span class="date"><?php echo "allowed {$stats['count_enabled_devices']}"; ?></span>
+		</div>
+		
+		<div class="col-md-3 col-sm-3 stat">
+			<div class="data">
+				<span class="number"><?php echo $stats['count_notifications']; ?></span>
+				notifications
+			</div>
+			<span class="date"><?php echo "stopped {$stats['count_notifications_stopped']}"; ?></span>
+		</div>
+		
+		<div class="col-md-3 col-sm-3 stat">
+			<div class="data">
+				<span class="number"><?php echo $this->Number->currency($stats['sales_month'], 'USD'); ?></span>
+				sales
+			</div>
+			<span class="date">Pending <?php echo $this->Number->currency($stats['sales_pending'], 'USD'); ?></span>
+		</div>
+	</div>
+<?php $this->end(); ?>
 
 	<div class="row">
 		<div class="col-md-4">

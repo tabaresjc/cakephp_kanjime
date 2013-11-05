@@ -41,15 +41,22 @@ try
 	require_once('push_config.php');
 
 	ini_set('display_errors', 'off');
-
+	
 	if ($argc != 2 || ($argv[1] != 'development' && $argv[1] != 'production'))
-		exit("Usage: php push.php development|production". PHP_EOL);
-
-	$mode = $argv[1];
+	{
+		$mode = 'development';
+		//exit("Usage: php push.php development|production". PHP_EOL);
+	}
+	
 	$config = $config[$mode];
-
 	writeToLog("Push script started ($mode mode)");
+	if (!extension_loaded('openssl')) {
+		writeToLog("Open SSL is not enabled");
+	} else {
+		writeToLog("Open SSL is enabled");
+	}
 
+	
 	$obj = new APNS_Push($config);
 	$obj->start();
 }
@@ -65,7 +72,7 @@ function writeToLog($message)
 	global $config;
 	if ($fp = fopen($config['logfile'], 'at'))
 	{
-		fwrite($fp, date('c') . ' ' . $message . PHP_EOL);
+		fwrite($fp, date('c') . ' ' . $message . "\n");
 		fclose($fp);
 	}
 }
@@ -82,12 +89,17 @@ class APNS_Push
 {
 	private $fp = NULL;
 	private $server;
+	private $server_url;
+	private $port;
 	private $certificate;
 	private $passphrase;
 
 	function __construct($config)
 	{
-		$this->server = $config['server'];
+		$this->server_url = $config['server'];
+		$this->port = $config['port'];
+		$this->server = $config['server'] . ':' . $config['port'];
+		
 		$this->certificate = $config['certificate'];
 		$this->passphrase = $config['passphrase'];
 
@@ -110,19 +122,26 @@ class APNS_Push
 	// messages, sends them to APNS, sleeps for a few seconds, and repeats this
 	// forever (or until a fatal error occurs and the script exits).
 	function start()
-	{
+	{	
+		if($this->checkRequiredPorts()) {
+			writeToLog("Port 2195 is avalaible");
+		} else {
+			writeToLog("Port 2195 is not avalaible!!!");
+			exit("Port 2195 is not avalaible!!!". PHP_EOL);
+		}
+
 		writeToLog('Connecting to ' . $this->server);
-
-		if (!$this->connectToAPNS())
-			exit;
-
-		while (true)
-		{
+		if (!$this->connectToAPNS()) exit;
+		$shutdown_time = time() + (82800);
+		while(1) {
 			// Do at most 20 messages at a time. Note: we send each message in
 			// a separate packet to APNS. It would be more efficient if we 
 			// combined several messages into one packet, but this script isn't
 			// smart enough to do that. ;-)
-
+			if( time() > $shutdown_time ) {
+				writeToLog("shutting down the notification service");
+			}
+			
 			$stmt = $this->pdo->prepare('SELECT * FROM notifications WHERE (status = 1) AND (push_time <= NOW())');
 			$stmt->execute();
 			$messages = $stmt->fetchAll(PDO::FETCH_OBJ);
@@ -178,9 +197,9 @@ class APNS_Push
 				}
 			}
 			unset($messages);
-			unset($devices);
-			
-			sleep(5);
+			unset($devices);			
+			sleep(10);
+			writeToLog("Waking up, fetching new notifications...");
 		}
 	}
 
@@ -192,9 +211,7 @@ class APNS_Push
 		stream_context_set_option($ctx, 'ssl', 'local_cert', $this->certificate);
 		stream_context_set_option($ctx, 'ssl', 'passphrase', $this->passphrase);
 
-		$this->fp = stream_socket_client(
-			'ssl://' . $this->server, $err, $errstr, 60,
-			STREAM_CLIENT_CONNECT|STREAM_CLIENT_PERSISTENT, $ctx);
+		$this->fp = stream_socket_client('ssl://' . $this->server, $err, $errstr,60, STREAM_CLIENT_CONNECT|STREAM_CLIENT_PERSISTENT, $ctx);
 
 		if (!$this->fp)
 		{
@@ -288,4 +305,18 @@ class APNS_Push
 		writeToLog('Message successfully delivered');
 		return TRUE;
 	}
+	
+	function checkRequiredPorts()
+	{
+		$fp = fsockopen($this->server_url, $this->port, $errno, $errstr, 5);
+		if (!$fp) {
+			// port is closed or blocked
+			return false;
+		} else {
+			// port is open and available
+			fclose($fp);
+			return true;
+		}
+	}
+
 }

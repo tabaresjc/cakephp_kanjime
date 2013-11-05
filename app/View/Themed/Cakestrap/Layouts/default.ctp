@@ -67,7 +67,14 @@
 	echo "\n";
 	echo $this->element('menu/top_menu', array('user' => $user_data, 'cur_controller' => $cur_controller, 'cur_action' => $cur_action));
 	echo $this->element('menu/sidebar', array('user' => $user_data, 'cur_controller' => $cur_controller, 'cur_action' => $cur_action));
-	echo "\n\t" . '<div class="content">' . "\n";
+	echo "\n\t" . '<div class="content">' . "\n";	
+	
+	if ($this->fetch('main-stats')) {
+		echo "\t\t" . '<div id="main-stats">' . "\n";
+		echo $this->fetch('main-stats') . "\n";
+		echo "\t\t" . '</div>' . "\n";
+	}
+	
 	echo "\t\t" . '<div id="pad-wrapper">' . "\n";
 	echo $this->Session->flash(). "\n";
 	echo $this->fetch('content'). "\n";

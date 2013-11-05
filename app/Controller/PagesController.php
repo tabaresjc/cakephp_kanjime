@@ -80,11 +80,46 @@ class PagesController extends AppController {
 		
 		if(preg_match('/dashboard/',$this->request->here)){
 			$this->layout = 'default';
-		} else {
+			$stats = array();
+			
+
+			$this->loadModel('Device');
+			$this->loadModel('Notification');
+			$this->loadModel('Collection');
+			$this->loadModel('Order');
+			
+			//Collection's stats
+			$options = array('conditions' => array('Collection.status' => '1'));
+			$stats['count_publish_names'] = $this->Collection->find('count', $options);
+			$options = array('conditions' => array('Collection.status' => '2'));
+			$stats['count_draft_names'] = $this->Collection->find('count', $options);			
+			
+			//Device's stats
+			$stats['count_devices'] = $this->Device->find('count');
+			$options = array('conditions' => array('Device.enabled' => '1'));
+			$stats['count_enabled_devices'] = $this->Device->find('count', $options);
+						
+			//Notification's stats
+			$options = array('conditions' => array('Notification.status' => '3'));
+			$stats['count_notifications'] = $this->Notification->find('count', $options);
+			$options = array('conditions' => array('Notification.status' => '5'));
+			$stats['count_notifications_stopped'] = $this->Notification->find('count', $options);
+			
+			//Order's stats
+			$stats['sales_month'] = $this->Order->query("SELECT IFNULL(sum(payment_amount),0) as TOTAL FROM orders WHERE (payment_currency = 'USD') AND (payment_status = 'approved');");
+			$stats['sales_month'] = $stats['sales_month'][0][0]['TOTAL'];			
+			
+			$stats['sales_pending'] = $this->Order->query("SELECT IFNULL(sum(payment_amount),0) as TOTAL FROM orders WHERE (payment_currency = 'USD') AND (payment_status = 'pending');");
+			$stats['sales_pending'] = $stats['sales_pending'][0][0]['TOTAL'];
+
+			$this->set(compact('page', 'subpage', 'title_for_layout', 'stats'));
+
+			} else {
 			$this->layout = 'home';
+			$this->set(compact('page', 'subpage', 'title_for_layout'));
 		}
 		
-		$this->set(compact('page', 'subpage', 'title_for_layout'));
+		
 		$this->render(implode('/', $path));
 	}
 }

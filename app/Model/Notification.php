@@ -51,15 +51,8 @@ class Notification extends AppModel {
 	
 	public function beforeSave($options = array()) {
 		if (isset($this->data[$this->alias]['minutes'])) {
-			$initDate = new DateTime(date("Y-m-d H:i:s"));
-			
-			$initDate->add(new DateInterval("PT".$this->data[$this->alias]['minutes']."M"));
-			$this->data[$this->alias]['push_time'] = $initDate->format("Y-m-d H:i:s");					
+			$this->data[$this->alias]['push_time'] = date('Y-m-d H:i:s', strtotime("+{$this->data[$this->alias]['minutes']} minutes"));
 			unset($this->data[$this->alias]['minutes']);
-		} else {
-			$initDate = new DateTime(date("Y-m-d H:i:s"));		
-			$initDate->add(new DateInterval("PT60M"));
-			$this->data[$this->alias]['push_time'] = $initDate->format("Y-m-d H:i:s");		
 		}
 		
 		return true;
