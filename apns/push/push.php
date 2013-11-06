@@ -36,26 +36,30 @@ if (!defined('DEVICE_ENABLED')) {
 	define('DEVICE_ENABLED', '1');
 }
 
+
+
 try
 {
 	require_once('push_config.php');
-
 	ini_set('display_errors', 'off');
 	
-	if ($argc != 2 || ($argv[1] != 'development' && $argv[1] != 'production'))
+	if ($argc != 2 || ($argv[1] != 'test' && $argv[1] != 'development' && $argv[1] != 'production'))
 	{
 		$mode = 'development';
-		//exit("Usage: php push.php development|production". PHP_EOL);
+		//exit("Usage: php push.php test|development|production". PHP_EOL);
+	} else {
+		$mode = $argv[1];
 	}
 	
 	$config = $config[$mode];
+	date_default_timezone_set($config['timezone']);
 	writeToLog("Push script started ($mode mode)");
 	if (!extension_loaded('openssl')) {
 		writeToLog("Open SSL is not enabled");
 	} else {
 		writeToLog("Open SSL is enabled");
 	}
-
+	
 	
 	$obj = new APNS_Push($config);
 	$obj->start();
@@ -132,7 +136,9 @@ class APNS_Push
 
 		writeToLog('Connecting to ' . $this->server);
 		if (!$this->connectToAPNS()) exit;
-		$shutdown_time = time() + (82800);
+		$shutdown_time = time() + (85800);
+		
+		writeToLog("the service will shut down at --> " . date('Y-m-d H:i:s', $shutdown_time));
 		while(1) {
 			// Do at most 20 messages at a time. Note: we send each message in
 			// a separate packet to APNS. It would be more efficient if we 
@@ -142,7 +148,7 @@ class APNS_Push
 				writeToLog("shutting down the notification service");
 			}
 			
-			$stmt = $this->pdo->prepare('SELECT * FROM notifications WHERE (status = 1) AND (push_time <= NOW())');
+			$stmt = $this->pdo->prepare('SELECT * FROM notifications WHERE (status = 1) AND (push_time <= \''. date('Y-m-d H:i:s'). '\')');
 			$stmt->execute();
 			$messages = $stmt->fetchAll(PDO::FETCH_OBJ);
 
@@ -199,7 +205,6 @@ class APNS_Push
 			unset($messages);
 			unset($devices);			
 			sleep(10);
-			writeToLog("Waking up, fetching new notifications...");
 		}
 	}
 
