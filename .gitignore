@@ -12,6 +12,7 @@
 /tags
 /apns/push/ck_development.pem
 /apns/push/ck_production.pem
+/apns/push/push_config.php
 /apns/log/*
 !/app/tmp/cache/models/empty
 !/app/tmp/cache/persistent/empty
@@ -27,4 +28,4 @@
 Icon?
 ehthumbs.db
 Thumbs.db
-gitcommit.message
+gitcommit.log

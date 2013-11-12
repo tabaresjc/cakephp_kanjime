@@ -46,7 +46,7 @@ class NotificationsController extends AppController {
 		if ($this->request->is('post')) {
 			$this->Notification->create();
 			if ($this->Notification->save($this->request->data)) {
-				$this->Session->setFlash(__('The notification has been saved, it will be sent after 1 hour'), 'flash/success');
+				$this->Session->setFlash(__('The notification has been saved'), 'flash/success');
 				$this->redirect(array('action' => 'index'));
 			} else {
 				$this->Session->setFlash(__('The notification could not be saved. Please, try again.'), 'flash/error');

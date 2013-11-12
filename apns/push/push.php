@@ -52,6 +52,7 @@ try
 	}
 	
 	$config = $config[$mode];
+	
 	date_default_timezone_set($config['timezone']);
 	writeToLog("Push script started ($mode mode)");
 	if (!extension_loaded('openssl')) {
@@ -97,7 +98,7 @@ class APNS_Push
 	private $port;
 	private $certificate;
 	private $passphrase;
-
+	private $time_shutdown;
 	function __construct($config)
 	{
 		$this->server_url = $config['server'];
@@ -106,7 +107,7 @@ class APNS_Push
 		
 		$this->certificate = $config['certificate'];
 		$this->passphrase = $config['passphrase'];
-
+		$this->shutdown_time = time() + (870);
 		// Create a connection to the database.
 		$this->pdo = new PDO(
 			'mysql:host=' . $config['db']['host'] . ';dbname=' . $config['db']['dbname'], 
@@ -136,16 +137,17 @@ class APNS_Push
 
 		writeToLog('Connecting to ' . $this->server);
 		if (!$this->connectToAPNS()) exit;
-		$shutdown_time = time() + (85800);
 		
-		writeToLog("the service will shut down at --> " . date('Y-m-d H:i:s', $shutdown_time));
+		
+		writeToLog("the service will shut down at --> " . date('Y-m-d H:i:s', $this->shutdown_time));
 		while(1) {
 			// Do at most 20 messages at a time. Note: we send each message in
 			// a separate packet to APNS. It would be more efficient if we 
 			// combined several messages into one packet, but this script isn't
 			// smart enough to do that. ;-)
-			if( time() > $shutdown_time ) {
+			if( time() > $this->shutdown_time ) {				
 				writeToLog("shutting down the notification service");
+				exit("shutting down the notification service". PHP_EOL);
 			}
 			
 			$stmt = $this->pdo->prepare('SELECT * FROM notifications WHERE (status = 1) AND (push_time <= \''. date('Y-m-d H:i:s'). '\')');
