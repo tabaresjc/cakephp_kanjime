@@ -37,7 +37,11 @@ class CollectionsController extends AppController {
 				return $this->Rest->abort(array('status' => '400', 'error' => $msg));		
 			}
 			
-			$options = array('conditions' => array('Collection.status' => '1'), 'limit' => $limit, 'offset'=> $offset - 1 );
+			//$options = array('conditions' => array('Collection.status' => '1'), 'limit' => $limit, 'offset'=> $offset - 1 );
+			$options = array('conditions' => array(
+				'Collection.status' => '1',
+				'Collection.id >=' =>  $offset
+			));
 			
 			$data['collections'] = $this->Collection->find('all', $options);
 			$data['total'] = $this->Collection->find('count', $options);
@@ -141,6 +145,17 @@ class CollectionsController extends AppController {
 			throw new NotFoundException(__('Invalid collection'));
 		}
 		if ($this->request->is('post') || $this->request->is('put')) {
+			$options = array('conditions' => array('Collection.' . $this->Collection->primaryKey => $id));
+			$collection = $this->Collection->find('first', $options);
+			if($collection['Collection']['status']=='2' && $this->request->data['Collection']['status']=='1') {
+				$this->Collection->delete($this->request->data('Collection.id'));
+				unset($this->request->data['Collection']['id']);
+			}
+			else if($collection['Collection']['status']=='1' && $this->request->data['Collection']['status']=='2') {
+				$this->Session->setFlash(__('Can\'t change status "Published" to "Draft"'), 'flash/error');
+				$this->redirect(array('action' => 'edit', $id));
+			}
+			
 			if ($this->Collection->save($this->request->data)) {
 				$this->Session->setFlash(__('The collection has been saved'), 'flash/success');
 				$this->redirect(array('action' => 'index'));

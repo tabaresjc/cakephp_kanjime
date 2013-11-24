@@ -50,7 +50,7 @@
 						<th class="visible-lg"><?php echo $this->Paginator->sort('message'); ?></th>
 						<th class="visible-lg"><?php echo $this->Paginator->sort('badge'); ?></th>						
 						<th ><?php echo $this->Paginator->sort('status'); ?></th>
-						<th><?php echo $this->Paginator->sort('push_time'); ?></th>
+						<th class="visible-lg"><?php echo $this->Paginator->sort('push_time'); ?></th>
 						<th class="visible-lg"><?php echo $this->Paginator->sort('updated'); ?></th>
 						<th><?php echo __('Actions'); ?></th>
 					</thead>
@@ -61,7 +61,7 @@
 							<td class="visible-lg"><?php echo h($notification['Notification']['message']); ?></td>
 							<td class="visible-lg"><?php echo h($notification['Notification']['badge']); ?></td>
 							<td><span class="<?php echo $this->Notification->getStatusDescriptorClass($notification['Notification']['status']); ?>"><?php echo $this->Notification->getStatusDescriptor($notification['Notification']['status']); ?></span>								
-							<td><?php echo h($notification['Notification']['push_time']); ?></td>
+							<td class="visible-lg"><?php echo h($notification['Notification']['push_time']); ?></td>
 							<td class="visible-lg"><?php echo h($notification['Notification']['updated']); ?></td>
 							<td>
 								<div class="btn-group">

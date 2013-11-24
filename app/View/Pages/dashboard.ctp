@@ -22,14 +22,14 @@
 			</div>
 			<span class="date"><?php echo "allowed {$stats['count_enabled_devices']}"; ?></span>
 		</div>
-		
+
 		<div class="col-md-3 col-sm-3 stat">
 			<div class="data">
 				<span class="number"><?php echo $stats['count_notifications']; ?></span>
-				notifications
+				notices
 			</div>
 			<span class="date"><?php echo "stopped {$stats['count_notifications_stopped']}"; ?></span>
-		</div>
+		</div>		
 		
 		<div class="col-md-3 col-sm-3 stat">
 			<div class="data">

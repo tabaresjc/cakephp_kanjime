@@ -334,6 +334,9 @@ table th span.line{
   .navbar-toggle {
     display: block !important;
   }
+  .thumbnail {
+	margin-bottom:15px;
+  }
 }
 
 
