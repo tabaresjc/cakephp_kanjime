@@ -56,6 +56,14 @@
 						</strong>
 					  </td>
 					  <td><span class="<?php echo $this->Collection->getStatusDescriptorClass($collection['Collection']['status']); ?>"><?php echo $this->Collection->getStatusDescriptor($collection['Collection']['status']); ?></span></td>
+					</tr>
+					<tr>
+					  <td>
+						<strong>
+						  <?php echo __('Video'); ?>
+						</strong>
+					  </td>
+					  <td><a href="<?php echo h($collection['Collection']['url_video']); ?>" target="_blank"><?php echo h($collection['Collection']['url_video']); ?></a></td>
 					</tr>					
 					<tr>
 					  <td>

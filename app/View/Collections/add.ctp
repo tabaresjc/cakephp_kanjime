@@ -46,6 +46,14 @@
 							  <!-- .col-lg-10 -->
 							</div>
 							<!-- .form-group -->
+							<div class="form-group">
+							  <?php echo $this->Form->label('url_video', 'URL video', array('class' => 'col-lg-2 control-label'));?>
+							  <div class="col-lg-10">
+								<?php echo $this->Form->input('url_video', array('class' => 'form-control')); ?>
+							  </div>
+							  <!-- .col-lg-10 -->
+							</div>								
+							<!-- .form-group -->
 							<?php echo $this->Form->hidden('body', array('value' => 'kanji:null', 'id' => 'kanjime_body')); ?>
 							<!-- .form-group -->
 						</div>

@@ -31,7 +31,7 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
 	<!-- bootstrap -->
-    <link href="/admin/css/bootstrap/bootstrap.css" rel="stylesheet" />
+    <link href="/admin/css/bootstrap.css" rel="stylesheet" />
     <link href="/admin/css/bootstrap/bootstrap-overrides.css" type="text/css" rel="stylesheet" />
 	
 	<!-- libraries -->

@@ -46,7 +46,15 @@
 								<?php echo $this->Form->input('status', array('options' => $this->Collection->getStatusDescriptors())); ?>
 							  </div>
 							  <!-- .col-lg-10 -->
-							</div>				
+							</div>
+							<!-- .form-group -->
+							<div class="form-group">
+							  <?php echo $this->Form->label('url_video', 'URL video', array('class' => 'col-lg-2 control-label'));?>
+							  <div class="col-lg-10">
+								<?php echo $this->Form->input('url_video', array('class' => 'form-control')); ?>
+							  </div>
+							  <!-- .col-lg-10 -->
+							</div>											
 							<!-- .form-group -->
 							<?php echo $this->Form->hidden('body', array('id' => 'kanjime_body')); ?>
 							<?php echo $this->Form->hidden('id'); ?>

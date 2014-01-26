@@ -25,7 +25,7 @@
 								<th class="col-md-2 sortable"><?php echo $this->Paginator->sort('title', __('Name')); ?></th>
 								<th class="col-md-2 sortable visible-lg"><?php echo $this->Paginator->sort('subtitle', __('Kanji')); ?></th>
 								<th class="col-md-2 sortable visible-lg"><?php echo $this->Paginator->sort('description', __('Katakana')); ?></th>
-								<th class="col-md-2 sortable visible-lg"><?php echo $this->Paginator->sort('created', __('Created')); ?></th>
+								<th class="col-md-2 sortable visible-lg"><?php echo $this->Paginator->sort('created', __('Modified')); ?></th>
 								<th class="col-md-2 sortable visible-lg"><?php echo $this->Paginator->sort('created', __('Status')); ?></th>
 								<th></th>
 							</tr>	
@@ -34,12 +34,17 @@
 						
 						<?php foreach ($collections as $collection): ?>				
 							<tr>
-								<td>
-									<?php echo $this->Html->link($collection['Collection']['title'], array('action' => 'view', $collection['Collection']['id']), array('class' => 'title')); ?>
+								<td>									
+									<?php echo $this->Html->link($collection['Collection']['title'], array('action' => 'view', $collection['Collection']['id']), array('class' => 'title', 'style' => 'line-height: 30px;')); ?>
+									<?php if (!empty($collection['Collection']['url_video'])) { ?>
+										<a href="<?php echo h($collection['Collection']['url_video']); ?>" class="btn btn-danger" target="_blank" style="float:right;">
+											<i class="glyphicon glyphicon-facetime-video"></i>
+										</a>
+									<?php } ?>
 								</td>
 								<td class="visible-lg"><span class="subtitle"><?php echo h($collection['Collection']['subtitle']); ?></span></td>
 								<td class="visible-lg"><span class="subtitle"><?php echo h($collection['Collection']['description']); ?></span></td>
-								<td class="visible-lg"><?php echo $this->Time->format(DATETIME_FORMAT, $collection['Collection']['created']); ?></td>
+								<td class="visible-lg"><?php echo $this->Time->format(DATETIME_FORMAT, $collection['Collection']['modified']); ?></td>
 								<td class="visible-lg"><span class="<?php echo $this->Collection->getStatusDescriptorClass($collection['Collection']['status']); ?>"><?php echo $this->Collection->getStatusDescriptor($collection['Collection']['status']); ?></span></td>
 								<td>
 									<div class="btn-group">
