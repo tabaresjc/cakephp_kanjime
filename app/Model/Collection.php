@@ -54,12 +54,13 @@ class Collection extends AppModel {
 	
     public function beforeSave($options = array()) {
         // Save the hash of the entire record
-        $record_string = $this->data[$this->alias]['title'] +
-            $this->data[$this->alias]['subtitle'] +
-            $this->data[$this->alias]['description'] +
-            $this->data[$this->alias]['title'] +
-            $this->data[$this->alias]['body'] +
-            $this->data[$this->alias]['url_video'];
+        $record_string = '';
+        $record_string .= $this->data[$this->alias]['title'];
+        $record_string .= $this->data[$this->alias]['subtitle'];
+        $record_string .= $this->data[$this->alias]['description'];
+        $record_string .= $this->data[$this->alias]['title'];
+        $record_string .= $this->data[$this->alias]['body'];
+        $record_string .= $this->data[$this->alias]['url_video'];
         $this->data[$this->alias]['hash'] = Security::hash($record_string, 'sha1', true);
         return true;
     }    
