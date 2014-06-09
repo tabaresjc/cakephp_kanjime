@@ -108,4 +108,11 @@ class NotificationsController extends AppController {
 			$this->redirect(array('action' => 'index'));
 		}
 	}
+
+	public function start() {
+		$this->request->onlyAllow('post');
+		//$this->Session->setFlash(__('Process started.'), 'flash/success');
+		//exec("php /home4/kazue77/public_app/apns/push/push.php > /dev/null &");
+		$this->redirect(array('action' => 'index'));
+	}
 }

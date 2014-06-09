@@ -159,9 +159,9 @@
 								<div class="span12 social">
 									<h3 class="heading" style="font-size: 1.5em;"><i class="icon icon-bookmark"></i> LearnJapanese123</h3>
 									<ul style="text-align: left;">
-										<li><a href="http://blog.learnjapanese123.com/" target="_blank"><img src="/img/wordpress_48.png" alt="Blog LearnJapanese123" /></a></li>
+										<li><a href="http://learnjapanese123.com/blog" target="_blank"><img src="/img/wordpress_48.png" alt="Blog LearnJapanese123" /></a></li>
 										<li><a href="https://www.facebook.com/Japanese.Language.Culture" target="_blank"><img src="/img/facebook_48.png" alt="Facebook for Japanese Language and and Culture"  /></a></li>
-										<li><a href="https://plus.google.com/105449602868059056192?rel=author" target="_blank"><img src="/img/google_48.png" alt="Google+ for Japanese Language and and Culture"  /></a></li>
+										<li><a href="https://plus.google.com/+Learnjapanese123" target="_blank"><img src="/img/google_48.png" alt="Google+ for Japanese Language and and Culture"  /></a></li>
 										<li>
 											<a href="https://twitter.com/japanese123" target="_blank">
 												<img src="/img/twitter_48.png" alt="Twitter for Japanese Language and and Culture"  />
@@ -252,7 +252,7 @@
 						<ul>
 							<li><a href="https://www.facebook.com/Japanese.Language.Culture"><i class="socicon facebookcircle"></i></a></li>
 							<li><a href="https://twitter.com/japanese123"><i class="socicon twittercircle"></i></a></li>
-							<li><a href="https://plus.google.com/105449602868059056192"><i class="socicon googlecircle"></i></a></li>
+							<li><a href="https://plus.google.com/+Learnjapanese123"><i class="socicon googlecircle"></i></a></li>
 						</ul>	
 					</div>
 				</div>

@@ -36,7 +36,8 @@ class NotificationHelper extends AppHelper {
 		'2' => 'Sending',
 		'3' => 'Completed',
 		'4' => 'Error',
-		'5' => 'Stop'
+		'5' => 'Stop',
+		'6' => 'Not completed'
 	);
 	
 	protected $status_descriptor_edit = array(
@@ -49,7 +50,8 @@ class NotificationHelper extends AppHelper {
 		'2' => 'label label-primary',
 		'3' => 'label label-success',
 		'4' => 'label label-danger',
-		'5' => 'label label-warning'
+		'5' => 'label label-warning',
+		'6' => 'label label-warning'
 	);
 
 	public function getStatusDescriptors() {

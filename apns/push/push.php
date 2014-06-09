@@ -31,6 +31,10 @@ if (!defined('KM_SUCCESS')) {
 if (!defined('KM_ERROR')) {
 	define('KM_ERROR', '4');
 }
+if (!defined('KM_WARNING')) {
+	define('KM_WARNING', '6');
+}
+
 
 if (!defined('DEVICE_ENABLED')) {
 	define('DEVICE_ENABLED', '1');
@@ -52,8 +56,8 @@ try
 	}
 	
 	$config = $config[$mode];
-	
 	date_default_timezone_set($config['timezone']);
+	$config['logfile'] = '../log/' . date('Ymd') . $config['logfile'];
 	writeToLog("Push script started ($mode mode)");
 	if (!extension_loaded('openssl')) {
 		writeToLog("Open SSL is not enabled");
@@ -107,7 +111,7 @@ class APNS_Push
 		
 		$this->certificate = $config['certificate'];
 		$this->passphrase = $config['passphrase'];
-		$this->shutdown_time = time() + (870);
+		$this->shutdown_time = time() + (58 * 15);
 		// Create a connection to the database.
 		$this->pdo = new PDO(
 			'mysql:host=' . $config['db']['host'] . ';dbname=' . $config['db']['dbname'], 
@@ -201,7 +205,7 @@ class APNS_Push
 				if($device_count==$count_sent) {
 					$stmt->execute(array(KM_SUCCESS, $message->id));
 				} else {
-					$stmt->execute(array(KM_ERROR, $message->id));
+					$stmt->execute(array(KM_WARNING, $message->id));
 				}
 			}
 			unset($messages);
